@@ -17,4 +17,20 @@
 
     --font-h1: 'Marcellus', 3rem, ;
     --font-h2: 'Inter', 2.25rem;
+
+    /* Semánticos */
+  --bg-primary: var(--color-white);
+  --bg-secondary: var(--color-gray-light);
+
+  --text-primary: var(--color-black);
+  --text-secondary: var(--color-gray-dark);
+  --text-muted: var(--color-gray-medium);
+
+  --border-default: var(--color-gray-dark);
+  --border-focus: var(--color-black);
+
+  --button-primary-bg: var(--color-black);
+  --button-primary-text: var(--color-white);
+}
+
 }
