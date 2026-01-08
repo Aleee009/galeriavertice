@@ -1,0 +1,137 @@
+/* =========================================
+   1. CONFIGURACIÓN GLOBAL (Base)
+   ========================================= */
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.5;
+}
+
+h1 {
+    font: var(--font-h1);
+    color: var(--text-primary);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    font: var(--font-h2);
+    color: var(--text-title);
+    margin-bottom: 1rem;
+}
+
+p {
+    font: var(--font-text-1);
+    color: var(--text-subtitle);
+    margin-bottom: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1280px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+}
+
+.text-sm {
+    font: var(--font-text-2);
+}
+
+/* Botones estándar */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bg-button);
+    font: var(--font-button);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-grisoscuro);
+    color: var(--color-blanco);
+}
+
+/* =========================================
+   3. LAYOUT: HEADER (Navegación)
+   ========================================= */
+.site-header {
+    background-color: var(--bg-primary);
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.main-nav a {
+    font: var(--font-text-1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+
+.site-footer {
+    background-color: var(--bg-secondary);
+    padding-block: 4rem;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+
+.grid-obras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+.card-obra img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    background-color: var(--bg-secondary);
+}
+
+.card-obra h3 {
+    font: var(--font-text-1);
+    margin-bottom: 0.25rem;
+}
+
+.card-obra .precio {
+    font: var(--font-text-2);
+    color: var(--text-subtitle);
+}
