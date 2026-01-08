@@ -1,0 +1,20 @@
+:root {
+    --color-negro: #111111;
+    --color-blanco: #F3F3F3;
+    --color-grisclaro: #E5E5E5;
+    --color-grismedio: #8C8C8C;
+    --color-grisoscuro: #333333;
+    --color-verde: #32843E;
+    --color-rojo: #8B2E2F;
+
+    --bg-primary: var(--color-blanco);
+    --bg-secondary: var(--color-grisclaro);
+    --text-primary: var(--color-negro);
+    --text-inverse: var(--color-blanco);
+    --text-subtitle: var(--color-grismedio);
+    --text-title: var(--color-grisoscuro);
+    --bg-button: var(var(--color-grisclaro));
+
+    --font-h1: 'Marcellus', 3rem;
+    --font-h2: 'Inter', 2.25rem;
+}
