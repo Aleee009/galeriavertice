@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&display=swap');
+
 :root {
     --color-negro: #111111;
     --color-blanco: #F3F3F3;
@@ -13,8 +15,12 @@
     --text-inverse: var(--color-blanco);
     --text-subtitle: var(--color-grismedio);
     --text-title: var(--color-grisoscuro);
-    --bg-button: var(var(--color-grisclaro));
+    --bg-button: var(--color-grisclaro);
 
-    --font-h1: 'Marcellus', 3rem, ;
-    --font-h2: 'Inter', 2.25rem;
+    /* Typography */
+    --font-h1: 400 3rem 'Marcellus', serif;
+    --font-h2: 500 2.25rem 'Inter', sans-serif;
+    --font-button: 600 1rem 'Inter', sans-serif;
+    --font-text-1: 500 1rem 'Inter', sans-serif;
+    --font-text-2: 500 0.75rem 'Inter', sans-serif;
 }
