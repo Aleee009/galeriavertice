@@ -1,25 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&display=swap');
 
 :root {
-    --color-negro: #111111;
-    --color-blanco: #F3F3F3;
-    --color-grisclaro: #E5E5E5;
-    --color-grismedio: #8C8C8C;
-    --color-grisoscuro: #333333;
-    --color-verde: #32843E;
-    --color-rojo: #8B2E2F;
+  /* =========================
+     COLORES BASE
+  ========================= */
+  --color-negro: #111111;
+  --color-blanco: #F3F3F3;
+  --color-grisclaro: #E5E5E5;
+  --color-grismedio: #8C8C8C;
+  --color-grisoscuro: #333333;
+  --color-verde: #32843E;
+  --color-rojo: #8B2E2F;
 
-    --bg-primary: var(--color-blanco);
-    --bg-secondary: var(--color-grisclaro);
-    --text-primary: var(--color-negro);
-    --text-inverse: var(--color-blanco);
-    --text-subtitle: var(--color-grismedio);
-    --text-title: var(--color-grisoscuro);
-    --bg-button: var(--color-grisclaro);
+  /* =========================
+     COLORES HOVER (DERIVADOS)
+  ========================= */
 
-    --font-h1: 400 3rem 'Marcellus', serif;
-    --font-h2: 500 2.25rem 'Inter', sans-serif;
-    --font-button: 600 1rem 'Inter', sans-serif;
-    --font-text-1: 500 1rem 'Inter', sans-serif;
-    --font-text-2: 500 0.75rem 'Inter', sans-serif;
+  /* Grises */
+  --color-grisoscuro-hover: var(--color-grismedio);
+  --color-grismedio-hover: var(--color-grisclaro);
+  --color-grisclaro-hover: var(--color-blanco);
+
+  /* Texto */
+  --text-primary-hover: var(--color-grisoscuro);
+  --text-subtitle-hover: var(--color-grisoscuro);
+
+  /* Fondos */
+  --bg-primary-hover: var(--color-grisclaro);
+  --bg-secondary-hover: var(--color-blanco);
+  --bg-button-hover: var(--color-blanco);
+
+  /* Acciones */
+  --color-verde-hover: #4FA15B;
+  --color-rojo-hover: #A84546;
+
+  /* =========================
+     TOKENS SEMÁNTICOS
+  ========================= */
+  --bg-primary: var(--color-blanco);
+  --bg-secondary: var(--color-grisclaro);
+
+  --text-primary: var(--color-negro);
+  --text-inverse: var(--color-blanco);
+  --text-subtitle: var(--color-grismedio);
+  --text-title: var(--color-grisoscuro);
+
+  --bg-button: var(--color-grisclaro);
+
+  /* =========================
+     TIPOGRAFÍA
+  ========================= */
+  --font-h1: 400 3rem 'Marcellus', serif;
+  --font-h2: 500 2.25rem 'Inter', sans-serif;
+  --font-button: 600 1rem 'Inter', sans-serif;
+  --font-text-1: 500 1rem 'Inter', sans-serif;
+  --font-text-2: 500 0.75rem 'Inter', sans-serif;
 }
