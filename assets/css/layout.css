@@ -2,6 +2,24 @@
    HEADER
 =========================== */
 
+.header-grid {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+}
+
+.main-nav {
+  justify-self: start;
+}
+
+.logo {
+  justify-self: center;
+}
+
+.user-actions {
+  justify-self: end;
+}
+
 .site-header {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--color-grisclaro);
@@ -11,10 +29,30 @@
 }
 
 .site-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  position: relative;
   height: 96px;
+}
+
+/* Posicionamiento absoluto para centrar perfecto */
+.main-nav {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.user-actions {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* Logo */
@@ -59,6 +97,27 @@
 .user-actions {
   display: flex;
   gap: 1rem;
+  .user-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid var(--color-grisclaro);
+  color: var(--text-primary);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.user-icon:hover {
+  background: var(--bg-secondary);
+  border-color: var(--color-grismedio);
+}
+
+.user-icon span {
+  font-size: 22px;
+}
+
 }
 
 .user-actions .btn {
@@ -169,4 +228,8 @@
 
 .footer-social a:hover {
   opacity: 1;
+}
+
+body[data-page="home"] .site-footer {
+  margin-top: 0;
 }
