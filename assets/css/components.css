@@ -40,3 +40,16 @@
     font: var(--font-text-2);
     color: var(--text-subtitle);
 }
+
+.filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.filtros select,
+.filtros input {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--color-grisclaro);
+  background: var(--bg-primary);
+}

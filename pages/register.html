@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro · Galería Vértice</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Material Symbols -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+
+  <!-- JS -->
+  <script src="../assets/js/auth.js" defer></script>
+</head>
+
+<body data-page="registro">
+  <div class="layout">
+    <!-- =========================
+         COLUMNA IZQUIERDA
+    ========================= -->
+    <div class="layout-left">
+      <div class="grid-overlay"></div>
+    </div>
+
+    <!-- =========================
+         COLUMNA DERECHA
+    ========================= -->
+    <div class="layout-right">
+      <!-- REGISTRO -->
+      <div class="register">
+        <!-- HEADER -->
+        <header class="register-header">
+          <h2 class="ag-h2">Galería Vértice</h2>
+          <p class="ag-text-1">
+            Regístrate con nosotros
+          </p>
+        </header>
+
+        <!-- FORMULARIO -->
+        <form class="register-form">
+          <!-- Nombre -->
+          <div class="field">
+            <label class="label-with-icon">
+              <span class="material-symbols-outlined label-icon">person</span>
+              Nombre
+            </label>
+            <input type="text" placeholder="Tu nombre" required />
+          </div>
+
+          <!-- Email -->
+          <div class="field">
+            <label class="label-with-icon">
+              <span class="material-symbols-outlined label-icon">mail</span>
+              Email
+            </label>
+            <input type="email" placeholder="correo@ejemplo.com" required />
+          </div>
+
+          <!-- Tipo de usuario -->
+          <div class="field field-select">
+            <label class="label-with-icon">
+              <span class="material-symbols-outlined label-icon">group</span>
+              Tipo de usuario
+            </label>
+            <select id="userType" required>
+              <option value="" disabled selected>
+                Selecciona una opción
+              </option>
+              <option value="artista">Artista</option>
+              <option value="coleccionista">Usuario</option>
+            </select>
+          </div>
+
+          <!-- Contraseña -->
+          <div class="field">
+            <label class="label-with-icon">
+              <span class="material-symbols-outlined label-icon">lock</span>
+              Contraseña
+            </label>
+            <input type="password" placeholder="••••••••" required />
+          </div>
+
+          <!-- BOTÓN -->
+          <button type="submit" class="btn-primary ag-button-destacado">
+            Registrarse
+          </button>
+        </form>
+
+        <!-- LOGIN -->
+        <div class="register-login">
+          <p class="ag-text-login">
+            ¿Ya tienes sesión iniciada?
+            <a href="login.html" class="login-link">Inicia sesión</a>
+          </p>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <footer class="page-footer">
+        <p class="copyright">© 2026 Galería Vértice</p>
+      </footer>
+    </div>
+  </div>
+</body>
+</html>

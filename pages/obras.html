@@ -2,26 +2,43 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Obras – Vértice</title>
+  <title>Obras · Galería Vértice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <script src="../assets/js/main.js" defer></script>
+  <script src="../assets/js/pages.js" defer></script>
 </head>
+
 <body data-page="obras">
 
-<div id="header"></div>
+  <div id="header"></div>
 
-<main class="obras">
-  <h1>Obras</h1>
+  <main class="container">
+    <h1>Obras</h1>
 
-  <section class="grid">
-    <article class="card"></article>
-    <article class="card"></article>
-    <article class="card"></article>
-    <article class="card"></article>
-  </section>
-</main>
+    <!-- FILTROS -->
+    <div class="filtros">
+      <select id="filtroArtista">
+        <option value="">Todos los artistas</option>
+      </select>
 
-<div id="footer"></div>
+      <input
+        type="text"
+        id="buscador"
+        placeholder="Buscar por título o descripción..."
+      >
+
+      <button id="filtroFavoritos" class="btn">
+        Solo favoritos
+      </button>
+    </div>
+
+    <!-- GRID DE OBRAS -->
+    <section class="grid-obras" id="obrasGrid"></section>
+
+  </main>
+
+  <div id="footer"></div>
 
 </body>
 </html>
