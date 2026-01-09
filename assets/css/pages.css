@@ -1,0 +1,27 @@
+/* Home */
+.home .featured-grid {
+  margin-top: 4rem;
+}
+
+/* Obras */
+.obras .grid {
+  margin-top: 2rem;
+}
+
+/* Perfil */
+.perfil h1 {
+  margin-bottom: 2rem;
+}
+
+/* Auth */
+.auth,
+.register {
+  max-width: 400px;
+  margin: auto;
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

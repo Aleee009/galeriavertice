@@ -1,0 +1,42 @@
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--bg-button);
+    font: var(--font-button);
+    color: var(--text-primary);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--color-grisoscuro);
+    color: var(--color-blanco);
+}
+
+.grid-obras {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-block: 2rem;
+}
+
+.card-obra img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    background-color: var(--bg-secondary);
+}
+
+.card-obra h3 {
+    font: var(--font-text-1);
+    margin-bottom: 0.25rem;
+}
+
+.card-obra .precio {
+    font: var(--font-text-2);
+    color: var(--text-subtitle);
+}

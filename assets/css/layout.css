@@ -1,0 +1,37 @@
+.site-header {
+    background-color: var(--bg-primary);
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--bg-secondary);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.main-nav a {
+    font: var(--font-text-1);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.user-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.site-footer {
+    background-color: var(--bg-secondary);
+    padding-block: 4rem;
+    margin-top: 4rem;
+    text-align: center;
+}
