@@ -1,24 +1,16 @@
 /* ===========================
-   HEADER
+   BASE
 =========================== */
 
-.header-grid {
-  display: grid;
-  grid-template-columns: max-content 1fr max-content;
-  align-items: center;
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-primary);
 }
 
-.main-nav {
-  justify-self: start;
-}
-
-.logo {
-  justify-self: center;
-}
-
-.user-actions {
-  justify-self: end;
-}
+/* ===========================
+   HEADER
+=========================== */
 
 .site-header {
   background-color: var(--bg-primary);
@@ -33,7 +25,16 @@
   height: 96px;
 }
 
-/* Posicionamiento absoluto para centrar perfecto */
+/* Posicionamiento */
+main {
+  flex: 1;
+  display: block;
+}
+
+.site-footer {
+  flex-shrink: 0;
+}
+
 .main-nav {
   position: absolute;
   left: 0;
@@ -67,6 +68,8 @@
   display: flex;
   gap: 3rem;
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .main-nav a {
@@ -75,6 +78,7 @@
   letter-spacing: 0.15em;
   color: var(--text-primary);
   position: relative;
+  text-decoration: none;
 }
 
 /* Línea hover */
@@ -97,7 +101,9 @@
 .user-actions {
   display: flex;
   gap: 1rem;
-  .user-icon {
+}
+
+.user-icon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,6 +113,8 @@
   border: 1px solid var(--color-grisclaro);
   color: var(--text-primary);
   transition: background 0.2s ease, border-color 0.2s ease;
+  background: transparent;
+  cursor: pointer;
 }
 
 .user-icon:hover {
@@ -118,118 +126,117 @@
   font-size: 22px;
 }
 
-}
-
-.user-actions .btn {
-  background: transparent;
-  border: 1px solid var(--color-grisclaro);
-}
-
-
 /* ===========================
    FOOTER
 =========================== */
 
 .site-footer {
-  background: var(--color-grisoscuro);
-  color: var(--text-inverse);
-  padding-top: 5rem;
+  margin-top: auto;
+  background: #2f2f2f;
+  color: white;
+  padding: 80px 60px 30px;
+  font-family: inherit;
+
+    /* Esto es lo que faltaba */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 
-/* Grid principal */
-.footer-grid {
-  display: grid;
-  grid-template-columns: 2fr repeat(4, 1fr);
-  gap: 4rem;
-  padding-bottom: 4rem;
+/* Bloque superior */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
 }
 
 /* Marca */
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-title {
-  font: var(--font-h1);
-  color: var(--text-inverse);
-  max-width: 320px;
+.footer-brand h2 {
+  font-family: "Marcellus", serif;
+  font-size: 32px;
+  line-height: 1.2;
+  margin: 0 0 40px 0;
 }
 
 .footer-logo {
-  font: var(--font-h2);
-  letter-spacing: 0.2em;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  opacity: 0.85;
+}
+
+.footer-logo img {
+  width: 80px;
+}
+
+.footer-logo span {
+  font: var(--font-text-2);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
 }
 
 /* Columnas */
-.footer-column h4 {
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+}
+
+.footer-col h4 {
   font: var(--font-text-2);
-  text-transform: uppercase;
   letter-spacing: 0.15em;
-  margin-bottom: 1.5rem;
-  color: var(--text-inverse);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  opacity: 0.6;
 }
 
-.footer-column ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.footer-column a {
+.footer-col a {
+  display: block;
   font: var(--font-text-2);
-  color: var(--text-inverse);
-  opacity: 0.8;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 12px;
+  opacity: 0.85;
 }
 
-.footer-column a:hover {
+.footer-col a:hover {
   opacity: 1;
 }
 
 /* Barra inferior */
 .footer-bottom {
-  border-top: 1px solid var(--color-grismedio);
-  padding: 1.5rem 0;
-}
-
-.footer-bottom-grid {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.2);
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.footer-legal {
-  display: flex;
-  gap: 2rem;
-}
-
-.footer-legal a {
+.footer-links a {
   font: var(--font-text-2);
-  color: var(--text-inverse);
+  color: white;
+  text-decoration: none;
+  margin-right: 30px;
   opacity: 0.7;
 }
 
-.footer-legal a:hover {
+.footer-links a:hover {
   opacity: 1;
 }
 
-.footer-social {
-  display: flex;
-  gap: 1.25rem;
-}
-
 .footer-social a {
-  font: var(--font-text-2);
-  color: var(--text-inverse);
-  opacity: 0.8;
+  margin-left: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  opacity: 0.7;
 }
 
 .footer-social a:hover {
   opacity: 1;
 }
 
-body[data-page="home"] .site-footer {
-  margin-top: 0;
+.site-footer {
+  margin-top: auto;
 }

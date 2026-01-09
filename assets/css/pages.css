@@ -1,42 +1,28 @@
-/* Home */
-.home .featured-grid {
-  margin-top: 4rem;
-}
-
-/* Obras */
-.obras .grid {
-  margin-top: 2rem;
-}
-
-/* Perfil */
-.perfil h1 {
-  margin-bottom: 2rem;
-}
-
-/* Auth */
-.auth,
-.register {
-  max-width: 400px;
-  margin: auto;
-}
-
-.register-form {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+html, body {
+  height: 100%;
 }
 
 /* ================================
-   HOME LAYOUT
+   HOME FULLSCREEN
 ================================ */
 
+/* Alturas fijas de header y footer */
+body[data-page="home"] .site-header {
+  height: 96px;
+}
+
+body[data-page="home"] .site-footer {
+  height: 260px;
+  margin-top: 0;
+}
+
+/* Área central */
 body[data-page="home"] main {
-  min-height: 100vh;
-  padding: 6rem 6rem 0;
+  padding: 6rem 6rem 4rem;
   position: relative;
 }
 
-/* Grid flotante de obras */
+/* Grid flotante */
 body[data-page="home"] .grid-obras {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -45,9 +31,18 @@ body[data-page="home"] .grid-obras {
   margin-top: 4rem;
 }
 
-/* Cards tipo placeholder */
+/* Cards reales */
 body[data-page="home"] .grid-obras .card-obra {
-  background: var(--color-grisclaro);
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+/* Imágenes visibles */
+body[data-page="home"] .grid-obras img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Posiciones irregulares */
@@ -66,13 +61,84 @@ body[data-page="home"] .grid-obras .card-obra:nth-child(10) { grid-column: 4; gr
 
 /* Texto central */
 body[data-page="home"] h1 {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 600px;
-  transform: translate(-50%, -50%);
+  position: sticky;
+  top: 35%;
   text-align: center;
+  margin: 0 auto;
+  width: 600px;
   font: var(--font-h1);
   color: var(--text-primary);
   z-index: 2;
+}
+/* ================================
+   HOME FLOATING GALLERY
+================================ */
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+#home-images {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Cada imagen flotante */
+.home-image {
+  position: absolute;
+  width: 220px;
+  height: 280px;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.home-image.square {
+  width: 260px;
+  height: 260px;
+}
+
+.home-image.rect {
+  width: 360px;
+  height: 240px;
+}
+
+.home-image.tall {
+  width: 240px;
+  height: 360px;
+}
+
+.home-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Título con efecto cristal */
+.home-title {
+  position: sticky;
+  top: 35%;
+  margin: 0 auto;
+  width: 1200px;
+  padding: 0.9rem 3.2rem;
+  text-align: center;
+
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.6em;
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--color-negro);
+
+  /* Solo efecto cristal, sin caja visible */
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border: none;
+  z-index: 10;
 }

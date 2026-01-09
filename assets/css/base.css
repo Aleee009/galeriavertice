@@ -1,46 +1,60 @@
-body {
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    font-family: 'Inter', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    line-height: 1.5;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* elimina scroll fantasma horizontal */
 }
 
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Elimina márgenes colapsados de texto */
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+/* Tipografías */
 h1 {
-    font: var(--font-h1);
-    color: var(--text-primary);
-    margin-bottom: 1.5rem;
+  font: var(--font-h1);
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
 }
 
 h2 {
-    font: var(--font-h2);
-    color: var(--text-title);
-    margin-bottom: 1rem;
+  font: var(--font-h2);
+  color: var(--text-title);
+  margin-bottom: 1rem;
 }
 
 p {
-    font: var(--font-text-1);
-    color: var(--text-subtitle);
-    margin-bottom: 1rem;
+  font: var(--font-text-1);
+  color: var(--text-subtitle);
+  margin-bottom: 1rem;
 }
 
+/* Enlaces */
 a {
-    text-decoration: none;
-    color: inherit;
-    transition: opacity 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
 }
 
 a:hover {
-    opacity: 0.7;
+  opacity: 0.7;
 }
 
+/* Contenedor global */
 .container {
-    width: 100%;
-    max-width: 1280px;
-    margin-inline: auto;
-    padding-inline: 1.5rem;
+  width: 100%;
+  max-width: 1280px;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  box-sizing: border-box; /* evita overflow por padding */
 }
 
 .text-sm {
-    font: var(--font-text-2);
+  font: var(--font-text-2);
 }
