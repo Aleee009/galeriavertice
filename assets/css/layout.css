@@ -1,37 +1,172 @@
+/* ===========================
+   HEADER
+=========================== */
+
 .site-header {
-    background-color: var(--bg-primary);
-    padding-block: 1.5rem;
-    border-bottom: 1px solid var(--bg-secondary);
-    position: sticky;
-    top: 0;
-    z-index: 100;
+  background-color: var(--bg-primary);
+  border-bottom: 1px solid var(--color-grisclaro);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 96px;
 }
 
+/* Logo */
+.logo h2 {
+  font: var(--font-h2);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Navegación */
 .main-nav ul {
-    display: flex;
-    gap: 2.5rem;
+  display: flex;
+  gap: 3rem;
+  list-style: none;
 }
 
 .main-nav a {
-    font: var(--font-text-1);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+  font: var(--font-text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-primary);
+  position: relative;
 }
 
-.user-actions {
-    display: flex;
-    gap: 1rem;
+/* Línea hover */
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--color-negro);
+  transition: width 0.2s ease;
 }
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Acciones usuario */
+.user-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.user-actions .btn {
+  background: transparent;
+  border: 1px solid var(--color-grisclaro);
+}
+
+
+/* ===========================
+   FOOTER
+=========================== */
 
 .site-footer {
-    background-color: var(--bg-secondary);
-    padding-block: 4rem;
-    margin-top: 4rem;
-    text-align: center;
+  background: var(--color-grisoscuro);
+  color: var(--text-inverse);
+  padding-top: 5rem;
+}
+
+/* Grid principal */
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr repeat(4, 1fr);
+  gap: 4rem;
+  padding-bottom: 4rem;
+}
+
+/* Marca */
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.footer-title {
+  font: var(--font-h1);
+  color: var(--text-inverse);
+  max-width: 320px;
+}
+
+.footer-logo {
+  font: var(--font-h2);
+  letter-spacing: 0.2em;
+}
+
+/* Columnas */
+.footer-column h4 {
+  font: var(--font-text-2);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin-bottom: 1.5rem;
+  color: var(--text-inverse);
+}
+
+.footer-column ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-column a {
+  font: var(--font-text-2);
+  color: var(--text-inverse);
+  opacity: 0.8;
+}
+
+.footer-column a:hover {
+  opacity: 1;
+}
+
+/* Barra inferior */
+.footer-bottom {
+  border-top: 1px solid var(--color-grismedio);
+  padding: 1.5rem 0;
+}
+
+.footer-bottom-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-legal a {
+  font: var(--font-text-2);
+  color: var(--text-inverse);
+  opacity: 0.7;
+}
+
+.footer-legal a:hover {
+  opacity: 1;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1.25rem;
+}
+
+.footer-social a {
+  font: var(--font-text-2);
+  color: var(--text-inverse);
+  opacity: 0.8;
+}
+
+.footer-social a:hover {
+  opacity: 1;
 }

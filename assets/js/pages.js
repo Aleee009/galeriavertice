@@ -1,45 +1,45 @@
 let categorias = [];
 let artistas = [];
 let obras = [];
-let favoritos = JSON.parse(localStorage.getItem("favorites")) || [];
 
-let obrasFiltradasActuales = [];
 let mostrarSoloFavoritos = false;
-
-/* ================================
-   UTILIDADES
-================================ */
-function getQueryParam(param) {
-  return new URLSearchParams(window.location.search).get(param);
-}
-
-function guardarFavoritos() {
-  localStorage.setItem("favorites", JSON.stringify(favoritos));
-}
-
-function toggleFavorito(id) {
-  if (favoritos.includes(id)) {
-    favoritos = favoritos.filter(f => f !== id);
-  } else {
-    favoritos.push(id);
-  }
-  guardarFavoritos();
-  aplicarFiltros();
-}
 
 /* ================================
    CARGA DE DATOS
 ================================ */
 async function cargarDatos() {
-  const [catRes, artRes, obraRes] = await Promise.all([
-    fetch("../data/categorias.json"),
-    fetch("../data/artistas.json"),
-    fetch("../data/obras.json")
-  ]);
+  categorias = await loadJSON("categorias.json");
+  artistas = await loadJSON("artistas.json");
+  obras = await loadJSON("obras.json");
+}
 
-  categorias = await catRes.json();
-  artistas = await artRes.json();
-  obras = await obraRes.json();
+/* ================================
+   RENDER DE OBRAS
+================================ */
+function renderObras(lista) {
+  const grid = document.getElementById("obrasGrid");
+  if (!grid) return;
+
+  grid.innerHTML = lista.map(obra => {
+    const artista = artistas.find(a => a.id === obra.artistaId);
+    const favorito = isFavorite(obra.id);
+
+    return `
+      <article class="card-obra">
+        <img src="../assets/img/${obra.imagen}">
+        <h3>${obra.titulo}</h3>
+        <p>${artista.nombre}</p>
+        <button class="favorite" onclick="handleFavorite(${obra.id})">
+          ${favorito ? "❤️" : "🤍"}
+        </button>
+      </article>
+    `;
+  }).join("");
+}
+
+function handleFavorite(id) {
+  toggleFavorite(id);
+  aplicarFiltros();
 }
 
 /* ================================
@@ -49,7 +49,7 @@ function aplicarFiltros() {
   let resultado = [...obras];
 
   const artistaId = document.getElementById("filtroArtista")?.value;
-  const texto = document.getElementById("buscador")?.value.toLowerCase();
+  const texto = normalize(document.getElementById("buscador")?.value || "");
 
   if (artistaId) {
     resultado = resultado.filter(o => o.artistaId === parseInt(artistaId));
@@ -57,42 +57,16 @@ function aplicarFiltros() {
 
   if (texto) {
     resultado = resultado.filter(o =>
-      o.titulo.toLowerCase().includes(texto) ||
-      o.descripcion.toLowerCase().includes(texto)
+      normalize(o.titulo).includes(texto) ||
+      normalize(o.descripcion).includes(texto)
     );
   }
 
   if (mostrarSoloFavoritos) {
-    resultado = resultado.filter(o => favoritos.includes(o.id));
+    resultado = resultado.filter(o => isFavorite(o.id));
   }
 
   renderObras(resultado);
-}
-
-/* ================================
-   RENDER
-================================ */
-function renderObras(lista) {
-  obrasFiltradasActuales = lista;
-
-  const grid = document.getElementById("obrasGrid");
-  if (!grid) return;
-
-  grid.innerHTML = lista.map(obra => {
-    const artista = artistas.find(a => a.id === obra.artistaId);
-    const esFavorito = favoritos.includes(obra.id);
-
-    return `
-      <article class="card-obra">
-        <img src="../assets/img/${obra.imagen}">
-        <h3>${obra.titulo}</h3>
-        <p>${artista.nombre}</p>
-        <button class="favorite" onclick="toggleFavorito(${obra.id})">
-          ${esFavorito ? "❤️" : "🤍"}
-        </button>
-      </article>
-    `;
-  }).join("");
 }
 
 /* ================================
@@ -120,10 +94,38 @@ async function initObras() {
 }
 
 /* ================================
+   CATEGORÍAS
+================================ */
+async function initCategorias() {
+  await cargarDatos();
+
+  const grid = document.getElementById("categoriasGrid");
+  grid.innerHTML = categorias.map(c => `
+    <div class="card-obra" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
+      <h3>${c.nombre}</h3>
+    </div>
+  `).join("");
+}
+
+async function initCategoriaDetalle() {
+  await cargarDatos();
+
+  const id = parseInt(getParam("id"));
+  const categoria = categorias.find(c => c.id === id);
+
+  document.getElementById("categoriaTitulo").textContent = categoria.nombre;
+
+  const filtradas = obras.filter(o => o.categoriaId === id);
+  renderObras(filtradas);
+}
+
+/* ================================
    ROUTER
 ================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.body.dataset.page === "obras") {
-    initObras();
-  }
+  const page = document.body.dataset.page;
+
+  if (page === "obras") initObras();
+  if (page === "categorias") initCategorias();
+  if (page === "categoria") initCategoriaDetalle();
 });

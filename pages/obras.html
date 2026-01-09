@@ -1,44 +1,34 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Obras · Galería Vértice</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <link rel="stylesheet" href="../assets/css/styles.css">
-  <script src="../assets/js/pages.js" defer></script>
+<head>
+    <meta charset="UTF-8">
+    <title>Obras · Vértice</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <script src="../assets/js/utils.js"></script>
+    <script src="../assets/js/pages.js" defer></script>
+
 </head>
 
 <body data-page="obras">
 
-  <div id="header"></div>
+    <div id="header"></div>
 
-  <main class="container">
-    <h1>Obras</h1>
+    <main class="container">
+        <h1>Obras</h1>
 
-    <!-- FILTROS -->
-    <div class="filtros">
-      <select id="filtroArtista">
-        <option value="">Todos los artistas</option>
-      </select>
+        <div class="filtros">
+            <select id="filtroArtista"></select>
+            <input id="buscador" placeholder="Buscar...">
+            <button id="filtroFavoritos" class="btn">Favoritos</button>
+        </div>
 
-      <input
-        type="text"
-        id="buscador"
-        placeholder="Buscar por título o descripción..."
-      >
+        <section class="grid-obras" id="obrasGrid"></section>
+    </main>
 
-      <button id="filtroFavoritos" class="btn">
-        Solo favoritos
-      </button>
-    </div>
-
-    <!-- GRID DE OBRAS -->
-    <section class="grid-obras" id="obrasGrid"></section>
-
-  </main>
-
-  <div id="footer"></div>
+    <div id="footer"></div>
 
 </body>
+
 </html>
