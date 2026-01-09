@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "nombre": "Lucía Ferrer",
+    "bio": "Artista visual contemporánea especializada en abstracción cromática y composición espacial.",
+    "imagen": "artistas/lucia.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Daniel Ríos",
+    "bio": "Fotógrafo documental enfocado en la vida urbana y la identidad visual de las ciudades.",
+    "imagen": "artistas/daniel.jpg"
+  },
+  {
+    "id": 3,
+    "nombre": "Marina Soto",
+    "bio": "Ilustradora digital y concept artist para videojuegos y cine.",
+    "imagen": "artistas/marina.jpg"
+  },
+  {
+    "id": 4,
+    "nombre": "Andrés Valera",
+    "bio": "Escultor contemporáneo que trabaja con metal y materiales reciclados.",
+    "imagen": "artistas/andres.jpg"
+  },
+  {
+    "id": 5,
+    "nombre": "Clara Montes",
+    "bio": "Artista visual enfocada en surrealismo y narrativas oníricas.",
+    "imagen": "artistas/clara.jpg"
+  }
+]

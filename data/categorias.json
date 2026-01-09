@@ -1,0 +1,10 @@
+[
+  { "id": 1, "nombre": "Pintura" },
+  { "id": 2, "nombre": "Fotografía" },
+  { "id": 3, "nombre": "Escultura" },
+  { "id": 4, "nombre": "Arte Digital" },
+  { "id": 5, "nombre": "Ilustración" },
+  { "id": 6, "nombre": "Arte Conceptual" },
+  { "id": 7, "nombre": "Minimalismo" },
+  { "id": 8, "nombre": "Surrealismo" }
+]
