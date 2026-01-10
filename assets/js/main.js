@@ -23,8 +23,12 @@ async function loadLayout() {
 
   const base = getBasePath();
 
-  const header = await fetch(`${base}/partials/header.html`).then(r => r.text());
-  const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
+  const header = await fetch(`${base}/partials/header.html`).then((r) =>
+    r.text()
+  );
+  const footer = await fetch(`${base}/partials/footer.html`).then((r) =>
+    r.text()
+  );
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
@@ -90,50 +94,97 @@ async function cargarHome() {
 
   const base = getBasePath();
   const obras = await fetch(`${base}/data/obras.json`).then(r => r.json());
-  const seleccion = obras.sort(() => 0.5 - Math.random()).slice(0, 18);
 
-  const width = window.innerWidth;
-const height = window.innerHeight;
+  const SIZE = 200;
+  const GAP = 14;      // separación mínima real entre bordes
+  const MAX = 36;
 
-  const padding = 60;
+  const MARGIN = 40;
+  const VIEW_W = window.innerWidth;
+  const VIEW_H = window.innerHeight * 1.4;
+
+  const AREA_W = VIEW_W - MARGIN * 2;
+  const AREA_H = VIEW_H - MARGIN * 2;
+  const ORIGIN_X = MARGIN;
+  const ORIGIN_Y = MARGIN;
+
+  // Zona central libre
+  const CENTER_W = 520;
+  const CENTER_H = 220;
+  const CX = ORIGIN_X + AREA_W / 2;
+  const CY = ORIGIN_Y + AREA_H / 2;
+
+  const pool = obras.sort(() => 0.5 - Math.random());
+
+  container.innerHTML = "";
   const placed = [];
 
-  const shapes = [
-    { cls: "square", w: 260, h: 260 },
-    { cls: "rect", w: 360, h: 240 },
-    { cls: "tall", w: 240, h: 360 }
-  ];
-
-  function overlaps(x, y, w, h) {
-    return placed.some(p =>
-      x < p.x + p.w + padding &&
-      x + w + padding > p.x &&
-      y < p.y + p.h + padding &&
-      y + h + padding > p.y
+  function boxesOverlap(a, b) {
+    return !(
+      a.x + a.w + GAP <= b.x ||
+      b.x + b.w + GAP <= a.x ||
+      a.y + a.h + GAP <= b.y ||
+      b.y + b.h + GAP <= a.y
     );
   }
 
-  container.innerHTML = "";
+  function inCenter(box) {
+    return !(
+      box.x + box.w <= CX - CENTER_W / 2 ||
+      box.x >= CX + CENTER_W / 2 ||
+      box.y + box.h <= CY - CENTER_H / 2 ||
+      box.y >= CY + CENTER_H / 2
+    );
+  }
 
-  for (let obra of seleccion) {
-    const shape = shapes[Math.floor(Math.random() * shapes.length)];
-    let x, y, tries = 0;
+  function valid(box) {
+    // dentro del main
+    if (box.x < ORIGIN_X || box.y < ORIGIN_Y) return false;
+    if (box.x + box.w > ORIGIN_X + AREA_W) return false;
+    if (box.y + box.h > ORIGIN_Y + AREA_H) return false;
 
-    do {
-      x = Math.random() * (width - shape.w);
-      y = Math.random() * (height - shape.h);
-      tries++;
-    } while (overlaps(x, y, shape.w, shape.h) && tries < 80);
+    // no invadir centro
+    if (inCenter(box)) return false;
 
-    placed.push({ x, y, w: shape.w, h: shape.h });
+    // separación estricta
+    for (let p of placed) {
+      if (boxesOverlap(box, p)) return false;
+    }
+
+    return true;
+  }
+
+  let tries = 0;
+  while (placed.length < MAX && tries < 20000) {
+    const box = {
+      x: ORIGIN_X + Math.random() * (AREA_W - SIZE),
+      y: ORIGIN_Y + Math.random() * (AREA_H - SIZE),
+      w: SIZE,
+      h: SIZE
+    };
+
+    if (valid(box)) {
+      placed.push(box);
+    }
+
+    tries++;
+  }
+
+  let maxBottom = 0;
+
+  placed.forEach((p, i) => {
+    const obra = pool[i % pool.length];
 
     container.innerHTML += `
-      <div class="home-image ${shape.cls}" style="left:${x}px; top:${y}px;">
+      <div class="home-image square"
+           style="left:${p.x}px; top:${p.y}px;
+                  width:${p.w}px; height:${p.h}px;">
         <img src="${base}/assets/img/${obra.imagen}" alt="${obra.titulo}">
       </div>
     `;
-  }
 
-  // Ajustar altura real del hero
-  const maxBottom = Math.max(...placed.map(p => p.y + p.h));
+    maxBottom = Math.max(maxBottom, p.y + p.h);
+  });
+
+  container.style.height = (maxBottom + MARGIN) + "px";
 }

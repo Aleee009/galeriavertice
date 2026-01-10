@@ -7,9 +7,9 @@ html, body {
 
 body {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: block;
 }
+
 
 /* Elimina márgenes colapsados de texto */
 h1, h2, h3, h4, h5, h6, p {
