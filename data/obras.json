@@ -1,242 +1,93 @@
 [
   {
     "id": 1,
-    "titulo": "Fragmentos de luz",
-    "descripcion": "Obra abstracta basada en contrastes de color y profundidad.",
-    "imagen": "obras/obra1.jpg",
-    "artistaId": 1,
+    "titulo": "Rojo profundo",
+    "imagen": "moderno_1.jpg",
     "categoriaId": 1
   },
   {
     "id": 2,
-    "titulo": "Horizonte rojo",
-    "descripcion": "Composición pictórica minimalista.",
-    "imagen": "obras/obra2.jpg",
-    "artistaId": 1,
-    "categoriaId": 7
+    "titulo": "Minimal",
+    "imagen": "moderno_2.jpg",
+    "categoriaId": 1
   },
   {
     "id": 3,
-    "titulo": "Ecos del azul",
-    "descripcion": "Exploración del color y la forma en el espacio.",
-    "imagen": "obras/obra3.jpg",
-    "artistaId": 1,
+    "titulo": "Equilibrio",
+    "imagen": "moderno_3.jpg",
     "categoriaId": 1
   },
   {
     "id": 4,
-    "titulo": "Líneas de calma",
-    "descripcion": "Minimalismo pictórico basado en ritmo y balance.",
-    "imagen": "obras/obra4.jpg",
-    "artistaId": 1,
-    "categoriaId": 7
+    "titulo": "Horizonte urbano",
+    "imagen": "moderno_4.jpg",
+    "categoriaId": 1
   },
   {
     "id": 5,
-    "titulo": "Calles vacías",
-    "descripcion": "Fotografía urbana en blanco y negro.",
-    "imagen": "obras/obra5.jpg",
-    "artistaId": 2,
-    "categoriaId": 2
+    "titulo": "Luz estructural",
+    "imagen": "moderno_5.jpg",
+    "categoriaId": 1
   },
+
   {
     "id": 6,
-    "titulo": "Sombras urbanas",
-    "descripcion": "Retrato de la ciudad al anochecer.",
-    "imagen": "obras/obra6.jpg",
-    "artistaId": 2,
+    "titulo": "Retrato de mármol",
+    "imagen": "clasico_1.jpg",
     "categoriaId": 2
   },
   {
     "id": 7,
-    "titulo": "Tránsito",
-    "descripcion": "Escena urbana capturada en movimiento.",
-    "imagen": "obras/obra7.jpg",
-    "artistaId": 2,
+    "titulo": "Naturaleza muerta",
+    "imagen": "clasico_2.jpg",
     "categoriaId": 2
   },
   {
     "id": 8,
-    "titulo": "Reflejos",
-    "descripcion": "La ciudad reflejada en superficies de vidrio.",
-    "imagen": "obras/obra8.jpg",
-    "artistaId": 2,
+    "titulo": "Luz del norte",
+    "imagen": "clasico_3.jpg",
     "categoriaId": 2
   },
   {
     "id": 9,
-    "titulo": "Mundos flotantes",
-    "descripcion": "Paisaje fantástico en arte digital.",
-    "imagen": "obras/obra9.jpg",
-    "artistaId": 3,
-    "categoriaId": 4
+    "titulo": "Retrato al óleo",
+    "imagen": "clasico_4.jpg",
+    "categoriaId": 2
   },
   {
     "id": 10,
-    "titulo": "Criaturas",
-    "descripcion": "Diseño de personajes para videojuego.",
-    "imagen": "obras/obra10.jpg",
-    "artistaId": 3,
-    "categoriaId": 6
+    "titulo": "Paisaje clásico",
+    "imagen": "clasico_5.jpg",
+    "categoriaId": 2
   },
   {
     "id": 11,
-    "titulo": "Reinos ocultos",
-    "descripcion": "Concept art de mundos imaginarios.",
-    "imagen": "obras/obra11.jpg",
-    "artistaId": 3,
-    "categoriaId": 6
+    "titulo": "Fragmentos",
+    "imagen": "abstracto_1.jpg",
+    "categoriaId": 7
   },
   {
     "id": 12,
-    "titulo": "Ciudad futurista",
-    "descripcion": "Ilustración de arquitectura futurista.",
-    "imagen": "obras/obra12.jpg",
-    "artistaId": 3,
-    "categoriaId": 4
+    "titulo": "Geometría viva",
+    "imagen": "abstracto_2.jpg",
+    "categoriaId": 7
   },
   {
     "id": 13,
-    "titulo": "Estructura",
-    "descripcion": "Escultura contemporánea en acero.",
-    "imagen": "obras/obra13.jpg",
-    "artistaId": 4,
-    "categoriaId": 3
+    "titulo": "Caos cromático",
+    "imagen": "abstracto_3.jpg",
+    "categoriaId": 7
   },
   {
     "id": 14,
-    "titulo": "Equilibrio",
-    "descripcion": "Pieza escultórica basada en balance y peso.",
-    "imagen": "obras/obra14.jpg",
-    "artistaId": 4,
+    "titulo": "Ritmo visual",
+    "imagen": "abstracto_4.jpg",
     "categoriaId": 7
   },
   {
     "id": 15,
-    "titulo": "Forma y vacío",
-    "descripcion": "Escultura minimalista.",
-    "imagen": "obras/obra15.jpg",
-    "artistaId": 4,
-    "categoriaId": 3
-  },
-  {
-    "id": 16,
-    "titulo": "Sueño de invierno",
-    "descripcion": "Obra surrealista inspirada en el subconsciente.",
-    "imagen": "obras/obra16.jpg",
-    "artistaId": 5,
-    "categoriaId": 8
-  },
-  {
-    "id": 17,
-    "titulo": "Bosque etéreo",
-    "descripcion": "Ilustración onírica de un paisaje irreal.",
-    "imagen": "obras/obra17.jpg",
-    "artistaId": 5,
-    "categoriaId": 5
-  },
-  {
-    "id": 18,
-    "titulo": "Sueños líquidos",
-    "descripcion": "Escena surrealista de inspiración acuática.",
-    "imagen": "obras/obra18.jpg",
-    "artistaId": 5,
-    "categoriaId": 8
-  },
-  {
-    "id": 19,
-    "titulo": "Jardín imposible",
-    "descripcion": "Ilustración surrealista.",
-    "imagen": "obras/obra19.jpg",
-    "artistaId": 5,
-    "categoriaId": 5
-  },
-  {
-    "id": 20,
-    "titulo": "Luz nocturna",
-    "descripcion": "Fotografía de ciudad nocturna.",
-    "imagen": "obras/obra20.jpg",
-    "artistaId": 2,
-    "categoriaId": 2
-  },
-  {
-    "id": 21,
-    "titulo": "Rojo profundo",
-    "descripcion": "Exploración pictórica del color.",
-    "imagen": "obras/obra21.jpg",
-    "artistaId": 1,
-    "categoriaId": 1
-  },
-  {
-    "id": 22,
-    "titulo": "Geometría",
-    "descripcion": "Composición abstracta geométrica.",
-    "imagen": "obras/obra22.jpg",
-    "artistaId": 1,
+    "titulo": "Estructura líquida",
+    "imagen": "abstracto_5.jpg",
     "categoriaId": 7
-  },
-  {
-    "id": 23,
-    "titulo": "Puentes",
-    "descripcion": "Fotografía urbana arquitectónica.",
-    "imagen": "obras/obra23.jpg",
-    "artistaId": 2,
-    "categoriaId": 2
-  },
-  {
-    "id": 24,
-    "titulo": "Metropolis",
-    "descripcion": "Concept art de una ciudad futurista.",
-    "imagen": "obras/obra24.jpg",
-    "artistaId": 3,
-    "categoriaId": 6
-  },
-  {
-    "id": 25,
-    "titulo": "Coloso",
-    "descripcion": "Escultura monumental.",
-    "imagen": "obras/obra25.jpg",
-    "artistaId": 4,
-    "categoriaId": 3
-  },
-  {
-    "id": 26,
-    "titulo": "Visiones",
-    "descripcion": "Ilustración surrealista.",
-    "imagen": "obras/obra26.jpg",
-    "artistaId": 5,
-    "categoriaId": 8
-  },
-  {
-    "id": 27,
-    "titulo": "Neblina",
-    "descripcion": "Paisaje ilustrado.",
-    "imagen": "obras/obra27.jpg",
-    "artistaId": 5,
-    "categoriaId": 5
-  },
-  {
-    "id": 28,
-    "titulo": "Minimal",
-    "descripcion": "Pintura de estilo minimalista.",
-    "imagen": "obras/obra28.jpg",
-    "artistaId": 1,
-    "categoriaId": 7
-  },
-  {
-    "id": 29,
-    "titulo": "Callejón",
-    "descripcion": "Fotografía urbana.",
-    "imagen": "obras/obra29.jpg",
-    "artistaId": 2,
-    "categoriaId": 2
-  },
-  {
-    "id": 30,
-    "titulo": "Mundo interior",
-    "descripcion": "Ilustración conceptual.",
-    "imagen": "obras/obra30.jpg",
-    "artistaId": 3,
-    "categoriaId": 6
   }
 ]

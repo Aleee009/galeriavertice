@@ -1,82 +1,104 @@
-/* ================================
-   HOME FULLSCREEN
-================================ */
+/* =========================================================
+   HOME — CONTENEDOR PRINCIPAL
+========================================================= */
 
-/* Altura fija del header */
-body[data-page="home"] .site-header {
-  height: 96px;
+.home-hero {
+  background: var(--bg-primary);
+  padding-top: 120px;              /* espacio para el header */
+  min-height: calc(100vh - 96px);  /* viewport menos el header */
+  display: flex;
+  flex-direction: column;
 }
 
-/* Área principal */
-body[data-page="home"] main.home-hero {
-  position: relative;
+
+/* =========================================================
+   HERO — eliminado visualmente
+========================================================= */
+
+.hero {
+  display: none;
+}
+
+
+/* =========================================================
+   BLOQUE DE CATEGORÍAS (centro real)
+========================================================= */
+
+.home-category-block {
+  flex: 1;                         /* ocupa el área visible */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;         /* centro vertical real */
+  align-items: center;             /* centro horizontal */
+  text-align: center;
+}
+
+
+/* Texto pequeño “Selecciona una categoría” */
+.home-eyebrow {
+  font: var(--font-text-2);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+}
+
+
+/* =========================================================
+   FILA DE CATEGORÍAS
+========================================================= */
+
+.home-categories {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  padding: 0; /* el espacio lo controla JS con márgenes reales */
-  overflow: visible;
+  max-width: 900px;       /* controla la composición */
+  align-items: center;
 }
 
-/* ================================
-   HOME FLOATING GALLERY
-================================ */
 
-#home-images {
-  position: relative;
-  width: 100%;
-  overflow: visible;
+/* Cada categoría */
+.home-categories span {
+  font-family: var(--font-primary);
+  font-size: 32px;        /* tamaño editorial correcto */
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  transition: color 0.25s ease;
 }
 
-/* Cada imagen flotante */
-.home-image {
-  position: absolute;
-  box-sizing: border-box;
-  background-color: #eee;
+.home-categories span:hover {
+  color: var(--action-primary);
+}
+
+
+/* =========================================================
+   GRID DE OBRAS
+========================================================= */
+
+.home-grid {
+  max-width: 1200px;
+  margin: 0 auto 120px auto;
+  padding: 0 24px;
+
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 28px;
+}
+
+
+/* Cada obra */
+.grid-item {
+  background: var(--bg-secondary);
+  aspect-ratio: 4 / 3;
   overflow: hidden;
+  border-radius: 2px;
 }
 
-/* Solo usamos cuadrados */
-.home-image.square {
-  width: 200px;
-  height: 200px;
-}
-
-/* Imágenes dentro del cuadro */
-.home-image img {
+.grid-item img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* nunca recorta */
-  background: #eee;
+  object-fit: cover;
 }
-
-/* ================================
-   TEXTO CENTRAL (LOREM IPSUM)
-================================ */
-
-.home-title {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  width: 700px;
-  max-width: 90%;
-  padding: 1.2rem 3.2rem;
-  text-align: center;
-
-  font-family: 'Inter', sans-serif;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.2;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-
-  color: var(--color-negro);
-
-  background: rgba(255, 255, 255, 0.18);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-
-  border-radius: 2px;
-  z-index: 20;
-  pointer-events: none;
-}
-

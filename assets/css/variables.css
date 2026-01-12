@@ -1,9 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Marcellus&display=swap');
-
 :root {
   /* =========================
-     COLORES BASE
+     PRIMITIVOS DE COLOR
+     (no usar directamente en UI)
   ========================= */
+
   --color-negro: #111111;
   --color-blanco: #F3F3F3;
   --color-grisclaro: #E5E5E5;
@@ -13,43 +13,50 @@
   --color-rojo: #8B2E2F;
 
   /* =========================
-     COLORES HOVER (DERIVADOS)
+     ESTADOS (DERIVADOS)
   ========================= */
 
-  /* Grises */
   --color-grisoscuro-hover: var(--color-grismedio);
   --color-grismedio-hover: var(--color-grisclaro);
   --color-grisclaro-hover: var(--color-blanco);
 
-  /* Texto */
-  --text-primary-hover: var(--color-grisoscuro);
-  --text-subtitle-hover: var(--color-grisoscuro);
-
-  /* Fondos */
-  --bg-primary-hover: var(--color-grisclaro);
-  --bg-secondary-hover: var(--color-blanco);
-  --bg-button-hover: var(--color-blanco);
-
-  /* Acciones */
   --color-verde-hover: #4FA15B;
   --color-rojo-hover: #A84546;
 
   /* =========================
-     TOKENS SEMÁNTICOS
+     TOKENS DE FONDO
   ========================= */
-  --bg-primary: var(--color-blanco);
-  --bg-secondary: var(--color-grisclaro);
 
-  --text-primary: var(--color-negro);
-  --text-inverse: var(--color-blanco);
+  --bg-primary: var(--color-blanco);        /* fondo principal UI */
+  --bg-secondary: var(--color-grisclaro);   /* tarjetas, bloques */
+
+  --bg-inverse: var(--color-negro);         /* escenas oscuras, hero, overlays */
+
+  /* =========================
+     TOKENS DE TEXTO
+  ========================= */
+
+  --text-primary: var(--color-negro);       /* texto sobre bg-primary */
+  --text-secondary: var(--color-grisoscuro);
   --text-subtitle: var(--color-grismedio);
   --text-title: var(--color-grisoscuro);
 
-  --bg-button: var(--color-grisclaro);
+  --text-inverse: var(--color-blanco);      /* texto sobre bg-inverse */
+
+  /* =========================
+     TOKENS DE ACCIÓN
+  ========================= */
+
+  --action-primary: var(--color-verde);
+  --action-primary-hover: var(--color-verde-hover);
+
+  --action-danger: var(--color-rojo);
+  --action-danger-hover: var(--color-rojo-hover);
 
   /* =========================
      TIPOGRAFÍA
   ========================= */
+
   --font-h1: 400 3rem 'Marcellus', serif;
   --font-h2: 500 2.25rem 'Inter', sans-serif;
   --font-button: 600 1rem 'Inter', sans-serif;
