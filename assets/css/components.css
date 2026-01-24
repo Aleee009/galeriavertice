@@ -16,6 +16,10 @@
     color: var(--color-blanco);
 }
 
+/* =========================
+   OBRAS
+========================= */
+
 .grid-obras {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -41,31 +45,63 @@
     color: var(--text-subtitle);
 }
 
+/* =========================
+   FILTROS
+========================= */
+
 .filtros {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
 }
 
 .filtros select,
 .filtros input {
-  padding: 0.75rem 1rem;
-  border: 1px solid var(--color-grisclaro);
-  background: var(--bg-primary);
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-grisclaro);
+    background: var(--bg-primary);
 }
 
+/* =========================
+   SOCIAL BAR
+========================= */
+
 .social-bar {
-  display: flex;
-  gap: 18px;
+    display: flex;
+    gap: 18px;
 }
 
 .social-bar a {
-  color: var(--text-subtitle);
-  font-size: 18px;
-  transition: color 0.25s ease, transform 0.25s ease;
+    color: var(--text-subtitle);
+    font-size: 18px;
+    transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .social-bar a:hover {
-  color: var(--text-inverse);
-  transform: scale(1.15);
+    color: var(--text-inverse);
+    transform: scale(1.15);
+}
+
+/* =========================
+   HEADER · USUARIO SIN SESIÓN
+========================= */
+
+.auth-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.btn-login {
+    padding: 0.6rem 1.25rem;
+}
+
+.register-link {
+    font: var(--font-text-2);
+    color: var(--text-subtitle);
+    text-decoration: none;
+}
+
+.register-link:hover {
+    color: var(--text-primary);
 }

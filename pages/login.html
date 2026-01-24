@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <title>Login · Vértice</title>
+
+  <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/styles.css">
+
+  <!-- Google Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+  <!-- JS auxiliares -->
   <script src="../assets/js/utils.js"></script>
   <script src="../assets/js/pages.js" defer></script>
 </head>
+
 <body data-page="login">
 
-<main class="auth container">
-  <h1>Iniciar sesión</h1>
+  <!-- HEADER DINÁMICO -->
+  <div id="header"></div>
 
-  <form class="login-form">
-    <input type="email" placeholder="Email" required>
-    <input type="password" placeholder="Contraseña" required>
-    <button class="btn">Entrar</button>
-  </form>
-</main>
+  <main class="auth container">
+    <h1>Iniciar sesión</h1>
+
+    <form class="login-form">
+      <input type="email" placeholder="Email" required>
+      <input type="password" placeholder="Contraseña" required>
+      <button class="btn">Entrar</button>
+    </form>
+  </main>
+
+  <!-- AUTH -->
+  <script src="../assets/js/auth.js"></script>
 
 </body>
 </html>
