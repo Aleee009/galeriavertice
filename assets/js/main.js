@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", async () => {
   await loadLayout();
 
+  // HOME
   if (document.body.dataset.page === "home") {
     iniciarHome();
   }
@@ -21,21 +22,26 @@ function getBasePath() {
 async function loadLayout() {
   const base = getBasePath();
 
-  const header = await fetch(`${base}/partials/header.html`).then(r => r.text());
-  const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
+  const header = await fetch(`${base}/partials/header_sesion.html`)
+    .then(r => r.text());
+
+  const footer = await fetch(`${base}/partials/footer.html`)
+    .then(r => r.text());
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
 }
 
 /* ===========================
-   HOME
+   HOME (FOTOS)
 =========================== */
 
 function iniciarHome() {
   const grid = document.querySelector(".home-grid");
   const buttons = document.querySelectorAll(".home-categories span");
   const base = getBasePath();
+
+  if (!grid) return;
 
   let todasLasObras = [];
 
@@ -51,21 +57,19 @@ function iniciarHome() {
       const cat =
         btn.dataset.cat === "moderno" ? 1 :
         btn.dataset.cat === "clasico" ? 2 :
-        7; // abstracto
+        7;
 
       renderCategoria(cat);
     });
   });
 
   function renderCategoria(catId) {
-    if (!grid) return;
-
     grid.innerHTML = "";
 
     const seleccion = todasLasObras
       .filter(o => o.categoriaId === catId)
       .sort(() => Math.random() - 0.5)
-      .slice(0, 5); // SOLO 5 obras
+      .slice(0, 5);
 
     seleccion.forEach(obra => {
       const div = document.createElement("div");
