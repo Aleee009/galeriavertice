@@ -66,11 +66,16 @@
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
-  transition: color 0.25s ease;
+    transition:
+    color 0.25s ease,
+    letter-spacing 0.25s ease,
+    transform 0.25s ease;
 }
 
 .home-categories span:hover {
-  color: var(--action-primary);
+  color: var(--text-secondary);
+  letter-spacing: 0.28em;        /* gesto editorial claro */
+  transform: translateY(-3px);   /* micro-movimiento perceptible */
 }
 
 

@@ -92,16 +92,64 @@
     gap: 1rem;
 }
 
+/* =========================================================
+   CTA · INICIAR SESIÓN — HOVER EDITORIAL
+========================================================= */
+
 .btn-login {
-    padding: 0.6rem 1.25rem;
+  background-color: transparent; /* neutraliza el bloque */
+  color: var(--text-primary);
+  font: var(--font-text-1);
+  padding: 0;                    /* parece texto, no botón */
+  white-space: nowrap;      /* ⬅️ CLAVE: no permite salto de línea */
+  display: inline-flex;     /* mantiene alineación correcta */
+  align-items: center;
 }
+
+/* Hover elegante */
+.btn-login:hover {
+  background-color: transparent; /* mata el gris */
+  color: var(--text-primary);
+}
+
+/* Línea editorial solo en hover */
+.btn-login::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  margin-top: 4px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.btn-login:hover::after {
+  transform: scaleX(1);
+}
+
 
 .register-link {
     font: var(--font-text-2);
     color: var(--text-subtitle);
     text-decoration: none;
+    margin-left: 0.5rem;
+    position: relative;
+    padding-left: 2rem; /* espacio para el separador */
 }
 
 .register-link:hover {
     color: var(--text-primary);
+}
+
+.register-link::before {
+  content: "|";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-52%);
+  color: var(--text-subtitle);
+  font-weight: 400;
+  opacity: 0.6;
 }
