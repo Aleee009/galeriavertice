@@ -107,3 +107,283 @@
   height: 100%;
   object-fit: cover;
 }
+
+/* =========================================================
+   AUTH LAYOUT (REGISTER / LOGIN)
+========================================================= */
+
+.auth-layout {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: var(--bg-primary);
+}
+
+/* =========================================================
+   COLUMNA IMAGEN
+========================================================= */
+
+.auth-image {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.auth-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* =========================================================
+   COLUMNA FORMULARIO
+========================================================= */
+
+.auth-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.auth-form-inner {
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+  transform: translateY(-24px);
+}
+
+/* =========================================================
+   LOGO AUTH (SIN CÍRCULO)
+========================================================= */
+
+.auth-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.auth-logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+  filter: brightness(0);
+}
+
+/* =========================================================
+   TÍTULOS
+========================================================= */
+
+.auth-form h1 {
+  font: var(--font-text-1);
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.auth-subtitle {
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+  margin-bottom: 2.5rem;
+}
+
+/* =========================================================
+   FORMULARIO
+========================================================= */
+
+.form-auth {
+  text-align: left;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+  margin-bottom: 0.25rem;
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-grisclaro);
+  padding: 0.5rem 0;
+  font: var(--font-text-1);
+  background: transparent;
+  color: var(--text-primary);
+}
+
+.form-group input::placeholder {
+  color: var(--text-subtitle);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: var(--text-primary);
+}
+
+/* =========================================================
+   BOTÓN PRINCIPAL
+========================================================= */
+
+.form-auth .btn {
+  width: 100%;
+  margin-top: 2rem;
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font: var(--font-button);
+}
+
+/* =========================================================
+   FOOTER DEL FORMULARIO
+========================================================= */
+
+.auth-footer {
+  margin-top: 2rem;
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+}
+
+.auth-footer a {
+  margin-left: 0.25rem;
+}
+
+/* =========================================================
+   COPYRIGHT
+========================================================= */
+
+.auth-copy {
+  display: block;
+  margin-top: 3rem;
+  font: var(--font-text-2);
+  font-size: 0.7rem;
+  color: var(--text-subtitle);
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .auth-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .auth-image {
+    display: none;
+  }
+
+  .auth-form {
+    padding: 2rem;
+  }
+}
+
+.form-group input {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-grisclaro);
+  padding: 0.5rem 0;
+  font: var(--font-text-1);
+  background: transparent;
+  color: var(--text-primary);
+  transition: border-color 0.25s ease;
+}
+
+.form-group input:hover {
+  border-bottom-color: var(--color-grismedio);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-bottom-color: var(--text-primary);
+}
+
+.form-auth .btn {
+  width: 100%;
+  margin-top: 2rem;
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  border-radius: 6px;
+  padding: 0.75rem;
+  font: var(--font-button);
+  transition: background-color 0.25s ease;
+}
+
+.form-auth .btn:hover {
+  background: var(--color-grisoscuro-hover);
+}
+
+.auth-footer a {
+  margin-left: 0.25rem;
+  color: var(--text-primary);
+  transition: color 0.25s ease;
+}
+
+.auth-footer a:hover {
+  color: var(--text-secondary);
+}
+
+.auth-footer a {
+  position: relative;
+}
+
+.auth-footer a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s ease;
+}
+
+.auth-footer a:hover::after {
+  transform: scaleX(1);
+}
+
+/* =========================================================
+   AUTH · SIN SCROLL
+========================================================= */
+
+.auth-layout {
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* =========================================================
+   PASSWORD TOGGLE
+========================================================= */
+
+.form-password .password-field {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 0;
+  bottom: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: var(--text-subtitle);
+  font-size: 0.9rem;
+  transition: color 0.25s ease;
+}
+
+.toggle-password:hover {
+  color: var(--text-secondary);
+}
+
+.toggle-password i {
+  pointer-events: none;
+}

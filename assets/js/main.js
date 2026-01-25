@@ -1,11 +1,17 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadLayout();
 
-  // HOME
-  if (document.body.dataset.page === "home") {
+  const page = document.body.dataset.page;
+
+  // Header y footer en TODAS menos auth
+  if (page !== "login" && page !== "register") {
+    await loadLayout();
+  }
+
+  if (page === "home") {
     iniciarHome();
   }
 });
+
 
 /* ===========================
    BASE PATH
@@ -84,3 +90,23 @@ function iniciarHome() {
     });
   }
 }
+
+document.addEventListener("click", (e) => {
+  const btn = e.target.closest(".toggle-password");
+  if (!btn) return;
+
+  const input = btn.previousElementSibling;
+  const icon = btn.querySelector("i");
+
+  if (input.type === "password") {
+    input.type = "text";
+    icon.classList.remove("fa-eye");
+    icon.classList.add("fa-eye-slash");
+    btn.setAttribute("aria-label", "Ocultar contraseña");
+  } else {
+    input.type = "password";
+    icon.classList.remove("fa-eye-slash");
+    icon.classList.add("fa-eye");
+    btn.setAttribute("aria-label", "Mostrar contraseña");
+  }
+});
