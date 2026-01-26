@@ -1,10 +1,12 @@
-[
-  { "id": 1, "nombre": "Pintura" },
-  { "id": 2, "nombre": "Fotografía" },
-  { "id": 3, "nombre": "Escultura" },
-  { "id": 4, "nombre": "Arte Digital" },
-  { "id": 5, "nombre": "Ilustración" },
-  { "id": 6, "nombre": "Arte Conceptual" },
-  { "id": 7, "nombre": "Minimalismo" },
-  { "id": 8, "nombre": "Surrealismo" }
-]
+{
+  "categorias": [
+    { "id": 1, "slug": "pintura", "nombre": "Pintura" },
+    { "id": 2, "slug": "fotografia", "nombre": "Fotografía" },
+    { "id": 3, "slug": "ilustracion", "nombre": "Ilustración" },
+    { "id": 4, "slug": "arte-digital", "nombre": "Arte Digital" },
+    { "id": 5, "slug": "3d-cgi", "nombre": "3D & CGI" },
+    { "id": 6, "slug": "arte-generativo", "nombre": "Arte Generativo" },
+    { "id": 7, "slug": "videoarte", "nombre": "Videoarte" },
+    { "id": 8, "slug": "arte-conceptual", "nombre": "Arte Conceptual" }
+  ]
+}

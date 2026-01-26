@@ -1,0 +1,12 @@
+{
+  "estilos": [
+    { "id": 1, "slug": "abstracto", "nombre": "Abstracto" },
+    { "id": 2, "slug": "minimalismo", "nombre": "Minimalismo" },
+    { "id": 3, "slug": "surrealismo", "nombre": "Surrealismo" },
+    { "id": 4, "slug": "figurativo", "nombre": "Figurativo" },
+    { "id": 5, "slug": "experimental", "nombre": "Experimental" },
+    { "id": 6, "slug": "geometrico", "nombre": "Geométrico" },
+    { "id": 7, "slug": "pop-art", "nombre": "Pop Art" },
+    { "id": 8, "slug": "realismo-digital", "nombre": "Realismo Digital" }
+  ]
+}

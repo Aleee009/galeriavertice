@@ -1,32 +1,28 @@
-[
-  {
-    "id": 1,
-    "nombre": "Lucía Ferrer",
-    "bio": "Artista visual contemporánea especializada en abstracción cromática y composición espacial.",
-    "imagen": "artistas/lucia.jpg"
-  },
-  {
-    "id": 2,
-    "nombre": "Daniel Ríos",
-    "bio": "Fotógrafo documental enfocado en la vida urbana y la identidad visual de las ciudades.",
-    "imagen": "artistas/daniel.jpg"
-  },
-  {
-    "id": 3,
-    "nombre": "Marina Soto",
-    "bio": "Ilustradora digital y concept artist para videojuegos y cine.",
-    "imagen": "artistas/marina.jpg"
-  },
-  {
-    "id": 4,
-    "nombre": "Andrés Valera",
-    "bio": "Escultor contemporáneo que trabaja con metal y materiales reciclados.",
-    "imagen": "artistas/andres.jpg"
-  },
-  {
-    "id": 5,
-    "nombre": "Clara Montes",
-    "bio": "Artista visual enfocada en surrealismo y narrativas oníricas.",
-    "imagen": "artistas/clara.jpg"
-  }
-]
+{
+  "artistas": [
+    {
+      "id": 1,
+      "nombre": "Lucía Moreno",
+      "slug": "lucia-moreno",
+      "pais": "España",
+      "bio": "Artista digital centrada en paisajes sintéticos y narrativa visual.",
+      "avatar": "lucia-moreno.jpg"
+    },
+    {
+      "id": 2,
+      "nombre": "Daniel Ortiz",
+      "slug": "daniel-ortiz",
+      "pais": "México",
+      "bio": "Ilustrador contemporáneo con un enfoque figurativo y conceptual.",
+      "avatar": "daniel-ortiz.jpg"
+    },
+    {
+      "id": 3,
+      "nombre": "Sofia Klein",
+      "slug": "sofia-klein",
+      "pais": "Alemania",
+      "bio": "Explora la abstracción geométrica y la percepción del color.",
+      "avatar": "sofia-klein.jpg"
+    }
+  ]
+}
