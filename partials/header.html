@@ -15,11 +15,22 @@
       <h2>VÉRTICE</h2>
     </a>
 
-    <!-- Usuario a la derecha -->
+    <!-- Usuario a la derecha (SESION INICIADA) -->
     <div class="user-actions">
-      <a href="../pages/login.html" class="user-icon" aria-label="Perfil de usuario">
-        <span class="material-symbols-outlined">person</span>
-      </a>
+
+      <!-- Nombre del usuario (rellenado por JS) -->
+      <span class="user-name"></span>
+
+      <!-- Botón cerrar sesión -->
+      <button
+        type="button"
+        class="logout-btn"
+        onclick="logout()"
+        aria-label="Cerrar sesión"
+      >
+        Salir
+      </button>
+
     </div>
 
   </div>

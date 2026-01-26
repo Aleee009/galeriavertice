@@ -1,3 +1,16 @@
+/* =========================
+   AUTH PAGE TRANSITION
+========================= */
+
+body {
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+body.page-exit {
+  opacity: 0;
+}
+
 /* =========================================================
    HOME — CONTENEDOR PRINCIPAL
 ========================================================= */
@@ -360,13 +373,19 @@
 }
 
 /* =========================================================
-   PASSWORD TOGGLE
+   PASSWORD TOGGLE (LOGIN / REGISTER)
 ========================================================= */
 
-.form-password .password-field {
+.form-password {
   position: relative;
 }
 
+/* El input deja espacio al icono */
+.form-password input {
+  padding-right: 2rem;
+}
+
+/* Botón ojo */
 .toggle-password {
   position: absolute;
   right: 0;
@@ -375,15 +394,18 @@
   border: none;
   padding: 0;
   cursor: pointer;
+
   color: var(--text-subtitle);
   font-size: 0.9rem;
   transition: color 0.25s ease;
 }
 
+/* Hover */
 .toggle-password:hover {
   color: var(--text-secondary);
 }
 
+/* Icono */
 .toggle-password i {
   pointer-events: none;
 }

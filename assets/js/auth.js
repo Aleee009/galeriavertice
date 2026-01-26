@@ -1,95 +1,120 @@
-document.addEventListener("DOMContentLoaded", () => {
+function initAuth(page) {
+  initPasswordToggle();
 
-  /* ================================
-     HEADER (con / sin sesión)
-  ================================ */
+  if (page === "login") initLogin();
+  if (page === "register") initRegister();
+}
 
-  const headerContainer = document.getElementById("header");
+/* ================================
+   TOGGLE PASSWORD
+================================ */
+function initPasswordToggle() {
+  document.querySelectorAll(".toggle-password").forEach(button => {
+    button.addEventListener("click", () => {
+      const input = button
+        .closest(".form-password")
+        ?.querySelector("input");
 
-  if (headerContainer) {
-    const isLoggedIn = localStorage.getItem("userLoggedIn");
+      if (!input) return;
 
-    const headerFile = isLoggedIn
-      ? "/partials/header.html"          // CON sesión
-      : "/partials/header_sesion.html";  // SIN sesión
+      const visible = input.type === "text";
+      input.type = visible ? "password" : "text";
 
-    fetch(headerFile)
-      .then(res => res.text())
-      .then(html => {
-        headerContainer.innerHTML = html;
-      })
-      .catch(err => {
-        console.error("Error cargando el header:", err);
-      });
-  }
-
-  /* ================================
-     CONTEXTO DE PÁGINA
-  ================================ */
-
-  const page = document.body.dataset.page;
-
-  /* ================================
-     REGISTRO
-  ================================ */
-
-  if (page === "registro") {
-    const form = document.querySelector(".register-form");
-    const userTypeSelect = document.querySelector("#userType");
-
-    if (!form || !userTypeSelect) return;
-
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-
-      const userType = userTypeSelect.value;
-
-      if (!userType) {
-        alert("Selecciona un tipo de usuario");
-        return;
-      }
-
-      // Guardar tipo de usuario
-      localStorage.setItem("userType", userType);
-      localStorage.setItem("userLoggedIn", "true");
-
-      // Redirección según rol
-      if (userType === "artista") {
-        window.location.href = "perfil-artista.html";
-      } else if (userType === "usuario") {
-        window.location.href = "perfil-usuario.html";
-      }
+      button.innerHTML = visible
+        ? `<i class="fa-regular fa-eye"></i>`
+        : `<i class="fa-regular fa-eye-slash"></i>`;
     });
-  }
+  });
+}
 
-  /* ================================
-     LOGIN
-  ================================ */
+/* ================================
+   AUTH TRANSITIONS
+================================ */
 
-  if (page === "login") {
-    const form = document.querySelector(".login-form");
+function goToAuth(url) {
+  document.body.classList.add("page-exit");
+  setTimeout(() => {
+    window.location.href = url;
+  }, 350);
+}
 
-    if (!form) return;
+/* ================================
+   REGISTER
+================================ */
 
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
+function initRegister() {
+  const form = document.querySelector(".form-auth");
+  if (!form) return;
 
-      const userType = localStorage.getItem("userType");
+  form.addEventListener("submit", e => {
+    e.preventDefault();
 
-      if (!userType) {
-        alert("No existe una cuenta registrada");
-        return;
-      }
+    const name = form.querySelector("#name").value.trim();
+    const email = form.querySelector("#email").value.trim();
+    const password = form.querySelector("#password").value;
+    const role = form.querySelector("#tipo").value;
 
-      // Marcar sesión como iniciada
-      localStorage.setItem("userLoggedIn", "true");
+    if (!name || !email || !password || !role) {
+      alert("Completa todos los campos");
+      return;
+    }
 
-      if (userType === "artista") {
-        window.location.href = "perfil-artista.html";
-      } else if (userType === "usuario") {
-        window.location.href = "perfil-usuario.html";
-      }
-    });
-  }
+    const users = getUsers();
+    if (users.some(u => u.email === email)) {
+      alert("Este correo ya existe");
+      return;
+    }
 
-});
+    const newUser = {
+      id: Date.now(),
+      name,
+      email,
+      password,
+      role
+    };
+
+    users.push(newUser);
+    saveUsers(users);
+    setSession(newUser);
+
+    goToAuth("login.html");
+  });
+}
+
+
+/* ================================
+   LOGIN
+================================ */
+
+function initLogin() {
+  const form = document.querySelector(".form-auth");
+  if (!form) return;
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const email = form.querySelector("#email").value.trim();
+    const password = form.querySelector("#password").value;
+
+    const users = getUsers();
+    const user = users.find(
+      u => u.email === email && u.password === password
+    );
+
+    if (!user) {
+      alert("Correo o contraseña incorrectos");
+      return;
+    }
+
+    setSession(user);
+    window.location.href = "../index.html";
+  });
+}
+
+function logout() {
+  const user = getCurrentUser();
+  if (!user) return;
+
+  clearSession();
+  window.location.href = "login.html";
+}

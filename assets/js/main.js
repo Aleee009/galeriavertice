@@ -1,17 +1,44 @@
 document.addEventListener("DOMContentLoaded", async () => {
-
   const page = document.body.dataset.page;
 
-  // Header y footer en TODAS menos auth
+  /* ===========================
+     LAYOUT (HEADER + FOOTER)
+     =========================== */
+
+  // Header y footer SOLO si NO es login ni register
   if (page !== "login" && page !== "register") {
     await loadLayout();
+
+    // Estas funciones SOLO se llaman si existen
+    if (typeof renderHeaderUser === "function") {
+      renderHeaderUser();
+    }
+
+    if (typeof applyUserRole === "function") {
+      applyUserRole();
+    }
   }
 
-  if (page === "home") {
-    iniciarHome();
+  /* ===========================
+     ROUTING DE PÁGINAS
+     =========================== */
+
+  if (typeof initPages === "function") {
+    if (["home", "obras", "categorias", "categoria"].includes(page)) {
+      initPages(page);
+    }
+  }
+
+  /* ===========================
+     AUTH
+     =========================== */
+
+  if (typeof initAuth === "function") {
+    if (page === "login" || page === "register") {
+      initAuth(page);
+    }
   }
 });
-
 
 /* ===========================
    BASE PATH
@@ -22,91 +49,23 @@ function getBasePath() {
 }
 
 /* ===========================
-   LAYOUT (HEADER + FOOTER)
+   LAYOUT
 =========================== */
 
 async function loadLayout() {
   const base = getBasePath();
 
-  const header = await fetch(`${base}/partials/header_sesion.html`)
-    .then(r => r.text());
+  // ⚠️ getCurrentUser puede NO existir todavía
+  let user = null;
+  if (typeof getCurrentUser === "function") {
+    user = getCurrentUser();
+  }
 
-  const footer = await fetch(`${base}/partials/footer.html`)
-    .then(r => r.text());
+  const headerFile = user ? "header.html" : "header_sesion.html";
+
+  const header = await fetch(`${base}/partials/${headerFile}`).then(r => r.text());
+  const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
 }
-
-/* ===========================
-   HOME (FOTOS)
-=========================== */
-
-function iniciarHome() {
-  const grid = document.querySelector(".home-grid");
-  const buttons = document.querySelectorAll(".home-categories span");
-  const base = getBasePath();
-
-  if (!grid) return;
-
-  let todasLasObras = [];
-
-  fetch(`${base}/data/obras.json`)
-    .then(r => r.json())
-    .then(obras => {
-      todasLasObras = obras;
-      renderCategoria(1); // moderno por defecto
-    });
-
-  buttons.forEach(btn => {
-    btn.addEventListener("mouseenter", () => {
-      const cat =
-        btn.dataset.cat === "moderno" ? 1 :
-        btn.dataset.cat === "clasico" ? 2 :
-        7;
-
-      renderCategoria(cat);
-    });
-  });
-
-  function renderCategoria(catId) {
-    grid.innerHTML = "";
-
-    const seleccion = todasLasObras
-      .filter(o => o.categoriaId === catId)
-      .sort(() => Math.random() - 0.5)
-      .slice(0, 5);
-
-    seleccion.forEach(obra => {
-      const div = document.createElement("div");
-      div.className = "grid-item";
-
-      const img = document.createElement("img");
-      img.src = `${base}/assets/img/${obra.imagen}`;
-      img.alt = obra.titulo;
-
-      div.appendChild(img);
-      grid.appendChild(div);
-    });
-  }
-}
-
-document.addEventListener("click", (e) => {
-  const btn = e.target.closest(".toggle-password");
-  if (!btn) return;
-
-  const input = btn.previousElementSibling;
-  const icon = btn.querySelector("i");
-
-  if (input.type === "password") {
-    input.type = "text";
-    icon.classList.remove("fa-eye");
-    icon.classList.add("fa-eye-slash");
-    btn.setAttribute("aria-label", "Ocultar contraseña");
-  } else {
-    input.type = "password";
-    icon.classList.remove("fa-eye-slash");
-    icon.classList.add("fa-eye");
-    btn.setAttribute("aria-label", "Mostrar contraseña");
-  }
-});

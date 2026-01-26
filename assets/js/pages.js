@@ -7,6 +7,7 @@ let mostrarSoloFavoritos = false;
 /* ================================
    CARGA DE DATOS
 ================================ */
+
 async function cargarDatos() {
   categorias = await loadJSON("categorias.json");
   artistas = await loadJSON("artistas.json");
@@ -14,8 +15,59 @@ async function cargarDatos() {
 }
 
 /* ================================
-   RENDER DE OBRAS
+   HOME
 ================================ */
+
+function iniciarHome() {
+  const grid = document.querySelector(".home-grid");
+  const buttons = document.querySelectorAll(".home-categories span");
+  const base = getBasePath();
+
+  if (!grid) return;
+
+  fetch(`${base}/data/obras.json`)
+    .then(r => r.json())
+    .then(data => {
+      obras = data;
+      renderCategoria(1); // moderno por defecto
+    });
+
+  buttons.forEach(btn => {
+    btn.addEventListener("mouseenter", () => {
+      const cat =
+        btn.dataset.cat === "moderno" ? 1 :
+        btn.dataset.cat === "clasico" ? 2 :
+        7;
+
+      renderCategoria(cat);
+    });
+  });
+
+  function renderCategoria(catId) {
+    grid.innerHTML = "";
+
+    const seleccion = obras
+      .filter(o => o.categoriaId === catId)
+      .slice(0, 5);
+
+    seleccion.forEach(obra => {
+      const div = document.createElement("div");
+      div.className = "grid-item";
+
+      const img = document.createElement("img");
+      img.src = `${base}/assets/img/${obra.imagen}`;
+      img.alt = obra.titulo;
+
+      div.appendChild(img);
+      grid.appendChild(div);
+    });
+  }
+}
+
+/* ================================
+   OBRAS
+================================ */
+
 function renderObras(lista) {
   const grid = document.getElementById("obrasGrid");
   if (!grid) return;
@@ -28,7 +80,7 @@ function renderObras(lista) {
       <article class="card-obra">
         <img src="../assets/img/${obra.imagen}">
         <h3>${obra.titulo}</h3>
-        <p>${artista.nombre}</p>
+        <p>${artista?.nombre || ""}</p>
         <button class="favorite" onclick="handleFavorite(${obra.id})">
           ${favorito ? "❤️" : "🤍"}
         </button>
@@ -38,6 +90,12 @@ function renderObras(lista) {
 }
 
 function handleFavorite(id) {
+  const user = getCurrentUser();
+  if (!user) {
+    goTo("login.html");
+    return;
+  }
+
   toggleFavorite(id);
   aplicarFiltros();
 }
@@ -45,6 +103,7 @@ function handleFavorite(id) {
 /* ================================
    FILTROS
 ================================ */
+
 function aplicarFiltros() {
   let resultado = [...obras];
 
@@ -57,8 +116,7 @@ function aplicarFiltros() {
 
   if (texto) {
     resultado = resultado.filter(o =>
-      normalize(o.titulo).includes(texto) ||
-      normalize(o.descripcion).includes(texto)
+      normalize(o.titulo).includes(texto)
     );
   }
 
@@ -72,20 +130,24 @@ function aplicarFiltros() {
 /* ================================
    INIT OBRAS
 ================================ */
+
 async function initObras() {
   await cargarDatos();
 
   const select = document.getElementById("filtroArtista");
-  artistas.forEach(a => {
-    const option = document.createElement("option");
-    option.value = a.id;
-    option.textContent = a.nombre;
-    select.appendChild(option);
-  });
+  if (select) {
+    artistas.forEach(a => {
+      const option = document.createElement("option");
+      option.value = a.id;
+      option.textContent = a.nombre;
+      select.appendChild(option);
+    });
 
-  document.getElementById("filtroArtista").addEventListener("change", aplicarFiltros);
-  document.getElementById("buscador").addEventListener("input", aplicarFiltros);
-  document.getElementById("filtroFavoritos").addEventListener("click", () => {
+    select.addEventListener("change", aplicarFiltros);
+  }
+
+  document.getElementById("buscador")?.addEventListener("input", aplicarFiltros);
+  document.getElementById("filtroFavoritos")?.addEventListener("click", () => {
     mostrarSoloFavoritos = !mostrarSoloFavoritos;
     aplicarFiltros();
   });
@@ -96,10 +158,13 @@ async function initObras() {
 /* ================================
    CATEGORÍAS
 ================================ */
+
 async function initCategorias() {
   await cargarDatos();
 
   const grid = document.getElementById("categoriasGrid");
+  if (!grid) return;
+
   grid.innerHTML = categorias.map(c => `
     <div class="card-obra" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
       <h3>${c.nombre}</h3>
@@ -112,6 +177,7 @@ async function initCategoriaDetalle() {
 
   const id = parseInt(getParam("id"));
   const categoria = categorias.find(c => c.id === id);
+  if (!categoria) return;
 
   document.getElementById("categoriaTitulo").textContent = categoria.nombre;
 
@@ -120,12 +186,12 @@ async function initCategoriaDetalle() {
 }
 
 /* ================================
-   ROUTER
+   ROUTER DE PÁGINAS
 ================================ */
-document.addEventListener("DOMContentLoaded", () => {
-  const page = document.body.dataset.page;
 
+function initPages(page) {
+  if (page === "home") iniciarHome();
   if (page === "obras") initObras();
   if (page === "categorias") initCategorias();
   if (page === "categoria") initCategoriaDetalle();
-});
+}

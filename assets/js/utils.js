@@ -1,7 +1,6 @@
 /* ================================
    URL Y NAVEGACIÓN
 ================================ */
-
 function getParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
@@ -14,7 +13,6 @@ function goTo(page, params = {}) {
 /* ================================
    LOCAL STORAGE
 ================================ */
-
 function save(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -31,7 +29,6 @@ function remove(key) {
 /* ================================
    FAVORITOS
 ================================ */
-
 function getFavorites() {
   return load("favorites", []);
 }
@@ -54,21 +51,52 @@ function toggleFavorite(id) {
 }
 
 /* ================================
-   DATOS (JSON)
+   JSON
 ================================ */
-
 async function loadJSON(file) {
-  const res = await fetch(`../data/${file}`);
+  const base = window.location.pathname.includes("/pages/") ? ".." : ".";
+  const res = await fetch(`${base}/data/${file}`);
   return await res.json();
 }
 
 /* ================================
    TEXTO
 ================================ */
-
 function normalize(text) {
   return text
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+/* ================================
+   AUTH · LOCAL STORAGE
+================================ */
+
+function getUsers() {
+  return load("users", []);
+}
+
+function saveUsers(users) {
+  save("users", users);
+}
+
+function getSession() {
+  return load("session", null);
+}
+
+function setSession(user) {
+  save("session", { userId: user.id });
+}
+
+function clearSession() {
+  remove("session");
+}
+
+function getCurrentUser() {
+  const session = getSession();
+  if (!session) return null;
+
+  const users = getUsers();
+  return users.find(u => u.id === session.userId) || null;
 }
