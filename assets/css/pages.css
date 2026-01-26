@@ -423,20 +423,53 @@
 }
 
 /* =========================================================
-   FLECHA SOLO PARA SELECT
+   SELECT · AUTH (DESPLEGABLE CLARO Y VISIBLE)
 ========================================================= */
 
 .form-select {
   position: relative;
 }
 
+/* Select base */
+.form-select select {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid var(--color-grisclaro);
+  padding: 0.5rem 2rem 0.5rem 0; /* espacio claro para flecha */
+  font: var(--font-text-1);
+  background: transparent;
+  color: var(--text-primary);
+  appearance: none;       /* elimina UI nativa */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: border-color 0.25s ease;
+}
+
+/* Hover */
+.form-select select:hover {
+  border-bottom-color: var(--color-grismedio);
+}
+
+/* Focus */
+.form-select select:focus {
+  outline: none;
+  border-bottom-color: var(--text-primary);
+}
+
+/* Placeholder visual */
+.form-select select:invalid {
+  color: var(--text-subtitle);
+}
+
+/* Flecha visible SIEMPRE */
 .form-select::after {
   content: "▾";
   position: absolute;
   right: 0;
   top: 50%;
-  transform: translateY(-25%);
-  font-size: 0.75rem;
-  color: var(--text-subtitle);
+  transform: translateY(-35%);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
   pointer-events: none;
 }
