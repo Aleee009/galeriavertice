@@ -23,7 +23,7 @@
 
     <!-- COLUMNA IMAGEN -->
     <section class="auth-image">
-      <img src="../assets/img/register-gallery.jpg" alt="Galería de arte" />
+      <img src="../assets/img/imagen-register.jpg" alt="Galería de arte" />
     </section>
 
     <!-- COLUMNA FORMULARIO -->
@@ -54,7 +54,11 @@
 
           <div class="form-group">
             <label for="tipo">Tipo de Usuario</label>
-            <input type="text" id="tipo" />
+            <select id="tipo" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="usuario">Usuario</option>
+              <option value="artista">Artista</option>
+            </select>
           </div>
 
           <div class="form-group form-password">
