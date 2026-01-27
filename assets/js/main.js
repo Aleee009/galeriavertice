@@ -1,19 +1,21 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  // Página actual definida en <body data-page="...">
   const page = document.body.dataset.page;
 
   /* ===========================
      LAYOUT (HEADER + FOOTER)
      =========================== */
 
-  // Header y footer SOLO si NO es login ni register
+  // Cargar layout solo si NO es login ni register
   if (page !== "login" && page !== "register") {
     await loadLayout();
 
-    // Estas funciones SOLO se llaman si existen
+    // Renderiza usuario en header si existe la función
     if (typeof renderHeaderUser === "function") {
       renderHeaderUser();
     }
 
+    // Aplica rol de usuario si existe la función
     if (typeof applyUserRole === "function") {
       applyUserRole();
     }
@@ -24,8 +26,11 @@ document.addEventListener("DOMContentLoaded", async () => {
      =========================== */
 
   if (typeof initPages === "function") {
+    // Pasamos también la sección por URL (si existe)
+    const seccion = getParam("seccion");
+
     if (["home", "obras", "categorias", "categoria"].includes(page)) {
-      initPages(page);
+      initPages(page, seccion);
     }
   }
 
@@ -45,6 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 =========================== */
 
 function getBasePath() {
+  // Si estamos dentro de /pages/, subimos un nivel
   return window.location.pathname.includes("/pages/") ? ".." : ".";
 }
 
@@ -55,14 +61,16 @@ function getBasePath() {
 async function loadLayout() {
   const base = getBasePath();
 
-  // ⚠️ getCurrentUser puede NO existir todavía
+  // getCurrentUser puede no existir aún
   let user = null;
   if (typeof getCurrentUser === "function") {
     user = getCurrentUser();
   }
 
+  // Header según estado de sesión
   const headerFile = user ? "header.html" : "header_sesion.html";
 
+  // Carga de header y footer
   const header = await fetch(`${base}/partials/${headerFile}`).then(r => r.text());
   const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
 

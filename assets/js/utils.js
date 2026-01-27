@@ -1,10 +1,13 @@
 /* ================================
    URL Y NAVEGACIÓN
 ================================ */
+
+// Obtener parámetro de la URL (?id=3, ?seccion=moderno, etc.)
 function getParam(name) {
   return new URLSearchParams(window.location.search).get(name);
 }
 
+// Navegar a otra página con parámetros opcionales
 function goTo(page, params = {}) {
   const query = new URLSearchParams(params).toString();
   window.location.href = query ? `${page}?${query}` : page;
@@ -13,6 +16,7 @@ function goTo(page, params = {}) {
 /* ================================
    LOCAL STORAGE
 ================================ */
+
 function save(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
@@ -29,6 +33,7 @@ function remove(key) {
 /* ================================
    FAVORITOS
 ================================ */
+
 function getFavorites() {
   return load("favorites", []);
 }
@@ -53,6 +58,8 @@ function toggleFavorite(id) {
 /* ================================
    JSON
 ================================ */
+
+// Carga de archivos JSON respetando /pages/
 async function loadJSON(file) {
   const base = window.location.pathname.includes("/pages/") ? ".." : ".";
   const res = await fetch(`${base}/data/${file}`);
@@ -62,11 +69,33 @@ async function loadJSON(file) {
 /* ================================
    TEXTO
 ================================ */
+
+// Normaliza texto para búsquedas (acentos, mayúsculas)
 function normalize(text) {
   return text
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+/* ================================
+   FILTRADO POR CATEGORÍAS / SECCIONES
+   (NUEVO · MULTICATEGORÍA)
+================================ */
+
+// Comprueba si una obra pertenece a una sección
+function obraEnSeccion(obra, categoriasSeccion) {
+  return obra.categorias?.some(cat => categoriasSeccion.includes(cat));
+}
+
+// Filtra obras por sección
+function filtrarPorSeccion(obras, categoriasSeccion) {
+  return obras.filter(obra => obraEnSeccion(obra, categoriasSeccion));
+}
+
+// Filtra obras por una categoría concreta
+function filtrarPorCategoria(obras, categoriaId) {
+  return obras.filter(obra => obra.categorias?.includes(categoriaId));
 }
 
 /* ================================
