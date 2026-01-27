@@ -1,12 +1,28 @@
 {
   "categorias": [
-    { "id": 1, "slug": "pintura", "nombre": "Pintura" },
-    { "id": 2, "slug": "fotografia", "nombre": "Fotografía" },
-    { "id": 3, "slug": "ilustracion", "nombre": "Ilustración" },
-    { "id": 4, "slug": "arte-digital", "nombre": "Arte Digital" },
-    { "id": 5, "slug": "3d-cgi", "nombre": "3D & CGI" },
-    { "id": 6, "slug": "arte-generativo", "nombre": "Arte Generativo" },
-    { "id": 7, "slug": "videoarte", "nombre": "Videoarte" },
-    { "id": 8, "slug": "arte-conceptual", "nombre": "Arte Conceptual" }
+    { "id": 1, "nombre": "Pintura" },
+    { "id": 2, "nombre": "Fotografía" },
+    { "id": 3, "nombre": "Escultura" },
+    { "id": 4, "nombre": "Arte Digital" },
+    { "id": 5, "nombre": "Ilustración" },
+    { "id": 6, "nombre": "Arte Conceptual" },
+    { "id": 7, "nombre": "Minimalismo" },
+    { "id": 8, "nombre": "Surrealismo" },
+    { "id": 9, "nombre": "Arte Urbano" },
+    { "id": 10, "nombre": "Graffiti" },
+    { "id": 11, "nombre": "Street Photography" },
+    { "id": 12, "nombre": "Retrato" },
+    { "id": 13, "nombre": "Paisaje" },
+    { "id": 14, "nombre": "Abstracto" },
+    { "id": 15, "nombre": "Arte Generativo (IA)" },
+    { "id": 16, "nombre": "NFT Art" },
+    { "id": 17, "nombre": "3D Art" },
+    { "id": 18, "nombre": "Motion Art" },
+    { "id": 19, "nombre": "Collage Digital" },
+    { "id": 20, "nombre": "Arte Experimental" },
+    { "id": 21, "nombre": "Pop Art" },
+    { "id": 22, "nombre": "Neo-Surrealismo" },
+    { "id": 23, "nombre": "Arte Contemporáneo" },
+    { "id": 24, "nombre": "Arte Visual para Redes" }
   ]
 }
