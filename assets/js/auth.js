@@ -49,7 +49,7 @@ function initRegister() {
   form.addEventListener("submit", e => {
     e.preventDefault();
 
-    const name = form.querySelector("#name").value.trim();
+    const name = form.querySelector("#nombre").value.trim(); // ✅ corregido
     const email = form.querySelector("#email").value.trim();
     const password = form.querySelector("#password").value;
     const role = form.querySelector("#tipo").value;
@@ -80,7 +80,6 @@ function initRegister() {
     goToAuth("login.html");
   });
 }
-
 
 /* ================================
    LOGIN
@@ -118,3 +117,12 @@ function logout() {
   clearSession();
   window.location.href = "login.html";
 }
+
+/* ================================
+   INIT
+================================ */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const page = document.body.dataset.page;
+  initAuth(page);
+});
