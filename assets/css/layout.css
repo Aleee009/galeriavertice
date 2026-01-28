@@ -254,3 +254,25 @@ main {
     'opsz' 24;
   -webkit-font-smoothing: antialiased;
 }
+
+/* =====================================================
+   HEADER · USER MENU (AJUSTE A LAYOUT ABSOLUTO)
+   ⬇️ NO ELIMINA NADA EXISTENTE
+===================================================== */
+
+.site-header .user-menu {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Evita que choque con el nav */
+.site-header .main-nav {
+  left: 0;
+}
+
+/* Seguridad: evita herencias raras */
+.site-header .user-menu * {
+  box-sizing: border-box;
+}

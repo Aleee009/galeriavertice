@@ -97,22 +97,20 @@
 ========================================================= */
 
 .btn-login {
-  background-color: transparent; /* neutraliza el bloque */
+  background-color: transparent;
   color: var(--text-primary);
   font: var(--font-text-1);
-  padding: 0;                    /* parece texto, no botón */
-  white-space: nowrap;      /* ⬅️ CLAVE: no permite salto de línea */
-  display: inline-flex;     /* mantiene alineación correcta */
+  padding: 0;
+  white-space: nowrap;
+  display: inline-flex;
   align-items: center;
 }
 
-/* Hover elegante */
 .btn-login:hover {
-  background-color: transparent; /* mata el gris */
+  background-color: transparent;
   color: var(--text-primary);
 }
 
-/* Línea editorial solo en hover */
 .btn-login::after {
   content: "";
   display: block;
@@ -129,14 +127,13 @@
   transform: scaleX(1);
 }
 
-
 .register-link {
     font: var(--font-text-2);
     color: var(--text-subtitle);
     text-decoration: none;
     margin-left: 0.5rem;
     position: relative;
-    padding-left: 2rem; /* espacio para el separador */
+    padding-left: 2rem;
 }
 
 .register-link:hover {
@@ -152,4 +149,135 @@
   color: var(--text-subtitle);
   font-weight: 400;
   opacity: 0.6;
+}
+
+/* =====================================================
+   HEADER · USER MENU (SESIÓN INICIADA)
+   ⬇️ AÑADIDO · NO SUSTITUYE NADA
+===================================================== */
+
+.user-menu {
+  position: relative;
+}
+
+.user-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-primary);
+  font: var(--font-text-1);
+}
+
+.user-icon {
+  width: auto;
+  height: auto;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+}
+
+.user-icon i {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.user-text {
+  white-space: nowrap;
+  color: var(--text-primary);
+}
+
+.user-chevron {
+  font-size: 0.7rem;
+  color: var(--text-subtitle);
+}
+
+.user-dropdown {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 0.6rem);
+  background: var(--bg-primary);
+  border-radius: 10px;
+  min-width: 190px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.user-dropdown a,
+.user-dropdown button {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.75rem 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font: var(--font-text-1);
+  color: var(--text-secondary);
+  text-align: left;
+  width: 100%;
+}
+
+.user-dropdown a:hover {
+  background: var(--color-grisclaro-hover);
+}
+
+.user-dropdown button:hover {
+  background: var(--color-grisclaro-hover);
+  color: var(--action-danger);
+}
+
+.user-menu.open .user-dropdown {
+  display: flex;
+}
+
+/* =====================================
+   USER MENU · HOVER GLOBAL
+===================================== */
+
+.user-trigger {
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.user-trigger:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Evita hover individual en el icono */
+.user-trigger:hover .user-icon {
+  background: none;
+}
+
+/* =====================================
+   USER DROPDOWN · HOVER FINAL
+===================================== */
+
+/* Hover base (forma y animación igual para todos) */
+.user-dropdown a:hover,
+.user-dropdown button:hover {
+  background-color: var(--bg-secondary);
+}
+
+/* Ajustes → color normal */
+.user-dropdown a:hover {
+  color: var(--text-primary);
+}
+
+/* Cerrar sesión → rojo sutil */
+.user-dropdown button.logout-btn:hover {
+  background-color: rgba(139, 46, 47, 0.08); /* rojo MUY sutil */
+  color: var(--action-danger);
+}
+
+/* Iconos acompañan el color */
+.user-dropdown a:hover .material-symbols-outlined,
+.user-dropdown button.logout-btn:hover .material-symbols-outlined {
+  color: currentColor;
 }

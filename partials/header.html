@@ -16,20 +16,41 @@
     </a>
 
     <!-- Usuario a la derecha (SESION INICIADA) -->
-    <div class="user-actions">
+    <div class="user-menu">
 
-      <!-- Nombre del usuario (rellenado por JS) -->
-      <span class="user-name"></span>
+      <button class="user-trigger" id="userTrigger" type="button">
 
-      <!-- Botón cerrar sesión -->
-      <button
-        type="button"
-        class="logout-btn"
-        onclick="logout()"
-        aria-label="Cerrar sesión"
-      >
-        Salir
+        <!-- Icono usuario -->
+        <span class="user-icon">
+          <span class="material-symbols-outlined">account_circle</span>
+        </span>
+
+        <!-- Texto -->
+        <span class="user-text">
+          Bienvenid@, <strong class="user-name"></strong>
+        </span>
+
+        <!-- Flecha -->
+        <span class="material-symbols-outlined user-chevron">
+          expand_more
+        </span>
+
       </button>
+
+      <!-- Dropdown -->
+      <div class="user-dropdown">
+
+        <a href="../pages/perfil-usuario.html">
+          <span class="material-symbols-outlined">settings</span>
+          Ajustes
+        </a>
+
+        <button type="button" class="logout-btn" onclick="logout()">
+          <span class="material-symbols-outlined">logout</span>
+          Cerrar sesión
+        </button>
+
+      </div>
 
     </div>
 
