@@ -9,12 +9,9 @@ function initAuth(page) {
    TOGGLE PASSWORD
 ================================ */
 function initPasswordToggle() {
-  document.querySelectorAll(".toggle-password").forEach(button => {
+  document.querySelectorAll(".toggle-password").forEach((button) => {
     button.addEventListener("click", () => {
-      const input = button
-        .closest(".form-password")
-        ?.querySelector("input");
-
+      const input = button.closest(".form-password")?.querySelector("input");
       if (!input) return;
 
       const visible = input.type === "text";
@@ -30,7 +27,6 @@ function initPasswordToggle() {
 /* ================================
    AUTH TRANSITIONS
 ================================ */
-
 function goToAuth(url) {
   document.body.classList.add("page-exit");
   setTimeout(() => {
@@ -39,14 +35,13 @@ function goToAuth(url) {
 }
 
 /* ================================
-   RENDER USER NAME (ROBUSTO)
+   RENDER USER NAME
 ================================ */
-
 function renderUserName() {
   const user = getCurrentUser();
   if (!user) return;
 
-  document.querySelectorAll(".user-name").forEach(el => {
+  document.querySelectorAll(".user-name").forEach((el) => {
     el.textContent = user.name;
   });
 }
@@ -54,12 +49,11 @@ function renderUserName() {
 /* ================================
    REGISTER
 ================================ */
-
 function initRegister() {
   const form = document.querySelector(".form-auth");
   if (!form) return;
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = form.querySelector("#nombre").value.trim();
@@ -73,7 +67,7 @@ function initRegister() {
     }
 
     const users = getUsers();
-    if (users.some(u => u.email === email)) {
+    if (users.some((u) => u.email === email)) {
       alert("Este correo ya existe");
       return;
     }
@@ -83,13 +77,14 @@ function initRegister() {
       name,
       email,
       password,
-      role
+      role,
     };
 
     users.push(newUser);
     saveUsers(users);
     setSession(newUser);
 
+    alert("Registro completado correctamente");
     goToAuth("login.html");
   });
 }
@@ -97,12 +92,11 @@ function initRegister() {
 /* ================================
    LOGIN
 ================================ */
-
 function initLogin() {
   const form = document.querySelector(".form-auth");
   if (!form) return;
 
-  form.addEventListener("submit", e => {
+  form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const email = form.querySelector("#email").value.trim();
@@ -110,7 +104,7 @@ function initLogin() {
 
     const users = getUsers();
     const user = users.find(
-      u => u.email === email && u.password === password
+      (u) => u.email === email && u.password === password
     );
 
     if (!user) {
@@ -126,54 +120,45 @@ function initLogin() {
 /* ================================
    LOGOUT
 ================================ */
-
 function logout() {
   const user = getCurrentUser();
   if (!user) return;
 
   clearSession();
-  window.location.href = "login.html";
+  window.location.href = "../index.html";
 }
 
 /* ================================
    INIT GENERAL
 ================================ */
-
 document.addEventListener("DOMContentLoaded", () => {
   const page = document.body.dataset.page;
   initAuth(page);
-
-  // Por si el header ya está cargado
   renderUserName();
 });
 
 /* ================================
-   USER MENU DROPDOWN (ROBUSTO)
-   ✔ Funciona con partials
+   USER MENU DROPDOWN
 ================================ */
-
 document.addEventListener("click", (e) => {
   const menu = document.querySelector(".user-menu");
   if (!menu) return;
 
   const trigger = e.target.closest("#userTrigger");
 
-  // Click en el botón de usuario → toggle
   if (trigger) {
     e.stopPropagation();
-    renderUserName(); // ⬅️ CLAVE: el header ya existe aquí
+    renderUserName();
     menu.classList.toggle("open");
     return;
   }
 
-  // Click fuera → cerrar
   menu.classList.remove("open");
 });
 
 /* ================================
-   AUTO-RENDER USER NAME (SIN CLICK)
+   AUTO-RENDER USER NAME
 ================================ */
-
 const userNameObserver = new MutationObserver(() => {
   const userNameEl = document.querySelector(".user-name");
   const user = getCurrentUser();
@@ -183,8 +168,7 @@ const userNameObserver = new MutationObserver(() => {
   }
 });
 
-// Observa cambios en el body (cuando se inserta el header)
 userNameObserver.observe(document.body, {
   childList: true,
-  subtree: true
+  subtree: true,
 });
