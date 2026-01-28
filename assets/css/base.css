@@ -57,3 +57,14 @@ a:hover {
 .text-sm {
   font: var(--font-text-2);
 }
+
+.material-symbols-outlined {
+  font-family: "Material Symbols Outlined";
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 200,
+    'GRAD' 0,
+    'opsz' 20;   /* ⬅️ CAMBIO CLAVE */
+
+  line-height: 1;
+}
