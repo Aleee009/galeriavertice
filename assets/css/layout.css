@@ -18,6 +18,7 @@ main {
   flex: 1 0 auto;
 }
 
+/* Contenedor editorial */
 .container {
   max-width: 1200px;
   margin-left: auto;
@@ -25,6 +26,7 @@ main {
   padding-left: 24px;
   padding-right: 24px;
 }
+
 /* ===========================
    HEADER
 =========================== */
@@ -32,17 +34,22 @@ main {
 .site-header {
   background-color: var(--bg-primary);
   border-bottom: 1px solid var(--color-grisclaro);
+
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
+/* Altura única y consistente */
 .site-header .container {
   position: relative;
   height: 96px;
 }
 
-/* Posicionamiento */
+/* ===========================
+   POSICIONAMIENTO HEADER
+=========================== */
+
 .main-nav {
   position: absolute;
   left: 0;
@@ -64,14 +71,20 @@ main {
   transform: translateY(-50%);
 }
 
-/* Logo */
+/* ===========================
+   LOGO
+=========================== */
+
 .logo h2 {
   font: var(--font-h2);
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
 
-/* Navegación */
+/* ===========================
+   NAVEGACIÓN
+=========================== */
+
 .main-nav ul {
   display: flex;
   gap: 3rem;
@@ -104,7 +117,10 @@ main {
   width: 100%;
 }
 
-/* Acciones usuario */
+/* ===========================
+   ACCIONES USUARIO
+=========================== */
+
 .user-actions {
   display: flex;
   gap: 1rem;
@@ -114,11 +130,14 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+
   width: 42px;
   height: 42px;
+
   border-radius: 50%;
   border: 1px solid var(--color-grisclaro);
   color: var(--text-primary);
+
   transition: background 0.2s ease, border-color 0.2s ease;
   background: transparent;
   cursor: pointer;
@@ -134,54 +153,58 @@ main {
 }
 
 /* ===========================
-   FOOTER (GLOBAL)
+   FOOTER · DISPOSICIÓN FINAL
 =========================== */
 
 .site-footer {
   background: var(--bg-inverse);
   color: var(--text-inverse);
-  padding: 4rem 4rem 0 4rem;
-  display: grid;
-  grid-template-rows: 1fr auto;
-  flex-direction: column;
+  width: 100%;
 }
 
-/* Bloque superior */
+/* ===========================
+   BLOQUE SUPERIOR
+=========================== */
+
 .footer-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 60px;
-  padding-bottom: 12px; /* distancia exacta a la línea */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 24px 2rem;
+
+  display: grid;
+  grid-template-columns: 1.2fr 3fr;
+  gap: 80px;
+  align-items: start;
 }
 
-/* Marca */
+/* ===========================
+   BLOQUE IZQUIERDO
+=========================== */
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .footer-brand h2 {
   font-family: "Marcellus", serif;
   font-size: 32px;
-  line-height: 1.2;
-  margin: 0 0 40px 0;
-  color: var(--text-inverse);
-  opacity: 0.9;
-}
+  line-height: 1.15;
+  margin: 0;
 
-.footer-logo {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  opacity: 0.9;
-  color: var(--text-primary);
+  color: var(--text-inverse); /* blanco del sistema */
+  opacity: 1;                /* ← importante */
 }
 
 .footer-logo img {
   width: 80px;
 }
 
-/* Oculta el VÉRTICE duplicado */
-.footer-logo span {
-  display: none;
-}
+/* ===========================
+   COLUMNAS
+=========================== */
 
-/* Columnas */
 .footer-columns {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -210,19 +233,30 @@ main {
 }
 
 /* ===========================
-   BARRA INFERIOR
+   BARRA INFERIOR (ALINEADA)
 =========================== */
 
 .footer-bottom {
-  margin-top: 0;               /* nada de empujar la línea */
-  padding-top: 12px;           /* aire debajo de la línea */
-  padding-bottom: 12px;        /* casi pegado al borde */
-  border-top: 1px solid rgba(255,255,255,0.2);
+  width: 100%;
+}
+
+/* ESTE es el contenedor editorial REAL */
+.footer-bottom > div {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 24px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  /* 👇 LA LÍNEA VA AQUÍ */
+  border-top: 1px solid rgba(255,255,255,0.2);
 }
+
+/* ===========================
+   LINKS LEGALES
+=========================== */
 
 .footer-links a {
   font: var(--font-text-2);
@@ -236,21 +270,23 @@ main {
   opacity: 1;
 }
 
-.footer-social a {
-  margin-left: 20px;
+/* ===========================
+   SOCIAL
+=========================== */
+
+.social-bar a {
+  margin-left: 18px;
   color: white;
-  font-weight: bold;
   text-decoration: none;
   opacity: 0.7;
 }
 
-.footer-social a:hover {
+.social-bar a:hover {
   opacity: 1;
 }
 
 /* =====================================================
-   HEADER · USER MENU (AJUSTE A LAYOUT ABSOLUTO)
-   ⬇️ NO ELIMINA NADA EXISTENTE
+   HEADER · USER MENU (AJUSTE SEGURO)
 ===================================================== */
 
 .site-header .user-menu {
@@ -260,12 +296,12 @@ main {
   transform: translateY(-50%);
 }
 
-/* Evita que choque con el nav */
+/* Evita colisiones */
 .site-header .main-nav {
   left: 0;
 }
 
-/* Seguridad: evita herencias raras */
+/* Seguridad */
 .site-header .user-menu * {
   box-sizing: border-box;
 }
