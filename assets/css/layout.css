@@ -69,11 +69,10 @@ main {
   text-align: center;
 }
 
-.logo h2 {
-  font: var(--font-h2);
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin: 0;
+.logo-svg {
+  height: 40px;   /* ajusta si quieres: 26–32px */
+  width: auto;
+  display: block;
 }
 
 /* USUARIO DERECHA */
