@@ -9,9 +9,13 @@ let mostrarSoloFavoritos = false;
 ================================ */
 
 async function cargarDatos() {
-  categorias = await loadJSON("categorias.json");
-  artistas = await loadJSON("artistas.json");
-  obras = await loadJSON("obras.json");
+  const categoriasData = await loadJSON("categorias.json");
+  const artistasData = await loadJSON("artistas.json");
+  const obrasData = await loadJSON("obras.json");
+
+  categorias = categoriasData.categorias;
+  artistas = artistasData.artistas;
+  obras = obrasData;
 }
 
 const SECCIONES = {
@@ -210,4 +214,169 @@ function initPages(page) {
   if (page === "obras") initObras();
   if (page === "categorias") initCategorias();
   if (page === "categoria") initCategoriaDetalle();
+  if (page === "artistas") initArtistas();
+}
+
+/* =====================================================
+   ARTISTAS PAGE
+===================================================== */
+
+async function initArtistas() {
+  await cargarDatos();
+
+  const artistasActivos = artistas.filter(a => a.activo);
+  if (!artistasActivos.length) return;
+
+  renderFeaturedArtist(artistasActivos[0]);
+  renderArtistsGrid(artistasActivos);
+
+  renderArtistFilters(); // 👈 ESTA ERA LA PIEZA QUE FALTABA
+
+  initSearch(artistasActivos);
+  initOrder(artistasActivos);
+}
+
+/* =====================================================
+   ARTISTA DESTACADO
+===================================================== */
+
+function renderFeaturedArtist(artista) {
+  document.getElementById("featuredImage").innerHTML = `
+    <img src="../assets/img/artistas/${artista.avatar}" alt="${artista.nombre}">
+  `;
+
+  document.getElementById("featuredName").textContent = artista.nombre;
+  document.getElementById("featuredCity").textContent = artista.ciudad;
+}
+
+
+/* =====================================================
+   TAGS DE CATEGORÍAS (ARTISTAS)
+===================================================== */
+
+function renderArtistTags(containerId, estilosIds) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+
+  container.innerHTML = "";
+
+  estilosIds.forEach(id => {
+    const categoria = categorias.find(c => c.id === id);
+    if (!categoria) return;
+
+    container.insertAdjacentHTML(
+      "beforeend",
+      `<span class="artist-tag">${categoria.nombre}</span>`
+    );
+  });
+}
+
+/* =====================================================
+   FILTROS DE ARTISTAS (DESDE CATEGORÍAS)
+===================================================== */
+
+function renderArtistFilters() {
+  const container = document.getElementById("artistFilters");
+  if (!container || !Array.isArray(categorias)) return;
+
+  container.innerHTML = "";
+
+  // Orden editorial (nombres tal como quieres mostrarlos)
+  const ordenVisible = [
+    "Pintura",
+    "Fotografía",
+    "Escultura",
+    "Retrato",
+    "Abstracto",
+    "Blanco y Negro"
+  ];
+
+  // Normaliza para evitar problemas con acentos / mayúsculas
+  const normalize = (str) =>
+    str
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+  // Mapa rápido por nombre normalizado
+  const mapCategorias = new Map(
+    categorias.map(c => [normalize(c.nombre), c])
+  );
+
+  ordenVisible.forEach((nombre, index) => {
+    const categoria = mapCategorias.get(normalize(nombre));
+    if (!categoria) return;
+
+    const btn = document.createElement("button");
+    btn.className = "filter-pill" + (index === 0 ? " active" : "");
+    btn.textContent = categoria.nombre;
+    btn.dataset.id = categoria.id;
+
+    container.appendChild(btn);
+  });
+}
+
+/* =====================================================
+   GRID DE ARTISTAS
+===================================================== */
+
+function renderArtistsGrid(artistas) {
+  const grid = document.getElementById("artistsGrid");
+  grid.innerHTML = "";
+
+  artistas.forEach(artista => {
+    grid.insertAdjacentHTML("beforeend", `
+      <article class="artist-card">
+        <div class="artist-image">
+          <img src="../assets/img/artistas/${artista.avatar}" alt="${artista.nombre}">
+        </div>
+
+        <div class="artist-info">
+          <h3>${artista.nombre}</h3>
+          <p class="artist-city">${artista.ciudad}</p>
+
+          <a href="perfil-artista.html?slug=${artista.slug}" class="btn btn-outline">
+            Ver perfil
+          </a>
+        </div>
+      </article>
+    `);
+  });
+}
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+function initSearch(allArtists) {
+  const input = document.getElementById("artistSearch");
+
+  input.addEventListener("input", () => {
+    const value = input.value.toLowerCase();
+
+    const filtered = allArtists.filter(a =>
+      a.nombre.toLowerCase().includes(value) ||
+      a.ciudad.toLowerCase().includes(value)
+    );
+
+    renderArtistsGrid(filtered);
+  });
+}
+
+/* =====================================================
+   ORDEN
+===================================================== */
+
+function initOrder(allArtists) {
+  const select = document.getElementById("artistOrder");
+
+  select.addEventListener("change", () => {
+    const sorted = [...allArtists].sort((a, b) => {
+      return select.value === "az"
+        ? a.nombre.localeCompare(b.nombre)
+        : b.nombre.localeCompare(a.nombre);
+    });
+
+    renderArtistsGrid(sorted);
+  });
 }

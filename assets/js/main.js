@@ -29,7 +29,9 @@ document.addEventListener("DOMContentLoaded", async () => {
     // Pasamos también la sección por URL (si existe)
     const seccion = getParam("seccion");
 
-    if (["home", "obras", "categorias", "categoria"].includes(page)) {
+    if (
+      ["home", "obras", "categorias", "categoria", "artistas"].includes(page)
+    ) {
       initPages(page, seccion);
     }
   }
@@ -76,4 +78,20 @@ async function loadLayout() {
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
+
+  // 🔑 CLAVE: esperar a que el DOM realmente exista
+  requestAnimationFrame(() => {
+    if (typeof renderHeaderUser === "function") {
+      renderHeaderUser();
+    }
+
+    if (typeof applyUserRole === "function") {
+      applyUserRole();
+    }
+
+    // Si tienes menú desplegable por JS
+    if (typeof initHeaderMenu === "function") {
+      initHeaderMenu();
+    }
+  });
 }

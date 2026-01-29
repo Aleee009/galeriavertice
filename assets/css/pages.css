@@ -342,7 +342,6 @@ button.ghost:hover {
   flex-direction: column;
 }
 
-
 /* =========================================================
    HERO — eliminado visualmente
 ========================================================= */
@@ -351,12 +350,13 @@ button.ghost:hover {
   display: none;
 }
 
-
 /* =========================================================
    BLOQUE DE CATEGORÍAS (centro real)
 ========================================================= */
 
 .home-category-block {
+  flex: 1;
+  /* ocupa el área visible */
   flex: 1;
   /* ocupa el área visible */
   display: flex;
@@ -368,7 +368,6 @@ button.ghost:hover {
   text-align: center;
 }
 
-
 /* Texto pequeño “Selecciona una categoría” */
 .home-eyebrow {
   font: var(--font-text-2);
@@ -377,7 +376,6 @@ button.ghost:hover {
   color: var(--text-secondary);
   margin-bottom: 24px;
 }
-
 
 /* =========================================================
    FILA DE CATEGORÍAS
@@ -391,7 +389,6 @@ button.ghost:hover {
   /* controla la composición */
   align-items: center;
 }
-
 
 /* Cada categoría */
 .home-categories span {
@@ -417,7 +414,6 @@ button.ghost:hover {
   /* micro-movimiento perceptible */
 }
 
-
 /* =========================================================
    GRID DE OBRAS
 ========================================================= */
@@ -431,7 +427,6 @@ button.ghost:hover {
   grid-template-columns: repeat(5, 1fr);
   gap: 28px;
 }
-
 
 /* Cada obra */
 .grid-item {
@@ -736,7 +731,6 @@ button.ghost:hover {
   pointer-events: none;
 }
 
-
 /* =========================================================
    SELECT · AUTH (MISMO ESTILO QUE INPUT)
 ========================================================= */
@@ -1021,5 +1015,402 @@ button.ghost:hover {
 
   .auth-form {
     padding: 2rem;
+  }
+}
+
+/* ===============================
+   SECTION HEADER
+=============================== */
+
+.section-header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-top: 32px;
+}
+
+.section-header::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+
+  left: 24px;
+  right: 24px;
+
+  height: 1px;
+  background: var(--color-grisclaro);
+}
+
+/* FILA SUPERIOR */
+.section-header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* TÍTULO */
+.section-title {
+  font: var(--font-h1);
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1;
+}
+
+/* TOOLS A LA DERECHA */
+.section-tools {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  /* pequeño, editorial */
+}
+
+/* SEARCH PILL */
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid var(--color-grismedio);
+  border-radius: 999px;
+}
+
+.search-box .material-symbols-outlined {
+  font-size: 20px;
+  color: var(--text-subtitle);
+}
+
+.search-box input {
+  width: 220px;
+  background: transparent;
+  font: var(--font-text-2);
+  color: var(--text-primary);
+}
+
+.search-box input::placeholder {
+  color: var(--text-subtitle);
+}
+
+/* ORDER PILL */
+.order-select {
+  height: 40px;
+  padding: 0 40px 0 16px;
+
+  border: 1px solid var(--color-grismedio);
+  border-radius: 999px;
+  background: var(--bg-primary);
+
+  font: var(--font-text-2);
+  color: var(--text-primary);
+
+  appearance: none;
+  cursor: pointer;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--text-primary) 50%),
+    linear-gradient(135deg, var(--text-primary) 50%, transparent 50%);
+  background-position:
+    calc(100% - 20px) 55%,
+    calc(100% - 14px) 55%;
+  background-size:
+    6px 6px,
+    6px 6px;
+  background-repeat: no-repeat;
+}
+
+.search-box:focus-within,
+.order-select:focus {
+  border-color: var(--text-primary);
+}
+
+/* ===============================
+   FEATURED ARTIST
+=============================== */
+
+.featured-artist {
+  margin-top: 48px;
+  margin-bottom: 88px;
+  /* separa claramente del grid */
+}
+
+.featured-carousel {
+  position: relative;
+  aspect-ratio: 16 / 7;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.featured-carousel::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.35));
+  pointer-events: none;
+}
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Flechas */
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  color: var(--text-inverse);
+  font-size: 28px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
+}
+
+.carousel-control:hover {
+  opacity: 1;
+}
+
+.carousel-control.prev {
+  left: 16px;
+}
+
+.carousel-control.next {
+  right: 16px;
+}
+
+/* ===============================
+   FEATURED INFO
+=============================== */
+
+.featured-info {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  text-align: center;
+  padding: 20px 0;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.featured-info h2 {
+  margin: 0;
+  font: var(--font-text-1);
+  letter-spacing: 0.35em;
+}
+
+.featured-info p {
+  margin-top: 6px;
+  font: var(--font-text-2);
+  opacity: 0.75;
+}
+
+/* ===============================
+   ARTIST FILTERS (PILLS)
+=============================== */
+
+.artist-filters {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 32px auto 48px;
+}
+
+/* LÍNEA PERFECTAMENTE ALINEADA */
+.artist-filters::after {
+  content: "";
+  position: absolute;
+  bottom: -16px;
+
+  left: 24px;
+  right: 24px;
+
+  height: 1px;
+  background: var(--color-grisclaro);
+}
+
+
+.filters-left {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filter-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 5px 12px;
+  border-radius: 999px;
+
+  border: 1px solid var(--color-grisoscuro);
+  background: var(--bg-primary);
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--text-primary);
+  cursor: pointer;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.filter-pill:hover {
+  background: var(--bg-secondary);
+}
+
+.filter-pill.active {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  border-color: var(--bg-inverse);
+}
+
+.filters-more {
+  display: inline-flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 4px;
+  flex-shrink: 0;
+
+  background: none;
+  padding: 0;
+
+  font-family: "Inter", sans-serif;
+  font-size: 0.6rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.filters-more span {
+  font-size: 0.65rem;
+  transform: translateY(-1px);
+}
+
+/* ===============================
+   ARTISTS GRID
+=============================== */
+
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  margin-top: 48px;
+  margin-bottom: 96px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.artist-card {
+  position: relative;
+  background: var(--bg-secondary);
+  overflow: hidden;
+  transition: transform 0.25s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-6px);
+}
+
+.artist-card:hover .artist-image img {
+  transform: scale(1.05);
+}
+
+.artist-card:hover .artist-info {
+  background: linear-gradient(to top,
+      var(--bg-inverse),
+      rgba(17, 17, 17, 0.85));
+}
+
+.artist-image {
+  aspect-ratio: 4 / 3;
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.artist-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.artist-card:hover img {
+  transform: scale(1.03);
+}
+
+.artist-info {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  padding: 12px;
+  text-align: center;
+}
+
+.artist-info h3 {
+  margin: 0;
+  font: var(--font-text-2);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.artist-city {
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+  margin: 4px 0 6px;
+}
+
+/* ===============================
+   BUTTON
+=============================== */
+
+.btn-outline {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 6px 14px;
+
+  font: var(--font-button);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+
+  border: 1px solid var(--text-inverse);
+  color: var(--text-inverse);
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.btn-outline:hover {
+  background: var(--text-inverse);
+  color: var(--bg-inverse);
+}
+
+/* ===============================
+   RESPONSIVE
+=============================== */
+
+@media (max-width: 1024px) {
+  .artists-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .artists-grid {
+    grid-template-columns: 1fr;
   }
 }
