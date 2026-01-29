@@ -25,7 +25,7 @@ body {
     0 10px 10px rgba(0, 0, 0, 0.02);
   position: relative;
   overflow: hidden;
-  width: 1000px;
+  width: 100%;
   max-width: 100%;
   min-height: 600px;
   /* CORRECCIÓN: Forzamos la fuente principal aquí para herencia */
@@ -50,6 +50,13 @@ body {
   padding: 0 50px;
   height: 100%;
   text-align: center;
+}
+
+.form-container input,
+.form-container select,
+.form-container .form-group {
+  width: 100%;
+  max-width: 450px;
 }
 
 /* CORRECCIÓN: Tipografías específicas para que no pierdas tu diseño */
@@ -90,6 +97,7 @@ body {
 
 /* CORRECCIÓN: Botones principales - Hover sutil */
 .auth-container button.btn {
+  width: 90%;
   background: var(--bg-inverse);
   color: var(--text-inverse);
   font: var(--font-button);
@@ -98,15 +106,13 @@ body {
   padding: 12px 45px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
   cursor: pointer;
-  /* Transición un poco más lenta para que sea más elegante */
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .auth-container button.btn:hover {
   opacity: 0.9;
-  /* Cambio muy leve, apenas se nota pero se siente */
 }
 
 .auth-container button.btn:active {
@@ -178,7 +184,7 @@ body {
 .overlay {
   background: linear-gradient(rgba(255, 255, 255, 0.50),
       rgba(255, 255, 255, 0.50)),
-    url('../img/LoginBackgroundPage.png') no-repeat center center;
+    url('../img/LoginBackgroundPage2.png') no-repeat center center;
 
   background-size: cover;
 
@@ -334,7 +340,8 @@ button.ghost:hover {
 
 .home-hero {
   width: 100%;
-  min-height: calc(100vh - 96px); /* pantalla completa menos header */
+  min-height: calc(100vh - 96px);
+  /* pantalla completa menos header */
   background: var(--bg-primary);
 
   display: flex;
@@ -727,7 +734,8 @@ button.ghost:hover {
 .toggle-password {
   position: absolute;
   right: 0;
-  bottom: 6px;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   padding: 0;
@@ -782,28 +790,45 @@ button.ghost:hover {
 }
 
 /* =========================================================
-   SELECT · AUTH (DESPLEGABLE CLARO Y VISIBLE)
+   SELECT · AUTH 
 ========================================================= */
 
 .form-select {
   position: relative;
+  width: 100%;
+  /* Aseguramos que tenga el mismo margen que los inputs normales */
+  margin-bottom: 1.5rem;
 }
 
 /* Select base */
 .form-select select {
   width: 100%;
+
+  /* 1. FORZAR TRANSPARENCIA */
+  background-color: transparent !important;
+  background-image: none;
+
+  /* 2. BORDES Y ESTILO (Solo línea inferior) */
   border: none;
   border-bottom: 1px solid var(--color-grisclaro);
+  border-radius: 0;
+  /* CRUCIAL: Elimina el fondo blanco redondeado en iPhone/iPad */
+
+  /* 3. ESPACIADO */
   padding: 0.5rem 2rem 0.5rem 0;
-  /* espacio claro para flecha */
+  /* 2rem a la derecha para que el texto no toque la flecha */
+
+  /* 4. FUENTES */
   font: var(--font-text-1);
-  background: transparent;
   color: var(--text-primary);
-  appearance: none;
-  /* elimina UI nativa */
+
+  /* 5. ELIMINAR UI NATIVA */
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
+
   cursor: pointer;
+  outline: none;
   transition: border-color 0.25s ease;
 }
 
@@ -812,27 +837,150 @@ button.ghost:hover {
   border-bottom-color: var(--color-grismedio);
 }
 
-/* Focus */
+/* Focus (Al hacer clic) */
 .form-select select:focus {
-  outline: none;
   border-bottom-color: var(--text-primary);
 }
 
-/* Placeholder visual */
-.form-select select:invalid {
+/* Placeholder visual (Color gris cuando no se ha seleccionado nada) */
+.form-select select:required:invalid {
   color: var(--text-subtitle);
 }
 
-/* Flecha visible SIEMPRE */
+/* Las opciones desplegadas siempre deben tener fondo para leerse (esto es nativo) */
+.form-select select option {
+  color: #000;
+  background: #fff;
+}
+
+/* TU FLECHA ORIGINAL (Alineada perfectamente) */
 .form-select::after {
   content: "▾";
   position: absolute;
   right: 0;
+
+  /* Centrado vertical matemático */
   top: 50%;
-  transform: translateY(-35%);
-  font-size: 0.85rem;
+  transform: translateY(-50%);
+
+  font-size: 1rem;
+  /* Un pelín más grande para que se vea bien */
   color: var(--text-secondary);
   pointer-events: none;
+  /* Permite hacer clic en la flecha y que se abra el select */
+}
+
+/* =========================================================
+   CUSTOM SELECT (Fake Select para estilos avanzados)
+========================================================= */
+
+.custom-select-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 1.5rem;
+  user-select: none;
+}
+
+/* EL BOTÓN PRINCIPAL (Cerrado) */
+.custom-select-trigger {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding: 10px 0;
+  padding-right: 20px;
+  /* Espacio para flecha */
+
+  font: var(--font-text-1);
+  color: var(--text-subtitle);
+  /* Color inicial (placeholder) */
+
+  background: transparent;
+  border-bottom: 1px solid var(--color-grisclaro);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Cuando tiene un valor seleccionado (se pone negro) */
+.custom-select-trigger.has-value {
+  color: var(--text-primary);
+}
+
+/* La flecha hecha con CSS */
+.custom-select-trigger .arrow {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-60%) rotate(45deg);
+
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--text-subtitle);
+  border-bottom: 2px solid var(--text-subtitle);
+  transition: transform 0.3s;
+}
+
+/* Girar flecha cuando está abierto */
+.custom-select-wrapper.open .arrow {
+  transform: translateY(-20%) rotate(225deg);
+  border-color: var(--text-primary);
+}
+
+/* EL DESPLEGABLE (Abierto) */
+.custom-options {
+  position: absolute;
+  top: 100%;
+  /* Justo debajo del input */
+  left: 0;
+  right: 0;
+  z-index: 10;
+
+  /* ESTILOS DE TRANSPARENCIA Y LÍNEAS */
+  background: #FAFAFA;
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-grisclaro);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+
+  /* Animación de entrada */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* Estado abierto */
+.custom-select-wrapper.open .custom-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* LAS OPCIONES INDIVIDUALES */
+.custom-option {
+  display: block;
+  padding: 12px 15px;
+  font: var(--font-text-1);
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+
+  /* LÍNEA SEPARADORA */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background 0.2s;
+}
+
+/* Quitar borde al último */
+.custom-option:last-child {
+  border-bottom: none;
+}
+
+.custom-option:hover {
+  background: rgba(0, 0, 0, 0.05);
+  /* Hover sutil */
+  color: #000;
 }
 
 /* =========================================================
@@ -1134,7 +1282,8 @@ button.ghost:hover {
 
 .order-select {
   height: 40px;
-  padding: 0 44px 0 16px; /* espacio para icono */
+  padding: 0 44px 0 16px;
+  /* espacio para icono */
   border: 1px solid var(--color-grismedio);
   border-radius: 999px;
   background: var(--bg-primary);
