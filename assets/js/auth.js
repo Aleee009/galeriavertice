@@ -2,12 +2,12 @@
    INIT GENERAL
 ================================ */
 document.addEventListener("DOMContentLoaded", () => {
-  // Inicializamos todo
-  initSlidingLogic();   // La animación
-  initPasswordToggle(); // El ojo de la contraseña
-  initRegister();       // Lógica del formulario de registro
-  initLogin();          // Lógica del formulario de login
-  renderUserName();     // Mostrar nombre si ya hay sesión
+  initSlidingLogic();
+  initPasswordToggle();
+  initRegister();
+  initLogin();
+  renderUserName();
+  initCustomSelect();
 });
 
 /* ================================
@@ -67,29 +67,29 @@ function initPasswordToggle() {
    3. REGISTRO (LOGICA DE NEGOCIO)
 ================================ */
 function initRegister() {
-  // Seleccionamos por el ID específico que pusimos en el HTML
   const form = document.getElementById("form-register");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    // Obtenemos valores usando los IDs únicos
     const name = document.getElementById("register-name").value.trim();
     const email = document.getElementById("register-email").value.trim();
-    const role = document.getElementById("register-role").value;
     const password = document.getElementById("register-pass").value;
 
+    // CAPTURAMOS EL ROL AQUÍ
+    const roleSelect = document.getElementById("register-role");
+    const role = roleSelect ? roleSelect.value : "usuario"; // Fallback por seguridad
+
     if (!name || !email || !password || !role) {
-      alert("Completa todos los campos");
+      alert("Por favor, completa todos los campos.");
       return;
     }
 
-    // Usamos las funciones de utils.js (getUsers, saveUsers, setSession)
-    const users = getUsers();
+    const users = getUsers(); // Asumiendo que esta función viene de utils.js
 
     if (users.some((u) => u.email === email)) {
-      alert("Este correo ya existe");
+      alert("Este correo ya está registrado.");
       return;
     }
 
@@ -98,16 +98,16 @@ function initRegister() {
       name,
       email,
       password,
-      role,
+      role, // Guardamos el rol (artista/usuario)
     };
 
     users.push(newUser);
     saveUsers(users);
     setSession(newUser);
 
-    alert("Registro completado correctamente");
+    alert("¡Registro completado! Bienvenido.");
 
-    // Redirigir al home
+    // Redirigir
     window.location.href = "../index.html";
   });
 }
@@ -173,3 +173,48 @@ document.addEventListener("click", (e) => {
   }
   menu.classList.remove("open");
 });
+
+/* ================================
+   LOGICA CUSTOM SELECT
+================================ */
+function initCustomSelect() {
+  const wrapper = document.querySelector('.custom-select-wrapper');
+  if (!wrapper) return;
+
+  const trigger = wrapper.querySelector('.custom-select-trigger');
+  const options = wrapper.querySelectorAll('.custom-option');
+  const hiddenInput = document.getElementById('register-role');
+  const selectedText = document.getElementById('role-selected-text');
+
+  // 1. Abrir / Cerrar al hacer click
+  trigger.addEventListener('click', () => {
+    wrapper.classList.toggle('open');
+  });
+
+  // 2. Seleccionar opción
+  options.forEach(option => {
+    option.addEventListener('click', () => {
+      // Obtenemos el valor y el texto
+      const value = option.dataset.value;
+      const text = option.textContent;
+
+      // Actualizamos la UI
+      selectedText.textContent = text;
+      trigger.classList.add('has-value'); // Para poner el texto en negro
+
+      // Actualizamos el input oculto (para que el formulario funcione)
+      hiddenInput.value = value;
+
+      // Cerramos
+      wrapper.classList.remove('open');
+    });
+  });
+
+  // 3. Cerrar si clickamos fuera
+  document.addEventListener('click', (e) => {
+    if (!wrapper.contains(e.target)) {
+      wrapper.classList.remove('open');
+    }
+  });
+}
+
