@@ -1,14 +1,331 @@
-/* =========================
-   AUTH PAGE TRANSITION
-========================= */
+/* =========================================================
+   AUTH SLIDING CONTAINER
+========================================================= */
 
 body {
-  opacity: 1;
-  transition: opacity 0.35s ease;
+  background: var(--bg-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  /* Evita scroll horizontal durante la animación */
 }
 
-body.page-exit {
+/* =========================================================
+   AUTH SLIDING CONTAINER (ADAPTADO)
+========================================================= */
+
+/* El marco principal */
+.auth-container {
+  background: #FAFAFA;
+  border-radius: 10px;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.05),
+    0 10px 10px rgba(0, 0, 0, 0.02);
+  position: relative;
+  overflow: hidden;
+  width: 1000px;
+  max-width: 100%;
+  min-height: 600px;
+  /* CORRECCIÓN: Forzamos la fuente principal aquí para herencia */
+  font-family: var(--font-primary, sans-serif);
+}
+
+/* Contenedores de formularios base */
+.form-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  transition: all 0.6s ease-in-out;
+}
+
+/* Estilos internos del formulario para centrarlo */
+.form-container form {
+  background: #FAFAFA;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 50px;
+  height: 100%;
+  text-align: center;
+}
+
+/* CORRECCIÓN: Tipografías específicas para que no pierdas tu diseño */
+.form-container h1,
+.overlay-panel h1 {
+  font: var(--font-text-1);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.form-container p,
+.overlay-panel p {
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+/* CORRECCIÓN: Estilo de Inputs (Línea inferior como tenías antes) */
+.form-container input,
+.form-container select {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--color-grisclaro, #ccc);
+  padding: 10px 0;
+  margin: 8px 0;
+  width: 100%;
+  font: var(--font-text-1);
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-bottom-color: var(--text-primary);
+}
+
+/* CORRECCIÓN: Botones principales - Hover sutil */
+.auth-container button.btn {
+  background: var(--bg-inverse);
+  color: var(--text-inverse);
+  font: var(--font-button);
+  border-radius: 6px;
+  border: none;
+  padding: 12px 45px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  cursor: pointer;
+  /* Transición un poco más lenta para que sea más elegante */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.auth-container button.btn:hover {
+  opacity: 0.9;
+  /* Cambio muy leve, apenas se nota pero se siente */
+}
+
+.auth-container button.btn:active {
+  transform: scale(0.98);
+  /* Rebote casi imperceptible (antes era 0.95) */
+}
+
+/* --- LOGICA DE MOVIMIENTO --- */
+
+/* Login: Ocupa la mitad izquierda por defecto */
+.sign-in-container {
+  left: 0;
+  width: 50%;
+  z-index: 2;
+}
+
+/* Registro: Inicialmente oculto a la derecha/atrás */
+.sign-up-container {
+  left: 0;
+  width: 50%;
   opacity: 0;
+  z-index: 1;
+}
+
+/* ESTADO ACTIVO (Cuando JS añade la clase .right-panel-active) */
+.auth-container.right-panel-active .sign-in-container {
+  transform: translateX(100%);
+}
+
+.auth-container.right-panel-active .sign-up-container {
+  transform: translateX(100%);
+  opacity: 1;
+  z-index: 5;
+  animation: show 0.6s;
+}
+
+@keyframes show {
+
+  0%,
+  49.99% {
+    opacity: 0;
+    z-index: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    z-index: 5;
+  }
+}
+
+/* --- OVERLAY (La Imagen) --- */
+
+.overlay-container {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  transition: transform 0.6s ease-in-out;
+  z-index: 100;
+}
+
+.auth-container.right-panel-active .overlay-container {
+  transform: translateX(-100%);
+}
+
+.overlay {
+  background: linear-gradient(rgba(255, 255, 255, 0.50),
+      rgba(255, 255, 255, 0.50)),
+    url('../img/LoginBackgroundPage.png') no-repeat center center;
+
+  background-size: cover;
+
+  color: #111111;
+  position: relative;
+  left: -100%;
+  height: 100%;
+  width: 200%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+.auth-container.right-panel-active .overlay {
+  transform: translateX(50%);
+}
+
+.overlay-panel {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  top: 0;
+  height: 100%;
+  width: 50%;
+  transform: translateX(0);
+  transition: transform 0.6s ease-in-out;
+}
+
+/* =========================================================
+   TEXTOS DEL OVERLAY (IMAGEN) - AUMENTO DE VISIBILIDAD
+========================================================= */
+
+.overlay-panel h1 {
+  font: var(--font-text-1);
+  color: #111111;
+
+  font-size: 2rem;
+  font-weight: 700;
+
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.5px;
+}
+
+.overlay-panel p {
+  font: var(--font-text-2);
+  color: #111111;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  max-width: 80%;
+}
+
+.overlay-left {
+  transform: translateX(-20%);
+}
+
+.overlay-right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.auth-container.right-panel-active .overlay-left {
+  transform: translateX(0);
+}
+
+.auth-container.right-panel-active .overlay-right {
+  transform: translateX(20%);
+}
+
+/* Botones dentro de la imagen (Ghost Buttons) */
+button.ghost {
+  background-color: transparent;
+  border-color: #111111;
+  color: #111111;
+
+  border: 1px solid #111111;
+  font: var(--font-button);
+  margin-top: 20px;
+  padding: 10px 30px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background-color 0.3s ease;
+}
+
+button.ghost:hover {
+  background-color: #333333;
+}
+
+/* --- RESPONSIVE (Móvil) --- */
+.mobile-toggle {
+  display: none;
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .auth-container {
+    width: 100%;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .overlay-container {
+    display: none;
+  }
+
+  .sign-in-container,
+  .sign-up-container {
+    width: 100%;
+    position: absolute;
+    left: 0;
+  }
+
+  .sign-up-container {
+    z-index: 1;
+    opacity: 0;
+    transform: translateX(0) !important;
+  }
+
+  .sign-in-container {
+    z-index: 2;
+  }
+
+  .auth-container.right-panel-active .sign-in-container {
+    opacity: 0;
+    z-index: 1;
+    transform: translateX(0) !important;
+  }
+
+  .auth-container.right-panel-active .sign-up-container {
+    opacity: 1;
+    z-index: 5;
+    animation: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
 }
 
 /* =========================================================
@@ -17,8 +334,10 @@ body.page-exit {
 
 .home-hero {
   background: var(--bg-primary);
-  padding-top: 120px;              /* espacio para el header */
-  min-height: calc(100vh - 96px);  /* viewport menos el header */
+  padding-top: 120px;
+  /* espacio para el header */
+  min-height: calc(100vh - 96px);
+  /* viewport menos el header */
   display: flex;
   flex-direction: column;
 }
@@ -38,11 +357,14 @@ body.page-exit {
 ========================================================= */
 
 .home-category-block {
-  flex: 1;                         /* ocupa el área visible */
+  flex: 1;
+  /* ocupa el área visible */
   display: flex;
   flex-direction: column;
-  justify-content: center;         /* centro vertical real */
-  align-items: center;             /* centro horizontal */
+  justify-content: center;
+  /* centro vertical real */
+  align-items: center;
+  /* centro horizontal */
   text-align: center;
 }
 
@@ -65,7 +387,8 @@ body.page-exit {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   width: 100%;
-  max-width: 900px;       /* controla la composición */
+  max-width: 900px;
+  /* controla la composición */
   align-items: center;
 }
 
@@ -73,13 +396,14 @@ body.page-exit {
 /* Cada categoría */
 .home-categories span {
   font-family: var(--font-primary);
-  font-size: 32px;        /* tamaño editorial correcto */
+  font-size: 32px;
+  /* tamaño editorial correcto */
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
   cursor: pointer;
-    transition:
+  transition:
     color 0.25s ease,
     letter-spacing 0.25s ease,
     transform 0.25s ease;
@@ -87,8 +411,10 @@ body.page-exit {
 
 .home-categories span:hover {
   color: var(--text-secondary);
-  letter-spacing: 0.28em;        /* gesto editorial claro */
-  transform: translateY(-3px);   /* micro-movimiento perceptible */
+  letter-spacing: 0.28em;
+  /* gesto editorial claro */
+  transform: translateY(-3px);
+  /* micro-movimiento perceptible */
 }
 
 
@@ -457,11 +783,13 @@ body.page-exit {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--color-grisclaro);
-  padding: 0.5rem 2rem 0.5rem 0; /* espacio claro para flecha */
+  padding: 0.5rem 2rem 0.5rem 0;
+  /* espacio claro para flecha */
   font: var(--font-text-1);
   background: transparent;
   color: var(--text-primary);
-  appearance: none;       /* elimina UI nativa */
+  appearance: none;
+  /* elimina UI nativa */
   -webkit-appearance: none;
   -moz-appearance: none;
   cursor: pointer;
@@ -505,7 +833,8 @@ body.page-exit {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background: var(--bg-primary);
-  overflow: hidden; /* elimina scroll */
+  overflow: hidden;
+  /* elimina scroll */
 }
 
 /* =========================================================

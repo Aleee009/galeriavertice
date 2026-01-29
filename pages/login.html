@@ -3,95 +3,88 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Iniciar sesión — Galería Vértice</title>
+  <title>Acceso — Galería Vértice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Font Awesome (OBLIGATORIO PARA EL ICONO DEL OJO) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Marcellus&display=swap"
+    rel="stylesheet" />
 
-  <!-- CSS -->
   <link rel="stylesheet" href="../assets/css/styles.css" />
 </head>
 
-<body data-page="login">
-  <main class="auth-layout">
+<body>
+  <main class="auth-container" id="auth-container">
 
-    <!-- COLUMNA FORMULARIO -->
-    <section class="auth-form">
-      <div class="auth-form-inner">
+    <div class="form-container sign-up-container">
+      <form class="form-auth" action="#">
+        <h1>Crear Cuenta</h1>
+        <p class="auth-subtitle">Únete a Galería Vértice</p>
 
-        <!-- Logo -->
+        <div class="form-group">
+          <input type="text" placeholder="Nombre completo" required />
+        </div>
+        <div class="form-group">
+          <input type="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="form-group">
+          <input type="password" placeholder="Contraseña" required />
+        </div>
+
+        <button class="btn">Registrarse</button>
+
+        <div class="mobile-toggle">
+          <span>¿Ya tienes cuenta? <a href="#" id="to-signin-mobile">Inicia sesión</a></span>
+        </div>
+      </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+      <form class="form-auth" action="#">
         <div class="auth-logo">
           <img src="../assets/icons/logo_vertice.svg" alt="Galería Vértice">
         </div>
+        <h1>Iniciar sesión</h1>
+        <p class="auth-subtitle">Accede a tu colección</p>
 
-        <!-- Título -->
-        <h1>Galería Vértice</h1>
-        <p class="auth-subtitle">Accede a tu cuenta</p>
+        <div class="form-group">
+          <input type="email" placeholder="Correo electrónico" required />
+        </div>
+        <div class="form-group form-password">
+          <input type="password" placeholder="Contraseña" required />
+          <button type="button" class="toggle-password"><i class="fa-regular fa-eye"></i></button>
+        </div>
 
-        <!-- FORMULARIO -->
-        <form class="form-auth">
+        <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
+        <button class="btn">Iniciar Sesión</button>
 
-          <!-- Email -->
-          <div class="form-group">
-            <label for="email">Correo electrónico</label>
-            <input type="email" id="email" name="email" required />
-          </div>
+        <div class="mobile-toggle">
+          <span>¿No tienes cuenta? <a href="#" id="to-signup-mobile">Regístrate</a></span>
+        </div>
+      </form>
+    </div>
 
-          <!-- Password con ojo -->
-          <div class="form-group form-password">
-            <label for="password">Contraseña</label>
+    <div class="overlay-container">
+      <div class="overlay">
 
-            <input type="password" id="password" name="password" required />
+        <div class="overlay-panel overlay-left">
+          <h1>¡Bienvenido de nuevo!</h1>
+          <p>Para mantenerte conectado con nosotros, por favor inicia sesión con tu información personal</p>
+          <button class="btn ghost" id="signIn">Iniciar Sesión</button>
+        </div>
 
-            <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
-              <i class="fa-regular fa-eye"></i>
-            </button>
-          </div>
-
-          <!-- Opciones -->
-          <div class="auth-options">
-            <label class="remember-me">
-              <input type="checkbox">
-              <span>Recordarme</span>
-            </label>
-
-            <a href="#" class="forgot-password">
-              ¿Olvidaste tu contraseña?
-            </a>
-          </div>
-
-          <!-- Botón -->
-          <button type="submit" class="btn">
-            Iniciar sesión
-          </button>
-
-        </form>
-
-        <!-- Footer auth -->
-        <div class="auth-footer">
-          <p>
-            ¿No tienes cuenta?
-            <a href="#" onclick="goToAuth('register.html')">Regístrate</a>
-
-          </p>
-          <span class="auth-copy">© 2026 Galería Vértice</span>
+        <div class="overlay-panel overlay-right">
+          <h1>Hola, Amante del Arte</h1>
+          <p>Introduce tus datos personales y comienza tu viaje con nosotros</p>
+          <button class="btn ghost" id="signUp">Registrarse</button>
         </div>
 
       </div>
-    </section>
-
-    <!-- COLUMNA IMAGEN -->
-    <section class="auth-image">
-      <img src="../assets/img/imagen_login.jpg" alt="Galería de arte" />
-    </section>
-
+    </div>
   </main>
 
   <script src="../assets/js/utils.js"></script>
   <script src="../assets/js/auth.js"></script>
-
-
 </body>
 
 </html>
