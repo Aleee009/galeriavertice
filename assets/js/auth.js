@@ -1,17 +1,56 @@
-function initAuth(page) {
-  initPasswordToggle();
+/* ================================
+   INIT GENERAL
+================================ */
+document.addEventListener("DOMContentLoaded", () => {
+  // Inicializamos todo
+  initSlidingLogic();   // La animación
+  initPasswordToggle(); // El ojo de la contraseña
+  initRegister();       // Lógica del formulario de registro
+  initLogin();          // Lógica del formulario de login
+  renderUserName();     // Mostrar nombre si ya hay sesión
+});
 
-  if (page === "login") initLogin();
-  if (page === "register") initRegister();
+/* ================================
+   1. LOGICA DE ANIMACIÓN (SLIDING)
+================================ */
+function initSlidingLogic() {
+  const container = document.getElementById('auth-container');
+
+  // Botones del Overlay (Desktop)
+  const signUpBtn = document.getElementById('signUp');
+  const signInBtn = document.getElementById('signIn');
+
+  // Enlaces de Móvil
+  const mobileSignUpLink = document.getElementById('to-signup-mobile');
+  const mobileSignInLink = document.getElementById('to-signin-mobile');
+
+  // Función para activar panel derecho (Registro)
+  const showRegister = (e) => {
+    if (e) e.preventDefault();
+    container.classList.add("right-panel-active");
+  };
+
+  // Función para desactivar panel derecho (volver a Login)
+  const showLogin = (e) => {
+    if (e) e.preventDefault();
+    container.classList.remove("right-panel-active");
+  };
+
+  // Listeners
+  if (signUpBtn) signUpBtn.addEventListener('click', showRegister);
+  if (signInBtn) signInBtn.addEventListener('click', showLogin);
+  if (mobileSignUpLink) mobileSignUpLink.addEventListener('click', showRegister);
+  if (mobileSignInLink) mobileSignInLink.addEventListener('click', showLogin);
 }
 
 /* ================================
-   TOGGLE PASSWORD
+   2. TOGGLE PASSWORD
 ================================ */
 function initPasswordToggle() {
   document.querySelectorAll(".toggle-password").forEach((button) => {
     button.addEventListener("click", () => {
-      const input = button.closest(".form-password")?.querySelector("input");
+      // Buscamos el input hermano dentro del mismo grupo
+      const input = button.parentElement.querySelector("input");
       if (!input) return;
 
       const visible = input.type === "text";
@@ -25,48 +64,30 @@ function initPasswordToggle() {
 }
 
 /* ================================
-   AUTH TRANSITIONS
-================================ */
-function goToAuth(url) {
-  document.body.classList.add("page-exit");
-  setTimeout(() => {
-    window.location.href = url;
-  }, 350);
-}
-
-/* ================================
-   RENDER USER NAME
-================================ */
-function renderUserName() {
-  const user = getCurrentUser();
-  if (!user) return;
-
-  document.querySelectorAll(".user-name").forEach((el) => {
-    el.textContent = user.name;
-  });
-}
-
-/* ================================
-   REGISTER
+   3. REGISTRO (LOGICA DE NEGOCIO)
 ================================ */
 function initRegister() {
-  const form = document.querySelector(".form-auth");
+  // Seleccionamos por el ID específico que pusimos en el HTML
+  const form = document.getElementById("form-register");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const name = form.querySelector("#nombre").value.trim();
-    const email = form.querySelector("#email").value.trim();
-    const password = form.querySelector("#password").value;
-    const role = form.querySelector("#tipo").value;
+    // Obtenemos valores usando los IDs únicos
+    const name = document.getElementById("register-name").value.trim();
+    const email = document.getElementById("register-email").value.trim();
+    const role = document.getElementById("register-role").value;
+    const password = document.getElementById("register-pass").value;
 
     if (!name || !email || !password || !role) {
       alert("Completa todos los campos");
       return;
     }
 
+    // Usamos las funciones de utils.js (getUsers, saveUsers, setSession)
     const users = getUsers();
+
     if (users.some((u) => u.email === email)) {
       alert("Este correo ya existe");
       return;
@@ -85,22 +106,25 @@ function initRegister() {
     setSession(newUser);
 
     alert("Registro completado correctamente");
-    goToAuth("login.html");
+
+    // Redirigir al home
+    window.location.href = "../index.html";
   });
 }
 
 /* ================================
-   LOGIN
+   4. LOGIN (LOGICA DE NEGOCIO)
 ================================ */
 function initLogin() {
-  const form = document.querySelector(".form-auth");
+  const form = document.getElementById("form-login");
   if (!form) return;
 
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
-    const email = form.querySelector("#email").value.trim();
-    const password = form.querySelector("#password").value;
+    // Obtenemos valores del formulario de login
+    const email = document.getElementById("login-email").value.trim();
+    const password = document.getElementById("login-pass").value;
 
     const users = getUsers();
     const user = users.find(
@@ -118,28 +142,23 @@ function initLogin() {
 }
 
 /* ================================
-   LOGOUT
+   5. UTILS UI (RENDER NAME & LOGOUT)
 ================================ */
-function logout() {
+function renderUserName() {
   const user = getCurrentUser();
   if (!user) return;
 
+  document.querySelectorAll(".user-name").forEach((el) => {
+    el.textContent = user.name;
+  });
+}
+
+function logout() {
   clearSession();
   window.location.href = "../index.html";
 }
 
-/* ================================
-   INIT GENERAL
-================================ */
-document.addEventListener("DOMContentLoaded", () => {
-  const page = document.body.dataset.page;
-  initAuth(page);
-  renderUserName();
-});
-
-/* ================================
-   USER MENU DROPDOWN
-================================ */
+/* Dropdown Menu (si lo usas en el header) */
 document.addEventListener("click", (e) => {
   const menu = document.querySelector(".user-menu");
   if (!menu) return;
@@ -148,27 +167,9 @@ document.addEventListener("click", (e) => {
 
   if (trigger) {
     e.stopPropagation();
-    renderUserName();
+    renderUserName(); // Asegura tener el nombre actualizado
     menu.classList.toggle("open");
     return;
   }
-
   menu.classList.remove("open");
-});
-
-/* ================================
-   AUTO-RENDER USER NAME
-================================ */
-const userNameObserver = new MutationObserver(() => {
-  const userNameEl = document.querySelector(".user-name");
-  const user = getCurrentUser();
-
-  if (user && userNameEl && !userNameEl.textContent) {
-    userNameEl.textContent = user.name;
-  }
-});
-
-userNameObserver.observe(document.body, {
-  childList: true,
-  subtree: true,
 });
