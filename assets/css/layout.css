@@ -271,16 +271,17 @@ main {
 .social-bar {
   display: flex;
   align-items: center;
-  gap: 10px; /* ajusta aquí: 6px, 8px, 10px */
-} 
+  gap: var(--space-sm, 10px); /* fallback seguro */
+}
 
 .social-bar a {
   margin: 0;
-  color: white;
+  color: var(--text-inverse);
   text-decoration: none;
-  opacity: 0.7;
+  opacity: var(--opacity-muted, 0.7);
+  transition: opacity 0.2s ease;
 }
 
 .social-bar a:hover {
-  opacity: 1;
+  opacity: var(--opacity-full, 1);
 }
