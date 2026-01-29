@@ -1,19 +1,4 @@
 /* =========================================================
-   AUTH SLIDING CONTAINER
-========================================================= */
-
-body {
-  background: var(--bg-primary);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-  /* Evita scroll horizontal durante la animación */
-}
-
-/* =========================================================
    AUTH SLIDING CONTAINER (ADAPTADO)
 ========================================================= */
 
@@ -334,14 +319,16 @@ button.ghost:hover {
 
 .home-hero {
   width: 100%;
-  min-height: calc(100vh - 96px); /* pantalla completa menos header */
   background: var(--bg-primary);
 
-  display: flex;
-  align-items: center;
+  /* AIRE EDITORIAL REAL */
+  padding-top: 180px;
+  padding-bottom: 220px;
 }
 
 .home-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -372,26 +359,15 @@ button.ghost:hover {
 ========================================================= */
 
 .home-category-block {
-  flex: 1;
-  /* ocupa el área visible */
-  flex: 1;
-  /* ocupa el área visible */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  /* centro vertical real */
-  align-items: center;
-  /* centro horizontal */
-  text-align: center;
+  margin-bottom: 96px;
 }
 
-/* Texto pequeño “Selecciona una categoría” */
 .home-eyebrow {
   font: var(--font-text-2);
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 24px;
+  margin-bottom: 48px;
 }
 
 /* =========================================================
@@ -401,34 +377,28 @@ button.ghost:hover {
 .home-categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  width: 100%;
-  max-width: 900px;
-  /* controla la composición */
-  align-items: center;
+  gap: 80px;
+  margin-bottom: 48px;
 }
 
-/* Cada categoría */
 .home-categories span {
   font-family: var(--font-primary);
   font-size: 32px;
-  /* tamaño editorial correcto */
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  text-align: center;
   cursor: pointer;
+
   transition:
     color 0.25s ease,
     letter-spacing 0.25s ease,
     transform 0.25s ease;
 }
 
-.home-categories span:hover {
-  color: var(--text-secondary);
-  letter-spacing: 0.28em;
-  /* gesto editorial claro */
-  transform: translateY(-3px);
-  /* micro-movimiento perceptible */
+.home-hero .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 /* =========================================================
@@ -436,13 +406,11 @@ button.ghost:hover {
 ========================================================= */
 
 .home-grid {
-  max-width: 1200px;
-  margin: 0 auto 120px auto;
-  padding: 0 24px;
-
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 28px;
+  gap: 32px;
+
+  margin-top: 96px;
 }
 
 /* Cada obra */
@@ -457,6 +425,33 @@ button.ghost:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* ===========================
+   RESPONSIVE HOME
+=========================== */
+
+@media (max-width: 1200px) {
+  .home-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .home-categories {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* =========================================================
