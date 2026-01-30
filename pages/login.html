@@ -61,7 +61,7 @@
     </div>
 
     <div class="form-container sign-in-container">
-      <form class="form-auth" action="#">
+      <form class="form-auth" id="form-login" action="#">
         <div class="auth-logo">
           <img src="../assets/icons/logo_vertice.svg" alt="Galería Vértice">
         </div>
@@ -69,15 +69,19 @@
         <p class="auth-subtitle">Accede a tu colección</p>
 
         <div class="form-group">
-          <input type="email" placeholder="Correo electrónico" required />
+          <input type="email" id="login-email" placeholder="Correo electrónico" required />
         </div>
         <div class="form-group form-password">
-          <input type="password" placeholder="Contraseña" required />
-          <button type="button" class="toggle-password"><i class="fa-regular fa-eye"></i></button>
+          <input type="password" id="login-pass" placeholder="Contraseña" required />
+          <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+
         </div>
 
         <a href="#" class="forgot-password">¿Olvidaste tu contraseña?</a>
-        <button class="btn">Iniciar Sesión</button>
+        <button type="submit" class="btn">Iniciar Sesión</button>
+
 
         <div class="mobile-toggle">
           <span>¿No tienes cuenta? <a href="#" id="to-signup-mobile">Regístrate</a></span>

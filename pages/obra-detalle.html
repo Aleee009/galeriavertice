@@ -7,124 +7,76 @@
   <title>Obra – Vértice</title>
 
   <link rel="stylesheet" href="../assets/css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
+<body data-page="obra-detalle">
 
-<body>
   <!-- HEADER -->
   <div id="site-header"></div>
 
-  <header class="header">
-    <div class="container header__inner">
-      <nav class="nav">
-        <a href="./artistas.html" class="nav__link">ARTISTAS</a>
-        <a href="./obras.html" class="nav__link">OBRAS</a>
-        <a href="./categorias.html" class="nav__link">CATEGORÍAS</a>
-      </nav>
-
-      <a href="../index.html" class="brand" aria-label="Inicio Vértice">VÉRTICE</a>
-
-      <div class="header__actions">
-        <button class="icon-btn" aria-label="Usuario / Perfil">
-          <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </header>
-
-
-  <!-- TOP BAR (OBRAS + SEARCH + SORT) -->
-  <section class="topbar">
-    <div class="container topbar__inner">
-      <h1 class="topbar__title">OBRAS</h1>
-
-      <div class="topbar__controls">
-        <label class="search">
-          <span class="sr-only">Buscar</span>
-          <svg class="search__icon" width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M10 18a8 8 0 1 1 5.293-14.293A8 8 0 0 1 10 18Zm11 3-6.1-6.1 1.4-1.4L22.4 19.6 21 21Z" />
-          </svg>
-          <input class="search__input" type="search" placeholder="Barra de búsqueda" />
-        </label>
-
-        <button class="sort" type="button" aria-label="Ordenar">
-          <span>A - Z</span>
-          <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M7 10l5 5 5-5H7z" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </section>
-
   <!-- MAIN CONTENT -->
-  <main class="container main">
-    <!-- LEFT: DETAILS -->
-    <section class="details">
-      <div class="details__text">
-        <h2 class="details__author">Autor</h2>
-        <h3 class="details__name">Título Cuadro</h3>
-        <p class="details__desc">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-          et dolore magna aliqua.
-          Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-          consequat.
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur.
-        </p>
-      </div>
+  <main class="main">
+    <div class="container">
+      <!-- LEFT: DETAILS -->
+      <section class="details">
+        <div class="details__text">
+          <h2 class="details__author">Autor</h2>
+          <h3 class="details__name">Título Cuadro</h3>
+          <p class="details__desc">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+            et dolore magna aliqua.
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.
+          </p>
+        </div>
 
-      <div class="details__buttons">
-        <button class="btn btn--primary" type="button">PUJAR</button>
-        <button class="btn btn--primary" type="button">GUARDAR EN PERFIL</button>
-        <button class="btn btn--primary" type="button">COMPRAR</button>
-      </div>
+        <div class="details__buttons">
+          <button class="details__btn" type="button">PUJAR</button>
+          <button class="details__btn" type="button">GUARDAR EN PERFIL</button>
+          <button class="details__btn" type="button">COMPRAR</button>
+        </div>
 
-      <div class="details__icons">
-        <button class="icon-btn" aria-label="Copiar enlace">
-          <!-- link icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M10.59 13.41a1 1 0 0 1 0-1.41l3.59-3.59a3 3 0 0 1 4.24 4.24l-2.12 2.12a1 1 0 1 1-1.41-1.41l2.12-2.12a1 1 0 0 0-1.41-1.41l-3.59 3.59a1 1 0 0 1-1.42 0Zm2.82-2.82a1 1 0 0 1 0 1.41l-3.59 3.59a3 3 0 0 1-4.24-4.24l2.12-2.12a1 1 0 1 1 1.41 1.41l-2.12 2.12a1 1 0 0 0 1.41 1.41l3.59-3.59a1 1 0 0 1 1.42 0Z" />
-          </svg>
-        </button>
+        <div class="details__icons">
+          <button class="icon-btn" aria-label="Copiar enlace">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M10.59 13.41a1 1 0 0 1 0-1.41l3.59-3.59a3 3 0 0 1 4.24 4.24l-2.12 2.12a1 1 0 1 1-1.41-1.41l2.12-2.12a1 1 0 0 0-1.41-1.41l-3.59 3.59a1 1 0 0 1-1.42 0Zm2.82-2.82a1 1 0 0 1 0 1.41l-3.59 3.59a3 3 0 0 1-4.24-4.24l2.12-2.12a1 1 0 1 1 1.41 1.41l-2.12 2.12a1 1 0 0 0 1.41 1.41l3.59-3.59a1 1 0 0 1 1.42 0Z" />
+            </svg>
+          </button>
 
-        <button class="icon-btn" aria-label="Compartir">
-          <!-- share icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M18 16a3 3 0 0 0-2.24 1.02L8.91 13.7a3.02 3.02 0 0 0 0-3.4l6.85-3.32A3 3 0 1 0 15 5a2.98 2.98 0 0 0 .09.7L8.24 9.02A3 3 0 1 0 9 12a2.98 2.98 0 0 0-.09-.7l6.85 3.32A3 3 0 1 0 18 16Z" />
-          </svg>
-        </button>
+          <button class="icon-btn" aria-label="Compartir">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M18 16a3 3 0 0 0-2.24 1.02L8.91 13.7a3.02 3.02 0 0 0 0-3.4l6.85-3.32A3 3 0 1 0 15 5a2.98 2.98 0 0 0 .09.7L8.24 9.02A3 3 0 1 0 9 12a2.98 2.98 0 0 0-.09-.7l6.85 3.32A3 3 0 1 0 18 16Z" />
+            </svg>
+          </button>
 
-        <button class="icon-btn" aria-label="Favorito">
-          <!-- heart icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M12 21s-7-4.35-9.33-8.4C.52 8.7 3.09 5 7 5c2 0 3.57 1.08 5 2.67C13.43 6.08 15 5 17 5c3.91 0 6.48 3.7 4.33 7.6C19 16.65 12 21 12 21z" />
-          </svg>
-        </button>
-      </div>
-    </section>
+          <button class="icon-btn" aria-label="Favorito">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M12 21s-7-4.35-9.33-8.4C.52 8.7 3.09 5 7 5c2 0 3.57 1.08 5 2.67C13.43 6.08 15 5 17 5c3.91 0 6.48 3.7 4.33 7.6C19 16.65 12 21 12 21z" />
+            </svg>
+          </button>
+        </div>
+      </section>
 
-    <!-- RIGHT: IMAGE -->
-    <section class="art">
-      <div class="art__frame">
+      <!-- RIGHT: IMAGE -->
+      <section class="art">
+        <div class="art__frame">
+          <img class="art__img" src="../assets/img/gato9.jpg" alt="Obra principal" />
 
-        <img class="art__img" src="../assets/img/gato9.jpg" alt="Obra principal" />
-
-        <button class="icon-btn art__expand" aria-label="Ampliar imagen">
-          <!-- expand icon -->
-          <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M14 3h7v7h-2V6.41l-4.29 4.3-1.42-1.42L17.59 5H14V3ZM3 14h2v3.59l4.29-4.3 1.42 1.42L6.41 19H10v2H3v-7Z" />
-          </svg>
-        </button>
-      </div>
-    </section>
+          <button class="icon-btn art__expand" aria-label="Ampliar imagen">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 3h7v7h-2V6.41l-4.29 4.3-1.42-1.42L17.59 5H14V3ZM3 14h2v3.59l4.29-4.3 1.42 1.42L6.41 19H10v2H3v-7Z" />
+            </svg>
+          </button>
+        </div>
+      </section>
+    </div>
   </main>
 
   <!-- RELATED -->
@@ -173,88 +125,7 @@
   </section>
 
   <!-- FOOTER -->
-  <div id="site-header"></div>
-
-  <footer class="footer">
-    <div class="container footer__inner">
-      <div class="footer__left">
-        <h2 class="footer__headline">ARTE DESDE OTRO<br>ÁNGULO</h2>
-
-        <div class="footer__logo">
-          <div class="footer__logo-box" aria-hidden="true"></div>
-          <div class="footer__logo-text">VÉRTICE</div>
-        </div>
-      </div>
-
-      <div class="footer__cols">
-        <div class="footer__col">
-          <h3 class="footer__title">EXPLORA</h3>
-          <a href="#" class="footer__link">ARTISTAS DESTACADOS</a>
-          <a href="#" class="footer__link">OBRAS TRENDING</a>
-        </div>
-
-        <div class="footer__col">
-          <h3 class="footer__title">SOBRE NOSOTROS</h3>
-          <a href="#" class="footer__link">QUIENES SOMOS</a>
-          <a href="#" class="footer__link">PARTNERS</a>
-          <a href="#" class="footer__link">MANIFIESTO</a>
-        </div>
-
-        <div class="footer__col">
-          <h3 class="footer__title">COMUNIDAD</h3>
-          <a href="#" class="footer__link">DROPS</a>
-          <a href="#" class="footer__link">NOTICIAS</a>
-        </div>
-
-        <div class="footer__col">
-          <h3 class="footer__title">CONTACTO</h3>
-          <a href="#" class="footer__link">FAQ</a>
-          <a href="#" class="footer__link">SOPORTE</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="container footer__bottom">
-      <div class="footer__legal">
-        <a href="#" class="footer__legal-link">TÉRMINOS DE USO</a>
-        <a href="#" class="footer__legal-link">POLÍTICA DE PRIVACIDAD</a>
-        <a href="#" class="footer__legal-link">POLÍTICA DE COOKIES</a>
-      </div>
-
-      <div class="footer__social" aria-label="Redes sociales">
-        <a class="social" href="#" aria-label="X">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M18.9 2H22l-6.8 7.8L23 22h-6.2l-4.9-6.4L6.3 22H3.2l7.3-8.3L1 2h6.3l4.4 5.9L18.9 2Zm-1.1 18h1.7L6.2 4H4.4l13.4 16Z" />
-          </svg>
-        </a>
-        <a class="social" href="#" aria-label="LinkedIn">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6.94 6.5A2.44 2.44 0 1 1 7 2.61a2.44 2.44 0 0 1-.06 3.89ZM4 22h6V8H4v14Zm8 0h6v-7.4c0-4.5-5-4.1-6-2v-4.6h-6v14h6v-7.2c0-1.7 2-1.8 2 0V22Z" />
-          </svg>
-        </a>
-        <a class="social" href="#" aria-label="Facebook">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M13 22v-8h3l1-4h-4V7.5C13 6.7 13.3 6 14.7 6H17V2.2C16.6 2.1 15.2 2 13.6 2 10.3 2 8 4 8 7.7V10H5v4h3v8h5Z" />
-          </svg>
-        </a>
-        <a class="social" href="#" aria-label="Pinterest">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M12 2a10 10 0 0 0-3.6 19.3c-.1-.8-.2-2 0-2.9l1.5-6.3S9.5 11 9.5 10c0-1.6.9-2.8 2.1-2.8 1 0 1.5.7 1.5 1.7 0 1-.6 2.6-.9 4 .3.8 1.2 1.4 2.2 1.4 2.6 0 4.4-2.7 4.4-6.1 0-3.2-2.3-5.4-5.6-5.4-3.8 0-6 2.9-6 5.8 0 1.1.4 2.3.9 2.9.1.1.1.3.1.5l-.3 1.2c-.1.4-.4.5-.8.3-1.2-.6-1.9-2.4-1.9-3.9 0-3.2 2.3-6.1 6.7-6.1 3.5 0 6.2 2.5 6.2 5.9 0 3.5-2.2 6.3-5.3 6.3-1 0-2-.5-2.3-1.2l-.6 2.2c-.2.8-.7 1.8-1.1 2.4A10 10 0 1 0 12 2Z" />
-          </svg>
-        </a>
-        <a class="social" href="#" aria-label="Instagram">
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm10 2H7a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Zm-5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5Zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5ZM17.8 6.3a.9.9 0 1 1-.9.9.9.9 0 0 1 .9-.9Z" />
-          </svg>
-        </a>
-      </div>
-    </div>
-  </footer>
+  <div id="site-footer"></div>
 
   <script src="../assets/js/utils.js"></script>
   <script src="../assets/js/pages.js"></script>
@@ -262,4 +133,5 @@
   <script src="../assets/js/main.js"></script>
 
 </body>
+
 </html>

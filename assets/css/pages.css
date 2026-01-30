@@ -18,7 +18,7 @@
 }
 
 /* Contenedores de formularios base */
-.form-container {
+.auth-container .form-container {
   position: absolute;
   top: 0;
   height: 100%;
@@ -26,7 +26,7 @@
 }
 
 /* Estilos internos del formulario para centrarlo */
-.form-container form {
+.auth-container .form-container form {
   background: #FAFAFA;
   display: flex;
   align-items: center;
@@ -37,24 +37,24 @@
   text-align: center;
 }
 
-.form-container input,
-.form-container select,
-.form-container .form-group {
+.auth-container .form-container input,
+.auth-container .form-container select,
+.auth-container .form-container .form-group {
   width: 100%;
   max-width: 450px;
 }
 
 /* CORRECCIÓN: Tipografías específicas para que no pierdas tu diseño */
-.form-container h1,
-.overlay-panel h1 {
+.auth-container .form-container h1,
+.auth-container .overlay-panel h1 {
   font: var(--font-text-1);
   font-weight: 600;
   margin-bottom: 0.5rem;
   color: var(--text-primary);
 }
 
-.form-container p,
-.overlay-panel p {
+.auth-container .form-container p,
+.auth-container .overlay-panel p {
   font: var(--font-text-2);
   color: var(--text-subtitle);
   margin-bottom: 1.5rem;
@@ -62,8 +62,8 @@
 }
 
 /* CORRECCIÓN: Estilo de Inputs (Línea inferior como tenías antes) */
-.form-container input,
-.form-container select {
+.auth-container .form-container input,
+.auth-container .form-container select {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid var(--color-grisclaro, #ccc);
@@ -75,8 +75,8 @@
   transition: border-color 0.3s;
 }
 
-.form-container input:focus,
-.form-container select:focus {
+.auth-container .form-container input:focus,
+.auth-container .form-container select:focus {
   border-bottom-color: var(--text-primary);
 }
 
@@ -108,20 +108,25 @@
 /* --- LOGICA DE MOVIMIENTO --- */
 
 /* Login: Ocupa la mitad izquierda por defecto */
-.sign-in-container {
+.auth-container .sign-in-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
   left: 0;
   width: 50%;
   z-index: 2;
 }
 
 /* Registro: Inicialmente oculto a la derecha/atrás */
-.sign-up-container {
+.auth-container .sign-up-container {
+  position: absolute;
+  top: 0;
+  height: 100%;
   left: 0;
   width: 50%;
   opacity: 0;
   z-index: 1;
 }
-
 /* ESTADO ACTIVO (Cuando JS añade la clase .right-panel-active) */
 .auth-container.right-panel-active .sign-in-container {
   transform: translateX(100%);
@@ -151,7 +156,7 @@
 
 /* --- OVERLAY (La Imagen) --- */
 
-.overlay-container {
+.auth-container .overlay-container {
   position: absolute;
   top: 0;
   left: 50%;
@@ -166,7 +171,7 @@
   transform: translateX(-100%);
 }
 
-.overlay {
+.auth-container .overlay {
   background: linear-gradient(rgba(255, 255, 255, 0.50),
       rgba(255, 255, 255, 0.50)),
     url('../img/LoginBackgroundPage2.png') no-repeat center center;
@@ -186,7 +191,7 @@
   transform: translateX(50%);
 }
 
-.overlay-panel {
+.auth-container .overlay-panel {
   position: absolute;
   display: flex;
   align-items: center;
@@ -205,7 +210,7 @@
    TEXTOS DEL OVERLAY (IMAGEN) - AUMENTO DE VISIBILIDAD
 ========================================================= */
 
-.overlay-panel h1 {
+.auth-container .overlay-panel h1 {
   font: var(--font-text-1);
   color: #111111;
 
@@ -216,7 +221,7 @@
   letter-spacing: -0.5px;
 }
 
-.overlay-panel p {
+.auth-container .overlay-panel p {
   font: var(--font-text-2);
   color: #111111;
 
@@ -228,11 +233,11 @@
   max-width: 80%;
 }
 
-.overlay-left {
+.auth-container .overlay-left {
   transform: translateX(-20%);
 }
 
-.overlay-right {
+.auth-container .overlay-right {
   right: 0;
   transform: translateX(0);
 }
@@ -246,7 +251,7 @@
 }
 
 /* Botones dentro de la imagen (Ghost Buttons) */
-button.ghost {
+.auth-container button.ghost {
   background-color: transparent;
   border-color: #111111;
   color: #111111;
@@ -262,12 +267,14 @@ button.ghost {
   transition: background-color 0.3s ease;
 }
 
-button.ghost:hover {
+.auth-container button.ghost:hover {
   background-color: #333333;
+  color:#FAFAFA;
+  border-color:#333333;
 }
 
 /* --- RESPONSIVE (Móvil) --- */
-.mobile-toggle {
+.auth-container .mobile-toggle {
   display: none;
   margin-top: 20px;
   font-size: 0.9rem;
@@ -281,24 +288,24 @@ button.ghost:hover {
     box-shadow: none;
   }
 
-  .overlay-container {
+  .auth-container .overlay-container {
     display: none;
   }
 
-  .sign-in-container,
-  .sign-up-container {
+  .auth-container .sign-in-container,
+  .auth-container .sign-up-container {
     width: 100%;
     position: absolute;
     left: 0;
   }
 
-  .sign-up-container {
+  .auth-container .sign-up-container {
     z-index: 1;
     opacity: 0;
     transform: translateX(0) !important;
   }
 
-  .sign-in-container {
+  .auth-container .sign-in-container {
     z-index: 2;
   }
 
@@ -314,7 +321,7 @@ button.ghost:hover {
     animation: none;
   }
 
-  .mobile-toggle {
+  .auth-container .mobile-toggle {
     display: block;
   }
 }
@@ -463,156 +470,14 @@ button.ghost:hover {
 }
 
 /* =========================================================
-   AUTH LAYOUT (REGISTER / LOGIN)
+   AUTH · SCOPE (para que no pise otras páginas)
 ========================================================= */
 
-.auth-layout {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--bg-primary);
-}
-
-/* =========================================================
-   COLUMNA IMAGEN
-========================================================= */
-
-.auth-image {
-  position: relative;
-  overflow: hidden;
-  background: var(--bg-secondary);
-}
-
-.auth-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* =========================================================
-   COLUMNA FORMULARIO
-========================================================= */
-
-.auth-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem;
-}
-
-.auth-form-inner {
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-  transform: translateY(-24px);
-}
-
-/* =========================================================
-   LOGO AUTH (SIN CÍRCULO)
-========================================================= */
-
-.auth-logo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 1.25rem;
-}
-
-.auth-logo img {
-  height: 56px;
-  width: auto;
-  display: block;
-  filter: brightness(0);
-}
-
-/* =========================================================
-   TÍTULOS
-========================================================= */
-
-.auth-form h1 {
-  font: var(--font-text-1);
-  font-weight: 600;
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.auth-subtitle {
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-  margin-bottom: 2.5rem;
-}
-
-/* =========================================================
-   FORMULARIO
-========================================================= */
-
-.form-auth {
+.auth-container .form-auth {
   text-align: left;
 }
 
-.form-group {
-  margin-bottom: 1.5rem;
-}
-
-.form-group label {
-  display: block;
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-  margin-bottom: 0.25rem;
-}
-
-.form-group input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid var(--color-grisclaro);
-  padding: 0.5rem 0;
-  font: var(--font-text-1);
-  background: transparent;
-  color: var(--text-primary);
-}
-
-.form-group input::placeholder {
-  color: var(--text-subtitle);
-}
-
-.form-group input:focus {
-  outline: none;
-  border-bottom-color: var(--text-primary);
-}
-
-/* =========================================================
-   BOTÓN PRINCIPAL
-========================================================= */
-
-.form-auth .btn {
-  width: 100%;
-  margin-top: 2rem;
-  background: var(--bg-inverse);
-  color: var(--text-inverse);
-  border-radius: 6px;
-  padding: 0.75rem;
-  font: var(--font-button);
-}
-
-/* =========================================================
-   FOOTER DEL FORMULARIO
-========================================================= */
-
-.auth-footer {
-  margin-top: 2rem;
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-}
-
-.auth-footer a {
-  margin-left: 0.25rem;
-}
-
-/* =========================================================
-   COPYRIGHT
-========================================================= */
-
-.auth-copy {
+.auth-container .auth-copy {
   display: block;
   margin-top: 3rem;
   font: var(--font-text-2);
@@ -620,25 +485,8 @@ button.ghost:hover {
   color: var(--text-subtitle);
 }
 
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-  .auth-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .auth-image {
-    display: none;
-  }
-
-  .auth-form {
-    padding: 2rem;
-  }
-}
-
-.form-group input {
+/* Inputs */
+.auth-container .form-group input {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--color-grisclaro);
@@ -649,45 +497,28 @@ button.ghost:hover {
   transition: border-color 0.25s ease;
 }
 
-.form-group input:hover {
+.auth-container .form-group input:hover {
   border-bottom-color: var(--color-grismedio);
 }
 
-.form-group input:focus {
+.auth-container .form-group input:focus {
   outline: none;
   border-bottom-color: var(--text-primary);
 }
 
-.form-auth .btn {
-  width: 100%;
-  margin-top: 2rem;
-  background: var(--bg-inverse);
-  color: var(--text-inverse);
-  border-radius: 6px;
-  padding: 0.75rem;
-  font: var(--font-button);
-  transition: background-color 0.25s ease;
-}
-
-.form-auth .btn:hover {
-  background: var(--color-grisoscuro-hover);
-}
-
-.auth-footer a {
+/* Links footer */
+.auth-container .auth-footer a {
   margin-left: 0.25rem;
   color: var(--text-primary);
   transition: color 0.25s ease;
-}
-
-.auth-footer a:hover {
-  color: var(--text-secondary);
-}
-
-.auth-footer a {
   position: relative;
 }
 
-.auth-footer a::after {
+.auth-container .auth-footer a:hover {
+  color: var(--text-secondary);
+}
+
+.auth-container .auth-footer a::after {
   content: "";
   position: absolute;
   left: 0;
@@ -700,34 +531,20 @@ button.ghost:hover {
   transition: transform 0.25s ease;
 }
 
-.auth-footer a:hover::after {
+.auth-container .auth-footer a:hover::after {
   transform: scaleX(1);
 }
 
-/* =========================================================
-   AUTH · SIN SCROLL
-========================================================= */
-
-.auth-layout {
-  height: 100vh;
-  overflow: hidden;
-}
-
-/* =========================================================
-   PASSWORD TOGGLE (LOGIN / REGISTER)
-========================================================= */
-
-.form-password {
+/* Password toggle */
+.auth-container .form-password {
   position: relative;
 }
 
-/* El input deja espacio al icono */
-.form-password input {
+.auth-container .form-password input {
   padding-right: 2rem;
 }
 
-/* Botón ojo */
-.toggle-password {
+.auth-container .toggle-password {
   position: absolute;
   right: 0;
   top: 50%;
@@ -736,27 +553,21 @@ button.ghost:hover {
   border: none;
   padding: 0;
   cursor: pointer;
-
   color: var(--text-subtitle);
   font-size: 0.9rem;
   transition: color 0.25s ease;
 }
 
-/* Hover */
-.toggle-password:hover {
+.auth-container .toggle-password:hover {
   color: var(--text-secondary);
 }
 
-/* Icono */
-.toggle-password i {
+.auth-container .toggle-password i {
   pointer-events: none;
 }
 
-/* =========================================================
-   SELECT · AUTH (MISMO ESTILO QUE INPUT)
-========================================================= */
-
-.form-group select {
+/* Select nativo */
+.auth-container .form-group select {
   width: 100%;
   border: none;
   border-bottom: 1px solid var(--color-grisclaro);
@@ -769,148 +580,53 @@ button.ghost:hover {
   transition: border-color 0.25s ease;
 }
 
-/* Hover */
-.form-group select:hover {
+.auth-container .form-group select:hover {
   border-bottom-color: var(--color-grismedio);
 }
 
-/* Focus */
-.form-group select:focus {
+.auth-container .form-group select:focus {
   outline: none;
   border-bottom-color: var(--text-primary);
 }
 
-/* Placeholder */
-.form-group select:invalid {
+.auth-container .form-group select:invalid {
   color: var(--text-subtitle);
 }
 
-/* =========================================================
-   SELECT · AUTH 
-========================================================= */
-
-.form-select {
-  position: relative;
-  width: 100%;
-  /* Aseguramos que tenga el mismo margen que los inputs normales */
-  margin-bottom: 1.5rem;
-}
-
-/* Select base */
-.form-select select {
-  width: 100%;
-
-  /* 1. FORZAR TRANSPARENCIA */
-  background-color: transparent !important;
-  background-image: none;
-
-  /* 2. BORDES Y ESTILO (Solo línea inferior) */
-  border: none;
-  border-bottom: 1px solid var(--color-grisclaro);
-  border-radius: 0;
-  /* CRUCIAL: Elimina el fondo blanco redondeado en iPhone/iPad */
-
-  /* 3. ESPACIADO */
-  padding: 0.5rem 2rem 0.5rem 0;
-  /* 2rem a la derecha para que el texto no toque la flecha */
-
-  /* 4. FUENTES */
-  font: var(--font-text-1);
-  color: var(--text-primary);
-
-  /* 5. ELIMINAR UI NATIVA */
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-
-  cursor: pointer;
-  outline: none;
-  transition: border-color 0.25s ease;
-}
-
-/* Hover */
-.form-select select:hover {
-  border-bottom-color: var(--color-grismedio);
-}
-
-/* Focus (Al hacer clic) */
-.form-select select:focus {
-  border-bottom-color: var(--text-primary);
-}
-
-/* Placeholder visual (Color gris cuando no se ha seleccionado nada) */
-.form-select select:required:invalid {
-  color: var(--text-subtitle);
-}
-
-/* Las opciones desplegadas siempre deben tener fondo para leerse (esto es nativo) */
-.form-select select option {
-  color: #000;
-  background: #fff;
-}
-
-/* TU FLECHA ORIGINAL (Alineada perfectamente) */
-.form-select::after {
-  content: "▾";
-  position: absolute;
-  right: 0;
-
-  /* Centrado vertical matemático */
-  top: 50%;
-  transform: translateY(-50%);
-
-  font-size: 1rem;
-  /* Un pelín más grande para que se vea bien */
-  color: var(--text-secondary);
-  pointer-events: none;
-  /* Permite hacer clic en la flecha y que se abra el select */
-}
-
-/* =========================================================
-   CUSTOM SELECT (Fake Select para estilos avanzados)
-========================================================= */
-
-.custom-select-wrapper {
+/* Select custom (fake) */
+.auth-container .custom-select-wrapper {
   position: relative;
   width: 100%;
   margin-bottom: 1.5rem;
+  -webkit-user-select: none;
   user-select: none;
 }
 
-/* EL BOTÓN PRINCIPAL (Cerrado) */
-.custom-select-trigger {
+.auth-container .custom-select-trigger {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-
   width: 100%;
   padding: 10px 0;
   padding-right: 20px;
-  /* Espacio para flecha */
-
   font: var(--font-text-1);
   color: var(--text-subtitle);
-  /* Color inicial (placeholder) */
-
   background: transparent;
   border-bottom: 1px solid var(--color-grisclaro);
   cursor: pointer;
   transition: all 0.3s ease;
 }
 
-/* Cuando tiene un valor seleccionado (se pone negro) */
-.custom-select-trigger.has-value {
+.auth-container .custom-select-trigger.has-value {
   color: var(--text-primary);
 }
 
-/* La flecha hecha con CSS */
-.custom-select-trigger .arrow {
+.auth-container .custom-select-trigger .arrow {
   position: absolute;
   right: 0;
   top: 50%;
   transform: translateY(-60%) rotate(45deg);
-
   width: 8px;
   height: 8px;
   border-right: 2px solid var(--text-subtitle);
@@ -918,265 +634,53 @@ button.ghost:hover {
   transition: transform 0.3s;
 }
 
-/* Girar flecha cuando está abierto */
-.custom-select-wrapper.open .arrow {
+.auth-container .custom-select-wrapper.open .arrow {
   transform: translateY(-20%) rotate(225deg);
   border-color: var(--text-primary);
 }
 
-/* EL DESPLEGABLE (Abierto) */
-.custom-options {
+.auth-container .custom-options {
   position: absolute;
   top: 100%;
-  /* Justo debajo del input */
   left: 0;
   right: 0;
   z-index: 10;
-
-  /* ESTILOS DE TRANSPARENCIA Y LÍNEAS */
   background: #FAFAFA;
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   border: 1px solid var(--color-grisclaro);
   border-top: none;
   border-radius: 0 0 8px 8px;
-
-  /* Animación de entrada */
   opacity: 0;
   visibility: hidden;
   transform: translateY(-10px);
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-/* Estado abierto */
-.custom-select-wrapper.open .custom-options {
+.auth-container .custom-select-wrapper.open .custom-options {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
 }
 
-/* LAS OPCIONES INDIVIDUALES */
-.custom-option {
+.auth-container .custom-option {
   display: block;
   padding: 12px 15px;
   font: var(--font-text-1);
   color: var(--text-primary);
   cursor: pointer;
   text-align: left;
-
-  /* LÍNEA SEPARADORA */
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   transition: background 0.2s;
 }
 
-/* Quitar borde al último */
-.custom-option:last-child {
+.auth-container .custom-option:last-child {
   border-bottom: none;
 }
 
-.custom-option:hover {
+.auth-container .custom-option:hover {
   background: rgba(0, 0, 0, 0.05);
-  /* Hover sutil */
   color: #000;
-}
-
-/* =========================================================
-   AUTH LAYOUT (LOGIN / REGISTER)
-========================================================= */
-
-.auth-layout {
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--bg-primary);
-  overflow: hidden;
-  /* elimina scroll */
-}
-
-/* =========================================================
-   COLUMNA IZQUIERDA · FORMULARIO
-========================================================= */
-
-.auth-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 4rem;
-}
-
-.auth-form-inner {
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-}
-
-/* Logo */
-.auth-logo {
-  margin-bottom: 1.5rem;
-}
-
-.auth-logo img {
-  height: 48px;
-  width: auto;
-}
-
-/* Títulos */
-.auth-form h1 {
-  font: var(--font-h2);
-  color: var(--text-primary);
-  margin-bottom: 0.25rem;
-}
-
-.auth-subtitle {
-  font: var(--font-text-1);
-  color: var(--text-subtitle);
-  margin-bottom: 2.5rem;
-}
-
-/* =========================================================
-   FORMULARIO
-========================================================= */
-
-.form-auth {
-  text-align: left;
-}
-
-/* Grupos */
-.form-group {
-  margin-bottom: 1.75rem;
-}
-
-.form-group label {
-  display: block;
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-  margin-bottom: 0.25rem;
-}
-
-/* Inputs */
-.form-group input {
-  width: 100%;
-  border: none;
-  border-bottom: 1px solid var(--color-grisclaro);
-  padding: 0.5rem 0;
-  font: var(--font-text-1);
-  background: transparent;
-  color: var(--text-primary);
-  transition: border-color 0.25s ease;
-}
-
-.form-group input:hover {
-  border-bottom-color: var(--color-grismedio);
-}
-
-.form-group input:focus {
-  outline: none;
-  border-bottom-color: var(--text-primary);
-}
-
-/* =========================================================
-   OPCIONES (REMEMBER / FORGOT)
-========================================================= */
-
-.auth-options {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 1.25rem 0 2rem;
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-}
-
-/* Remember me */
-.remember-me {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  cursor: pointer;
-}
-
-.remember-me input {
-  accent-color: var(--text-primary);
-}
-
-/* Forgot password */
-.forgot-password {
-  color: var(--text-subtitle);
-  transition: color 0.2s ease;
-}
-
-.forgot-password:hover {
-  color: var(--text-primary);
-}
-
-/* =========================================================
-   BOTÓN
-========================================================= */
-
-.form-auth .btn {
-  width: 100%;
-  margin-top: 0.5rem;
-  padding: 0.75rem;
-  background: var(--bg-inverse);
-  color: var(--text-inverse);
-  border-radius: 6px;
-  font: var(--font-button);
-  transition: opacity 0.2s ease;
-}
-
-.form-auth .btn:hover {
-  opacity: 0.85;
-}
-
-/* =========================================================
-   FOOTER AUTH
-========================================================= */
-
-.auth-footer {
-  margin-top: 2rem;
-  text-align: center;
-  font: var(--font-text-2);
-  color: var(--text-subtitle);
-}
-
-.auth-footer a {
-  color: var(--text-primary);
-}
-
-.auth-footer a:hover {
-  text-decoration: underline;
-}
-
-.auth-copy {
-  display: block;
-  margin-top: 1.75rem;
-  font-size: 0.7rem;
-  color: var(--text-subtitle);
-}
-
-/* =========================================================
-   COLUMNA DERECHA · IMAGEN
-========================================================= */
-
-.auth-image {
-  background: var(--bg-secondary);
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-  .auth-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .auth-image {
-    display: none;
-  }
-
-  .auth-form {
-    padding: 2rem;
-  }
 }
 
 /* ===============================
@@ -1599,5 +1103,159 @@ button.ghost:hover {
 @media (max-width: 600px) {
   .artists-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================================
+   OBRA DETALLE · OVERRIDE DE CONTAINER (solo esta página)
+========================================================= */
+body[data-page="obra-detalle"] .container{
+  max-width: 1392px; /* 549 + 843 */
+}
+
+
+
+/* ===========================
+   OBRA DETALLE (Figma limpio)
+=========================== */
+
+/* OBRA DETALLE (Figma limpio) */
+body[data-page="obra-detalle"] .main{
+  padding-top: 60px;   /* aire bajo topbar */
+  padding-bottom: 72px;
+}
+
+body[data-page="obra-detalle"] main.main .container{
+  display: grid;
+  grid-template-columns: 549px 843px; /* Figma */
+  gap: 40px;
+  align-items: start;  
+}
+
+
+/* Texto */
+body[data-page="obra-detalle"] .details__author{
+  font-family: "Marcellus", serif;
+  font-size: 48px;
+  line-height: 60px;
+  margin: 0 0 10px;
+}
+
+body[data-page="obra-detalle"] .details__name{
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 36px;
+  line-height: 44px;
+  margin: 0 0 18px;
+  color: #131927;
+}
+
+body[data-page="obra-detalle"] .details__desc{
+  max-width: 489px;     /* Figma */
+  font-family: "Inter", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  color: #8C8C8C;
+}
+
+/* Botones */
+body[data-page="obra-detalle"] .details__buttons{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px; /* separación tipo Figma */
+  margin-top: 28px;
+}
+
+/* Botones SOLO de obra-detalle (no toca el .btn global) */
+body[data-page="obra-detalle"] .details__btn{
+  width: 210px;
+  height: 32px;
+  padding: 0 16px;
+  border-radius: 0;
+  background: #111111;
+  color: #FAFAFA;
+  border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+
+
+/* Si existe .btn--primary global, lo neutralizamos aquí también */
+body[data-page="obra-detalle"] .details__buttons .btn--primary{
+  background: #111111 !important;
+  color: #FAFAFA !important;
+  border: 0 !important;
+}
+
+
+/* Iconos debajo */
+body[data-page="obra-detalle"] .details__icons{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+body[data-page="obra-detalle"] .details__icons .icon-btn{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body[data-page="obra-detalle"] .details__icons svg{
+  width: 22px;
+  height: 22px;
+}
+
+/* Imagen */
+body[data-page="obra-detalle"] .art__frame{
+  width: 100%;
+}
+
+body[data-page="obra-detalle"] .art__img{
+  width: 100%;
+  height: 701px;       /* Figma */
+  object-fit: cover;
+  display: block;
+}
+
+/* Relacionadas */
+body[data-page="obra-detalle"] .related{
+  padding-top: 64px;
+  padding-bottom: 96px;
+}
+
+body[data-page="obra-detalle"] .related__title{
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  color: #303030;
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+/* Responsive */
+@media (max-width: 1100px){
+  body[data-page="obra-detalle"] main.main .container{
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="obra-detalle"] .art__img{
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 }
