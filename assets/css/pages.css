@@ -1686,6 +1686,64 @@ button.ghost:hover {
   color: var(--bg-inverse);
 }
 
+/* =========================================================
+   BOTÓN VOLVER (BACK LINK)
+========================================================= */
+
+.back-link {
+  position: absolute;
+  top: 40px;
+  /* Espacio desde arriba */
+  left: 40px;
+  /* Espacio desde la izquierda */
+  z-index: 1000;
+  /* Asegura que esté por encima de todo */
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* Espacio entre flecha y texto */
+
+  text-decoration: none;
+  font-family: var(--font-text-1, sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  color: var(--text-subtitle);
+  /* Gris sutil por defecto */
+
+  transition: all 0.3s ease;
+}
+
+.back-link i {
+  font-size: 1rem;
+  transition: transform 0.3s ease;
+}
+
+/* Efecto Hover: Se pone negro y la flecha se mueve */
+.back-link:hover {
+  color: var(--text-primary);
+  /* Negro */
+}
+
+.back-link:hover i {
+  transform: translateX(-4px);
+  /* Pequeña animación hacia la izquierda */
+}
+
+/* RESPONSIVE: En móviles lo ajustamos para que no choque */
+@media (max-width: 768px) {
+  .back-link {
+    top: 20px;
+    left: 20px;
+  }
+
+  /* Opcional: En móvil ocultamos el texto y dejamos solo la flecha para ahorrar espacio */
+  .back-link span {
+    display: none;
+  }
+}
+
 /* ===============================
    RESPONSIVE
 =============================== */
