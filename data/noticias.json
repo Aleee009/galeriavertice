@@ -1,0 +1,716 @@
+{
+  "noticias": [
+    {
+      "id": 1,
+      "titulo": "Lucía Moreno presenta una nueva serie de paisajes digitales en Barcelona",
+      "slug": "lucia-moreno-nueva-serie-paisajes-digitales-barcelona",
+      "extracto": "La artista explora entornos urbanos sintéticos mediante composición 3D y narrativa visual contemporánea.",
+      "imagen": "noticia-lucia-moreno-1.jpg",
+      "fecha": "2026-01-15",
+      "categoria": "Arte Digital",
+      "artistaId": 1,
+      "destacada": true
+    },
+    {
+      "id": 2,
+      "titulo": "El proceso creativo de Lucía Moreno: estructura, ciudad y luz",
+      "slug": "proceso-creativo-lucia-moreno-estructura-ciudad-luz",
+      "extracto": "Un recorrido por la metodología visual de la artista y su forma de construir paisajes contemporáneos.",
+      "imagen": "noticia-lucia-moreno-2.jpg",
+      "fecha": "2026-02-03",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 1,
+      "destacada": false
+    },
+    {
+      "id": 3,
+      "titulo": "Lucía Moreno amplía su lenguaje visual con nuevas técnicas digitales",
+      "slug": "lucia-moreno-amplia-lenguaje-visual-tecnicas-digitales",
+      "extracto": "La artista incorpora nuevos procesos experimentales a su práctica digital.",
+      "imagen": "noticia-lucia-moreno-3.jpg",
+      "fecha": "2026-03-10",
+      "categoria": "Arte Digital",
+      "artistaId": 1,
+      "destacada": false
+    },
+
+    {
+      "id": 4,
+      "titulo": "Daniel Ortiz presenta una nueva serie ilustrada de enfoque figurativo",
+      "slug": "daniel-ortiz-nueva-serie-ilustrada-enfoque-figurativo",
+      "extracto": "La figura humana vuelve a ser el eje central en la última producción del ilustrador mexicano.",
+      "imagen": "noticia-daniel-ortiz-1.jpg",
+      "fecha": "2026-01-18",
+      "categoria": "Ilustración",
+      "artistaId": 2,
+      "destacada": true
+    },
+    {
+      "id": 5,
+      "titulo": "Narrativa visual y simbolismo en la obra reciente de Daniel Ortiz",
+      "slug": "narrativa-visual-simbolismo-daniel-ortiz",
+      "extracto": "Un análisis del lenguaje conceptual presente en sus ilustraciones más recientes.",
+      "imagen": "noticia-daniel-ortiz-2.jpg",
+      "fecha": "2026-02-12",
+      "categoria": "Arte Conceptual",
+      "artistaId": 2,
+      "destacada": false
+    },
+    {
+      "id": 6,
+      "titulo": "Daniel Ortiz reflexiona sobre dibujo digital y expresión contemporánea",
+      "slug": "daniel-ortiz-reflexiona-dibujo-digital-expresion-contemporanea",
+      "extracto": "El artista profundiza en el equilibrio entre técnica y contenido visual.",
+      "imagen": "noticia-daniel-ortiz-3.jpg",
+      "fecha": "2026-03-08",
+      "categoria": "Ilustración",
+      "artistaId": 2,
+      "destacada": false
+    },
+
+    {
+      "id": 7,
+      "titulo": "Sofia Klein explora nuevas estructuras geométricas generativas",
+      "slug": "sofia-klein-estructuras-geometricas-generativas",
+      "extracto": "La artista investiga la relación entre algoritmo, forma y percepción del color.",
+      "imagen": "noticia-sofia-klein-1.jpg",
+      "fecha": "2026-01-22",
+      "categoria": "Arte Generativo",
+      "artistaId": 3,
+      "destacada": true
+    },
+    {
+      "id": 8,
+      "titulo": "Minimalismo y percepción cromática en la obra de Sofia Klein",
+      "slug": "minimalismo-percepcion-cromatica-sofia-klein",
+      "extracto": "Una aproximación al uso del color y la geometría en su producción reciente.",
+      "imagen": "noticia-sofia-klein-2.jpg",
+      "fecha": "2026-02-17",
+      "categoria": "Abstracto",
+      "artistaId": 3,
+      "destacada": false
+    },
+    {
+      "id": 9,
+      "titulo": "Sofia Klein presenta un nuevo sistema visual basado en repetición",
+      "slug": "sofia-klein-sistema-visual-repeticion",
+      "extracto": "La artista desarrolla patrones visuales mediante procesos generativos.",
+      "imagen": "noticia-sofia-klein-3.jpg",
+      "fecha": "2026-03-14",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 3,
+      "destacada": false
+    },
+
+    {
+      "id": 10,
+      "titulo": "Marco Bellini revisita la pintura contemporánea desde la tradición clásica",
+      "slug": "marco-bellini-pintura-contemporanea-tradicion-clasica",
+      "extracto": "El artista italiano conecta arquitectura y pintura en su obra reciente.",
+      "imagen": "noticia-marco-bellini-1.jpg",
+      "fecha": "2026-01-20",
+      "categoria": "Pintura",
+      "artistaId": 4,
+      "destacada": true
+    },
+    {
+      "id": 11,
+      "titulo": "Arquitectura y composición en la obra pictórica de Marco Bellini",
+      "slug": "arquitectura-composicion-marco-bellini",
+      "extracto": "Un análisis del equilibrio formal presente en sus últimas pinturas.",
+      "imagen": "noticia-marco-bellini-2.jpg",
+      "fecha": "2026-02-18",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 4,
+      "destacada": false
+    },
+    {
+      "id": 12,
+      "titulo": "Marco Bellini presenta una nueva serie de óleos en Milán",
+      "slug": "marco-bellini-nueva-serie-oleos-milan",
+      "extracto": "La pintura tradicional dialoga con el espacio urbano contemporáneo.",
+      "imagen": "noticia-marco-bellini-3.jpg",
+      "fecha": "2026-03-22",
+      "categoria": "Pintura",
+      "artistaId": 4,
+      "destacada": false
+    },
+
+    {
+      "id": 13,
+      "titulo": "Claire Dubois investiga el equilibrio formal en su nueva producción",
+      "slug": "claire-dubois-equilibrio-formal-nueva-produccion",
+      "extracto": "Minimalismo y abstracción se combinan en la obra reciente de la artista francesa.",
+      "imagen": "noticia-claire-dubois-1.jpg",
+      "fecha": "2026-01-25",
+      "categoria": "Minimalismo",
+      "artistaId": 5,
+      "destacada": true
+    },
+    {
+      "id": 14,
+      "titulo": "Silencio visual y composición en la obra de Claire Dubois",
+      "slug": "silencio-visual-composicion-claire-dubois",
+      "extracto": "Una reflexión sobre el espacio y la contención formal.",
+      "imagen": "noticia-claire-dubois-2.jpg",
+      "fecha": "2026-02-20",
+      "categoria": "Abstracto",
+      "artistaId": 5,
+      "destacada": false
+    },
+    {
+      "id": 15,
+      "titulo": "Claire Dubois amplía su trabajo hacia el arte digital",
+      "slug": "claire-dubois-amplia-trabajo-arte-digital",
+      "extracto": "La artista introduce nuevos soportes manteniendo su lenguaje minimalista.",
+      "imagen": "noticia-claire-dubois-3.jpg",
+      "fecha": "2026-03-25",
+      "categoria": "Arte Digital",
+      "artistaId": 5,
+      "destacada": false
+    },
+
+    {
+      "id": 16,
+      "titulo": "Jonas Richter explora estructuras abstractas experimentales",
+      "slug": "jonas-richter-estructuras-abstractas-experimentales",
+      "extracto": "El artista alemán profundiza en procesos visuales no convencionales.",
+      "imagen": "noticia-jonas-richter-1.jpg",
+      "fecha": "2026-01-28",
+      "categoria": "Arte Experimental",
+      "artistaId": 6,
+      "destacada": true
+    },
+    {
+      "id": 17,
+      "titulo": "La abstracción como sistema visual en la obra de Jonas Richter",
+      "slug": "abstraccion-sistema-visual-jonas-richter",
+      "extracto": "Un análisis de ritmo, estructura y variación en su producción reciente.",
+      "imagen": "noticia-jonas-richter-2.jpg",
+      "fecha": "2026-02-24",
+      "categoria": "Abstracto",
+      "artistaId": 6,
+      "destacada": false
+    },
+    {
+      "id": 18,
+      "titulo": "Jonas Richter presenta nuevas piezas de arte digital experimental",
+      "slug": "jonas-richter-nuevas-piezas-arte-digital-experimental",
+      "extracto": "La obra digital como campo de investigación visual.",
+      "imagen": "noticia-jonas-richter-3.jpg",
+      "fecha": "2026-03-28",
+      "categoria": "Arte Digital",
+      "artistaId": 6,
+      "destacada": false
+    },
+
+    {
+      "id": 19,
+      "titulo": "Valentina Russo presenta una serie centrada en la figura humana",
+      "slug": "valentina-russo-serie-figura-humana",
+      "extracto": "Ilustración y concepto se unen en su nuevo trabajo.",
+      "imagen": "noticia-valentina-russo-1.jpg",
+      "fecha": "2026-01-30",
+      "categoria": "Ilustración",
+      "artistaId": 7,
+      "destacada": true
+    },
+    {
+      "id": 20,
+      "titulo": "La ilustración conceptual en la obra reciente de Valentina Russo",
+      "slug": "ilustracion-conceptual-valentina-russo",
+      "extracto": "Un enfoque contemporáneo de la representación humana.",
+      "imagen": "noticia-valentina-russo-2.jpg",
+      "fecha": "2026-02-26",
+      "categoria": "Arte Conceptual",
+      "artistaId": 7,
+      "destacada": false
+    },
+    {
+      "id": 21,
+      "titulo": "Valentina Russo amplía su lenguaje gráfico",
+      "slug": "valentina-russo-amplia-lenguaje-grafico",
+      "extracto": "Nuevas técnicas de dibujo y composición en su trabajo más reciente.",
+      "imagen": "noticia-valentina-russo-3.jpg",
+      "fecha": "2026-03-30",
+      "categoria": "Ilustración",
+      "artistaId": 7,
+      "destacada": false
+    },
+
+    {
+      "id": 22,
+      "titulo": "Hugo Lambert documenta nuevas geometrías urbanas en Bruselas",
+      "slug": "hugo-lambert-geometrias-urbanas-bruselas",
+      "extracto": "La arquitectura como eje central de su fotografía urbana.",
+      "imagen": "noticia-hugo-lambert-1.jpg",
+      "fecha": "2026-02-01",
+      "categoria": "Fotografía",
+      "artistaId": 8,
+      "destacada": true
+    },
+    {
+      "id": 23,
+      "titulo": "Composición arquitectónica y ciudad en la obra de Hugo Lambert",
+      "slug": "composicion-arquitectonica-ciudad-hugo-lambert",
+      "extracto": "Una exploración visual del espacio urbano contemporáneo.",
+      "imagen": "noticia-hugo-lambert-2.jpg",
+      "fecha": "2026-03-02",
+      "categoria": "Fotografía Urbana",
+      "artistaId": 8,
+      "destacada": false
+    },
+    {
+      "id": 24,
+      "titulo": "Hugo Lambert presenta una nueva serie fotográfica en gran formato",
+      "slug": "hugo-lambert-nueva-serie-fotografica-gran-formato",
+      "extracto": "La ciudad reinterpretada desde la geometría y la escala.",
+      "imagen": "noticia-hugo-lambert-3.jpg",
+      "fecha": "2026-04-01",
+      "categoria": "Fotografía",
+      "artistaId": 8,
+      "destacada": false
+    },
+
+    {
+      "id": 25,
+      "titulo": "Marta Kowalska explora la relación entre forma y emoción",
+      "slug": "marta-kowalska-relacion-forma-emocion",
+      "extracto": "La artista profundiza en procesos expresivos contemporáneos.",
+      "imagen": "noticia-marta-kowalska-1.jpg",
+      "fecha": "2026-02-05",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 9,
+      "destacada": true
+    },
+    {
+      "id": 26,
+      "titulo": "Gestualidad y abstracción en la obra reciente de Marta Kowalska",
+      "slug": "gestualidad-abstraccion-marta-kowalska",
+      "extracto": "Un análisis del uso del color y la forma en su pintura.",
+      "imagen": "noticia-marta-kowalska-2.jpg",
+      "fecha": "2026-03-05",
+      "categoria": "Abstracto",
+      "artistaId": 9,
+      "destacada": false
+    },
+    {
+      "id": 27,
+      "titulo": "Marta Kowalska presenta nuevas obras de arte mixto",
+      "slug": "marta-kowalska-nuevas-obras-arte-mixto",
+      "extracto": "La artista amplía su investigación visual mediante nuevos materiales.",
+      "imagen": "noticia-marta-kowalska-3.jpg",
+      "fecha": "2026-04-05",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 9,
+      "destacada": false
+    },
+
+    {
+      "id": 28,
+      "titulo": "Andrés Vega investiga sistemas visuales generativos",
+      "slug": "andres-vega-sistemas-visuales-generativos",
+      "extracto": "El artista chileno explora estética tecnológica y procesos algorítmicos.",
+      "imagen": "noticia-andres-vega-1.jpg",
+      "fecha": "2026-02-08",
+      "categoria": "Arte Generativo",
+      "artistaId": 10,
+      "destacada": true
+    },
+    {
+      "id": 29,
+      "titulo": "Lenguaje digital y abstracción en la obra de Andrés Vega",
+      "slug": "lenguaje-digital-abstraccion-andres-vega",
+      "extracto": "Un enfoque contemporáneo de la visualidad digital.",
+      "imagen": "noticia-andres-vega-2.jpg",
+      "fecha": "2026-03-08",
+      "categoria": "Arte Digital",
+      "artistaId": 10,
+      "destacada": false
+    },
+    {
+      "id": 30,
+      "titulo": "Andrés Vega presenta nuevas piezas generativas",
+      "slug": "andres-vega-nuevas-piezas-generativas",
+      "extracto": "La programación como herramienta creativa.",
+      "imagen": "noticia-andres-vega-3.jpg",
+      "fecha": "2026-04-08",
+      "categoria": "Arte Generativo",
+      "artistaId": 10,
+      "destacada": false
+    },
+
+    {
+      "id": 31,
+      "titulo": "Nina Hoffmann explora ritmo y equilibrio en su pintura abstracta",
+      "slug": "nina-hoffmann-ritmo-equilibrio-pintura-abstracta",
+      "extracto": "La artista desarrolla nuevas composiciones basadas en el color.",
+      "imagen": "noticia-nina-hoffmann-1.jpg",
+      "fecha": "2026-02-10",
+      "categoria": "Pintura Abstracta",
+      "artistaId": 11,
+      "destacada": true
+    },
+    {
+      "id": 32,
+      "titulo": "Color y cadencia visual en la obra reciente de Nina Hoffmann",
+      "slug": "color-cadencia-visual-nina-hoffmann",
+      "extracto": "Una reflexión sobre estructura y gesto pictórico.",
+      "imagen": "noticia-nina-hoffmann-2.jpg",
+      "fecha": "2026-03-10",
+      "categoria": "Abstracto",
+      "artistaId": 11,
+      "destacada": false
+    },
+    {
+      "id": 33,
+      "titulo": "Nina Hoffmann presenta una nueva serie pictórica en Viena",
+      "slug": "nina-hoffmann-nueva-serie-pictorica-viena",
+      "extracto": "La pintura abstracta como espacio de equilibrio visual.",
+      "imagen": "noticia-nina-hoffmann-3.jpg",
+      "fecha": "2026-04-10",
+      "categoria": "Pintura",
+      "artistaId": 11,
+      "destacada": false
+    },
+
+    {
+      "id": 34,
+      "titulo": "Samuel Brooks combina abstracción y lenguaje contemporáneo",
+      "slug": "samuel-brooks-abstraccion-lenguaje-contemporaneo",
+      "extracto": "El artista explora nuevas formas de expresión visual.",
+      "imagen": "noticia-samuel-brooks-1.jpg",
+      "fecha": "2026-02-12",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 12,
+      "destacada": true
+    },
+    {
+      "id": 35,
+      "titulo": "Procesos pictóricos y digitales en la obra de Samuel Brooks",
+      "slug": "procesos-pictoricos-digitales-samuel-brooks",
+      "extracto": "Un diálogo entre pintura y medios digitales.",
+      "imagen": "noticia-samuel-brooks-2.jpg",
+      "fecha": "2026-03-12",
+      "categoria": "Arte Digital",
+      "artistaId": 12,
+      "destacada": false
+    },
+    {
+      "id": 36,
+      "titulo": "Samuel Brooks presenta nuevas obras híbridas",
+      "slug": "samuel-brooks-nuevas-obras-hibridas",
+      "extracto": "La convergencia de técnicas como eje creativo.",
+      "imagen": "noticia-samuel-brooks-3.jpg",
+      "fecha": "2026-04-12",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 12,
+      "destacada": false
+    },
+
+    {
+      "id": 37,
+      "titulo": "Irene Papadopoulos revisita la figura humana desde la tradición clásica",
+      "slug": "irene-papadopoulos-figura-humana-tradicion-clasica",
+      "extracto": "La pintura figurativa como puente entre pasado y presente.",
+      "imagen": "noticia-irene-papadopoulos-1.jpg",
+      "fecha": "2026-02-14",
+      "categoria": "Pintura",
+      "artistaId": 13,
+      "destacada": true
+    },
+    {
+      "id": 38,
+      "titulo": "La influencia clásica en la obra contemporánea de Irene Papadopoulos",
+      "slug": "influencia-clasica-obra-irene-papadopoulos",
+      "extracto": "Un análisis del lenguaje pictórico de la artista.",
+      "imagen": "noticia-irene-papadopoulos-2.jpg",
+      "fecha": "2026-03-14",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 13,
+      "destacada": false
+    },
+    {
+      "id": 39,
+      "titulo": "Irene Papadopoulos presenta nuevos óleos figurativos",
+      "slug": "irene-papadopoulos-nuevos-oleos-figurativos",
+      "extracto": "La figura humana como centro de su investigación visual.",
+      "imagen": "noticia-irene-papadopoulos-3.jpg",
+      "fecha": "2026-04-14",
+      "categoria": "Pintura",
+      "artistaId": 13,
+      "destacada": false
+    },
+
+    {
+      "id": 40,
+      "titulo": "Leo Nakamura explora la abstracción tecnológica desde el minimalismo",
+      "slug": "leo-nakamura-abstraccion-tecnologica-minimalismo",
+      "extracto": "La estética digital como lenguaje contemporáneo.",
+      "imagen": "noticia-leo-nakamura-1.jpg",
+      "fecha": "2026-02-16",
+      "categoria": "Arte Digital",
+      "artistaId": 14,
+      "destacada": true
+    },
+    {
+      "id": 41,
+      "titulo": "Diseño generativo y forma en la obra de Leo Nakamura",
+      "slug": "diseno-generativo-forma-leo-nakamura",
+      "extracto": "Procesos algorítmicos aplicados a la creación visual.",
+      "imagen": "noticia-leo-nakamura-2.jpg",
+      "fecha": "2026-03-16",
+      "categoria": "Arte Generativo",
+      "artistaId": 14,
+      "destacada": false
+    },
+    {
+      "id": 42,
+      "titulo": "Leo Nakamura presenta una nueva serie de obras digitales",
+      "slug": "leo-nakamura-nueva-serie-obras-digitales",
+      "extracto": "Minimalismo y tecnología en equilibrio visual.",
+      "imagen": "noticia-leo-nakamura-3.jpg",
+      "fecha": "2026-04-16",
+      "categoria": "Arte Digital",
+      "artistaId": 14,
+      "destacada": false
+    },
+
+    {
+      "id": 43,
+      "titulo": "Paula Ríos investiga color y gesto en su obra reciente",
+      "slug": "paula-rios-color-gesto-obra-reciente",
+      "extracto": "La expresión visual como eje de su pintura contemporánea.",
+      "imagen": "noticia-paula-rios-1.jpg",
+      "fecha": "2026-02-18",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 15,
+      "destacada": true
+    },
+    {
+      "id": 44,
+      "titulo": "Abstracción y emoción en la pintura de Paula Ríos",
+      "slug": "abstraccion-emocion-pintura-paula-rios",
+      "extracto": "Un análisis del uso del color y el gesto pictórico.",
+      "imagen": "noticia-paula-rios-2.jpg",
+      "fecha": "2026-03-18",
+      "categoria": "Abstracto",
+      "artistaId": 15,
+      "destacada": false
+    },
+    {
+      "id": 45,
+      "titulo": "Paula Ríos presenta nuevas obras de arte mixto",
+      "slug": "paula-rios-nuevas-obras-arte-mixto",
+      "extracto": "La experimentación material como parte del proceso creativo.",
+      "imagen": "noticia-paula-rios-3.jpg",
+      "fecha": "2026-04-18",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 15,
+      "destacada": false
+    },
+
+    {
+      "id": 46,
+      "titulo": "Oliver Grant desarrolla nuevas narrativas visuales conceptuales",
+      "slug": "oliver-grant-narrativas-visuales-conceptuales",
+      "extracto": "El arte conceptual como estructura de pensamiento visual.",
+      "imagen": "noticia-oliver-grant-1.jpg",
+      "fecha": "2026-02-20",
+      "categoria": "Arte Conceptual",
+      "artistaId": 16,
+      "destacada": true
+    },
+    {
+      "id": 47,
+      "titulo": "Lenguaje y proceso en la obra reciente de Oliver Grant",
+      "slug": "lenguaje-proceso-obra-oliver-grant",
+      "extracto": "Una reflexión sobre sistemas narrativos contemporáneos.",
+      "imagen": "noticia-oliver-grant-2.jpg",
+      "fecha": "2026-03-20",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 16,
+      "destacada": false
+    },
+    {
+      "id": 48,
+      "titulo": "Oliver Grant presenta nuevas piezas conceptuales",
+      "slug": "oliver-grant-nuevas-piezas-conceptuales",
+      "extracto": "La estructura narrativa como elemento visual.",
+      "imagen": "noticia-oliver-grant-3.jpg",
+      "fecha": "2026-04-20",
+      "categoria": "Arte Conceptual",
+      "artistaId": 16,
+      "destacada": false
+    },
+
+    {
+      "id": 49,
+      "titulo": "Elena Novak explora la abstracción orgánica experimental",
+      "slug": "elena-novak-abstraccion-organica-experimental",
+      "extracto": "Formas fluidas y procesos no lineales definen su trabajo reciente.",
+      "imagen": "noticia-elena-novak-1.jpg",
+      "fecha": "2026-02-22",
+      "categoria": "Arte Experimental",
+      "artistaId": 17,
+      "destacada": true
+    },
+    {
+      "id": 50,
+      "titulo": "Materia y forma en la obra contemporánea de Elena Novak",
+      "slug": "materia-forma-obra-elena-novak",
+      "extracto": "Una investigación visual basada en organicidad y estructura.",
+      "imagen": "noticia-elena-novak-2.jpg",
+      "fecha": "2026-03-22",
+      "categoria": "Abstracto",
+      "artistaId": 17,
+      "destacada": false
+    },
+    {
+      "id": 51,
+      "titulo": "Elena Novak presenta nuevas piezas digitales experimentales",
+      "slug": "elena-novak-nuevas-piezas-digitales-experimentales",
+      "extracto": "La experimentación digital como extensión del proceso creativo.",
+      "imagen": "noticia-elena-novak-3.jpg",
+      "fecha": "2026-04-22",
+      "categoria": "Arte Digital",
+      "artistaId": 17,
+      "destacada": false
+    },
+
+    {
+      "id": 52,
+      "titulo": "Thiago Mendes explora movimiento y ritmo en arte digital",
+      "slug": "thiago-mendes-movimiento-ritmo-arte-digital",
+      "extracto": "El motion art como lenguaje visual contemporáneo.",
+      "imagen": "noticia-thiago-mendes-1.jpg",
+      "fecha": "2026-02-24",
+      "categoria": "Motion Art",
+      "artistaId": 18,
+      "destacada": true
+    },
+    {
+      "id": 53,
+      "titulo": "Ritmo visual y temporalidad en la obra de Thiago Mendes",
+      "slug": "ritmo-visual-temporalidad-thiago-mendes",
+      "extracto": "Una exploración del tiempo como elemento compositivo.",
+      "imagen": "noticia-thiago-mendes-2.jpg",
+      "fecha": "2026-03-24",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 18,
+      "destacada": false
+    },
+    {
+      "id": 54,
+      "titulo": "Thiago Mendes presenta nuevas piezas de motion art",
+      "slug": "thiago-mendes-nuevas-piezas-motion-art",
+      "extracto": "Movimiento, ritmo y estructura en equilibrio visual.",
+      "imagen": "noticia-thiago-mendes-3.jpg",
+      "fecha": "2026-04-24",
+      "categoria": "Motion Art",
+      "artistaId": 18,
+      "destacada": false
+    },
+
+    {
+      "id": 55,
+      "titulo": "Laura Svensson investiga el espacio y el silencio visual",
+      "slug": "laura-svensson-espacio-silencio-visual",
+      "extracto": "Minimalismo y contención formal en su obra reciente.",
+      "imagen": "noticia-laura-svensson-1.jpg",
+      "fecha": "2026-02-26",
+      "categoria": "Minimalismo",
+      "artistaId": 19,
+      "destacada": true
+    },
+    {
+      "id": 56,
+      "titulo": "Forma y vacío en la obra contemporánea de Laura Svensson",
+      "slug": "forma-vacio-obra-laura-svensson",
+      "extracto": "Una reflexión visual sobre espacio y equilibrio.",
+      "imagen": "noticia-laura-svensson-2.jpg",
+      "fecha": "2026-03-26",
+      "categoria": "Abstracto",
+      "artistaId": 19,
+      "destacada": false
+    },
+    {
+      "id": 57,
+      "titulo": "Laura Svensson presenta nuevas obras digitales minimalistas",
+      "slug": "laura-svensson-nuevas-obras-digitales-minimalistas",
+      "extracto": "El lenguaje digital aplicado al minimalismo visual.",
+      "imagen": "noticia-laura-svensson-3.jpg",
+      "fecha": "2026-04-26",
+      "categoria": "Arte Digital",
+      "artistaId": 19,
+      "destacada": false
+    },
+
+    {
+      "id": 58,
+      "titulo": "David Chen fusiona abstracción digital y estética generativa",
+      "slug": "david-chen-abstraccion-digital-estetica-generativa",
+      "extracto": "La programación como base de su investigación visual.",
+      "imagen": "noticia-david-chen-1.jpg",
+      "fecha": "2026-02-28",
+      "categoria": "Arte Generativo",
+      "artistaId": 20,
+      "destacada": true
+    },
+    {
+      "id": 59,
+      "titulo": "Procesos algorítmicos en la obra reciente de David Chen",
+      "slug": "procesos-algoritmicos-obra-david-chen",
+      "extracto": "Una aproximación contemporánea al arte digital generativo.",
+      "imagen": "noticia-david-chen-2.jpg",
+      "fecha": "2026-03-28",
+      "categoria": "Arte Digital",
+      "artistaId": 20,
+      "destacada": false
+    },
+    {
+      "id": 60,
+      "titulo": "David Chen presenta una nueva serie de obras generativas",
+      "slug": "david-chen-nueva-serie-obras-generativas",
+      "extracto": "La abstracción digital como sistema visual en expansión.",
+      "imagen": "noticia-david-chen-3.jpg",
+      "fecha": "2026-04-28",
+      "categoria": "Arte Generativo",
+      "artistaId": 20,
+      "destacada": false
+    },
+    {
+      "id": 61,
+      "titulo": "Álvaro Núñez presenta una nueva serie sobre paisaje y memoria",
+      "slug": "alvaro-nunez-serie-paisaje-memoria",
+      "extracto": "La nueva producción del artista combina fotografía y abstracción para explorar la percepción del territorio.",
+      "imagen": "noticia-alvaro-nunez-1.jpg",
+      "fecha": "2026-05-02",
+      "categoria": "Arte Contemporáneo",
+      "artistaId": 21,
+      "destacada": true
+    },
+    {
+      "id": 62,
+      "titulo": "Geometría y territorio en la obra reciente de Álvaro Núñez",
+      "slug": "geometria-territorio-obra-alvaro-nunez",
+      "extracto": "Un análisis del uso de estructuras geométricas aplicadas al paisaje contemporáneo.",
+      "imagen": "noticia-alvaro-nunez-2.jpg",
+      "fecha": "2026-05-20",
+      "categoria": "Abstracto",
+      "artistaId": 21,
+      "destacada": false
+    },
+    {
+      "id": 63,
+      "titulo": "Álvaro Núñez amplía su práctica visual con nuevos procesos digitales",
+      "slug": "alvaro-nunez-nuevos-procesos-digitales",
+      "extracto": "La incorporación de técnicas digitales refuerza su investigación sobre espacio y estructura.",
+      "imagen": "noticia-alvaro-nunez-3.jpg",
+      "fecha": "2026-06-05",
+      "categoria": "Arte Digital",
+      "artistaId": 21,
+      "destacada": false
+    }
+  ]
+}

@@ -39,10 +39,7 @@ function iniciarHome() {
     .then((r) => r.json())
     .then((data) => {
       obras = data;
-      renderCategoria("moderno"); // moderno por defecto
-      console.log("SECCION:", seccion);
-      console.log("CATEGORIAS:", SECCIONES[seccion]);
-      console.log("OBRAS:", seleccion.length);
+      renderCategoria("moderno");
     });
 
   buttons.forEach((btn) => {
@@ -58,7 +55,7 @@ function iniciarHome() {
 
     const seleccion = obras
       .filter((o) =>
-        o.categorias.some((cat) => categoriasSeccion.includes(cat)),
+        o.categorias.some((cat) => categoriasSeccion.includes(cat))
       )
       .sort(() => Math.random() - 0.5)
       .slice(0, 5);
@@ -91,15 +88,15 @@ function renderObras(lista) {
       const favorito = isFavorite(obra.id);
 
       return `
-      <article class="card-obra">
-        <img src="../assets/img/${obra.imagen}">
-        <h3>${obra.titulo}</h3>
-        <p>${artista?.nombre || ""}</p>
-        <button class="favorite" onclick="handleFavorite(${obra.id})">
-          ${favorito ? "❤️" : "🤍"}
-        </button>
-      </article>
-    `;
+        <article class="card-obra">
+          <img src="../assets/img/${obra.imagen}">
+          <h3>${obra.titulo}</h3>
+          <p>${artista?.nombre || ""}</p>
+          <button class="favorite" onclick="handleFavorite(${obra.id})">
+            ${favorito ? "❤️" : "🤍"}
+          </button>
+        </article>
+      `;
     })
     .join("");
 }
@@ -159,9 +156,7 @@ async function initObras() {
     select.addEventListener("change", aplicarFiltros);
   }
 
-  document
-    .getElementById("buscador")
-    ?.addEventListener("input", aplicarFiltros);
+  document.getElementById("buscador")?.addEventListener("input", aplicarFiltros);
   document.getElementById("filtroFavoritos")?.addEventListener("click", () => {
     mostrarSoloFavoritos = !mostrarSoloFavoritos;
     aplicarFiltros();
@@ -183,10 +178,10 @@ async function initCategorias() {
   grid.innerHTML = categorias
     .map(
       (c) => `
-    <div class="card-obra" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
-      <h3>${c.nombre}</h3>
-    </div>
-  `,
+      <div class="card-obra" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
+        <h3>${c.nombre}</h3>
+      </div>
+    `
     )
     .join("");
 }
@@ -201,12 +196,11 @@ async function initCategoriaDetalle() {
   document.getElementById("categoriaTitulo").textContent = categoria.nombre;
 
   const filtradas = obras.filter((o) => o.categorias.includes(id));
-
   renderObras(filtradas);
 }
 
 /* ================================
-   ROUTER DE PÁGINAS
+   ROUTER
 ================================ */
 
 function initPages(page) {
@@ -218,61 +212,23 @@ function initPages(page) {
 }
 
 /* =====================================================
-   ARTISTAS PAGE
+   ARTISTAS
 ===================================================== */
 
 async function initArtistas() {
   await cargarDatos();
 
-  const artistasActivos = artistas.filter(a => a.activo);
+  const artistasActivos = artistas.filter((a) => a.activo);
   if (!artistasActivos.length) return;
 
-  renderFeaturedArtist(artistasActivos[0]);
   renderArtistsGrid(artistasActivos);
-
-  renderArtistFilters(); // 👈 ESTA ERA LA PIEZA QUE FALTABA
-
+  renderArtistFilters();
   initSearch(artistasActivos);
   initOrder(artistasActivos);
 }
 
 /* =====================================================
-   ARTISTA DESTACADO
-===================================================== */
-
-function renderFeaturedArtist(artista) {
-  document.getElementById("featuredImage").innerHTML = `
-    <img src="../assets/img/artistas/${artista.avatar}" alt="${artista.nombre}">
-  `;
-
-  document.getElementById("featuredName").textContent = artista.nombre;
-  document.getElementById("featuredCity").textContent = artista.ciudad;
-}
-
-
-/* =====================================================
-   TAGS DE CATEGORÍAS (ARTISTAS)
-===================================================== */
-
-function renderArtistTags(containerId, estilosIds) {
-  const container = document.getElementById(containerId);
-  if (!container) return;
-
-  container.innerHTML = "";
-
-  estilosIds.forEach(id => {
-    const categoria = categorias.find(c => c.id === id);
-    if (!categoria) return;
-
-    container.insertAdjacentHTML(
-      "beforeend",
-      `<span class="artist-tag">${categoria.nombre}</span>`
-    );
-  });
-}
-
-/* =====================================================
-   FILTROS DE ARTISTAS (DESDE CATEGORÍAS)
+   FILTROS ARTISTAS
 ===================================================== */
 
 function renderArtistFilters() {
@@ -281,30 +237,27 @@ function renderArtistFilters() {
 
   container.innerHTML = "";
 
-  // Orden editorial (nombres tal como quieres mostrarlos)
   const ordenVisible = [
     "Pintura",
     "Fotografía",
     "Escultura",
     "Retrato",
     "Abstracto",
-    "Blanco y Negro"
+    "Blanco y Negro",
   ];
 
-  // Normaliza para evitar problemas con acentos / mayúsculas
-  const normalize = (str) =>
+  const normalizeName = (str) =>
     str
       .toLowerCase()
       .normalize("NFD")
       .replace(/[\u0300-\u036f]/g, "");
 
-  // Mapa rápido por nombre normalizado
   const mapCategorias = new Map(
-    categorias.map(c => [normalize(c.nombre), c])
+    categorias.map((c) => [normalizeName(c.nombre), c])
   );
 
   ordenVisible.forEach((nombre, index) => {
-    const categoria = mapCategorias.get(normalize(nombre));
+    const categoria = mapCategorias.get(normalizeName(nombre));
     if (!categoria) return;
 
     const btn = document.createElement("button");
@@ -317,18 +270,22 @@ function renderArtistFilters() {
 }
 
 /* =====================================================
-   GRID DE ARTISTAS
+   GRID ARTISTAS
 ===================================================== */
 
-function renderArtistsGrid(artistas) {
+function renderArtistsGrid(lista) {
   const grid = document.getElementById("artistsGrid");
+  if (!grid) return;
+
   grid.innerHTML = "";
 
-  artistas.forEach(artista => {
-    grid.insertAdjacentHTML("beforeend", `
+  lista.forEach((artista) => {
+    grid.insertAdjacentHTML(
+      "beforeend",
+      `
       <article class="artist-card">
         <div class="artist-image">
-          <img src="../assets/img/artistas/${artista.avatar}" alt="${artista.nombre}">
+          <img src="../assets/img/${artista.avatar}" alt="${artista.nombre}">
         </div>
 
         <div class="artist-info">
@@ -340,7 +297,8 @@ function renderArtistsGrid(artistas) {
           </a>
         </div>
       </article>
-    `);
+    `
+    );
   });
 }
 
@@ -350,13 +308,15 @@ function renderArtistsGrid(artistas) {
 
 function initSearch(allArtists) {
   const input = document.getElementById("artistSearch");
+  if (!input) return;
 
   input.addEventListener("input", () => {
     const value = input.value.toLowerCase();
 
-    const filtered = allArtists.filter(a =>
-      a.nombre.toLowerCase().includes(value) ||
-      a.ciudad.toLowerCase().includes(value)
+    const filtered = allArtists.filter(
+      (a) =>
+        a.nombre.toLowerCase().includes(value) ||
+        a.ciudad.toLowerCase().includes(value)
     );
 
     renderArtistsGrid(filtered);
@@ -369,14 +329,109 @@ function initSearch(allArtists) {
 
 function initOrder(allArtists) {
   const select = document.getElementById("artistOrder");
+  if (!select) return;
 
   select.addEventListener("change", () => {
-    const sorted = [...allArtists].sort((a, b) => {
-      return select.value === "az"
+    const sorted = [...allArtists].sort((a, b) =>
+      select.value === "az"
         ? a.nombre.localeCompare(b.nombre)
-        : b.nombre.localeCompare(a.nombre);
-    });
+        : b.nombre.localeCompare(a.nombre)
+    );
 
     renderArtistsGrid(sorted);
   });
 }
+
+/* =====================================================
+   CARRUSEL DE NOTICIAS
+===================================================== */
+
+async function initFeaturedNewsCarousel() {
+  const track = document.getElementById("newsTrack");
+  if (!track) return;
+
+  const [newsRes, artistsRes] = await Promise.all([
+    fetch("../data/noticias.json"),
+    fetch("../data/artistas.json"),
+  ]);
+
+  const newsData = await newsRes.json();
+  const artistsData = await artistsRes.json();
+
+  const artistMap = {};
+  artistsData.artistas.forEach((a) => {
+    artistMap[a.id] = a.nombre;
+  });
+
+  const featuredNews = newsData.noticias.filter((n) => n.destacada);
+  track.innerHTML = "";
+
+  featuredNews.forEach((noticia) => {
+    const slide = document.createElement("article");
+    slide.className = "news-slide";
+
+    slide.innerHTML = `
+      <div class="news-image">
+        <img src="../assets/img/${noticia.imagen}" alt="${noticia.titulo}">
+      </div>
+
+      <div class="news-content">
+        <span class="news-eyebrow">Última noticia</span>
+        <h2 class="news-title">${noticia.titulo}</h2>
+        <p class="news-excerpt">${noticia.extracto}</p>
+
+        <div class="news-meta">
+          <span class="news-artist">${artistMap[noticia.artistaId] || ""}</span>
+          <span class="news-date">${formatNewsDate(noticia.fecha)}</span>
+        </div>
+      </div>
+    `;
+
+    track.appendChild(slide);
+  });
+
+  initCarouselControls(track);
+}
+
+/* ===============================
+   CONTROLES
+=============================== */
+
+function initCarouselControls(track) {
+  const prev = document.querySelector(".carousel-control.prev");
+  const next = document.querySelector(".carousel-control.next");
+
+  if (!prev || !next) return;
+
+  const slideWidth = () =>
+    track.querySelector(".news-slide")?.offsetWidth || 0;
+
+  prev.addEventListener("click", () => {
+    track.scrollBy({
+      left: -(slideWidth() + 32),
+      behavior: "smooth",
+    });
+  });
+
+  next.addEventListener("click", () => {
+    track.scrollBy({
+      left: slideWidth() + 32,
+      behavior: "smooth",
+    });
+  });
+}
+
+/* ===============================
+   FECHA
+=============================== */
+
+function formatNewsDate(date) {
+  const d = new Date(date);
+  return d.toLocaleDateString("es-ES", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+}
+
+document.addEventListener("DOMContentLoaded", initFeaturedNewsCarousel);

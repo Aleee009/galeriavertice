@@ -33,11 +33,18 @@
       <div class="section-tools">
         <div class="search-box">
           <span class="material-symbols-outlined">search</span>
-          <input type="search" id="artistSearch" placeholder="Buscar artista" aria-label="Buscar artista" />
+          <input
+            type="search"
+            id="artistSearch"
+            placeholder="Buscar artista"
+            aria-label="Buscar artista" />
         </div>
 
         <div class="order-select-wrapper">
-          <select id="artistOrder" class="order-select">
+          <select
+            id="artistOrder"
+            class="order-select"
+            aria-label="Ordenar artistas">
             <option value="az">A – Z</option>
             <option value="za">Z – A</option>
           </select>
@@ -46,40 +53,41 @@
             expand_more
           </span>
         </div>
-
       </div>
     </section>
 
     <!-- =====================================================
-         ARTISTA DESTACADO / HERO
+         ÚLTIMAS NOTICIAS · ARTISTAS (CARRUSEL)
     ====================================================== -->
-    <section class="featured-artist container" id="featuredArtist">
+    <section class="featured-news container" id="featuredNews">
 
-      <div class="featured-carousel">
+      <div class="news-carousel" aria-roledescription="carousel">
 
-        <button class="carousel-control prev" aria-label="Anterior">
+        <button
+          class="carousel-control prev"
+          type="button"
+          aria-label="Noticia anterior">
           <span class="material-symbols-outlined">chevron_left</span>
         </button>
 
-        <div class="featured-image" id="featuredImage">
-          <!-- JS: imagen del artista -->
+        <div
+          class="news-track"
+          id="newsTrack"
+          aria-live="polite">
+          <!--
+            JS renderiza aquí las noticias desde noticias.json
+            Cada noticia será un <article class="news-slide">
+          -->
         </div>
 
-        <button class="carousel-control next" aria-label="Siguiente">
+        <button
+          class="carousel-control next"
+          type="button"
+          aria-label="Siguiente noticia">
           <span class="material-symbols-outlined">chevron_right</span>
         </button>
 
       </div>
-
-      <div class="featured-info">
-        <h2 id="featuredName"></h2>
-        <p id="featuredCity"></p>
-      </div>
-
-      <div class="artist-tags" id="featuredTags">
-        <!-- JS: categorías del artista destacado -->
-      </div>
-
     </section>
 
     <!-- =====================================================
@@ -90,7 +98,10 @@
         <!-- JS genera las pills desde categorias.json -->
       </div>
 
-      <button class="filters-more">
+      <button
+        class="filters-more"
+        type="button"
+        aria-label="Mostrar más categorías">
         Más categorías <span>›</span>
       </button>
     </section>
@@ -98,8 +109,11 @@
     <!-- =====================================================
          GRID DE ARTISTAS
     ====================================================== -->
-    <section class="artists-grid container" id="artistsGrid">
-      <!-- JS genera las cards -->
+    <section
+      class="artists-grid container"
+      id="artistsGrid"
+      aria-live="polite">
+      <!-- JS genera las cards de artistas -->
     </section>
 
   </main>
@@ -108,7 +122,7 @@
 
   <!-- JS -->
   <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/auth.js"></script> <!-- 🔑 ESTE -->
+  <script src="../assets/js/auth.js"></script>
   <script src="../assets/js/pages.js"></script>
   <script src="../assets/js/main.js"></script>
 

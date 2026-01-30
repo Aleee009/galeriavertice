@@ -11,7 +11,7 @@
       "tecnicas": ["Arte digital", "Composición 3D", "Edición fotográfica"],
       "web": "https://luciamoreno.art",
       "redes": { "instagram": "luciamoreno.art" },
-      "avatar": "lucia-moreno.jpg",
+      "avatar": "lucia_moreno.jpg",
       "activo": true
     },
     {
@@ -25,7 +25,7 @@
       "tecnicas": ["Ilustración", "Dibujo digital"],
       "web": null,
       "redes": { "instagram": "danielortiz.art" },
-      "avatar": "daniel-ortiz.jpg",
+      "avatar": "daniel_ortiz.jpg",
       "activo": true
     },
     {
@@ -39,7 +39,7 @@
       "tecnicas": ["Arte generativo", "Composición abstracta"],
       "web": null,
       "redes": { "instagram": "sofia.klein.art" },
-      "avatar": "sofia-klein.jpg",
+      "avatar": "sofia_klein.jpg",
       "activo": true
     },
     {
@@ -53,7 +53,7 @@
       "tecnicas": ["Pintura al óleo", "Acrílico"],
       "web": null,
       "redes": { "instagram": "marco.bellini.art" },
-      "avatar": "marco-bellini.jpg",
+      "avatar": "marco_bellini.jpg",
       "activo": true
     },
     {
@@ -67,7 +67,7 @@
       "tecnicas": ["Pintura", "Arte digital"],
       "web": null,
       "redes": { "instagram": "claire.dubois.art" },
-      "avatar": "claire-dubois.jpg",
+      "avatar": "claire_dubois.jpg",
       "activo": true
     },
     {
@@ -81,7 +81,7 @@
       "tecnicas": ["Arte experimental", "Arte digital"],
       "web": null,
       "redes": { "instagram": "jonasrichter.art" },
-      "avatar": "jonas-richter.jpg",
+      "avatar": "jonas_richter.jpg",
       "activo": true
     },
     {
@@ -95,7 +95,7 @@
       "tecnicas": ["Ilustración", "Dibujo"],
       "web": null,
       "redes": { "instagram": "valentina.russo.art" },
-      "avatar": "valentina-russo.jpg",
+      "avatar": "valentina_russo.jpg",
       "activo": true
     },
     {
@@ -109,7 +109,7 @@
       "tecnicas": ["Fotografía urbana"],
       "web": null,
       "redes": { "instagram": "hugolambert.photo" },
-      "avatar": "hugo-lambert.jpg",
+      "avatar": "hugo_lambert.jpg",
       "activo": true
     },
     {
@@ -123,7 +123,7 @@
       "tecnicas": ["Pintura", "Arte mixto"],
       "web": null,
       "redes": { "instagram": "marta.kowalska.art" },
-      "avatar": "marta-kowalska.jpg",
+      "avatar": "marta_kowalska.jpg",
       "activo": true
     },
     {
@@ -137,7 +137,7 @@
       "tecnicas": ["Arte generativo", "Diseño digital"],
       "web": null,
       "redes": { "instagram": "andresvega.digital" },
-      "avatar": "andres-vega.jpg",
+      "avatar": "andres_vega.jpg",
       "activo": true
     },
     {
@@ -151,7 +151,7 @@
       "tecnicas": ["Pintura abstracta"],
       "web": null,
       "redes": { "instagram": "nina.hoffmann.art" },
-      "avatar": "nina-hoffmann.jpg",
+      "avatar": "nina_hoffmann.jpg",
       "activo": true
     },
     {
@@ -165,7 +165,7 @@
       "tecnicas": ["Arte digital", "Pintura"],
       "web": null,
       "redes": { "instagram": "samuelbrooks.art" },
-      "avatar": "samuel-brooks.jpg",
+      "avatar": "samuel_brooks.jpg",
       "activo": true
     },
     {
@@ -179,7 +179,7 @@
       "tecnicas": ["Pintura al óleo"],
       "web": null,
       "redes": { "instagram": "irene.papadopoulos.art" },
-      "avatar": "irene-papadopoulos.jpg",
+      "avatar": "irene_papadopoulos.jpg",
       "activo": true
     },
     {
@@ -193,7 +193,7 @@
       "tecnicas": ["Arte digital", "Diseño generativo"],
       "web": null,
       "redes": { "instagram": "leo.nakamura.art" },
-      "avatar": "leo-nakamura.jpg",
+      "avatar": "leo_nakamura.jpg",
       "activo": true
     },
     {
@@ -207,7 +207,7 @@
       "tecnicas": ["Pintura", "Arte mixto"],
       "web": null,
       "redes": { "instagram": "paula.rios.art" },
-      "avatar": "paula-rios.jpg",
+      "avatar": "paula_rios.jpg",
       "activo": true
     },
     {
@@ -221,7 +221,7 @@
       "tecnicas": ["Arte conceptual"],
       "web": null,
       "redes": { "instagram": "olivergrant.art" },
-      "avatar": "oliver-grant.jpg",
+      "avatar": "oliver_grant.jpg",
       "activo": true
     },
     {
@@ -235,7 +235,7 @@
       "tecnicas": ["Arte experimental", "Arte digital"],
       "web": null,
       "redes": { "instagram": "elena.novak.art" },
-      "avatar": "elena-novak.jpg",
+      "avatar": "elena_novak.jpg",
       "activo": true
     },
     {
@@ -249,7 +249,7 @@
       "tecnicas": ["Motion art", "Arte digital"],
       "web": null,
       "redes": { "instagram": "thiago.mendes.art" },
-      "avatar": "thiago-mendes.jpg",
+      "avatar": "thiago_mendes.jpg",
       "activo": true
     },
     {
@@ -263,7 +263,7 @@
       "tecnicas": ["Minimalismo", "Arte digital"],
       "web": null,
       "redes": { "instagram": "laura.svensson.art" },
-      "avatar": "laura-svensson.jpg",
+      "avatar": "laura_svensson.jpg",
       "activo": true
     },
     {
@@ -277,7 +277,21 @@
       "tecnicas": ["Arte generativo", "Arte digital"],
       "web": null,
       "redes": { "instagram": "davidchen.art" },
-      "avatar": "david-chen.jpg",
+      "avatar": "david_chen.jpg",
+      "activo": true
+    },
+    {
+      "id": 21,
+      "nombre": "Álvaro Núñez",
+      "slug": "alvaro-nunez",
+      "pais": "España",
+      "ciudad": "Valencia",
+      "bio": "Artista visual contemporáneo que investiga la relación entre paisaje, memoria y estructura geométrica.",
+      "estilos": [13, 14, 23],
+      "tecnicas": ["Arte digital", "Fotografía", "Composición abstracta"],
+      "web": null,
+      "redes": { "instagram": "alvaro.nunez.art" },
+      "avatar": "alvaro_nunez.jpg",
       "activo": true
     }
   ]
