@@ -13,6 +13,11 @@ function goTo(page, params = {}) {
   window.location.href = query ? `${page}?${query}` : page;
 }
 
+// Base path automático (home vs /pages)
+function getBasePath() {
+  return window.location.pathname.includes("/pages/") ? ".." : ".";
+}
+
 /* ================================
    LOCAL STORAGE
 ================================ */
@@ -61,7 +66,7 @@ function toggleFavorite(id) {
 
 // Carga de archivos JSON respetando /pages/
 async function loadJSON(file) {
-  const base = window.location.pathname.includes("/pages/") ? ".." : ".";
+  const base = getBasePath();
   const res = await fetch(`${base}/data/${file}`);
   return await res.json();
 }
@@ -79,23 +84,76 @@ function normalize(text) {
 }
 
 /* ================================
-   FILTRADO POR CATEGORÍAS / SECCIONES
-   (NUEVO · MULTICATEGORÍA)
+   SISTEMA CURATORIAL · CATEGORÍAS
+   (MODELO NUEVO)
 ================================ */
 
-// Comprueba si una obra pertenece a una sección
-function obraEnSeccion(obra, categoriasSeccion) {
-  return obra.categorias?.some(cat => categoriasSeccion.includes(cat));
+/**
+ * Mapa único de secciones curatoriales
+ * 👉 un solo sitio donde se define la lógica
+ */
+const SECCIONES = {
+  moderno: {
+    categoriaPrincipal: [4, 6, 18], // Arte Digital, Conceptual, Motion
+  },
+  clasico: {
+    categoriaPrincipal: [1, 2], // Pintura, Fotografía
+  },
+  abstracto: {
+    categoriasSecundarias: [14], // Abstracto
+  },
+};
+
+/**
+ * Comprueba si una obra pertenece a una sección
+ */
+function obraEnSeccion(obra, seccion) {
+  const config = SECCIONES[seccion];
+  if (!config) return false;
+
+  if (
+    config.categoriaPrincipal &&
+    config.categoriaPrincipal.includes(obra.categoriaPrincipal)
+  ) {
+    return true;
+  }
+
+  if (
+    config.categoriasSecundarias &&
+    obra.categoriasSecundarias?.some(cat =>
+      config.categoriasSecundarias.includes(cat)
+    )
+  ) {
+    return true;
+  }
+
+  return false;
 }
 
-// Filtra obras por sección
-function filtrarPorSeccion(obras, categoriasSeccion) {
-  return obras.filter(obra => obraEnSeccion(obra, categoriasSeccion));
+/**
+ * Filtra obras por sección curatorial
+ */
+function filtrarPorSeccion(obras, seccion) {
+  return obras.filter(obra => obraEnSeccion(obra, seccion));
 }
 
-// Filtra obras por una categoría concreta
+/**
+ * Filtra obras por categoría concreta
+ * (principal o secundaria)
+ */
 function filtrarPorCategoria(obras, categoriaId) {
-  return obras.filter(obra => obra.categorias?.includes(categoriaId));
+  return obras.filter(
+    obra =>
+      obra.categoriaPrincipal === categoriaId ||
+      obra.categoriasSecundarias?.includes(categoriaId)
+  );
+}
+
+/**
+ * Filtra obras por tag
+ */
+function filtrarPorTag(obras, tag) {
+  return obras.filter(obra => obra.tags?.includes(tag));
 }
 
 /* ================================

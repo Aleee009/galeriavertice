@@ -18,12 +18,6 @@ async function cargarDatos() {
   obras = obrasData;
 }
 
-const SECCIONES = {
-  moderno: [4, 6, 9, 17, 18, 23],
-  clasico: [1, 3, 12, 13],
-  abstracto: [7, 14, 15, 18, 20],
-};
-
 /* ================================
    HOME
 ================================ */
@@ -51,12 +45,22 @@ function iniciarHome() {
   function renderCategoria(seccion) {
     grid.innerHTML = "";
 
-    const categoriasSeccion = SECCIONES[seccion];
-
     const seleccion = obras
-      .filter((o) =>
-        o.categorias.some((cat) => categoriasSeccion.includes(cat))
-      )
+      .filter((o) => {
+        if (seccion === "moderno") {
+          return [4, 6, 18].includes(o.categoriaPrincipal);
+        }
+
+        if (seccion === "clasico") {
+          return [1, 2].includes(o.categoriaPrincipal);
+        }
+
+        if (seccion === "abstracto") {
+          return o.categoriasSecundarias?.includes(14);
+        }
+
+        return false;
+      })
       .sort(() => Math.random() - 0.5)
       .slice(0, 5);
 
@@ -127,7 +131,9 @@ function aplicarFiltros() {
   }
 
   if (texto) {
-    resultado = resultado.filter((o) => normalize(o.titulo).includes(texto));
+    resultado = resultado.filter((o) =>
+      normalize(o.titulo).includes(texto)
+    );
   }
 
   if (mostrarSoloFavoritos) {
@@ -195,7 +201,12 @@ async function initCategoriaDetalle() {
 
   document.getElementById("categoriaTitulo").textContent = categoria.nombre;
 
-  const filtradas = obras.filter((o) => o.categorias.includes(id));
+  const filtradas = obras.filter(
+    (o) =>
+      o.categoriaPrincipal === id ||
+      o.categoriasSecundarias?.includes(id)
+  );
+
   renderObras(filtradas);
 }
 
@@ -240,10 +251,9 @@ function renderArtistFilters() {
   const ordenVisible = [
     "Pintura",
     "Fotografía",
-    "Escultura",
     "Retrato",
     "Abstracto",
-    "Blanco y Negro",
+    "Arte Digital",
   ];
 
   const normalizeName = (str) =>
@@ -256,12 +266,12 @@ function renderArtistFilters() {
     categorias.map((c) => [normalizeName(c.nombre), c])
   );
 
-  ordenVisible.forEach((nombre, index) => {
+  ordenVisible.forEach((nombre) => {
     const categoria = mapCategorias.get(normalizeName(nombre));
     if (!categoria) return;
 
     const btn = document.createElement("button");
-    btn.className = "filter-pill" + (index === 0 ? " active" : "");
+    btn.className = "filter-pill";
     btn.textContent = categoria.nombre;
     btn.dataset.id = categoria.id;
 
@@ -391,34 +401,6 @@ async function initFeaturedNewsCarousel() {
   });
 
   initCarouselControls(track);
-}
-
-/* ===============================
-   CONTROLES
-=============================== */
-
-function initCarouselControls(track) {
-  const prev = document.querySelector(".carousel-control.prev");
-  const next = document.querySelector(".carousel-control.next");
-
-  if (!prev || !next) return;
-
-  const slideWidth = () =>
-    track.querySelector(".news-slide")?.offsetWidth || 0;
-
-  prev.addEventListener("click", () => {
-    track.scrollBy({
-      left: -(slideWidth() + 32),
-      behavior: "smooth",
-    });
-  });
-
-  next.addEventListener("click", () => {
-    track.scrollBy({
-      left: slideWidth() + 32,
-      behavior: "smooth",
-    });
-  });
 }
 
 /* ===============================

@@ -1,965 +1,1146 @@
 [
-    {
+  {
     "id": 1,
     "titulo": "Rojo profundo",
     "imagen": "moderno_1.jpg",
-    "categorias": [14],
     "artistaId": 3,
-    "descripcion": "Composición intensa donde el color rojo actúa como eje emocional y visual de la obra."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["color", "geometría", "percepción"]
   },
   {
     "id": 2,
     "titulo": "Minimal",
     "imagen": "moderno_2.jpg",
-    "categorias": [7, 14],
-    "artistaId": 3,
-    "descripcion": "Exploración de la simplicidad formal a través de formas limpias y equilibrio cromático."
+    "artistaId": 19,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7, 14],
+    "tags": ["silencio", "reducción", "espacio"]
   },
   {
     "id": 3,
     "titulo": "Equilibrio",
     "imagen": "moderno_3.jpg",
-    "categorias": [14],
     "artistaId": 3,
-    "descripcion": "Juego visual entre tensión y armonía que busca una sensación de estabilidad compositiva."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["tensión", "balance", "estructura"]
   },
   {
     "id": 4,
     "titulo": "Horizonte urbano",
     "imagen": "moderno_4.jpg",
-    "categorias": [9, 14],
     "artistaId": 1,
-    "descripcion": "Interpretación moderna del paisaje urbano mediante estructuras y luces abstractas."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["ciudad", "paisaje-digital", "arquitectura"]
   },
   {
     "id": 5,
     "titulo": "Luz estructural",
     "imagen": "moderno_5.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Relación entre geometría y luz que define el espacio y la profundidad visual."
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["luz", "estructura", "experimento"]
   },
 
   {
     "id": 6,
     "titulo": "Retrato de mármol",
     "imagen": "clasico_1.jpg",
-    "categorias": [3, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato de inspiración clásica que resalta la solidez y la serenidad de la forma humana."
+    "artistaId": 12,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 6, 23],
+    "tags": ["clásico", "identidad", "símbolo"]
   },
   {
     "id": 7,
-    "titulo": "Naturaleza muerta",
+    "titulo": "Naturaleza contenida",
     "imagen": "clasico_2.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Composición tradicional centrada en el equilibrio, la luz y la quietud de los objetos."
+    "artistaId": 9,
+    "categoriaPrincipal": 1,
+    "categoriasSecundarias": [14, 23],
+    "tags": ["emoción", "forma", "materia"]
   },
   {
     "id": 8,
     "titulo": "Luz del norte",
     "imagen": "clasico_3.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje sereno que enfatiza la atmósfera y la iluminación natural del entorno."
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["paisaje", "memoria", "atmósfera"]
   },
   {
     "id": 9,
     "titulo": "Retrato al óleo",
     "imagen": "clasico_4.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato pictórico que destaca la expresividad y la técnica tradicional del óleo."
+    "artistaId": 12,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["figura", "clásico", "presencia"]
   },
   {
     "id": 10,
-    "titulo": "Paisaje clásico",
+    "titulo": "Paisaje estable",
     "imagen": "clasico_5.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Visión atemporal del paisaje, basada en la composición equilibrada y el detalle."
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["territorio", "estructura", "calma"]
   },
-   {
+
+  {
     "id": 11,
     "titulo": "Fragmentos",
     "imagen": "abstracto_1.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Superposición de formas y texturas que sugiere una realidad visual fragmentada."
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["fragmentación", "tensión", "sistema"]
   },
   {
     "id": 12,
     "titulo": "Geometría viva",
     "imagen": "abstracto_2.jpg",
-    "categorias": [14],
     "artistaId": 3,
-    "descripcion": "Interacción dinámica entre formas geométricas y color en constante movimiento."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["geometría", "ritmo", "color"]
   },
   {
     "id": 13,
     "titulo": "Caos cromático",
     "imagen": "abstracto_3.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Explosión de color y energía que rompe con la estructura visual tradicional."
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["algoritmo", "color", "expansión"]
   },
   {
     "id": 14,
     "titulo": "Ritmo visual",
     "imagen": "abstracto_4.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta basada en la repetición y el flujo rítmico de formas y tonos."
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [14, 23],
+    "tags": ["ritmo", "movimiento", "flujo"]
   },
   {
     "id": 15,
-    "titulo": "Estructura líquida",
+    "titulo": "Estructura orgánica",
     "imagen": "abstracto_5.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Fusión entre formas orgánicas y estructura, creando una sensación de fluidez visual."
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["organicidad", "forma", "equilibrio"]
   },
 
   {
     "id": 16,
-    "titulo": "Estudio de perfil",
-    "imagen": "clasico_6.jpg",
-    "categorias": [1, 12],
+    "titulo": "Perfil urbano",
+    "imagen": "retrato_1.jpg",
     "artistaId": 2,
-    "descripcion": "Retrato clásico de perfil que destaca la proporción y la serenidad del gesto."
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["identidad", "urbano", "masculinidad"]
   },
   {
     "id": 17,
-    "titulo": "Bodegón en penumbra",
-    "imagen": "clasico_7.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Naturaleza muerta tradicional con un tratamiento cuidadoso de la luz y la sombra."
+    "titulo": "Presencia",
+    "imagen": "retrato_2.jpg",
+    "artistaId": 7,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["editorial", "cine", "actitud"]
   },
   {
     "id": 18,
-    "titulo": "Paisaje al atardecer",
-    "imagen": "clasico_8.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje clásico que captura la transición de la luz en un entorno natural."
+    "titulo": "Cuerpo directo",
+    "imagen": "retrato_3.jpg",
+    "artistaId": 5,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["cuerpo", "presencia", "intensidad"]
   },
   {
     "id": 19,
-    "titulo": "Figura sentada",
-    "imagen": "clasico_9.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Estudio figurativo centrado en la postura y el equilibrio corporal."
+    "titulo": "Mirada contenida",
+    "imagen": "retrato_4.jpg",
+    "artistaId": 11,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["mirada", "moda", "control"]
   },
   {
     "id": 20,
-    "titulo": "Silencio del taller",
-    "imagen": "clasico_10.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Escena pictórica de inspiración académica que transmite calma y concentración."
+    "titulo": "Espacio íntimo",
+    "imagen": "retrato_5.jpg",
+    "artistaId": 15,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["intimidad", "espacio", "relación"]
   },
+
   {
     "id": 21,
-    "titulo": "Camino rural",
-    "imagen": "clasico_11.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje tradicional que evoca tranquilidad mediante una composición abierta."
+    "titulo": "Trama urbana",
+    "imagen": "moderno_6.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["ciudad", "sistema", "estructura"]
   },
   {
     "id": 22,
-    "titulo": "Retrato en claroscuro",
-    "imagen": "clasico_12.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato clásico que utiliza el contraste lumínico para resaltar el volumen."
+    "titulo": "Pulso digital",
+    "imagen": "moderno_7.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [23],
+    "tags": ["tecnología", "energía", "flujo"]
   },
   {
     "id": 23,
-    "titulo": "Naturaleza en reposo",
-    "imagen": "clasico_13.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Bodegón de composición equilibrada y atmósfera atemporal."
+    "titulo": "Intersección",
+    "imagen": "moderno_8.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [20],
+    "tags": ["planos", "tensión", "superposición"]
   },
   {
     "id": 24,
-    "titulo": "Vista del valle",
-    "imagen": "clasico_14.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje amplio que enfatiza la profundidad y la armonía del entorno."
+    "titulo": "Ciudad fragmentada",
+    "imagen": "moderno_9.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 14],
+    "tags": ["fragmentación", "urbano", "caos"]
   },
   {
     "id": 25,
-    "titulo": "Estudio clásico",
-    "imagen": "clasico_15.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Obra de enfoque tradicional basada en la observación y el detalle."
+    "titulo": "Lenguaje visual",
+    "imagen": "moderno_10.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["lenguaje", "símbolo", "comunicación"]
   },
+
   {
     "id": 26,
-    "titulo": "Figura en reposo",
-    "imagen": "clasico_16.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Representación figurativa que transmite quietud y equilibrio formal."
+    "titulo": "Sistema abierto",
+    "imagen": "conceptual_1.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["proceso", "estructura", "relación"]
   },
   {
     "id": 27,
-    "titulo": "Luz sobre el campo",
-    "imagen": "clasico_17.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje clásico donde la iluminación natural es el elemento protagonista."
+    "titulo": "Actitud",
+    "imagen": "conceptual_2.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["identidad", "presencia", "gesto"]
   },
   {
     "id": 28,
-    "titulo": "Retrato sereno",
-    "imagen": "clasico_18.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato de estilo tradicional con una expresión calmada y contenida."
+    "titulo": "Narrativa urbana",
+    "imagen": "conceptual_3.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["relato", "ciudad", "visual"]
   },
+
   {
     "id": 29,
-    "titulo": "Objetos cotidianos",
-    "imagen": "clasico_19.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Naturaleza muerta que eleva lo cotidiano mediante una composición clásica."
+    "titulo": "Campo vibrante",
+    "imagen": "abstracto_6.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["vibración", "color", "campo"]
   },
   {
     "id": 30,
-    "titulo": "Horizonte abierto",
-    "imagen": "clasico_20.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje de inspiración clásica que transmite amplitud y estabilidad."
+    "titulo": "Flujo continuo",
+    "imagen": "abstracto_7.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["flujo", "transformación", "algoritmo"]
   },
-   {
+
+  {
     "id": 31,
-    "titulo": "Estructura urbana",
-    "imagen": "moderno_6.jpg",
-    "categorias": [9, 23],
-    "artistaId": 1,
-    "descripcion": "Composición contemporánea inspirada en formas arquitectónicas y ritmo urbano."
+    "titulo": "Silencio visual",
+    "imagen": "minimal_1.jpg",
+    "artistaId": 19,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7],
+    "tags": ["silencio", "vacío", "espacio"]
   },
   {
     "id": 32,
-    "titulo": "Pulso digital",
-    "imagen": "moderno_7.jpg",
-    "categorias": [4, 23],
-    "artistaId": 1,
-    "descripcion": "Obra digital que explora la relación entre tecnología y lenguaje visual contemporáneo."
+    "titulo": "Estructura mínima",
+    "imagen": "minimal_2.jpg",
+    "artistaId": 14,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7, 14],
+    "tags": ["minimalismo", "tecnología", "orden"]
   },
+
   {
     "id": 33,
-    "titulo": "Intersección",
-    "imagen": "moderno_8.jpg",
-    "categorias": [4, 20],
-    "artistaId": 1,
-    "descripcion": "Composición moderna basada en la superposición de planos y tensiones visuales."
+    "titulo": "Ritmo de ciudad",
+    "imagen": "motion_1.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [23],
+    "tags": ["movimiento", "urbano", "ritmo"]
   },
   {
     "id": 34,
-    "titulo": "Ciudad fragmentada",
-    "imagen": "moderno_9.jpg",
-    "categorias": [9, 14],
-    "artistaId": 1,
-    "descripcion": "Interpretación contemporánea del entorno urbano a través de formas abstractas."
+    "titulo": "Secuencia",
+    "imagen": "motion_2.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [],
+    "tags": ["continuidad", "tiempo", "flujo"]
   },
+
   {
     "id": 35,
-    "titulo": "Lenguaje visual",
-    "imagen": "moderno_10.jpg",
-    "categorias": [6, 23],
-    "artistaId": 1,
-    "descripcion": "Obra conceptual moderna centrada en la comunicación visual y la estructura formal."
+    "titulo": "Proceso",
+    "imagen": "doc_1.jpg",
+    "artistaId": 13,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [23],
+    "tags": ["documentación", "gesto", "proceso"]
   },
 
   {
     "id": 36,
-    "titulo": "Campo de tensión",
-    "imagen": "abstracto_6.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta basada en la interacción de fuerzas visuales opuestas."
+    "titulo": "Geometría urbana",
+    "imagen": "foto_urbana_1.jpg",
+    "artistaId": 8,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [9],
+    "tags": ["arquitectura", "geometría", "ciudad"]
   },
+
   {
     "id": 37,
-    "titulo": "Materia en flujo",
-    "imagen": "abstracto_7.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta de carácter generativo que sugiere transformación constante."
+    "titulo": "Retrato cotidiano",
+    "imagen": "retrato_6.jpg",
+    "artistaId": 10,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["cotidiano", "urbano", "vida"]
   },
+
   {
     "id": 38,
-    "titulo": "Ritmo interno",
+    "titulo": "Materia generativa",
     "imagen": "abstracto_8.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta que enfatiza el movimiento y la cadencia visual."
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["código", "materia", "algoritmo"]
   },
+
   {
     "id": 39,
-    "titulo": "Estructura latente",
-    "imagen": "abstracto_9.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Exploración abstracta de formas ocultas y equilibrio interno."
+    "titulo": "Espacio emocional",
+    "imagen": "pintura_1.jpg",
+    "artistaId": 9,
+    "categoriaPrincipal": 1,
+    "categoriasSecundarias": [14, 23],
+    "tags": ["emoción", "forma", "color"]
   },
+
   {
     "id": 40,
-    "titulo": "Expansión cromática",
-    "imagen": "abstracto_10.jpg",
-    "categorias": [14],
+    "titulo": "Memoria del paisaje",
+    "imagen": "paisaje_1.jpg",
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["memoria", "territorio", "paisaje"]
+  },
+  {
+    "id": 81,
+    "titulo": "Forma latente",
+    "imagen": "abstracto_21.jpg",
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["latencia", "estructura", "abstracción"]
+  },
+  {
+    "id": 82,
+    "titulo": "Pulso cromático",
+    "imagen": "abstracto_22.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [14],
+    "tags": ["color", "ritmo", "movimiento"]
+  },
+  {
+    "id": 83,
+    "titulo": "Trama orgánica",
+    "imagen": "abstracto_23.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["organicidad", "trama", "equilibrio"]
+  },
+  {
+    "id": 84,
+    "titulo": "Campo expansivo",
+    "imagen": "abstracto_24.jpg",
     "artistaId": 3,
-    "descripcion": "Obra abstracta centrada en la expansión del color como elemento expresivo."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["expansión", "color", "campo"]
+  },
+
+  {
+    "id": 85,
+    "titulo": "Retrato editorial II",
+    "imagen": "retrato_15.jpg",
+    "artistaId": 7,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["editorial", "presencia", "actitud"]
+  },
+  {
+    "id": 86,
+    "titulo": "Retrato íntimo II",
+    "imagen": "retrato_16.jpg",
+    "artistaId": 15,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["intimidad", "espacio", "relación"]
+  },
+
+  {
+    "id": 87,
+    "titulo": "Paisaje interior",
+    "imagen": "paisaje_4.jpg",
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["paisaje", "interior", "memoria"]
+  },
+
+  {
+    "id": 88,
+    "titulo": "Estructura de datos",
+    "imagen": "conceptual_6.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["datos", "estructura", "lenguaje"]
+  },
+
+  {
+    "id": 89,
+    "titulo": "Campo generativo",
+    "imagen": "abstracto_25.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["generativo", "campo", "algoritmo"]
+  },
+
+  {
+    "id": 90,
+    "titulo": "Silencio urbano",
+    "imagen": "foto_urbana_3.jpg",
+    "artistaId": 8,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [9],
+    "tags": ["silencio", "ciudad", "arquitectura"]
+  },
+
+  {
+    "id": 91,
+    "titulo": "Proceso III",
+    "imagen": "doc_3.jpg",
+    "artistaId": 13,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [23],
+    "tags": ["proceso", "registro", "gesto"]
+  },
+
+  {
+    "id": 92,
+    "titulo": "Retrato nocturno II",
+    "imagen": "retrato_17.jpg",
+    "artistaId": 2,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["noche", "urbano", "identidad"]
+  },
+
+  {
+    "id": 93,
+    "titulo": "Espacio expandido",
+    "imagen": "abstracto_26.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["espacio", "expansión", "color"]
+  },
+
+  {
+    "id": 94,
+    "titulo": "Estructura sensible",
+    "imagen": "abstracto_27.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["sensibilidad", "estructura", "organicidad"]
+  },
+
+  {
+    "id": 95,
+    "titulo": "Pulso generativo",
+    "imagen": "abstracto_28.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["ritmo", "generativo", "código"]
+  },
+
+  {
+    "id": 96,
+    "titulo": "Ciudad en capas",
+    "imagen": "moderno_21.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["capas", "ciudad", "estructura"]
+  },
+
+  {
+    "id": 97,
+    "titulo": "Ritmo digital",
+    "imagen": "moderno_22.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [4],
+    "tags": ["digital", "movimiento", "ritmo"]
+  },
+
+  {
+    "id": 98,
+    "titulo": "Sistema cerrado",
+    "imagen": "conceptual_7.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["sistema", "control", "estructura"]
+  },
+
+  {
+    "id": 99,
+    "titulo": "Forma contenida",
+    "imagen": "abstracto_29.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["contención", "forma", "equilibrio"]
+  },
+
+  {
+    "id": 100,
+    "titulo": "Equilibrio final",
+    "imagen": "abstracto_30.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["cierre", "balance", "color"]
+  },
+
+  {
+    "id": 101,
+    "titulo": "Retrato conceptual III",
+    "imagen": "retrato_18.jpg",
+    "artistaId": 12,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["conceptual", "símbolo", "figura"]
+  },
+
+  {
+    "id": 102,
+    "titulo": "Paisaje residual",
+    "imagen": "paisaje_5.jpg",
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["residuo", "memoria", "paisaje"]
+  },
+
+  {
+    "id": 103,
+    "titulo": "Geometría mínima II",
+    "imagen": "minimal_5.jpg",
+    "artistaId": 14,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7, 14],
+    "tags": ["geometría", "minimalismo", "tecnología"]
+  },
+
+  {
+    "id": 104,
+    "titulo": "Espacio silencioso II",
+    "imagen": "minimal_6.jpg",
+    "artistaId": 19,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7],
+    "tags": ["silencio", "vacío", "espacio"]
+  },
+
+  {
+    "id": 105,
+    "titulo": "Ritmo expandido",
+    "imagen": "motion_4.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [],
+    "tags": ["expansión", "movimiento", "tiempo"]
+  },
+
+  {
+    "id": 106,
+    "titulo": "Estructura urbana II",
+    "imagen": "foto_urbana_4.jpg",
+    "artistaId": 8,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [9],
+    "tags": ["arquitectura", "ciudad", "patrón"]
+  },
+
+  {
+    "id": 107,
+    "titulo": "Retrato cotidiano III",
+    "imagen": "retrato_19.jpg",
+    "artistaId": 10,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["cotidiano", "urbano", "vida"]
+  },
+
+  {
+    "id": 108,
+    "titulo": "Materia algorítmica",
+    "imagen": "abstracto_31.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["algoritmo", "materia", "proceso"]
+  },
+
+  {
+    "id": 109,
+    "titulo": "Forma emocional II",
+    "imagen": "pintura_3.jpg",
+    "artistaId": 9,
+    "categoriaPrincipal": 1,
+    "categoriasSecundarias": [14, 23],
+    "tags": ["emoción", "forma", "pintura"]
+  },
+
+  {
+    "id": 110,
+    "titulo": "Narrativa visual II",
+    "imagen": "conceptual_8.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["narrativa", "relato", "visual"]
+  },
+
+  {
+    "id": 111,
+    "titulo": "Campo final",
+    "imagen": "abstracto_32.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["cierre", "campo", "color"]
+  },
+
+  {
+    "id": 112,
+    "titulo": "Retrato íntimo III",
+    "imagen": "retrato_20.jpg",
+    "artistaId": 15,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["intimidad", "cierre", "presencia"]
+  },
+
+  {
+    "id": 113,
+    "titulo": "Presencia final",
+    "imagen": "retrato_21.jpg",
+    "artistaId": 7,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["presencia", "editorial", "cierre"]
+  },
+
+  {
+    "id": 114,
+    "titulo": "Cuerpo y gesto",
+    "imagen": "retrato_22.jpg",
+    "artistaId": 5,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["cuerpo", "gesto", "directo"]
+  },
+
+  {
+    "id": 115,
+    "titulo": "Proceso final",
+    "imagen": "doc_4.jpg",
+    "artistaId": 13,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [23],
+    "tags": ["cierre", "proceso", "documentación"]
+  },
+
+  {
+    "id": 116,
+    "titulo": "Ciudad residual",
+    "imagen": "moderno_23.jpg",
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["residuo", "ciudad", "estructura"]
+  },
+
+  {
+    "id": 117,
+    "titulo": "Ritmo contenido",
+    "imagen": "motion_5.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [],
+    "tags": ["contención", "movimiento", "tiempo"]
+  },
+
+  {
+    "id": 118,
+    "titulo": "Estructura final",
+    "imagen": "abstracto_33.jpg",
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["cierre", "estructura", "experimental"]
+  },
+
+  {
+    "id": 119,
+    "titulo": "Equilibrio residual",
+    "imagen": "abstracto_34.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["residuo", "equilibrio", "forma"]
+  },
+
+  {
+    "id": 120,
+    "titulo": "Campo silencioso final",
+    "imagen": "minimal_7.jpg",
+    "artistaId": 19,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7],
+    "tags": ["silencio", "cierre", "vacío"]
   },
   {
     "id": 41,
-    "titulo": "Retrato en calma",
-    "imagen": "clasico_21.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato clásico que enfatiza la serenidad y el equilibrio del gesto."
+    "titulo": "Campo latente",
+    "imagen": "abstracto_9.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["latencia", "color", "profundidad"]
   },
   {
     "id": 42,
-    "titulo": "Luz de estudio",
-    "imagen": "clasico_22.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Obra pictórica tradicional centrada en el tratamiento académico de la luz."
+    "titulo": "Trama sensible",
+    "imagen": "abstracto_10.jpg",
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["estructura", "sensibilidad", "materia"]
   },
   {
     "id": 43,
-    "titulo": "Colinas suaves",
-    "imagen": "clasico_23.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje clásico de formas suaves y composición equilibrada."
+    "titulo": "Pulso interno",
+    "imagen": "abstracto_11.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [14],
+    "tags": ["ritmo", "cadencia", "movimiento"]
   },
   {
     "id": 44,
-    "titulo": "Naturaleza detenida",
-    "imagen": "clasico_24.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Bodegón de inspiración tradicional que transmite quietud y orden."
+    "titulo": "Materia activa",
+    "imagen": "abstracto_12.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["algoritmo", "materia", "proceso"]
   },
   {
     "id": 45,
-    "titulo": "Figura en estudio",
-    "imagen": "clasico_25.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Representación figurativa basada en proporción y observación anatómica."
+    "titulo": "Equilibrio orgánico",
+    "imagen": "abstracto_13.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["organicidad", "balance", "estructura"]
   },
+
   {
     "id": 46,
-    "titulo": "Paisaje abierto",
-    "imagen": "clasico_26.jpg",
-    "categorias": [1, 13],
+    "titulo": "Perfil nocturno",
+    "imagen": "retrato_7.jpg",
     "artistaId": 2,
-    "descripcion": "Paisaje clásico que enfatiza la profundidad y la perspectiva."
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["noche", "urbano", "identidad"]
   },
   {
     "id": 47,
-    "titulo": "Retrato clásico",
-    "imagen": "clasico_27.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato de composición formal y expresión contenida."
+    "titulo": "Presencia editorial",
+    "imagen": "retrato_8.jpg",
+    "artistaId": 7,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["editorial", "cine", "actitud"]
   },
   {
     "id": 48,
-    "titulo": "Objetos en equilibrio",
-    "imagen": "clasico_28.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Naturaleza muerta basada en la armonía visual y el orden compositivo."
+    "titulo": "Silencio corporal",
+    "imagen": "retrato_9.jpg",
+    "artistaId": 5,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["cuerpo", "presencia", "directo"]
   },
   {
     "id": 49,
-    "titulo": "Valle sereno",
-    "imagen": "clasico_29.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje tradicional que transmite estabilidad y calma."
+    "titulo": "Mirada detenida",
+    "imagen": "retrato_10.jpg",
+    "artistaId": 11,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["mirada", "moda", "control"]
   },
   {
     "id": 50,
-    "titulo": "Estudio tradicional",
-    "imagen": "clasico_30.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Obra clásica centrada en técnica y observación cuidadosa."
+    "titulo": "Habitación propia",
+    "imagen": "retrato_11.jpg",
+    "artistaId": 15,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["intimidad", "espacio", "hogar"]
   },
+
   {
     "id": 51,
-    "titulo": "Trama urbana",
+    "titulo": "Red urbana",
     "imagen": "moderno_11.jpg",
-    "categorias": [9, 23],
     "artistaId": 1,
-    "descripcion": "Composición contemporánea inspirada en el ritmo de la ciudad."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["red", "ciudad", "estructura"]
   },
   {
     "id": 52,
     "titulo": "Pulso visual",
     "imagen": "moderno_12.jpg",
-    "categorias": [4, 23],
     "artistaId": 1,
-    "descripcion": "Obra digital moderna centrada en energía y estructura visual."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [23],
+    "tags": ["energía", "digital", "ritmo"]
   },
   {
     "id": 53,
     "titulo": "Capas contemporáneas",
     "imagen": "moderno_13.jpg",
-    "categorias": [4, 20],
     "artistaId": 1,
-    "descripcion": "Superposición de elementos que explora profundidad y tensión visual."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [20],
+    "tags": ["capas", "superposición", "tensión"]
   },
   {
     "id": 54,
     "titulo": "Entorno fragmentado",
     "imagen": "moderno_14.jpg",
-    "categorias": [9, 14],
     "artistaId": 1,
-    "descripcion": "Visión moderna del paisaje urbano a través de abstracción."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 14],
+    "tags": ["fragmentación", "urbano", "abstracción"]
   },
   {
     "id": 55,
     "titulo": "Código visual",
     "imagen": "moderno_15.jpg",
-    "categorias": [6, 23],
-    "artistaId": 1,
-    "descripcion": "Obra conceptual que reflexiona sobre el lenguaje visual actual."
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["código", "lenguaje", "sistema"]
   },
+
   {
     "id": 56,
     "titulo": "Estructura digital",
     "imagen": "moderno_16.jpg",
-    "categorias": [4, 17],
-    "artistaId": 1,
-    "descripcion": "Composición moderna basada en volumen y espacio digital."
+    "artistaId": 14,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7, 14],
+    "tags": ["minimalismo", "tecnología", "estructura"]
   },
   {
     "id": 57,
     "titulo": "Flujo urbano",
     "imagen": "moderno_17.jpg",
-    "categorias": [9, 18],
-    "artistaId": 1,
-    "descripcion": "Obra contemporánea que sugiere movimiento constante en el entorno urbano."
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [9],
+    "tags": ["movimiento", "ciudad", "ritmo"]
   },
   {
     "id": 58,
     "titulo": "Conexión visual",
     "imagen": "moderno_18.jpg",
-    "categorias": [23],
-    "artistaId": 1,
-    "descripcion": "Pieza moderna centrada en relaciones formales y visuales."
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["relación", "estructura", "visual"]
   },
   {
     "id": 59,
     "titulo": "Interfaz",
     "imagen": "moderno_19.jpg",
-    "categorias": [4, 6],
-    "artistaId": 1,
-    "descripcion": "Obra conceptual digital inspirada en sistemas e interacción."
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [4],
+    "tags": ["interfaz", "sistema", "concepto"]
   },
   {
     "id": 60,
     "titulo": "Ciudad latente",
     "imagen": "moderno_20.jpg",
-    "categorias": [9, 23],
     "artistaId": 1,
-    "descripcion": "Interpretación contemporánea de la ciudad como estructura viva."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [9, 23],
+    "tags": ["ciudad", "latencia", "estructura"]
   },
+
   {
     "id": 61,
-    "titulo": "Tensión cromática",
-    "imagen": "abstracto_11.jpg",
-    "categorias": [14],
+    "titulo": "Campo cromático",
+    "imagen": "abstracto_14.jpg",
     "artistaId": 3,
-    "descripcion": "Composición abstracta centrada en la interacción intensa del color."
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["color", "campo", "expansión"]
   },
   {
     "id": 62,
     "titulo": "Forma emergente",
-    "imagen": "abstracto_12.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta generativa que sugiere aparición y transformación."
+    "imagen": "abstracto_15.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["emergencia", "algoritmo", "forma"]
   },
   {
     "id": 63,
-    "titulo": "Movimiento interno",
-    "imagen": "abstracto_13.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Exploración abstracta del ritmo y la fluidez visual."
+    "titulo": "Ritmo profundo",
+    "imagen": "abstracto_16.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [14],
+    "tags": ["ritmo", "profundidad", "movimiento"]
   },
   {
     "id": 64,
-    "titulo": "Estructura sensible",
-    "imagen": "abstracto_14.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta que combina control estructural y expresión."
+    "titulo": "Estructura blanda",
+    "imagen": "abstracto_17.jpg",
+    "artistaId": 17,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 20],
+    "tags": ["fluidez", "estructura", "equilibrio"]
   },
   {
     "id": 65,
-    "titulo": "Campo expansivo",
-    "imagen": "abstracto_15.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta que utiliza el espacio y el color como protagonistas."
+    "titulo": "Espacio activo",
+    "imagen": "abstracto_18.jpg",
+    "artistaId": 6,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["espacio", "activación", "forma"]
   },
+
   {
     "id": 66,
-    "titulo": "Materia activa",
-    "imagen": "abstracto_16.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Pieza abstracta generativa basada en variación y flujo."
+    "titulo": "Retrato ceremonial",
+    "imagen": "retrato_12.jpg",
+    "artistaId": 12,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["ritual", "figura", "símbolo"]
   },
   {
     "id": 67,
-    "titulo": "Ritmo visual II",
-    "imagen": "abstracto_17.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Continuación abstracta centrada en cadencia y repetición."
+    "titulo": "Figura contenida",
+    "imagen": "retrato_13.jpg",
+    "artistaId": 12,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["contención", "presencia", "figura"]
   },
+
   {
     "id": 68,
-    "titulo": "Energía contenida",
-    "imagen": "abstracto_18.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta que equilibra fuerza y control."
+    "titulo": "Proceso II",
+    "imagen": "doc_2.jpg",
+    "artistaId": 13,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [23],
+    "tags": ["documentación", "proceso", "gesto"]
   },
+
   {
     "id": 69,
-    "titulo": "Trama orgánica",
-    "imagen": "abstracto_19.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta basada en formas orgánicas y estructura interna."
+    "titulo": "Geometría urbana II",
+    "imagen": "foto_urbana_2.jpg",
+    "artistaId": 8,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [9],
+    "tags": ["arquitectura", "patrón", "ciudad"]
   },
+
   {
     "id": 70,
-    "titulo": "Expansión interna",
-    "imagen": "abstracto_20.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Exploración abstracta de crecimiento y profundidad visual."
+    "titulo": "Retrato cotidiano II",
+    "imagen": "retrato_14.jpg",
+    "artistaId": 10,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["vida", "cotidiano", "urbano"]
   },
+
   {
     "id": 71,
-    "titulo": "Retrato contenido",
-    "imagen": "clasico_31.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato clásico que enfatiza la contención emocional y el equilibrio formal."
+    "titulo": "Materia generativa II",
+    "imagen": "abstracto_19.jpg",
+    "artistaId": 20,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14, 15],
+    "tags": ["variación", "algoritmo", "flujo"]
   },
   {
     "id": 72,
-    "titulo": "Luz sobre cerámica",
-    "imagen": "clasico_32.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Naturaleza muerta tradicional centrada en textura y luz."
+    "titulo": "Espacio emocional II",
+    "imagen": "pintura_2.jpg",
+    "artistaId": 9,
+    "categoriaPrincipal": 1,
+    "categoriasSecundarias": [14, 23],
+    "tags": ["emoción", "pintura", "forma"]
   },
+
   {
     "id": 73,
-    "titulo": "Paisaje en calma",
-    "imagen": "clasico_33.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje clásico que transmite serenidad y estabilidad visual."
+    "titulo": "Memoria del valle",
+    "imagen": "paisaje_2.jpg",
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["memoria", "territorio", "paisaje"]
   },
   {
     "id": 74,
-    "titulo": "Figura reclinada",
-    "imagen": "clasico_34.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Estudio figurativo de inspiración académica."
+    "titulo": "Horizonte suspendido",
+    "imagen": "paisaje_3.jpg",
+    "artistaId": 21,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [13, 23],
+    "tags": ["horizonte", "espacio", "paisaje"]
   },
+
   {
     "id": 75,
-    "titulo": "Objetos en silencio",
-    "imagen": "clasico_35.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Bodegón clásico de composición sobria y equilibrada."
+    "titulo": "Sistema visual II",
+    "imagen": "conceptual_4.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 6,
+    "categoriasSecundarias": [23],
+    "tags": ["sistema", "lenguaje", "estructura"]
   },
+
   {
     "id": 76,
-    "titulo": "Camino antiguo",
-    "imagen": "clasico_36.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje tradicional que evoca continuidad y tiempo."
+    "titulo": "Campo silencioso",
+    "imagen": "minimal_3.jpg",
+    "artistaId": 19,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7],
+    "tags": ["silencio", "vacío", "campo"]
   },
   {
     "id": 77,
-    "titulo": "Retrato tradicional",
-    "imagen": "clasico_37.jpg",
-    "categorias": [1, 12],
-    "artistaId": 2,
-    "descripcion": "Retrato clásico basado en proporción y observación."
+    "titulo": "Abstracción mínima",
+    "imagen": "minimal_4.jpg",
+    "artistaId": 14,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [7, 14],
+    "tags": ["reducción", "forma", "tecnología"]
   },
+
   {
     "id": 78,
-    "titulo": "Luz interior",
-    "imagen": "clasico_38.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Escena pictórica de carácter introspectivo."
+    "titulo": "Secuencia III",
+    "imagen": "motion_3.jpg",
+    "artistaId": 18,
+    "categoriaPrincipal": 18,
+    "categoriasSecundarias": [],
+    "tags": ["secuencia", "tiempo", "movimiento"]
   },
+
   {
     "id": 79,
-    "titulo": "Paisaje continuo",
-    "imagen": "clasico_39.jpg",
-    "categorias": [1, 13],
-    "artistaId": 2,
-    "descripcion": "Paisaje clásico de profundidad progresiva."
+    "titulo": "Actitud II",
+    "imagen": "conceptual_5.jpg",
+    "artistaId": 16,
+    "categoriaPrincipal": 2,
+    "categoriasSecundarias": [12, 23],
+    "tags": ["identidad", "gesto", "presencia"]
   },
+
   {
     "id": 80,
-    "titulo": "Estudio final",
-    "imagen": "clasico_40.jpg",
-    "categorias": [1],
-    "artistaId": 2,
-    "descripcion": "Obra de cierre clásico centrada en técnica y orden."
-  },
-  {
-    "id": 81,
-    "titulo": "Matriz urbana",
-    "imagen": "moderno_21.jpg",
-    "categorias": [9, 23],
-    "artistaId": 1,
-    "descripcion": "Composición moderna inspirada en la estructura de la ciudad."
-  },
-  {
-    "id": 82,
-    "titulo": "Flujo digital",
-    "imagen": "moderno_22.jpg",
-    "categorias": [4, 18],
-    "artistaId": 1,
-    "descripcion": "Obra digital contemporánea centrada en movimiento y continuidad."
-  },
-  {
-    "id": 83,
-    "titulo": "Sistema visual",
-    "imagen": "moderno_23.jpg",
-    "categorias": [6, 23],
-    "artistaId": 16,
-    "descripcion": "Pieza conceptual que explora sistemas y relaciones visuales."
-  },
-  {
-    "id": 84,
-    "titulo": "Entorno mutable",
-    "imagen": "moderno_24.jpg",
-    "categorias": [4, 20],
-    "artistaId": 16,
-    "descripcion": "Obra moderna basada en transformación y capas visuales."
-  },
-  {
-    "id": 85,
-    "titulo": "Arquitectura líquida",
-    "imagen": "moderno_25.jpg",
-    "categorias": [9, 14],
-    "artistaId": 1,
-    "descripcion": "Interpretación contemporánea de la arquitectura desde la abstracción."
-  },
-  {
-    "id": 86,
-    "titulo": "Estructura 3D",
-    "imagen": "moderno_26.jpg",
-    "categorias": [17, 23],
-    "artistaId": 16,
-    "descripcion": "Obra tridimensional digital de carácter contemporáneo."
-  },
-  {
-    "id": 87,
-    "titulo": "Pulso urbano II",
-    "imagen": "moderno_27.jpg",
-    "categorias": [9, 18],
-    "artistaId": 1,
-    "descripcion": "Continuación moderna basada en ritmo y movimiento urbano."
-  },
-  {
-    "id": 88,
-    "titulo": "Conectividad",
-    "imagen": "moderno_28.jpg",
-    "categorias": [4, 6],
-    "artistaId": 16,
-    "descripcion": "Obra conceptual digital centrada en interconexión visual."
-  },
-  {
-    "id": 89,
-    "titulo": "Lenguaje contemporáneo",
-    "imagen": "moderno_29.jpg",
-    "categorias": [23],
-    "artistaId": 16,
-    "descripcion": "Exploración moderna del lenguaje visual actual."
-  },
-  {
-    "id": 90,
-    "titulo": "Ciudad expandida",
-    "imagen": "moderno_30.jpg",
-    "categorias": [9, 23],
-    "artistaId": 1,
-    "descripcion": "Visión contemporánea de la ciudad como organismo en expansión."
-  },
-     {
-    "id": 91,
-    "titulo": "Campo energético",
-    "imagen": "abstracto_21.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta basada en energía y equilibrio cromático."
-  },
-  {
-    "id": 92,
-    "titulo": "Flujo latente",
-    "imagen": "abstracto_22.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta generativa que sugiere movimiento interno."
-  },
-  {
-    "id": 93,
-    "titulo": "Ritmo expansivo",
-    "imagen": "abstracto_23.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Exploración abstracta del ritmo visual y la repetición."
-  },
-  {
-    "id": 94,
-    "titulo": "Estructura blanda",
-    "imagen": "abstracto_24.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta que equilibra forma y fluidez."
-  },
-  {
-    "id": 95,
-    "titulo": "Espacio cromático",
-    "imagen": "abstracto_25.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta centrada en profundidad y color."
-  },
-  {
-    "id": 96,
-    "titulo": "Materia generativa",
-    "imagen": "abstracto_26.jpg",
-    "categorias": [14, 15],
-    "artistaId": 3,
-    "descripcion": "Pieza abstracta generada mediante variación algorítmica."
-  },
-  {
-    "id": 97,
-    "titulo": "Pulso visual",
-    "imagen": "abstracto_27.jpg",
-    "categorias": [14, 18],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta basada en movimiento y cadencia."
-  },
-  {
-    "id": 98,
-    "titulo": "Trama sensible",
-    "imagen": "abstracto_28.jpg",
-    "categorias": [14, 20],
-    "artistaId": 3,
-    "descripcion": "Exploración abstracta de textura y estructura interna."
-  },
-  {
-    "id": 99,
-    "titulo": "Expansión tonal",
-    "imagen": "abstracto_29.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Obra abstracta centrada en variaciones tonales."
-  },
-  {
-    "id": 100,
-    "titulo": "Campo interno",
-    "imagen": "abstracto_30.jpg",
-    "categorias": [14],
-    "artistaId": 3,
-    "descripcion": "Composición abstracta que transmite profundidad y equilibrio."
-  },
- {
-    "id": 101,
-    "titulo": "Red urbana",
-    "imagen": "moderno_31.jpg",
-    "categorias": [9, 23],
-    "artistaId": 16,
-    "descripcion": "Composición contemporánea inspirada en la interconexión urbana."
-  },
-  {
-    "id": 102,
-    "titulo": "Pulso tecnológico",
-    "imagen": "moderno_32.jpg",
-    "categorias": [4, 23],
-    "artistaId": 16,
-    "descripcion": "Obra digital que explora la relación entre tecnología y forma visual."
-  },
-  {
-    "id": 103,
-    "titulo": "Interfaz dinámica",
-    "imagen": "moderno_33.jpg",
-    "categorias": [4, 18],
-    "artistaId": 16,
-    "descripcion": "Pieza moderna basada en movimiento y transición visual."
-  },
-  {
-    "id": 104,
-    "titulo": "Espacio construido",
-    "imagen": "moderno_34.jpg",
-    "categorias": [9, 14],
-    "artistaId": 16,
-    "descripcion": "Interpretación abstracta de estructuras arquitectónicas contemporáneas."
-  },
-  {
-    "id": 105,
-    "titulo": "Sistema abierto",
-    "imagen": "moderno_35.jpg",
-    "categorias": [6, 23],
-    "artistaId": 16,
-    "descripcion": "Obra conceptual moderna centrada en procesos y relaciones visuales."
-  },
-  {
-    "id": 106,
-    "titulo": "Volumen digital",
-    "imagen": "moderno_36.jpg",
-    "categorias": [17, 23],
-    "artistaId": 16,
-    "descripcion": "Composición tridimensional de estética contemporánea."
-  },
-  {
-    "id": 107,
-    "titulo": "Ritmo urbano",
-    "imagen": "moderno_37.jpg",
-    "categorias": [9, 18],
-    "artistaId": 16,
-    "descripcion": "Obra moderna que traduce el movimiento urbano en ritmo visual."
-  },
-  {
-    "id": 108,
-    "titulo": "Lenguaje de datos",
-    "imagen": "moderno_38.jpg",
-    "categorias": [4, 6],
-    "artistaId": 16,
-    "descripcion": "Exploración conceptual del dato como lenguaje visual."
-  },
-  {
-    "id": 109,
-    "titulo": "Tránsito contemporáneo",
-    "imagen": "moderno_39.jpg",
-    "categorias": [23],
-    "artistaId": 16,
-    "descripcion": "Pieza moderna centrada en flujo y desplazamiento visual."
-  },
-  {
-    "id": 110,
-    "titulo": "Ciudad en red",
-    "imagen": "moderno_40.jpg",
-    "categorias": [9, 23],
-    "artistaId": 16,
-    "descripcion": "Visión contemporánea de la ciudad como sistema conectado."
-  },
-  {
-    "id": 111,
-    "titulo": "Campo vibrante",
-    "imagen": "abstracto_31.jpg",
-    "categorias": [14],
-    "artistaId": 17,
-    "descripcion": "Composición abstracta basada en vibración cromática."
-  },
-  {
-    "id": 112,
-    "titulo": "Flujo continuo",
-    "imagen": "abstracto_32.jpg",
-    "categorias": [14, 15],
-    "artistaId": 17,
-    "descripcion": "Obra abstracta generativa que sugiere continuidad y transformación."
-  },
-  {
-    "id": 113,
-    "titulo": "Ritmo profundo",
-    "imagen": "abstracto_33.jpg",
-    "categorias": [14, 18],
-    "artistaId": 17,
-    "descripcion": "Exploración abstracta del ritmo interno y la cadencia visual."
-  },
-  {
-    "id": 114,
-    "titulo": "Estructura orgánica",
-    "imagen": "abstracto_34.jpg",
-    "categorias": [14, 20],
-    "artistaId": 17,
-    "descripcion": "Composición abstracta que combina organicidad y control."
-  },
-  {
-    "id": 115,
-    "titulo": "Espacio activo",
-    "imagen": "abstracto_35.jpg",
-    "categorias": [14],
-    "artistaId": 17,
-    "descripcion": "Obra abstracta centrada en la activación del espacio visual."
-  },
-  {
-    "id": 116,
-    "titulo": "Materia fluida",
-    "imagen": "abstracto_36.jpg",
-    "categorias": [14, 15],
-    "artistaId": 17,
-    "descripcion": "Pieza abstracta generativa basada en fluidez y variación."
-  },
-  {
-    "id": 117,
-    "titulo": "Pulso cromático",
-    "imagen": "abstracto_37.jpg",
-    "categorias": [14, 18],
-    "artistaId": 17,
-    "descripcion": "Composición abstracta que enfatiza el pulso visual del color."
-  },
-  {
-    "id": 118,
-    "titulo": "Trama expansiva",
-    "imagen": "abstracto_38.jpg",
-    "categorias": [14, 20],
-    "artistaId": 17,
-    "descripcion": "Exploración abstracta de textura y expansión formal."
-  },
-  {
-    "id": 119,
     "titulo": "Campo resonante",
-    "imagen": "abstracto_39.jpg",
-    "categorias": [14],
-    "artistaId": 17,
-    "descripcion": "Obra abstracta centrada en resonancia y profundidad visual."
-  },
-  {
-    "id": 120,
-    "titulo": "Equilibrio interno",
-    "imagen": "abstracto_40.jpg",
-    "categorias": [14],
-    "artistaId": 17,
-    "descripcion": "Composición abstracta de cierre basada en balance y contención."
+    "imagen": "abstracto_20.jpg",
+    "artistaId": 3,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [14],
+    "tags": ["resonancia", "color", "campo"]
   }
 ]

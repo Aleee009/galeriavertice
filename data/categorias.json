@@ -15,14 +15,12 @@
     { "id": 13, "nombre": "Paisaje", "slug": "paisaje" },
     { "id": 14, "nombre": "Abstracto", "slug": "abstracto" },
     { "id": 15, "nombre": "Arte Generativo (IA)", "slug": "arte-generativo-ia" },
-    { "id": 16, "nombre": "NFT Art", "slug": "nft-art" },
     { "id": 17, "nombre": "3D Art", "slug": "3d-art" },
     { "id": 18, "nombre": "Motion Art", "slug": "motion-art" },
     { "id": 19, "nombre": "Collage Digital", "slug": "collage-digital" },
     { "id": 20, "nombre": "Arte Experimental", "slug": "arte-experimental" },
     { "id": 21, "nombre": "Pop Art", "slug": "pop-art" },
     { "id": 22, "nombre": "Neo-Surrealismo", "slug": "neo-surrealismo" },
-    { "id": 23, "nombre": "Arte Contemporáneo", "slug": "arte-contemporaneo" },
-    { "id": 24, "nombre": "Arte Visual para Redes", "slug": "arte-visual-redes" }
+    { "id": 23, "nombre": "Arte Contemporáneo", "slug": "arte-contemporaneo" }
   ]
 }
