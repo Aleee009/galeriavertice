@@ -6,7 +6,16 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["color", "geometría", "percepción"]
+    "tags": ["color", "geometría", "percepción"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "120 x 150 cm",
+    "procedencia": "Colección privada, Barcelona. Adquirido directamente a la artista.",
+    "historial_exposiciones": [
+      "Vértice Gallery: 'Nuevos Horizontes' (2023)",
+      "MACBA: 'Digitalismo en el Mediterráneo' (2024)"
+    ],
+    "descripcion_detallada": "Rojo Profundo es una investigación cromática sobre la persistencia de la retina. Moreno utiliza capas superpuestas de óleo para emular la luminosidad de una pantalla digital, creando un puente táctil entre lo físico y lo virtual."
   },
   {
     "id": 2,
@@ -15,7 +24,16 @@
     "artistaId": 19,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7, 14],
-    "tags": ["silencio", "reducción", "espacio"]
+    "tags": ["silencio", "reducción", "espacio"],
+    "tecnica": "Acrílico y resina sobre panel",
+    "año": 2022,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Colección de la Artista, Berlín.",
+    "historial_exposiciones": [
+      "Art Basel Miami: 'Emerging Minimalists' (2022)",
+      "Vértice Gallery: 'Silencio Visual' (2023)"
+    ],
+    "descripcion_detallada": "Minimal es una obra que busca la supresión del 'yo' artístico. A través de capas traslúcidas de resina, Klein crea una profundidad que invita a la introspección, eliminando cualquier rastro de la pincelada humana."
   },
   {
     "id": 3,
@@ -24,7 +42,16 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["tensión", "balance", "estructura"]
+    "tags": ["tensión", "balance", "estructura"],
+    "tecnica": "Bronce con pátina negra",
+    "año": 2024,
+    "dimensiones": "45 x 30 x 60 cm",
+    "procedencia": "Fundición Bellini, Milán.",
+    "historial_exposiciones": [
+      "Venice Biennale: 'Weight of the Modern' (2024)",
+      "Galleria d'Arte Moderna, Roma (2024)"
+    ],
+    "descripcion_detallada": "Equilibrio desafía las leyes de la física. Esta escultura en bronce utiliza un punto de apoyo mínimo para sostener una masa asimétrica, simbolizando la fragilidad de las instituciones humanas en la era digital."
   },
   {
     "id": 4,
@@ -33,7 +60,16 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["ciudad", "paisaje-digital", "arquitectura"]
+    "tags": ["ciudad", "paisaje-digital", "arquitectura"],
+    "tecnica": "Impresión Giclée sobre papel Hahnemühle",
+    "año": 2023,
+    "dimensiones": "150 x 100 cm",
+    "procedencia": "Taller de la Artista. Serie limitada 1/5.",
+    "historial_exposiciones": [
+      "Digital Art Fair Paris (2023)",
+      "Vértice: 'Metrópolis Sintéticas' (2024)"
+    ],
+    "descripcion_detallada": "Horizonte Urbano es una amalgama de metrópolis reales y generadas por IA. Moreno cuestiona la idea de 'lugar' en un mundo hiperconectado, donde las ciudades comienzan a parecerse entre sí a través de la arquitectura genérica."
   },
   {
     "id": 5,
@@ -42,7 +78,15 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["luz", "estructura", "experimento"]
+    "tags": ["luz", "estructura", "experimento"],
+    "tecnica": "Instalación lumínica (Captura digital)",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Donación del Artista para el programa de fomento Vértice.",
+    "historial_exposiciones": [
+      "ZKM Center for Art and Media, Karlsruhe (2024)"
+    ],
+    "descripcion_detallada": "Luz Estructural es el registro de una performance con luz láser en el Hamburgo Industrial. Richter utiliza la fotografía como un escáner que congela el movimiento de partículas de luz, creando una arquitectura efímera e intangible."
   },
 
   {
@@ -52,7 +96,13 @@
     "artistaId": 12,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 6, 23],
-    "tags": ["clásico", "identidad", "símbolo"]
+    "tags": ["clásico", "identidad", "símbolo"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2021,
+    "dimensiones": "80 x 120 cm",
+    "procedencia": "Colección Samuel Brooks, Nueva York.",
+    "historial_exposiciones": ["MoMA PS1: 'Classical Interventions' (2021)"],
+    "descripcion_detallada": "Brooks interviene la estética clásica con una mirada contemporánea, cuestionando la permanencia de la identidad y la belleza en la era de la reproducción digital."
   },
   {
     "id": 7,
@@ -61,7 +111,13 @@
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "categoriasSecundarias": [14, 23],
-    "tags": ["emoción", "forma", "materia"]
+    "tags": ["emoción", "forma", "materia"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2020,
+    "dimensiones": "150 x 200 cm",
+    "procedencia": "Estudio Marta Kowalska, Varsovia.",
+    "historial_exposiciones": ["Biennale de Arte Joven de Varsovia (2020)"],
+    "descripcion_detallada": "Una exploración de la fuerza orgánica contenida en el lienzo, donde el gesto pictórico se convierte en energía pura y la materia reclama su propio espacio narrativo."
   },
   {
     "id": 8,
@@ -70,7 +126,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["paisaje", "memoria", "atmósfera"]
+    "tags": ["paisaje", "memoria", "atmósfera"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "60 x 90 cm",
+    "procedencia": "Donación del Artista al programa Vértice.",
+    "historial_exposiciones": ["Valencia Photo Festival: 'Atmósferas' (2022)"],
+    "descripcion_detallada": "La captura de una atmósfera efímera donde la luz se convierte en el único habitante del paisaje, invitando a una reflexión sobre la soledad y la inmensidad."
   },
   {
     "id": 9,
@@ -79,7 +141,13 @@
     "artistaId": 12,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["figura", "clásico", "presencia"]
+    "tags": ["figura", "clásico", "presencia"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2019,
+    "dimensiones": "100 x 120 cm",
+    "procedencia": "Colección Familia Borbón (Préstamo permanente).",
+    "historial_exposiciones": ["Palacio Real de Madrid (2020)"],
+    "descripcion_detallada": "Un estudio magistral de la luz sobre el rostro humano, siguiendo las técnicas de claroscuro del siglo XVII."
   },
   {
     "id": 10,
@@ -88,7 +156,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["territorio", "estructura", "calma"]
+    "tags": ["territorio", "estructura", "calma"],
+    "tecnica": "Fotografía Fine Art sobre papel de algodón",
+    "año": 2022,
+    "dimensiones": "180 x 120 cm",
+    "procedencia": "Estudio Núñez, Valencia.",
+    "historial_exposiciones": ["Sala de Exposiciones UPV (2022)"],
+    "descripcion_detallada": "Álvaro Núñez captura la serenidad del paisaje mediterráneo, buscando una estructura geométrica natural en el horizonte."
   },
 
   {
@@ -98,7 +172,16 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["fragmentación", "tensión", "sistema"]
+    "tags": ["fragmentación", "tensión", "sistema"],
+    "tecnica": "Collage digital sobre aluminio dibond",
+    "año": 2023,
+    "dimensiones": "90 x 90 cm",
+    "procedencia": "Estudio del Artista, Hamburgo.",
+    "historial_exposiciones": [
+      "Deichtorhallen: 'Systemic Chaos' (2023)",
+      "Vértice: 'Fragmentaciones' (2024)"
+    ],
+    "descripcion_detallada": "Fragmentos es una deconstrucción visual de la arquitectura brutalista. Richter utiliza algoritmos para romper imágenes de edificios icónicos y reorganizarlas en una composición que evoca la fragilidad de las utopías urbanas modernas."
   },
   {
     "id": 12,
@@ -107,7 +190,15 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["geometría", "ritmo", "color"]
+    "tags": ["geometría", "ritmo", "color"],
+    "tecnica": "Infografía generativa (Serie única)",
+    "año": 2024,
+    "dimensiones": "Pieza digital (Dinámica)",
+    "procedencia": "Adquirido a través de la Bienal de Arte Digital de Berlín.",
+    "historial_exposiciones": [
+      "Digital Art Museum (DAM), Berlín (2024)"
+    ],
+    "descripcion_detallada": "Geometría Viva es una obra que respira. Desarrollada en código abierto por Klein, la pieza reacciona sutilmente a la luz ambiental (en su versión física), creando patrones de color que nunca se repiten exactamente, desafiando la estática del lienzo tradicional."
   },
   {
     "id": 13,
@@ -116,7 +207,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["algoritmo", "color", "expansión"]
+    "tags": ["algoritmo", "color", "expansión"],
+    "tecnica": "Pintura generativa digital",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "David Chen Studio, Vancouver.",
+    "historial_exposiciones": ["SIGGRAPH Art Gallery 2024"],
+    "descripcion_detallada": "Una explosión de píxeles orquestada por algoritmos de ruido Perlin, que simula el caos de una nebulosa estelar."
   },
   {
     "id": 14,
@@ -125,7 +222,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [14, 23],
-    "tags": ["ritmo", "movimiento", "flujo"]
+    "tags": ["ritmo", "movimiento", "flujo"],
+    "tecnica": "Motion Graphics (Still capture)",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Thiago Mendes Digital Arts.",
+    "historial_exposiciones": ["MUTEK Brazil 2023"],
+    "descripcion_detallada": "El flujo constante de la vida urbana capturado en una sola imagen fija a través de técnicas de larga exposición digital."
   },
   {
     "id": 15,
@@ -134,7 +237,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["organicidad", "forma", "equilibrio"]
+    "tags": ["organicidad", "forma", "equilibrio"],
+    "tecnica": "Escultura digital 3D (Render)",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Elena Novak Projects.",
+    "historial_exposiciones": ["Ars Electronica 2023"],
+    "descripcion_detallada": "Exploración de formas biormórficas que parecen crecer orgánicamente a partir del vacío digital."
   },
 
   {
@@ -144,7 +253,13 @@
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["identidad", "urbano", "masculinidad"]
+    "tags": ["identidad", "urbano", "masculinidad"],
+    "tecnica": "Fotografía analógica",
+    "año": 2021,
+    "dimensiones": "60 x 80 cm",
+    "procedencia": "Estudio Daniel Ortiz, CDMX.",
+    "historial_exposiciones": ["Centro de la Imagen: 'Sombras Urbanas' (2022)"],
+    "descripcion_detallada": "Un retrato que capta la dureza y la vulnerabilidad del sujeto en el entorno metropolitano, utilizando el contraste extremo para diseccionar la psique urbana."
   },
   {
     "id": 17,
@@ -153,7 +268,10 @@
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["editorial", "cine", "actitud"]
+    "tags": ["editorial", "cine", "actitud"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2022,
+    "dimensiones": "100 x 140 cm"
   },
   {
     "id": 18,
@@ -162,7 +280,13 @@
     "artistaId": 5,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["cuerpo", "presencia", "intensidad"]
+    "tags": ["cuerpo", "presencia", "intensidad"],
+    "tecnica": "Fotografía directa",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Palais de Tokyo, París (Adquisición especial).",
+    "historial_exposiciones": ["Performance Days: 'Cuerpos en Fuga' (2023)"],
+    "descripcion_detallada": "El registro de una acción donde el cuerpo se enfrenta directamente al lente, eliminando cualquier artificio para revelar la verdad cruda de la carne y el gesto."
   },
   {
     "id": 19,
@@ -171,7 +295,13 @@
     "artistaId": 11,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["mirada", "moda", "control"]
+    "tags": ["mirada", "moda", "control"],
+    "tecnica": "Fotografía de estudio",
+    "año": 2022,
+    "dimensiones": "80 x 100 cm",
+    "procedencia": "Viena Art Lab (Archivo Hoffmann).",
+    "historial_exposiciones": ["Retrospectiva Nina Hoffmann, Albertina Modern (2022)"],
+    "descripcion_detallada": "Un estudio sobre el control y la fisonomía, donde cada sombra revela una intención psicológica y el rostro se convierte en un paisaje de emociones contenidas."
   },
   {
     "id": 20,
@@ -180,7 +310,10 @@
     "artistaId": 15,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["intimidad", "espacio", "relación"]
+    "tags": ["intimidad", "espacio", "relación"],
+    "tecnica": "Fotografía ambiental",
+    "año": 2023,
+    "dimensiones": "90 x 90 cm"
   },
 
   {
@@ -190,7 +323,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["ciudad", "sistema", "estructura"]
+    "tags": ["ciudad", "sistema", "estructura"],
+    "tecnica": "Fotografía digital sobre metacrilato",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Estudio Lucía Moreno, Barcelona.",
+    "historial_exposiciones": ["MIRA Festival: 'Data Urbanism' (2023)"],
+    "descripcion_detallada": "La ciudad como un organismo vivo, donde las redes digitales se superponen a la arquitectura física, creando una trama compleja de flujos e información."
   },
   {
     "id": 22,
@@ -199,7 +338,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [23],
-    "tags": ["tecnología", "energía", "flujo"]
+    "tags": ["tecnología", "energía", "flujo"],
+    "tecnica": "Arte digital generativo",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Colección Digital Vértice.",
+    "historial_exposiciones": ["Sónar+D: 'Algorithmic Beats' (2024)"],
+    "descripcion_detallada": "La energía de los datos fluida en una representación visual que late con el ritmo del procesamiento algorítmico, creando una experiencia inmersiva y mutante."
   },
   {
     "id": 23,
@@ -208,7 +353,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [20],
-    "tags": ["planos", "tensión", "superposición"]
+    "tags": ["planos", "tensión", "superposición"],
+    "tecnica": "Composición digital 3D",
+    "año": 2023,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Colección privada, Berlín.",
+    "historial_exposiciones": ["Spatial Explorations, 2023"],
+    "descripcion_detallada": "Una compleja composición de planos y formas que se intersectan, creando una sensación de tensión y equilibrio en el espacio tridimensional."
   },
   {
     "id": 24,
@@ -216,17 +367,29 @@
     "imagen": "moderno_9.jpg",
     "artistaId": 1,
     "categoriaPrincipal": 4,
-    "categoriasSecundarias": [9, 14],
-    "tags": ["fragmentación", "urbano", "caos"]
+    "categoriasSecundarias": [23],
+    "tags": ["ciudad", "fragmento", "geometria"],
+    "tecnica": "Fotomontaje digital",
+    "año": 2024,
+    "dimensiones": "100 x 150 cm",
+    "procedencia": "Galería de Arte Digital, Tokio.",
+    "historial_exposiciones": ["Urban Deconstructions, 2024"],
+    "descripcion_detallada": "Un fotomontaje que deconstruye la imagen de la ciudad, revelando sus fragmentos y la geometría subyacente de su caos."
   },
   {
     "id": 25,
-    "titulo": "Lenguaje visual",
+    "titulo": "Sinfonía visual",
     "imagen": "moderno_10.jpg",
-    "artistaId": 16,
-    "categoriaPrincipal": 6,
-    "categoriasSecundarias": [23],
-    "tags": ["lenguaje", "símbolo", "comunicación"]
+    "artistaId": 1,
+    "categoriaPrincipal": 4,
+    "categoriasSecundarias": [20],
+    "tags": ["musica", "color", "abstraccion"],
+    "tecnica": "Arte digital (Captura de performance)",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Estudio del Artista, Londres.",
+    "historial_exposiciones": ["Synesthesia Art Festival, 2023"],
+    "descripcion_detallada": "Una obra que traduce la música en una experiencia visual, capturando la esencia de una performance digital en una imagen estática."
   },
 
   {
@@ -236,7 +399,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["proceso", "estructura", "relación"]
+    "tags": ["proceso", "estructura", "relación"],
+    "tecnica": "Instalación multimedia",
+    "año": 2023,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["Whitechapel Gallery: 'Open Systems' (2023)"],
+    "descripcion_detallada": "Sistema Abierto investiga la obsolescencia programada a través de una red de dispositivos interconectados que generan señales visuales en tiempo real."
   },
   {
     "id": 27,
@@ -245,7 +414,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["identidad", "presencia", "gesto"]
+    "tags": ["identidad", "presencia", "gesto"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2022,
+    "dimensiones": "120 x 180 cm",
+    "procedencia": "Colección Private, Londres.",
+    "historial_exposiciones": ["Tate Modern: 'Identity Now' (2022)"],
+    "descripcion_detallada": "Un estudio sobre la gestualidad contemporánea y la construcción de la identidad pública en la era de la sobreexposición visual."
   },
   {
     "id": 28,
@@ -254,7 +429,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["relato", "ciudad", "visual"]
+    "tags": ["relato", "ciudad", "visual"],
+    "tecnica": "Videoarte (Still)",
+    "año": 2024,
+    "dimensiones": "1920 x 1080 px",
+    "procedencia": "Archivo Grant.",
+    "historial_exposiciones": ["BFI Southbank: 'Urban Frames' (2024)"],
+    "descripcion_detallada": "Captura estática de una secuencia generada por IA que reimagina los flujos de tráfico de Londres como una narrativa visual abstracta."
   },
 
   {
@@ -264,7 +445,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["vibración", "color", "campo"]
+    "tags": ["vibración", "color", "campo"],
+    "tecnica": "Óleo digital",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Elena Novak.",
+    "historial_exposiciones": ["Art Zagreb (2023)"],
+    "descripcion_detallada": "Campo Vibrante explora la resonancia del color en el espacio digital, utilizando texturas que emulan la materia pictórica tradicional."
   },
   {
     "id": 30,
@@ -273,7 +460,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["flujo", "transformación", "algoritmo"]
+    "tags": ["flujo", "transformación", "algoritmo"],
+    "tecnica": "Arte generativo",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Residencia Técnica Dale, Noruega.",
+    "historial_exposiciones": ["Nordic Light Festival (2024)"],
+    "descripcion_detallada": "Un algoritmo que genera flujos infinitos de luz y color, inspirados en los fenómenos lumínicos de las regiones del norte."
   },
 
   {
@@ -283,7 +476,13 @@
     "artistaId": 19,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7],
-    "tags": ["silencio", "vacío", "espacio"]
+    "tags": ["silencio", "vacío", "espacio"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2022,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Estudio Laura Svensson, Estocolmo.",
+    "historial_exposiciones": ["Moderna Museet: 'Minimalism Today' (2022)"],
+    "descripcion_detallada": "Una obra que busca la supresión del ruido visual para centrarse en la pureza del blanco y la sutil textura del panel."
   },
   {
     "id": 32,
@@ -292,7 +491,13 @@
     "artistaId": 14,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7, 14],
-    "tags": ["minimalismo", "tecnología", "orden"]
+    "tags": ["minimalismo", "tecnología", "orden"],
+    "tecnica": "Composición digital",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Colección Digital Vértice.",
+    "historial_exposiciones": ["Mori Art Museum: 'Tech Zen' (2023)"],
+    "descripcion_detallada": "Leo Nakamura utiliza el rigor geométrico para crear una estructura que evoca el orden y la tecnología en un equilibrio perfecto."
   },
 
   {
@@ -302,7 +507,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [23],
-    "tags": ["movimiento", "urbano", "ritmo"]
+    "tags": ["movimiento", "urbano", "ritmo"],
+    "tecnica": "Motion Art (Loop digital)",
+    "año": 2023,
+    "dimensiones": "Pieza digital 4K",
+    "procedencia": "Estudio Thiago Mendes, São Paulo.",
+    "historial_exposiciones": ["SP-Arte 2023"],
+    "descripcion_detallada": "Un estudio sobre la incesante energía de la metrópolis brasileña, capturando el pulso de la ciudad en una danza cromática sin fin."
   },
   {
     "id": 34,
@@ -311,7 +522,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [],
-    "tags": ["continuidad", "tiempo", "flujo"]
+    "tags": ["continuidad", "tiempo", "flujo"],
+    "tecnica": "Videoinstalación (Still)",
+    "año": 2024,
+    "dimensiones": "150 x 85 cm",
+    "procedencia": "Colección privada, Curitiba.",
+    "historial_exposiciones": ["MAM Rio: 'Fluxos' (2024)"],
+    "descripcion_detallada": "Secuencia explora la distorsión del tiempo a través del movimiento, creando una narrativa donde el pasado y el futuro se funden en el presente."
   },
 
   {
@@ -321,7 +538,13 @@
     "artistaId": 13,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [23],
-    "tags": ["documentación", "gesto", "proceso"]
+    "tags": ["documentación", "gesto", "proceso"],
+    "tecnica": "Fotografía documental",
+    "año": 2022,
+    "dimensiones": "70 x 100 cm",
+    "procedencia": "Archivo de la Artista, Atenas.",
+    "historial_exposiciones": ["Athens Photo Festival 2022"],
+    "descripcion_detallada": "Un registro íntimo del proceso creativo, capturando el momento preciso en que la materia se convierte en intención artística."
   },
 
   {
@@ -331,7 +554,13 @@
     "artistaId": 8,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [9],
-    "tags": ["arquitectura", "geometría", "ciudad"]
+    "tags": ["arquitectura", "geometría", "ciudad"],
+    "tecnica": "Fotografía digital sobre metacrilato",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Donación Bruxelles Photo Award.",
+    "historial_exposiciones": ["Maison de l'Architecture: 'Geometric Cities' (2023)"],
+    "descripcion_detallada": "Lambert disecciona la arquitectura bruselense, encontrando un orden casi matemático en el caos de la capital belga y elevando lo funcional a lo estético."
   },
 
   {
@@ -341,7 +570,13 @@
     "artistaId": 10,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["cotidiano", "urbano", "vida"]
+    "tags": ["cotidiano", "urbano", "vida"],
+    "tecnica": "Fotografía de calle",
+    "año": 2022,
+    "dimensiones": "60 x 60 cm",
+    "procedencia": "Estudio Andrés Vega, Santiago.",
+    "historial_exposiciones": ["MNBA: 'Estética Cotidiana' (2022)"],
+    "descripcion_detallada": "Un fragmento de la vida urbana capturado con honestidad, donde el sujeto se funde con su entorno cotidiano."
   },
 
   {
@@ -351,7 +586,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["código", "materia", "algoritmo"]
+    "tags": ["código", "materia", "algoritmo"],
+    "tecnica": "Arte generativo (Impresión)",
+    "año": 2024,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Vancouver Art Gallery (Serie Limitada 1/10).",
+    "historial_exposiciones": ["VAG: 'Algorithmic Visions' (2024)"],
+    "descripcion_detallada": "La simulación de texturas orgánicas a través de código, creando una materia digital que parece tener peso, volumen y una vida biológica propia."
   },
 
   {
@@ -361,7 +602,10 @@
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "categoriasSecundarias": [14, 23],
-    "tags": ["emoción", "forma", "color"]
+    "tags": ["emoción", "forma", "color"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "150 x 150 cm"
   },
 
   {
@@ -371,7 +615,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["memoria", "territorio", "paisaje"]
+    "tags": ["memoria", "territorio", "paisaje"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "80 x 120 cm",
+    "procedencia": "IVAM (Préstamo permanente).",
+    "historial_exposiciones": ["IVAM: 'Memòria del Lloc' (2022)"],
+    "descripcion_detallada": "Un paisaje que no busca la geografía exacta, sino la huella emocional que esta deja en la memoria colectiva del territorio Mediterráneo."
   },
   {
     "id": 81,
@@ -380,7 +630,13 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["latencia", "estructura", "abstracción"]
+    "tags": ["latencia", "estructura", "abstracción"],
+    "tecnica": "Arte digital (Render)",
+    "año": 2024,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "ZKM Center for Art and Media (Archivo Digital).",
+    "historial_exposiciones": ["Berlin Art Forum: 'Latent Forms' (2024)"],
+    "descripcion_detallada": "Una exploración de las formas que existen en el umbral de lo visible, capturando el momento preciso en que la abstracción se convierte en estructura."
   },
   {
     "id": 82,
@@ -389,7 +645,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [14],
-    "tags": ["color", "ritmo", "movimiento"]
+    "tags": ["color", "ritmo", "movimiento"],
+    "tecnica": "Motion Print",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Colección Mendes, São Paulo.",
+    "historial_exposiciones": ["Mural Digital Avenida Paulista (Exhibición 2023)"],
+    "descripcion_detallada": "La traducción visual del ritmo y el movimiento en una explosión de color que late con la energía urbana y la síncopa musical de Brasil."
   },
   {
     "id": 83,
@@ -398,7 +660,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["organicidad", "trama", "equilibrio"]
+    "tags": ["organicidad", "trama", "equilibrio"],
+    "tecnica": "Escultura digital",
+    "año": 2023,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Nordic Artists' Centre Dale, Noruega.",
+    "historial_exposiciones": ["Zagreb Art Pavilion: 'Organic Mappings' (2023)"],
+    "descripcion_detallada": "Novak crea una malla digital que emula el crecimiento de tejidos biológicos complejos, fusionando la precisión del software con la irregularidad de la vida."
   },
   {
     "id": 84,
@@ -407,7 +675,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["expansión", "color", "campo"]
+    "tags": ["expansión", "color", "campo"],
+    "tecnica": "Pigmento sobre papel",
+    "año": 2024,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Guggenheim Berlin (Adquisición de la Colección Permanente).",
+    "historial_exposiciones": ["Berlin Design Week: 'Expansive Silence' (2024)"],
+    "descripcion_detallada": "Una obra monumental donde el color se expande más allá de sus límites físicos, envolviendo al espectador en una experiencia sensorial y contemplativa total."
   },
 
   {
@@ -417,7 +691,13 @@
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["editorial", "presencia", "actitud"]
+    "tags": ["editorial", "presencia", "actitud"],
+    "tecnica": "Fotografía de moda",
+    "año": 2022,
+    "dimensiones": "100 x 140 cm",
+    "procedencia": "Harper's Bazaar Archive Italia.",
+    "historial_exposiciones": ["MAXXI: 'Frames of Soul' (2022)"],
+    "descripcion_detallada": "La sofisticación del retrato editorial elevado a la categoría de estudio psicológico, donde la pose y la luz cuentan una historia de autoridad y estilo."
   },
   {
     "id": 86,
@@ -426,7 +706,13 @@
     "artistaId": 15,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["intimidad", "espacio", "relación"]
+    "tags": ["intimidad", "espacio", "relación"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2023,
+    "dimensiones": "80 x 80 cm",
+    "procedencia": "Fondo Nacional de las Artes (Argentina).",
+    "historial_exposiciones": ["Centro Cultural Recoleta: 'Habitancy' (2023)"],
+    "descripcion_detallada": "La vulnerabilidad capturada en la privacidad del hogar, donde cada sombra y cada objeto cuentan una parte silenciada de la historia del sujeto."
   },
 
   {
@@ -436,7 +722,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["paisaje", "interior", "memoria"]
+    "tags": ["paisaje", "interior", "memoria"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Residencia Casa de Velázquez, Madrid.",
+    "historial_exposiciones": ["IVAM: 'Memòria del Lloc' (2023)"],
+    "descripcion_detallada": "Una mirada introspectiva al paisaje, donde el horizonte visual se funde con el estado anímico y la memoria sensorial del artista."
   },
 
   {
@@ -446,7 +738,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["datos", "estructura", "lenguaje"]
+    "tags": ["datos", "estructura", "lenguaje"],
+    "tecnica": "Infografía conceptual",
+    "año": 2024,
+    "dimensiones": "Pieza digital",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["Digital Systems Festival (2024)"],
+    "descripcion_detallada": "La visualización de la información como una estructura estética, donde los datos se convierten en el material constructivo de la obra."
   },
 
   {
@@ -456,7 +754,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["generativo", "campo", "algoritmo"]
+    "tags": ["generativo", "campo", "algoritmo"],
+    "tecnica": "Algoritmo en tiempo real",
+    "año": 2024,
+    "dimensiones": "Dinámicas",
+    "procedencia": "Vancouver Art Gallery (Colección Digital).",
+    "historial_exposiciones": ["Algorithmic Visions, 2024"],
+    "descripcion_detallada": "Un horizonte digital infinito que se autogenera en tiempo real, cuestionando nuestra percepción del espacio virtual."
   },
 
   {
@@ -466,7 +770,13 @@
     "artistaId": 8,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [9],
-    "tags": ["silencio", "ciudad", "arquitectura"]
+    "tags": ["silencio", "ciudad", "arquitectura"],
+    "tecnica": "Fotografía directa",
+    "año": 2023,
+    "dimensiones": "100 x 150 cm",
+    "procedencia": "Estudio Hugo Lambert, Bruselas.",
+    "historial_exposiciones": ["Brussels Photo Award, 2023"],
+    "descripcion_detallada": "La captura de la quietud en la gran ciudad, donde la arquitectura habla a través del vacío y el silencio urbano."
   },
 
   {
@@ -476,7 +786,13 @@
     "artistaId": 13,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [23],
-    "tags": ["proceso", "registro", "gesto"]
+    "tags": ["proceso", "registro", "gesto"],
+    "tecnica": "Fotografía documental",
+    "año": 2022,
+    "dimensiones": "70 x 100 cm",
+    "procedencia": "Archivo Irene Papadopoulos, Atenas.",
+    "historial_exposiciones": ["Biennale de Atenas (2022)"],
+    "descripcion_detallada": "Documentación del proceso creativo donde el gesto artístico se funde con la materia prima y el entorno del taller."
   },
 
   {
@@ -486,7 +802,13 @@
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["noche", "urbano", "identidad"]
+    "tags": ["noche", "urbano", "identidad"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Estudio Daniel Ortiz, CDMX.",
+    "historial_exposiciones": ["Centro de la Imagen: 'Urban Shadows' (2023)"],
+    "descripcion_detallada": "La identidad capturada bajo la luz artificial de la metrópolis, revelando facetas que el día oculta tras su claridad."
   },
 
   {
@@ -496,7 +818,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["espacio", "expansión", "color"]
+    "tags": ["espacio", "expansión", "color"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2024,
+    "dimensiones": "200 x 200 cm",
+    "procedencia": "Colección Permanente Guggenheim Berlin.",
+    "historial_exposiciones": ["The Silence of Shape, 2024"],
+    "descripcion_detallada": "Una obra monumental que expande su influencia cromática hacia el entorno, redefiniendo el espacio físico que habita."
   },
 
   {
@@ -506,7 +834,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["sensibilidad", "estructura", "organicidad"]
+    "tags": ["sensibilidad", "estructura", "organicidad"],
+    "tecnica": "Escultura digital",
+    "año": 2023,
+    "dimensiones": "Variables",
+    "procedencia": "Residencia Dale, Noruega.",
+    "historial_exposiciones": ["Nordic Light Festival (2024)"],
+    "descripcion_detallada": "Elena Novak investiga la sensibilidad de las estructuras digitales a los estímulos externos, creando una obra reactiva."
   },
 
   {
@@ -516,7 +850,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["ritmo", "generativo", "código"]
+    "tags": ["ritmo", "generativo", "código"],
+    "tecnica": "Software Art",
+    "año": 2024,
+    "dimensiones": "N/A",
+    "procedencia": "Estudio David Chen, Vancouver.",
+    "historial_exposiciones": ["SIGGRAPH Art Gallery (2024)"],
+    "descripcion_detallada": "La energía de la información fluyendo a través de un código que late con vida propia, transformando datos en experiencia visual."
   },
 
   {
@@ -526,7 +866,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["capas", "ciudad", "estructura"]
+    "tags": ["capas", "ciudad", "estructura"],
+    "tecnica": "Arte digital generativo",
+    "año": 2024,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Lucía Moreno, Barcelona.",
+    "historial_exposiciones": ["Sónar+D: 'Metrópolis' (2024)"],
+    "descripcion_detallada": "Una visión estratificada de la ciudad contemporánea, donde cada capa representa una dimensión de la vida metropolitana digitalizada."
   },
 
   {
@@ -536,7 +882,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [4],
-    "tags": ["digital", "movimiento", "ritmo"]
+    "tags": ["digital", "movimiento", "ritmo"],
+    "tecnica": "Motion Graphics",
+    "año": 2023,
+    "dimensiones": "Pieza digital",
+    "procedencia": "Thiago Mendes Studio, São Paulo.",
+    "historial_exposiciones": ["MUTEK 2023"],
+    "descripcion_detallada": "La traducción de frecuencias sonoras en impulsos visuales que crean un ritmo hipnótico y puramente digital."
   },
 
   {
@@ -546,7 +898,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["sistema", "control", "estructura"]
+    "tags": ["sistema", "control", "estructura"],
+    "tecnica": "Instalación conceptual",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["Whitechapel: 'Closed Loops' (2024)"],
+    "descripcion_detallada": "Una reflexión sobre la autorreferencialidad de los sistemas tecnológicos y el control de la información en entornos aislados."
   },
 
   {
@@ -556,7 +914,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["contención", "forma", "equilibrio"]
+    "tags": ["contención", "forma", "equilibrio"],
+    "tecnica": "Escultura en bronce",
+    "año": 2024,
+    "dimensiones": "40 x 40 x 60 cm",
+    "procedencia": "Fundición Bellini, Milán.",
+    "historial_exposiciones": ["Biennale de Venise 2024"],
+    "descripcion_detallada": "La materialización de un concepto geométrico en bronce, buscando el equilibrio perfecto entre masa y espacio vacío."
   },
 
   {
@@ -566,7 +930,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["cierre", "balance", "color"]
+    "tags": ["cierre", "balance", "color"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2024,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Guggenheim Berlin (Serie Cierre).",
+    "historial_exposiciones": ["The Silence of Shape, 2024"],
+    "descripcion_detallada": "La culminación del estudio sobre la forma y el color de Klein, donde todos los elementos convergen en un equilibrio armónico final."
   },
 
   {
@@ -576,7 +946,13 @@
     "artistaId": 12,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["conceptual", "símbolo", "figura"]
+    "tags": ["conceptual", "símbolo", "figura"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Samuel Brooks, NY.",
+    "historial_exposiciones": ["Whitney Biennial 2023"],
+    "descripcion_detallada": "Un retrato que trasciende lo físico para convertirse en un sistema de símbolos sobre la identidad contemporánea."
   },
 
   {
@@ -586,7 +962,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["residuo", "memoria", "paisaje"]
+    "tags": ["residuo", "memoria", "paisaje"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Estudio Álvaro Núñez, Valencia.",
+    "historial_exposiciones": ["IVAM: 'Memòria del Lloc' (Exhibición 2023)"],
+    "descripcion_detallada": "Investigación sobre la huella humana en el paisaje y lo que queda de la naturaleza en entornos post-industriales."
   },
 
   {
@@ -596,7 +978,13 @@
     "artistaId": 14,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7, 14],
-    "tags": ["geometría", "minimalismo", "tecnología"]
+    "tags": ["geometría", "minimalismo", "tecnología"],
+    "tecnica": "Cutter sobre cartón",
+    "año": 2023,
+    "dimensiones": "80 x 80 cm",
+    "procedencia": "Archivo del Artista, Kioto.",
+    "historial_exposiciones": ["Kyoto Art Center (2023)"],
+    "descripcion_detallada": "Un estudio sobre la precisión y la reducción de la forma utilizando materiales humildes bajo un rigor tecnológico."
   },
 
   {
@@ -606,7 +994,13 @@
     "artistaId": 19,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7],
-    "tags": ["silencio", "vacío", "espacio"]
+    "tags": ["silencio", "vacío", "espacio"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2022,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Laura Svensson, Estocolmo.",
+    "historial_exposiciones": ["Moderna Museet (2022)"],
+    "descripcion_detallada": "Una obra que invita a la meditación a través de la supresión del ruido visual y la apreciación del vacío."
   },
 
   {
@@ -616,7 +1010,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [],
-    "tags": ["expansión", "movimiento", "tiempo"]
+    "tags": ["expansión", "movimiento", "tiempo"],
+    "tecnica": "Motion Graphics",
+    "año": 2023,
+    "dimensiones": "Digital",
+    "procedencia": "Colección Mendes, São Paulo.",
+    "historial_exposiciones": ["MAM Rio (2023)"],
+    "descripcion_detallada": "Experimentación visual sobre la expansión del ritmo en el espacio digital bidimensional."
   },
 
   {
@@ -626,7 +1026,13 @@
     "artistaId": 8,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [9],
-    "tags": ["arquitectura", "ciudad", "patrón"]
+    "tags": ["arquitectura", "ciudad", "patrón"],
+    "tecnica": "Fotografía digital",
+    "año": 2023,
+    "dimensiones": "150 x 100 cm",
+    "procedencia": "Estudio Hugo Lambert, Bruselas.",
+    "historial_exposiciones": ["Geometric Cities, 2023"],
+    "descripcion_detallada": "Análisis visual de los patrones estructurales que definen la estética de la arquitectura moderna europea."
   },
 
   {
@@ -636,7 +1042,13 @@
     "artistaId": 10,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["cotidiano", "urbano", "vida"]
+    "tags": ["cotidiano", "urbano", "vida"],
+    "tecnica": "Fotografía de calle",
+    "año": 2022,
+    "dimensiones": "60 x 90 cm",
+    "procedencia": "Estudio Andrés Vega, Santiago.",
+    "historial_exposiciones": ["Museo de Bellas Artes (2022)"],
+    "descripcion_detallada": "Tercera entrega de la serie sobre la vida urbana, centrada en la interacción humana en espacios públicos."
   },
 
   {
@@ -646,7 +1058,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["algoritmo", "materia", "proceso"]
+    "tags": ["algoritmo", "materia", "proceso"],
+    "tecnica": "Arte generativo",
+    "año": 2024,
+    "dimensiones": "Variables",
+    "procedencia": "Chen Studio, Vancouver.",
+    "historial_exposiciones": ["SIGGRAPH Art Gallery (2024)"],
+    "descripcion_detallada": "Exploración de la densidad y la textura visual generada a través de algoritmos de crecimiento complejo."
   },
 
   {
@@ -656,7 +1074,13 @@
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "categoriasSecundarias": [14, 23],
-    "tags": ["emoción", "forma", "pintura"]
+    "tags": ["emoción", "forma", "pintura"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "200 x 200 cm",
+    "procedencia": "Colección Kowalska, Cracovia.",
+    "historial_exposiciones": ["Biennale de Arte Joven (2023)"],
+    "descripcion_detallada": "Segunda entrega de la serie emocional, donde el gesto pictórico se vuelve más expansivo y dinámico."
   },
 
   {
@@ -666,7 +1090,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["narrativa", "relato", "visual"]
+    "tags": ["narrativa", "relato", "visual"],
+    "tecnica": "Instalación multimedia",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["Whitechapel: 'Visual Tales' (2024)"],
+    "descripcion_detallada": "Una obra que deconstruye la estructura del relato visual contemporáneo mediante el uso de múltiples pantallas interconectadas."
   },
 
   {
@@ -676,7 +1106,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["cierre", "campo", "color"]
+    "tags": ["cierre", "campo", "color"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2024,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Guggenheim Berlin (Serie Cierre).",
+    "historial_exposiciones": ["The Silence of Shape, 2024"],
+    "descripcion_detallada": "El campo final de color de Klein, donde la saturación llega a su punto máximo de equilibrio visual."
   },
 
   {
@@ -686,7 +1122,13 @@
     "artistaId": 15,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["intimidad", "cierre", "presencia"]
+    "tags": ["intimidad", "cierre", "presencia"],
+    "tecnica": "Fotografía de estudio",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Paula Ríos, Buenos Aires.",
+    "historial_exposiciones": ["Centro Cultural Recoleta, 2023"],
+    "descripcion_detallada": "Cierre de la serie íntima, capturando un momento de absoluta presencia y quietud del sujeto."
   },
 
   {
@@ -696,7 +1138,13 @@
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["presencia", "editorial", "cierre"]
+    "tags": ["presencia", "editorial", "cierre"],
+    "tecnica": "Fotografía editorial",
+    "año": 2023,
+    "dimensiones": "120 x 180 cm",
+    "procedencia": "Estudio Valentina Russo, Roma.",
+    "historial_exposiciones": ["PhotoVogue International Festival (2023)"],
+    "descripcion_detallada": "Una obra que explora la autoridad de la mirada y la construcción del personaje editorial, difuminando las líneas entre el documento y la ficción estética."
   },
 
   {
@@ -706,7 +1154,13 @@
     "artistaId": 5,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["cuerpo", "gesto", "directo"]
+    "tags": ["cuerpo", "gesto", "directo"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Donación de Nina Hoffmann.",
+    "historial_exposiciones": ["Albertina Modern (2022)"],
+    "descripcion_detallada": "Un estudio sobre el lenguaje corporal y el gesto como única forma de comunicación no mediada."
   },
 
   {
@@ -716,7 +1170,13 @@
     "artistaId": 13,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [23],
-    "tags": ["cierre", "proceso", "documentación"]
+    "tags": ["cierre", "proceso", "documentación"],
+    "tecnica": "Fotografía documental",
+    "año": 2023,
+    "dimensiones": "80 x 120 cm",
+    "procedencia": "Archivo Papadopoulos, Atenas.",
+    "historial_exposiciones": ["MAM Rio (2024)"],
+    "descripcion_detallada": "Conclusión visual del proceso documental, donde la obra terminada se muestra por fin en su contexto institucional."
   },
 
   {
@@ -726,7 +1186,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["residuo", "ciudad", "estructura"]
+    "tags": ["residuo", "ciudad", "estructura"],
+    "tecnica": "Arte digital generativo",
+    "año": 2024,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Residencia Moreno, Barcelona.",
+    "historial_exposiciones": ["Sónar+D (2024)"],
+    "descripcion_detallada": "La ciudad post-tecnológica visualizada como un residuo estético de flujos de datos y estructuras de hormigón."
   },
 
   {
@@ -736,7 +1202,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [],
-    "tags": ["contención", "movimiento", "tiempo"]
+    "tags": ["contención", "movimiento", "tiempo"],
+    "tecnica": "Videoarte",
+    "año": 2024,
+    "dimensiones": "N/A",
+    "procedencia": "Thiago Mendes Studio, São Paulo.",
+    "historial_exposiciones": ["MUTEK Brazil 2024"],
+    "descripcion_detallada": "Un estudio sobre la restricción del movimiento y cómo esta genera una tensión visual acumulada."
   },
 
   {
@@ -746,7 +1218,13 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["cierre", "estructura", "experimental"]
+    "tags": ["cierre", "estructura", "experimental"],
+    "tecnica": "Collage digital",
+    "año": 2024,
+    "dimensiones": "90 x 90 cm",
+    "procedencia": "Estudio Richter, Berlín.",
+    "historial_exposiciones": ["Digital Innovation Award (2024)"],
+    "descripcion_detallada": "Una pieza experimental que combina elementos de toda la trayectoria del autor en una estructura de cierre definitiva."
   },
 
   {
@@ -756,7 +1234,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["residuo", "equilibrio", "forma"]
+    "tags": ["residuo", "equilibrio", "forma"],
+    "tecnica": "Escultura digital",
+    "año": 2023,
+    "dimensiones": "Variables",
+    "procedencia": "Elena Novak Projects.",
+    "historial_exposiciones": ["Ars Electronica (2023)"],
+    "descripcion_detallada": "La búsqueda del equilibrio en las sobras del proceso digital, transformando el error en estética."
   },
 
   {
@@ -766,7 +1250,13 @@
     "artistaId": 19,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7],
-    "tags": ["silencio", "cierre", "vacío"]
+    "tags": ["silencio", "cierre", "vacío"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2023,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Estudio Laura Svensson, Estocolmo.",
+    "historial_exposiciones": ["Moderna Museet: 'The Final Silence' (2024)"],
+    "descripcion_detallada": "La obra culminante de Svensson, donde la reducción formal llega a su mínima expresión absoluta, ofreciendo un campo de silencio total."
   },
   {
     "id": 41,
@@ -775,7 +1265,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["latencia", "color", "profundidad"]
+    "tags": ["latencia", "color", "profundidad"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "120 x 150 cm",
+    "procedencia": "Estudio Sofia Klein, Berlín.",
+    "historial_exposiciones": ["Guggenheim Berlin (2023)"],
+    "descripcion_detallada": "Investigación sobre la profundidad cromática y la latencia del color en el lienzo."
   },
   {
     "id": 42,
@@ -784,7 +1280,13 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["estructura", "sensibilidad", "materia"]
+    "tags": ["estructura", "sensibilidad", "materia"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2022,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Richter, Berlín.",
+    "historial_exposiciones": ["Digital Innovation Award (2022)"],
+    "descripcion_detallada": "Una malla de color y textura que reacciona visualmente a la luz ambiental, creando una experiencia dinámica."
   },
   {
     "id": 43,
@@ -793,7 +1295,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [14],
-    "tags": ["ritmo", "cadencia", "movimiento"]
+    "tags": ["ritmo", "cadencia", "movimiento"],
+    "tecnica": "Motion Print",
+    "año": 2023,
+    "dimensiones": "150 x 80 cm",
+    "procedencia": "Colección Mendes, São Paulo.",
+    "historial_exposiciones": ["MAM Rio (2023)"],
+    "descripcion_detallada": "Tradución visual de los impulsos nerviosos en una secuencia de color y movimiento rítmico."
   },
   {
     "id": 44,
@@ -802,7 +1310,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["algoritmo", "materia", "proceso"]
+    "tags": ["algoritmo", "materia", "proceso"],
+    "tecnica": "Software Art",
+    "año": 2024,
+    "dimensiones": "N/A",
+    "procedencia": "Chen Studio, Vancouver.",
+    "historial_exposiciones": ["SIGGRAPH Art Gallery (2024)"],
+    "descripcion_detallada": "Simulación de materia física mediante algoritmos generativos que evolucionan con el tiempo."
   },
   {
     "id": 45,
@@ -811,7 +1325,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["organicidad", "balance", "estructura"]
+    "tags": ["organicidad", "balance", "estructura"],
+    "tecnica": "Escultura digital 3D",
+    "año": 2023,
+    "dimensiones": "100 x 120 cm",
+    "procedencia": "Elena Novak Projects.",
+    "historial_exposiciones": ["Nordic Light Festival (2024)"],
+    "descripcion_detallada": "Un estudio sobre las formas naturales replicadas en el entorno digital buscando un equilibrio biormórfico."
   },
 
   {
@@ -821,7 +1341,13 @@
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["noche", "urbano", "identidad"]
+    "tags": ["noche", "urbano", "identidad"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Colección Familia Ortiz, CDMX.",
+    "historial_exposiciones": ["Palacio de Bellas Artes: 'Identidades' (2024)"],
+    "descripcion_detallada": "Un estudio sobre la soledad urbana y la máscara social en la noche metropolitana."
   },
   {
     "id": 47,
@@ -830,7 +1356,13 @@
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["editorial", "cine", "actitud"]
+    "tags": ["editorial", "cine", "actitud"],
+    "tecnica": "Retrato editorial",
+    "año": 2022,
+    "dimensiones": "100 x 140 cm",
+    "procedencia": "Estudio Russo, Roma.",
+    "historial_exposiciones": ["PhotoVogue Festival 2023"],
+    "descripcion_detallada": "Una pieza que difumina la línea entre la fotografía de moda y el retrato psicológico."
   },
   {
     "id": 48,
@@ -839,7 +1371,13 @@
     "artistaId": 5,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["cuerpo", "presencia", "directo"]
+    "tags": ["cuerpo", "presencia", "directo"],
+    "tecnica": "Fotografía analógica",
+    "año": 2021,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Donación de la Artista.",
+    "historial_exposiciones": ["Maison Européenne de la Photographie (2022)"],
+    "descripcion_detallada": "Silencio Corporal es un manifiesto sobre la vulnerabilidad y la fuerza de la presencia física."
   },
   {
     "id": 49,
@@ -848,7 +1386,13 @@
     "artistaId": 11,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["mirada", "moda", "control"]
+    "tags": ["mirada", "moda", "control"],
+    "tecnica": "Fotografía de estudio",
+    "año": 2022,
+    "dimensiones": "80 x 100 cm",
+    "procedencia": "Colección Hoffmann, Viena.",
+    "historial_exposiciones": ["Albertina Modern (2022)"],
+    "descripcion_detallada": "Un estudio sobre el poder de la mirada y la detención del tiempo en el retrato de moda."
   },
   {
     "id": 50,
@@ -857,7 +1401,13 @@
     "artistaId": 15,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["intimidad", "espacio", "hogar"]
+    "tags": ["intimidad", "espacio", "hogar"],
+    "tecnica": "Fotografía analógica",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Residencia Paula Ríos, Buenos Aires.",
+    "historial_exposiciones": ["Centro Cultural Recoleta (2023)"],
+    "descripcion_detallada": "Investigación visual sobre la identidad femenina vinculada al espacio doméstico privado."
   },
 
   {
@@ -867,7 +1417,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["red", "ciudad", "estructura"]
+    "tags": ["red", "ciudad", "estructura"],
+    "tecnica": "Arte digital generativo",
+    "año": 2024,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Estudio Moreno, Barcelona.",
+    "historial_exposiciones": ["MIRA Festival 2024"],
+    "descripcion_detallada": "Red Urbana explora las conexiones invisibles que mantienen viva la ciudad inteligente."
   },
   {
     "id": 52,
@@ -876,7 +1432,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [23],
-    "tags": ["energía", "digital", "ritmo"]
+    "tags": ["energía", "digital", "ritmo"],
+    "tecnica": "Arte digital",
+    "año": 2024,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Moreno, Barcelona.",
+    "historial_exposiciones": ["MIRA Festival (2024)"],
+    "descripcion_detallada": "La energía de la ciudad inteligente capturada en un pulso visual dinámico y puramente digital."
   },
   {
     "id": 53,
@@ -885,7 +1447,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [20],
-    "tags": ["capas", "superposición", "tensión"]
+    "tags": ["capas", "superposición", "tensión"],
+    "tecnica": "Composición digital",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Colección Privada, Madrid.",
+    "historial_exposiciones": ["ARCOmadrid 2024"],
+    "descripcion_detallada": "Superposición de capas arquitectónicas que crean una tensión visual sobre el espacio urbano moderno."
   },
   {
     "id": 54,
@@ -894,7 +1462,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 14],
-    "tags": ["fragmentación", "urbano", "abstracción"]
+    "tags": ["fragmentación", "urbano", "abstracción"],
+    "tecnica": "Fotomontaje digital",
+    "año": 2024,
+    "dimensiones": "150 x 100 cm",
+    "procedencia": "Estudio Moreno, Barcelona.",
+    "historial_exposiciones": ["The Urban Deconstructions (2024)"],
+    "descripcion_detallada": "Deconstrucción fragmentada de entornos urbanos familiares reconvertidos en composiciones abstractas."
   },
   {
     "id": 55,
@@ -903,7 +1477,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["código", "lenguaje", "sistema"]
+    "tags": ["código", "lenguaje", "sistema"],
+    "tecnica": "Arte conceptual",
+    "año": 2024,
+    "dimensiones": "Pieza digital",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["Whitechapel: 'Open Systems' (2024)"],
+    "descripcion_detallada": "Una obra que visualiza el código de software como un lenguaje estético por derecho propio."
   },
 
   {
@@ -913,7 +1493,13 @@
     "artistaId": 14,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7, 14],
-    "tags": ["minimalismo", "tecnología", "estructura"]
+    "tags": ["minimalismo", "tecnología", "estructura"],
+    "tecnica": "Composición digital",
+    "año": 2023,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Colección Vértice, Bruselas.",
+    "historial_exposiciones": ["Mori Art Museum: 'Tech Zen' (2023)"],
+    "descripcion_detallada": "Rigor geométrico para crear una estructura que evoca el orden y el silencio en la tecnología."
   },
   {
     "id": 57,
@@ -922,7 +1508,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [9],
-    "tags": ["movimiento", "ciudad", "ritmo"]
+    "tags": ["movimiento", "luz", "abstraccion"],
+    "tecnica": "Óleo y técnica mixta",
+    "año": 2024,
+    "dimensiones": "200 x 200 cm",
+    "procedencia": "Estudio Thiago Mendes, São Paulo.",
+    "historial_exposiciones": ["SP-Arte (2024)"],
+    "descripcion_detallada": "Un estudio sobre el flujo y la luz de la metrópoli brasileña transformado en gesto pictórico."
   },
   {
     "id": 58,
@@ -931,7 +1523,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["relación", "estructura", "visual"]
+    "tags": ["relación", "estructura", "visual"],
+    "tecnica": "Instalación conceptual",
+    "año": 2023,
+    "dimensiones": "Pieza única",
+    "procedencia": "Galería Bellini, Milán.",
+    "historial_exposiciones": ["Palazzo Reale: 'Connessioni' (2023)"],
+    "descripcion_detallada": "Una pieza que investiga cómo percibimos la relación entre objetos en el espacio digital."
   },
   {
     "id": 59,
@@ -940,7 +1538,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [4],
-    "tags": ["interfaz", "sistema", "concepto"]
+    "tags": ["interfaz", "sistema", "concepto"],
+    "tecnica": "Arte conceptual",
+    "año": 2024,
+    "dimensiones": "Dimensiones variables",
+    "procedencia": "Estudio Oliver Grant, Londres.",
+    "historial_exposiciones": ["BFI Southbank (2024)"],
+    "descripcion_detallada": "Reflexión sobre el papel de la interfaz digital en nuestra construcción del mundo contemporáneo."
   },
   {
     "id": 60,
@@ -949,7 +1553,13 @@
     "artistaId": 1,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [9, 23],
-    "tags": ["ciudad", "latencia", "estructura"]
+    "tags": ["ciudad", "latencia", "estructura"],
+    "tecnica": "Fotomontaje algorítmico",
+    "año": 2024,
+    "dimensiones": "100 x 150 cm",
+    "procedencia": "Colección Privada, Madrid.",
+    "historial_exposiciones": ["ARCOmadrid 2024"],
+    "descripcion_detallada": "La ciudad latente espera a ser descubierta bajo capas de ruido digital y arquitectura olvidada."
   },
 
   {
@@ -959,7 +1569,13 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["color", "campo", "expansión"]
+    "tags": ["color", "campo", "expansión"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "200 x 200 cm",
+    "procedencia": "Colección de la Artista, Berlín.",
+    "historial_exposiciones": ["Guggenheim Berlin: 'Color Fields' (2023)"],
+    "descripcion_detallada": "Una exploración de la expansión del color puro."
   },
   {
     "id": 62,
@@ -968,7 +1584,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["emergencia", "algoritmo", "forma"]
+    "tags": ["emergencia", "algoritmo", "forma"],
+    "tecnica": "Arte generativo",
+    "año": 2024,
+    "dimensiones": "Variables",
+    "procedencia": "Chen Studio, Vancouver.",
+    "historial_exposiciones": ["VAG: 'Algorithmic Visions' (2024)"],
+    "descripcion_detallada": "Una pieza que evoluciona en función de la interacción del espectador con los datos ambientales."
   },
   {
     "id": 63,
@@ -977,7 +1599,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [14],
-    "tags": ["ritmo", "profundidad", "movimiento"]
+    "tags": ["ritmo", "profundidad", "movimiento"],
+    "tecnica": "Motion Print",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Colección Mendes, São Paulo.",
+    "historial_exposiciones": ["MAM Rio (2023)"],
+    "descripcion_detallada": "Exploración de la profundidad del ritmo mediante técnicas de impresión digital en movimiento."
   },
   {
     "id": 64,
@@ -986,7 +1614,13 @@
     "artistaId": 17,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 20],
-    "tags": ["fluidez", "estructura", "equilibrio"]
+    "tags": ["fluidez", "estructura", "equilibrio"],
+    "tecnica": "Escultura digital",
+    "año": 2023,
+    "dimensiones": "Variables",
+    "procedencia": "Elena Novak Projects.",
+    "historial_exposiciones": ["Zagreb Art Pavilion (2023)"],
+    "descripcion_detallada": "Un contrapunto a la rigidez tecnológica mediante formas que emulan tejidos biológicos blandos."
   },
   {
     "id": 65,
@@ -995,7 +1629,13 @@
     "artistaId": 6,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["espacio", "activación", "forma"]
+    "tags": ["espacio", "activación", "forma"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2022,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Estudio Richter, Berlín.",
+    "historial_exposiciones": ["Berlin Art Forum (2023)"],
+    "descripcion_detallada": "Una pieza diseñada para activar sensorialmente el espacio que la rodea mediante vibraciones cromáticas."
   },
 
   {
@@ -1005,7 +1645,13 @@
     "artistaId": 12,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["ritual", "figura", "símbolo"]
+    "tags": ["ritual", "figura", "símbolo"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2021,
+    "dimensiones": "120 x 180 cm",
+    "procedencia": "Colección Lambert, Bruselas.",
+    "historial_exposiciones": ["BOZAR: 'Rituals' (2022)"],
+    "descripcion_detallada": "Un retrato que captura la solemnidad de lo cotidiano elevado a rito."
   },
   {
     "id": 67,
@@ -1014,7 +1660,13 @@
     "artistaId": 12,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["contención", "presencia", "figura"]
+    "tags": ["contención", "presencia", "figura"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2022,
+    "dimensiones": "100 x 150 cm",
+    "procedencia": "Estudio Brooks, Nueva York.",
+    "historial_exposiciones": ["MoMA PS1 (2023)"],
+    "descripcion_detallada": "La figura humana en un estado de quietud absoluta, desafiando la mirada del espectador."
   },
 
   {
@@ -1024,7 +1676,13 @@
     "artistaId": 13,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [23],
-    "tags": ["documentación", "proceso", "gesto"]
+    "tags": ["documentación", "proceso", "gesto"],
+    "tecnica": "Fotografía documental",
+    "año": 2022,
+    "dimensiones": "70 x 100 cm",
+    "procedencia": "Archivo Papadopoulos, Atenas.",
+    "historial_exposiciones": ["Athens Photo Festival (2022)"],
+    "descripcion_detallada": "Segunda entrega del registro íntimo sobre la creación artística y la soledad del taller."
   },
 
   {
@@ -1034,7 +1692,13 @@
     "artistaId": 8,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [9],
-    "tags": ["arquitectura", "patrón", "ciudad"]
+    "tags": ["arquitectura", "patrón", "ciudad"],
+    "tecnica": "Fotografía digital",
+    "año": 2023,
+    "dimensiones": "120 x 80 cm",
+    "procedencia": "Estudio Lambert, Bruselas.",
+    "historial_exposiciones": ["Maison de l'Architecture (2023)"],
+    "descripcion_detallada": "Ampliación del análisis geométrico sobre la cuadrícula urbana europea y su repetición estética."
   },
 
   {
@@ -1044,7 +1708,13 @@
     "artistaId": 10,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["vida", "cotidiano", "urbano"]
+    "tags": ["vida", "cotidiano", "urbano"],
+    "tecnica": "Fotografía de calle",
+    "año": 2022,
+    "dimensiones": "60 x 60 cm",
+    "procedencia": "Estudio Andrés Vega, Santiago.",
+    "historial_exposiciones": ["MNBA Santiago (2022)"],
+    "descripcion_detallada": "Un segundo vistazo a la verdad cruda de los rostros anónimos en la gran ciudad sudamericana."
   },
 
   {
@@ -1054,7 +1724,13 @@
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14, 15],
-    "tags": ["variación", "algoritmo", "flujo"]
+    "tags": ["variación", "algoritmo", "flujo"],
+    "tecnica": "Arte generativo",
+    "año": 2024,
+    "dimensiones": "Variables",
+    "procedencia": "Chen Studio, Vancouver.",
+    "historial_exposiciones": ["VAG (2024)"],
+    "descripcion_detallada": "Variaciones algorítmicas sobre el comportamiento de la materia digital bajo condiciones extremas."
   },
   {
     "id": 72,
@@ -1063,7 +1739,13 @@
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "categoriasSecundarias": [14, 23],
-    "tags": ["emoción", "pintura", "forma"]
+    "tags": ["emoción", "pintura", "forma"],
+    "tecnica": "Óleo sobre lienzo",
+    "año": 2023,
+    "dimensiones": "150 x 150 cm",
+    "procedencia": "Colección Kowalska, Cracovia.",
+    "historial_exposiciones": ["Cracow Modern (2023)"],
+    "descripcion_detallada": "Segunda pieza de la serie donde el color actúa como un catalizador directo de la memoria emocional."
   },
 
   {
@@ -1073,7 +1755,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["memoria", "territorio", "paisaje"]
+    "tags": ["memoria", "territorio", "paisaje"],
+    "tecnica": "Fotografía analógica",
+    "año": 2022,
+    "dimensiones": "80 x 120 cm",
+    "procedencia": "Estudio Núñez, Valencia.",
+    "historial_exposiciones": ["IVAM: 'Paisatges' (2022)"],
+    "descripcion_detallada": "Un estudio sobre la permanencia de la geografía en la psique local y la transformación del valle mediterráneo."
   },
   {
     "id": 74,
@@ -1082,7 +1770,13 @@
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [13, 23],
-    "tags": ["horizonte", "espacio", "paisaje"]
+    "tags": ["horizonte", "espacio", "paisaje"],
+    "tecnica": "Fotografía Fine Art",
+    "año": 2023,
+    "dimensiones": "120 x 120 cm",
+    "procedencia": "Colección Paula Ríos, Buenos Aires.",
+    "historial_exposiciones": ["Centro Cultural Recoleta: 'Intimidad' (2023)"],
+    "descripcion_detallada": "La relación dialéctica entre el individuo y su espacio más personal, capturada con una sensibilidad doméstica que eleva lo cotidiano al plano de lo sagrado."
   },
 
   {
@@ -1092,7 +1786,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 6,
     "categoriasSecundarias": [23],
-    "tags": ["sistema", "lenguaje", "estructura"]
+    "tags": ["sistema", "lenguaje", "estructura"],
+    "tecnica": "Instalación conceptual",
+    "año": 2024,
+    "dimensiones": "Variables",
+    "procedencia": "Estudio Grant, Londres.",
+    "historial_exposiciones": ["Whitechapel: 'Visual Systems' (2024)"],
+    "descripcion_detallada": "Investigación sobre la decodificación de lenguajes visuales mediante el uso de estructuras geométricas puras."
   },
 
   {
@@ -1102,7 +1802,13 @@
     "artistaId": 19,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7],
-    "tags": ["silencio", "vacío", "campo"]
+    "tags": ["silencio", "vacío", "campo"],
+    "tecnica": "Acrílico sobre panel",
+    "año": 2022,
+    "dimensiones": "100 x 100 cm",
+    "procedencia": "Estudio Svensson, Estocolmo.",
+    "historial_exposiciones": ["Moderna Museet (2022)"],
+    "descripcion_detallada": "Una invitación al cese del estímulo visual externo para focalizar la atención en la pureza de la superficie pictórica."
   },
   {
     "id": 77,
@@ -1111,7 +1817,13 @@
     "artistaId": 14,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [7, 14],
-    "tags": ["reducción", "forma", "tecnología"]
+    "tags": ["reducción", "forma", "tecnología"],
+    "tecnica": "Composición digital",
+    "año": 2023,
+    "dimensiones": "80 x 80 cm",
+    "procedencia": "Leo Nakamura Archive, Kioto.",
+    "historial_exposiciones": ["Mori Art Museum (2023)"],
+    "descripcion_detallada": "La reducción extrema de la forma digital buscando el núcleo esencial de la estética minimalista contemporánea."
   },
 
   {
@@ -1121,7 +1833,13 @@
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "categoriasSecundarias": [],
-    "tags": ["secuencia", "tiempo", "movimiento"]
+    "tags": ["secuencia", "tiempo", "movimiento"],
+    "tecnica": "Motion Graphics",
+    "año": 2024,
+    "dimensiones": "Digital",
+    "procedencia": "Thiago Mendes Studio, São Paulo.",
+    "historial_exposiciones": ["MUTEK 2024"],
+    "descripcion_detallada": "Tercera fase del estudio sobre el movimiento temporal y la distorsión visual en entornos virtuales."
   },
 
   {
@@ -1131,7 +1849,13 @@
     "artistaId": 16,
     "categoriaPrincipal": 2,
     "categoriasSecundarias": [12, 23],
-    "tags": ["identidad", "gesto", "presencia"]
+    "tags": ["identidad", "gesto", "presencia"],
+    "tecnica": "Fotografía de estudio",
+    "año": 2023,
+    "dimensiones": "100 x 140 cm",
+    "procedencia": "Estudio Grant, Londres.",
+    "historial_exposiciones": ["Tate Modern: 'Identity' (2023)"],
+    "descripcion_detallada": "Investigación sobre la construcción del personaje social a través del gesto y la pose controlada."
   },
 
   {
@@ -1141,6 +1865,12 @@
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "categoriasSecundarias": [14],
-    "tags": ["resonancia", "color", "campo"]
+    "tags": ["resonancia", "color", "campo"],
+    "tecnica": "Óleo sobre lino",
+    "año": 2024,
+    "dimensiones": "200 x 200 cm",
+    "procedencia": "Galería Klein, Berlín.",
+    "historial_exposiciones": ["Art Basel 2024"],
+    "descripcion_detallada": "Una pieza monumental que resuena con la vibración pura del pigmento."
   }
 ]

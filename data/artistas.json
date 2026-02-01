@@ -6,11 +6,16 @@
       "slug": "lucia-moreno",
       "pais": "España",
       "ciudad": "Barcelona",
-      "bio": "Artista digital centrada en paisajes sintéticos y narrativa visual contemporánea.",
+      "bio": "Lucía Moreno es una pionera de la estética digital en España. Su trabajo explora la intersección entre el código generativo y la memoria visual colectiva, creando mundos que existen en el umbral de lo real y lo artificial.",
+      "trayectoria": [
+        "Premio Nacional de Artes Digitales 2021",
+        "Expositora en el Sónar+D (Barcelona)",
+        "Residencia artística en Tokyo Digital Arts Lab"
+      ],
       "estilos": [4, 13, 23],
-      "tecnicas": ["Arte digital", "Composición 3D", "Edición fotográfica"],
+      "tecnicas": ["Arte digital", "Composición 3D", "Edición fotográfica", "Algoritmos generativos"],
       "web": "https://luciamoreno.art",
-      "redes": { "instagram": "luciamoreno.art" },
+      "redes": { "instagram": "luciamoreno.art", "linkedIn": "lucia-moreno-art" },
       "avatar": "lucia_moreno.jpg",
       "activo": true
     },
@@ -20,11 +25,16 @@
       "slug": "daniel-ortiz",
       "pais": "México",
       "ciudad": "Ciudad de México",
-      "bio": "Artista visual centrado en el retrato contemporáneo y la exploración de identidad masculina en entornos urbanos.",
+      "bio": "Daniel Ortiz utiliza la lente para diseccionar la complejidad de la masculinidad en el siglo XXI. Sus retratos, cargados de una atmósfera urbana y melancólica, han sido reconocidos por su capacidad para capturar la vulnerabilidad en entornos tradicionalmente rígidos.",
+      "trayectoria": [
+        "Mención de Honor en el World Photography Registry 2022",
+        "Publicación 'Urban Shadows' por Editorial RM",
+        "Exposición individual en el Centro de la Imagen, CDMX"
+      ],
       "estilos": [12, 23],
-      "tecnicas": ["Fotografía", "Edición fotográfica"],
+      "tecnicas": ["Fotografía analógica", "Procesado químico", "Edición digital"],
       "web": null,
-      "redes": { "instagram": "danielortiz.art" },
+      "redes": { "instagram": "danielortiz.art", "twitter": "dortizphoto" },
       "avatar": "daniel_ortiz.jpg",
       "activo": true
     },
@@ -34,11 +44,16 @@
       "slug": "sofia-klein",
       "pais": "Alemania",
       "ciudad": "Berlín",
-      "bio": "Explora la abstracción geométrica y la percepción del color.",
+      "bio": "Sofia Klein es una figura central en el minimalismo geométrico contemporáneo. Formada en la Bauhaus-Archiv, su trabajo se centra en la reducción formal y la pureza del color como herramientas para la meditación visual.",
+      "trayectoria": [
+        "Gold Medal at the Berlin Design Week 2023",
+        "Permanent collection at the Guggenheim Berlin",
+        "Author of 'The Silence of Shape' (2022)"
+      ],
       "estilos": [14, 7, 15],
-      "tecnicas": ["Arte generativo", "Composición abstracta"],
-      "web": null,
-      "redes": { "instagram": "sofia.klein.art" },
+      "tecnicas": ["Arte generativo", "Acrílico sobre panel", "Plotter art"],
+      "web": "https://sofiaklein.de",
+      "redes": { "instagram": "sofia.klein.art", "linkedin": "sofia-klein" },
       "avatar": "sofia_klein.jpg",
       "activo": true
     },
@@ -48,11 +63,16 @@
       "slug": "marco-bellini",
       "pais": "Italia",
       "ciudad": "Milán",
-      "bio": "Fotógrafo contemporáneo especializado en retrato y paisaje humano, con una mirada documental influenciada por el diseño italiano.",
+      "bio": "Marco Bellini captura la esencia de la arquitectura humana. Con una formación dual en arquitectura y fotografía de moda, sus composiciones destacan por un orden riguroso y una iluminación que recuerda a los maestros del Renacimiento italiano.",
+      "trayectoria": [
+        "Fotógrafo del año - Milan Visual Awards 2021",
+        "Colaborador editorial en Vogue Italia",
+        "Cátedra de Composición en la Brera Academy"
+      ],
       "estilos": [2, 12, 23],
-      "tecnicas": ["Fotografía", "Edición fotográfica"],
-      "web": null,
-      "redes": { "instagram": "marco.bellini.art" },
+      "tecnicas": ["Fotografía de gran formato", "Iluminación cinematográfica", "Edición química"],
+      "web": "https://marcobellini.it",
+      "redes": { "instagram": "marco.bellini.art", "facebook": "marco.bellini.official" },
       "avatar": "marco_bellini.jpg",
       "activo": true
     },
@@ -62,11 +82,16 @@
       "slug": "claire-dubois",
       "pais": "Francia",
       "ciudad": "París",
-      "bio": "Artista visual y performer que trabaja el cuerpo, la presencia y la identidad desde una estética directa y contemporánea.",
+      "bio": "Claire Dubois es una artista multidisciplinar cuya práctica se sitúa en la intersección de la performance y la imagen fija. Su trabajo desafía los límites del cuerpo como objeto artístico, utilizando el espacio público como escenario de disrupción estética.",
+      "trayectoria": [
+        "Prix de la Performance - Palais de Tokyo 2020",
+        "Residencia en la Cité Internationale des Arts",
+        "Exposición 'Cuerpos en Fuga' en el Pompidou"
+      ],
       "estilos": [12, 23],
-      "tecnicas": ["Fotografía", "Performance visual"],
+      "tecnicas": ["Fotografía performativa", "Videoarte", "Instalación táctil"],
       "web": null,
-      "redes": { "instagram": "claire.dubois.art" },
+      "redes": { "instagram": "claire.dubois.art", "vimeo": "clairedubois" },
       "avatar": "claire_dubois.jpg",
       "activo": true
     },
@@ -77,6 +102,11 @@
       "pais": "Alemania",
       "ciudad": "Hamburgo",
       "bio": "Especializado en arte abstracto y estructuras visuales experimentales.",
+      "trayectoria": [
+        "Exposición 'Strukturen' en Deichtorhallen, Hamburgo (2023)",
+        "Premio de Innovación Visual, Berlin Art Forum (2022)",
+        "Colaboración con el ZKM Center for Art and Media"
+      ],
       "estilos": [14, 20],
       "tecnicas": ["Arte experimental", "Arte digital"],
       "web": null,
@@ -91,6 +121,11 @@
       "pais": "Italia",
       "ciudad": "Roma",
       "bio": "Fotógrafa especializada en retrato contemporáneo con una fuerte influencia editorial y cinematográfica.",
+      "trayectoria": [
+        "Portada de Harper's Bazaar Italia (Septiembre 2023)",
+        "Exhibición 'Frames of Soul' en el MAXXI, Roma",
+        "Masterclass de Retrato en la Accademia di Ripetta"
+      ],
       "estilos": [12, 23],
       "tecnicas": ["Fotografía de retrato", "Iluminación editorial"],
       "web": null,
@@ -105,6 +140,11 @@
       "pais": "Bélgica",
       "ciudad": "Bruselas",
       "bio": "Fotógrafo urbano centrado en geometría y composición arquitectónica.",
+      "trayectoria": [
+        "Ganador del Brussels Photo Award 2022",
+        "Publicación del libro 'Geometric Cities' (2023)",
+        "Exposición en la Maison de l'Architecture, Bruselas"
+      ],
       "estilos": [2, 11, 9],
       "tecnicas": ["Fotografía urbana"],
       "web": null,
@@ -119,6 +159,11 @@
       "pais": "Polonia",
       "ciudad": "Varsovia",
       "bio": "Artista contemporánea que explora la relación entre forma y emoción.",
+      "trayectoria": [
+        "Bienal de Venecia - Pabellón Polaco (Exhibición Colectiva)",
+        "Premio Joven Artista de la Academia de Varsovia",
+        "Residencia artística en el MAC/VAL, París"
+      ],
       "estilos": [23, 14],
       "tecnicas": ["Pintura", "Arte mixto"],
       "web": null,
@@ -133,6 +178,11 @@
       "pais": "Chile",
       "ciudad": "Santiago",
       "bio": "Fotógrafo independiente centrado en el retrato urbano y la estética cotidiana.",
+      "trayectoria": [
+        "Mención especial en el Festival Internacional de Fotografía de Valparaíso",
+        "Serie 'Santiaguinos' publicada en 'Santiago en 100 Palabras'",
+        "Exhibición en el Museo de Bellas Artes (MNBA), Chile"
+      ],
       "estilos": [12, 23],
       "tecnicas": ["Fotografía", "Edición fotográfica"],
       "web": null,
@@ -146,11 +196,14 @@
       "slug": "nina-hoffmann",
       "pais": "Austria",
       "ciudad": "Viena",
-      "bio": "Fotógrafa de retrato contemporáneo con una estética cuidada y una fuerte influencia de la moda.",
+      "bio": "Nina Hoffmann es una de las retratistas más influyentes en la escena de Viena. Su trabajo, fuertemente vinculado a la alta costura, trasciende el glamour comercial para capturar la psicología profunda de sus sujetos a través de una iluminación teatral y dramática.",
+      "trayectoria": [
+        "Vogue Austria - Photographer of the year 2021",
+        "Retrospectiva en el Albertina Modern (2022)",
+        "Docente de Retrato en la Universidad de Artes Aplicadas de Viena"
+      ],
       "estilos": [12, 23],
-      "tecnicas": ["Fotografía editorial", "Postproducción"],
-      "web": null,
-      "redes": { "instagram": "nina.hoffmann.art" },
+      "tecnicas": ["Fotografía editorial", "Postproducción digital", "Iluminación de estudio"],
       "avatar": "nina_hoffmann.jpg",
       "activo": true
     },
@@ -160,11 +213,14 @@
       "slug": "samuel-brooks",
       "pais": "Estados Unidos",
       "ciudad": "Nueva York",
-      "bio": "Artista conceptual que trabaja el retrato y el diálogo entre arte clásico y cultura contemporánea.",
+      "bio": "Samuel Brooks cuestiona la validez de la tradición clásica en la era del consumo digital. A través de instalaciones y retratos conceptuales, Brooks interviene estatuaria clásica con elementos de la cultura del desecho, creando un nuevo diálogo sobre la permanencia de la belleza.",
+      "trayectoria": [
+        "Whitney Biennial Participant 2021",
+        "Residencia artística en la American Academy in Rome",
+        "Autor del ensayo 'The Plastic Parthenon' (2023)"
+      ],
       "estilos": [6, 12, 23],
-      "tecnicas": ["Fotografía conceptual", "Instalación"],
-      "web": null,
-      "redes": { "instagram": "samuelbrooks.art" },
+      "tecnicas": ["Fotografía conceptual", "Escultura de ensamblaje", "Instalación"],
       "avatar": "samuel_brooks.jpg",
       "activo": true
     },
@@ -175,6 +231,11 @@
       "pais": "Grecia",
       "ciudad": "Atenas",
       "bio": "Artista visual que documenta el proceso creativo y la relación entre gesto, materia y expresión contemporánea.",
+      "trayectoria": [
+        "Expositora en el Museo de Arte Contemporáneo de Atenas (EMST)",
+        "Documentalista oficial de la Bienal de Atenas 2021",
+        "Publicación 'The Artist's Hand' por Phaidon"
+      ],
       "estilos": [23],
       "tecnicas": ["Fotografía artística", "Documentación visual"],
       "web": null,
@@ -189,6 +250,11 @@
       "pais": "Japón",
       "ciudad": "Tokio",
       "bio": "Artista digital que trabaja con minimalismo y abstracción tecnológica.",
+      "trayectoria": [
+        "Digital Art Award - Tokyo 2023",
+        "Instalación en la estación de Shibuya para el 'Art Metro' project",
+        "Diseñador visual para la Filarmónica de Tokio"
+      ],
       "estilos": [7, 4, 14],
       "tecnicas": ["Arte digital", "Diseño generativo"],
       "web": null,
@@ -203,6 +269,11 @@
       "pais": "Argentina",
       "ciudad": "Buenos Aires",
       "bio": "Artista visual centrada en el retrato íntimo y la relación entre persona y espacio.",
+      "trayectoria": [
+        "Primer Premio en el Salón Nacional de Artes Visuales, Argentina",
+        "Exposición 'Habitancy' en el Centro Cultural Recoleta",
+        "Beca de Creación del Fondo Nacional de las Artes"
+      ],
       "estilos": [12, 23],
       "tecnicas": ["Fotografía", "Narrativa visual"],
       "web": null,
@@ -217,6 +288,11 @@
       "pais": "Reino Unido",
       "ciudad": "Londres",
       "bio": "Artista conceptual y fotógrafo interesado en identidad, actitud y narrativas visuales contemporáneas.",
+      "trayectoria": [
+        "Turner Prize nominee shortlist 2023",
+        "Exposición individual en la Tate Modern (South Tank)",
+        "Colaborador curatorial de la Whitechapel Gallery"
+      ],
       "estilos": [6, 12, 23],
       "tecnicas": ["Fotografía conceptual", "Dirección visual"],
       "web": null,
@@ -231,6 +307,11 @@
       "pais": "Croacia",
       "ciudad": "Zagreb",
       "bio": "Explora el arte experimental y la abstracción orgánica.",
+      "trayectoria": [
+        "Exhibición en el Pabellón de Arte de Zagreb",
+        "Residencia artística en el Nordic Artists' Centre Dale, Noruega",
+        "Innovadora del año - Experimental Tech Arts 2022"
+      ],
       "estilos": [20, 14],
       "tecnicas": ["Arte experimental", "Arte digital"],
       "web": null,
@@ -245,6 +326,11 @@
       "pais": "Brasil",
       "ciudad": "São Paulo",
       "bio": "Artista visual centrado en movimiento, ritmo y composición contemporánea.",
+      "trayectoria": [
+        "Finalista del Premio PIPA de Arte Brasileño",
+        "Mural digital en la Avenida Paulista, São Paulo",
+        "Colaboración con la São Paulo Dance Company"
+      ],
       "estilos": [18, 23],
       "tecnicas": ["Motion art", "Arte digital"],
       "web": null,
@@ -259,6 +345,11 @@
       "pais": "Suecia",
       "ciudad": "Estocolmo",
       "bio": "Artista minimalista que trabaja con espacio, silencio visual y forma.",
+      "trayectoria": [
+        "Estocolmo Art Prize 2023 (Sección Minimalismo)",
+        "Exhibición individual en la Magasin III Museum & Foundation for Contemporary Art",
+        "Diseño de la serie limitada 'Silence' para la industria escandinava"
+      ],
       "estilos": [7, 14],
       "tecnicas": ["Minimalismo", "Arte digital"],
       "web": null,
@@ -273,6 +364,11 @@
       "pais": "Canadá",
       "ciudad": "Vancouver",
       "bio": "Artista contemporáneo que fusiona abstracción digital y estética generativa.",
+      "trayectoria": [
+        "Lumen Prize Longlist 2024",
+        "Exposición 'Algorithmic Visions' en la Vancouver Art Gallery",
+        "Profesor de Computación Creativa en la UBC"
+      ],
       "estilos": [14, 15, 4],
       "tecnicas": ["Arte generativo", "Arte digital"],
       "web": null,
@@ -287,6 +383,11 @@
       "pais": "España",
       "ciudad": "Valencia",
       "bio": "Artista visual contemporáneo que investiga la relación entre paisaje, memoria y estructura geométrica.",
+      "trayectoria": [
+        "Premio Senyera de Artes Visuales 2023",
+        "Exhibición 'Memòria del Lloc' en el IVAM, Valencia",
+        "Residencia artística en la Casa de Velázquez, Madrid"
+      ],
       "estilos": [13, 14, 23],
       "tecnicas": ["Arte digital", "Fotografía", "Composición abstracta"],
       "web": null,

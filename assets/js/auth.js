@@ -9,6 +9,19 @@ document.addEventListener("DOMContentLoaded", () => {
   renderUserName();
   initCustomSelect();
 
+  // 🔔 HELPER PARA NOTIFICACIONES
+  window.showAuthNotification = function(message, type = 'success') {
+    const notify = document.getElementById('auth-notification');
+    if (!notify) return;
+
+    notify.textContent = message;
+    notify.className = `auth-notification show ${type}`;
+    
+    setTimeout(() => {
+      notify.classList.remove('show');
+    }, 4000);
+  };
+
   // 🔑 SOPORTE PARA MODO REGISTRO DESDE URL
   const mode = new URLSearchParams(window.location.search).get("mode");
   if (mode === "register") {
@@ -110,16 +123,20 @@ function initRegister() {
 
     users.push(newUser);
     saveUsers(users);
-    setSession(newUser);
+    
+    // CAMBIO: NO INICIAMOS SESIÓN AUTOMÁTICAMENTE
+    // setSession(newUser);
 
-    alert("¡Registro completado! Bienvenido.");
+    showAuthNotification("¡Cuenta creada con éxito! Por favor, inicia sesión.");
 
-    // Redirigir
-    const intended = localStorage.getItem("intended_destination");
-    localStorage.removeItem("intended_destination");
+    // CAMBIO: DESLIZAR AL PANEL DE LOGIN EN LUGAR DE REDIRIGIR
+    const container = document.getElementById('auth-container');
+    if (container) {
+      container.classList.remove("right-panel-active");
+    }
 
-    const base = getBasePath();
-    window.location.href = intended || `${base}/index.html`;
+    // Limpiar formulario de registro
+    form.reset();
   });
 }
 
@@ -149,12 +166,16 @@ function initLogin() {
 
     setSession(user);
     
-    // Redirigir a destino previo o Home
+    showAuthNotification("Sesión iniciada correctamente. Redirigiendo...");
+
+    // Redirigir a destino previo o Home tras un breve delay
     const intended = localStorage.getItem("intended_destination");
     localStorage.removeItem("intended_destination");
 
     const base = getBasePath();
-    window.location.href = intended || `${base}/index.html`;
+    setTimeout(() => {
+      window.location.href = intended || `${base}/index.html`;
+    }, 1500);
   });
 }
 

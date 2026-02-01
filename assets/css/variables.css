@@ -1,70 +1,70 @@
 :root {
    /* =========================
-     PRIMITIVOS DE COLOR
-     (no usar directamente en UI)
-  ========================= */
+      PRIMITIVOS DE COLOR
+   ========================= */
 
    --color-negro: #111111;
-   --color-blanco: #F3F3F3;
-   --color-grisclaro: #E5E5E5;
-   --color-grismedio: #8C8C8C;
+   --color-blanco: #F8F8F8; /* Un blanco más puro para museo */
+   --color-grisclaro: #EAEAEA;
+   --color-grismedio: #666666; /* Oscurecido para contraste (4.5:1+) */
    --color-grisoscuro: #333333;
-   --color-verde: #32843E;
+   --color-verde: #2A6F35;
    --color-rojo: #8B2E2F;
 
    /* =========================
-     ESTADOS (DERIVADOS)
-  ========================= */
+      SISTEMA DE ESPACIADO (Escala de 8px)
+   ========================= */
+   --space-xs: 0.5rem;  /* 8px */
+   --space-sm: 1rem;    /* 16px */
+   --space-md: 1.5rem;  /* 24px */
+   --space-lg: 3rem;    /* 48px */
+   --space-xl: 6rem;    /* 96px */
+   --container-max: 1400px;
 
-   --color-grisoscuro-hover: var(--color-grismedio);
-   --color-grismedio-hover: var(--color-grisclaro);
+   /* =========================
+      ESTADOS (DERIVADOS)
+   ========================= */
+
+   --color-grisoscuro-hover: var(--color-negro);
+   --color-grismedio-hover: var(--color-grisoscuro);
    --color-grisclaro-hover: var(--color-blanco);
 
-   --color-verde-hover: #4FA15B;
+   --color-verde-hover: #32843E;
    --color-rojo-hover: #A84546;
 
    /* =========================
-     TOKENS DE FONDO
-  ========================= */
+      TOKENS DE FONDO
+   ========================= */
 
    --bg-primary: var(--color-blanco);
-   /* fondo principal UI */
    --bg-secondary: var(--color-grisclaro);
-   /* tarjetas, bloques */
-
    --bg-inverse: var(--color-negro);
-   /* escenas oscuras, hero, overlays */
 
    /* =========================
-     TOKENS DE TEXTO
-  ========================= */
+      TOKENS DE TEXTO
+   ========================= */
 
    --text-primary: var(--color-negro);
-   /* texto sobre bg-primary */
    --text-secondary: var(--color-grisoscuro);
    --text-subtitle: var(--color-grismedio);
-   --text-title: var(--color-grisoscuro);
+   --text-title: var(--color-negro);
 
    --text-inverse: var(--color-blanco);
-   /* texto sobre bg-inverse */
 
    /* =========================
-     TOKENS DE ACCIÓN
-  ========================= */
-
-   --action-primary: var(--color-verde);
-   --action-primary-hover: var(--color-verde-hover);
-
-   --action-danger: var(--color-rojo);
-   --action-danger-hover: var(--color-rojo-hover);
+      TRAN SICIONES
+   ========================= */
+   --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+   --transition-fast: all 0.2s ease;
 
    /* =========================
-     TIPOGRAFÍA
-  ========================= */
+      TIPOGRAFÍA
+   ========================= */
 
-   --font-h1: 400 3rem 'Marcellus', serif;
-   --font-h2: 500 2.25rem 'Inter', sans-serif;
-   --font-button: 600 1rem 'Inter', sans-serif;
-   --font-text-1: 500 1rem 'Inter', sans-serif;
-   --font-text-2: 500 0.75rem 'Inter', sans-serif;
+   --font-h1: 400 4.5rem 'Marcellus', serif;
+   --font-h2: 400 3rem 'Marcellus', serif;
+   --font-h3: 600 1.25rem 'Inter', sans-serif;
+   --font-button: 600 0.85rem 'Inter', sans-serif;
+   --font-text-1: 400 1rem 'Inter', sans-serif; /* Peso 400 para lectura */
+   --font-text-2: 400 0.75rem 'Inter', sans-serif;
 }

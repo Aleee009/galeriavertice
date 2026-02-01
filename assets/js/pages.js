@@ -200,13 +200,18 @@ async function initCategorias() {
   grid.innerHTML = categorias
     .map(
       (c) => `
-      <div class="card-obra" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
-        <h3>${c.nombre}</h3>
+      <div class="card-obra category-card-rich" onclick="goTo('categoria-detalle.html', { id: ${c.id} })">
+        <div class="category-info-content">
+          <h3>${c.nombre}</h3>
+          <p class="category-short-desc">${c.descripcion_larga || "Explora nuestra selección curada de esta disciplina artística."}</p>
+          <span class="btn btn-outline small">Explorar Catálogo</span>
+        </div>
       </div>
     `
     )
     .join("");
 }
+
 
 async function initCategoriaDetalle() {
   await cargarDatos();
@@ -233,9 +238,56 @@ async function initObraDetalle() {
   const artista = artistas.find(a => a.id === obra.artistaId);
   const base = getBasePath();
 
+  // Título y Artista
   document.querySelector(".obra-texto h1").textContent = obra.titulo;
-  document.querySelector(".obra-texto p:nth-child(2)").textContent = obra.descripcion || "Sin descripción";
-  document.querySelector(".obra-texto p:nth-child(3)").textContent = `Artista: ${artista?.nombre || "Desconocido"}`;
+  const artistLink = document.createElement("a");
+  artistLink.href = `perfil-artista.html?slug=${artista?.slug}`;
+  artistLink.className = "obra-artist-link";
+  artistLink.textContent = artista?.nombre || "Artista Independiente";
+  
+  const h1 = document.querySelector(".obra-texto h1");
+  h1.after(artistLink);
+
+  // Cuerpo de descripción rico
+  const descContainer = document.querySelector(".obra-texto p:nth-child(2)");
+  if (descContainer) {
+    descContainer.innerHTML = `
+      <div class="obra-curatorial-block">
+        <p class="obra-short-desc">${obra.descripcion || ""}</p>
+        
+        ${obra.descripcion_detallada ? `
+          <div class="obra-long-desc">
+            <h3>Análisis del Conservador</h3>
+            <p>${obra.descripcion_detallada}</p>
+          </div>
+        ` : ""}
+
+        <div class="obra-spec-grid">
+          <div class="spec-item"><strong>Técnica:</strong> ${obra.tecnica || "No especificada"}</div>
+          <div class="spec-item"><strong>Año:</strong> ${obra.año || "S.F."}</div>
+          <div class="spec-item"><strong>Dimensiones:</strong> ${obra.dimensiones || "Variables"}</div>
+        </div>
+
+        ${obra.procedencia ? `
+          <div class="obra-history-block">
+            <h3>Procedencia</h3>
+            <p>${obra.procedencia}</p>
+          </div>
+        ` : ""}
+
+        ${obra.historial_exposiciones ? `
+          <div class="obra-history-block">
+            <h3>Historial de Exposiciones</h3>
+            <ul>${obra.historial_exposiciones.map(e => `<li>${e}</li>`).join("")}</ul>
+          </div>
+        ` : ""}
+      </div>
+    `;
+    
+    // Limpiar el antiguo "Artista: ..."
+    const oldArtistP = document.querySelector(".obra-texto p:nth-child(3)");
+    if (oldArtistP) oldArtistP.remove();
+  }
   
   const imgContainer = document.querySelector(".obra-imagen");
   if (imgContainer) {
@@ -243,20 +295,45 @@ async function initObraDetalle() {
   }
 }
 
+
 async function initArtistaDetalle() {
   await cargarDatos();
   const slug = getParam("slug");
   const artista = artistas.find(a => a.slug === slug);
   if (!artista) return;
 
+  const base = getBasePath();
+
   document.getElementById("artistaNombre").textContent = artista.nombre;
+  
+  // Enriquecer Biografía
   if (document.getElementById("artistaBio")) {
-    document.getElementById("artistaBio").textContent = artista.bio || "Biografía no disponible.";
+    document.getElementById("artistaBio").innerHTML = `
+      <div class="artist-full-header">
+        <p class="artist-location">${artista.ciudad}, ${artista.pais}</p>
+        <div class="artist-main-bio">${artista.bio}</div>
+      </div>
+      
+      ${artista.trayectoria ? `
+        <div class="artist-achievements">
+          <h3>Trayectoria y Reconocimientos</h3>
+          <ul>${artista.trayectoria.map(t => `<li>${t}</li>`).join("")}</ul>
+        </div>
+      ` : ""}
+
+      ${artista.tecnicas ? `
+        <div class="artist-skills">
+          <h3>Técnicas y Especialidades</h3>
+          <div class="skills-grid">${artista.tecnicas.map(s => `<span class="skill-tag">${s}</span>`).join("")}</div>
+        </div>
+      ` : ""}
+    `;
   }
 
   const obrasArtista = obras.filter(o => o.artistaId === artista.id);
   renderObras(obrasArtista);
 }
+
 
 async function initPerfilArtista() {
   const user = getCurrentUser();
@@ -511,15 +588,11 @@ async function initSeccionDetalle(seccion) {
   // Aseguramos que los datos estén cargados
   await cargarDatos();
   
-  // Buscamos el grid (usaremos la clase .home-grid como contenedor base pero con estilo editorial)
-  const grid = document.querySelector(".home-grid");
+  // En las páginas temáticas ya tenemos .editorial-grid en el HTML
+  const grid = document.querySelector(".editorial-grid");
   const base = getBasePath();
 
   if (!grid) return;
-
-  // Cambiamos la clase para aplicar el nuevo layout
-  grid.classList.remove("home-grid");
-  grid.classList.add("editorial-grid");
 
   // Filtrar usando la lógica de utils.js
   const filtradas = filtrarPorSeccion(obras, seccion);
@@ -532,8 +605,14 @@ async function initSeccionDetalle(seccion) {
   // Renderizar las obras encontradas
   grid.innerHTML = "";
   
+  // Link de regreso institucional (Superior Izquierda)
+  const backBtn = document.createElement("a");
+  backBtn.href = `${base}/index.html`;
+  backBtn.className = "editorial-back-link";
+  backBtn.innerHTML = `<span class="material-symbols-outlined">west</span> Volver a la Colección`;
+  grid.before(backBtn);
+
   // Spans predefinidos para un look asimétrico que imita el wirefare (rítmico)
-  // [4,4,4] -> [6,6] -> [4,4,4]...
   const spans = ["span-4", "span-4", "span-4", "span-6", "span-6", "span-4", "span-4", "span-4"];
 
   filtradas.forEach((obra, index) => {
@@ -543,17 +622,29 @@ async function initSeccionDetalle(seccion) {
     const article = document.createElement("article");
     article.className = `editorial-item ${spanClass}`;
 
+    // Datos técnicos opcionales para look profesional
+    const metaHtml = obra.tecnica ? `
+      <div class="editorial-metadata">
+        <span>${obra.tecnica}</span>
+        <span>${obra.año || ""} ${obra.dimensiones ? `· ${obra.dimensiones}` : ""}</span>
+      </div>
+    ` : "";
+
     article.innerHTML = `
       <div class="editorial-count">${(index + 1).toString().padStart(2, '0')}</div>
       <div class="editorial-image-wrap">
         <img src="${base}/assets/img/${obra.imagen}" alt="${obra.titulo}" loading="lazy">
       </div>
       <div class="editorial-caption">
-        <span class="editorial-title">${obra.titulo}</span>
-        <span class="editorial-artist">${artista ? artista.nombre : "Artista Independiente"}</span>
+        <div class="editorial-header-info">
+          <span class="editorial-title">${obra.titulo}</span>
+          <span class="editorial-artist">${artista ? artista.nombre : "Artista Independiente"}</span>
+        </div>
+        ${metaHtml}
       </div>
     `;
 
     grid.appendChild(article);
   });
 }
+

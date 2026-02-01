@@ -325,13 +325,12 @@ button.ghost:hover {
 
 .home-hero {
   width: 100%;
-  min-height: calc(100vh - 96px);
-  /* pantalla completa menos header */
+  min-height: calc(100vh - 120px);
   background: var(--bg-primary);
 
   /* AIRE EDITORIAL REAL */
-  padding-top: 180px;
-  padding-bottom: 220px;
+  padding-top: var(--space-xl);
+  padding-bottom: var(--space-xl);
 }
 
 .home-hero .container {
@@ -344,7 +343,7 @@ button.ghost:hover {
   font: var(--font-text-2);
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  margin-bottom: 48px;
+  margin-bottom: var(--space-lg);
   color: var(--text-subtitle);
 }
 
@@ -367,7 +366,7 @@ button.ghost:hover {
 ========================================================= */
 
 .home-category-block {
-  margin-bottom: 96px;
+  margin-bottom: var(--space-xl);
 }
 
 .home-eyebrow {
@@ -375,7 +374,7 @@ button.ghost:hover {
   letter-spacing: 0.35em;
   text-transform: uppercase;
   color: var(--text-secondary);
-  margin-bottom: 48px;
+  margin-bottom: var(--space-lg);
 }
 
 /* =========================================================
@@ -385,26 +384,24 @@ button.ghost:hover {
 .home-categories {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 80px;
-  margin-bottom: 48px;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-lg);
 }
 
 .home-categories span {
   font-family: var(--font-primary);
-  font-size: 38px;
+  font-size: 2rem; /* Más equilibrado */
   font-weight: 400;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
-  color: #111111;
+  color: var(--text-primary);
 
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
+  transition: var(--transition-fast);
 }
 
 .home-categories span:hover {
-  opacity: 0.6;
+  color: var(--text-subtitle);
 }
 
 .home-categories span.active {
@@ -424,9 +421,8 @@ button.ghost:hover {
 .home-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: 32px;
-
-  margin-top: 96px;
+  gap: var(--space-md);
+  margin-top: var(--space-xl);
 }
 
 /* Cada obra */
@@ -512,7 +508,6 @@ button.ghost:hover {
   width: 100%;
   max-width: 420px;
   text-align: center;
-  transform: translateY(-24px);
 }
 
 /* =========================================================
