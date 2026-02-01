@@ -335,7 +335,7 @@ button.ghost:hover {
 }
 
 .home-hero .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }
@@ -391,20 +391,28 @@ button.ghost:hover {
 
 .home-categories span {
   font-family: var(--font-primary);
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: 0.18em;
+  font-size: 38px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
   cursor: pointer;
+  color: #111111;
 
   transition:
-    color 0.25s ease,
-    letter-spacing 0.25s ease,
+    opacity 0.25s ease,
     transform 0.25s ease;
 }
 
+.home-categories span:hover {
+  opacity: 0.6;
+}
+
+.home-categories span.active {
+  font-weight: 600;
+}
+
 .home-hero .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   text-align: center;
 }

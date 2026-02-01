@@ -30,8 +30,19 @@ document.addEventListener("DOMContentLoaded", async () => {
     const seccion = getParam("seccion");
 
     if (
-      ["home", "obras", "categorias", "categoria", "artistas"].includes(page)
+      ["home", "obras", "categorias", "categoria", "artistas", "obra", "artista", "perfil-artista", "perfil-usuario", "moderno", "clasico", "abstracto"].includes(page)
     ) {
+      // 🔑 CONTROL DE ACCESO PARA INVITADOS
+      const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+      const guestWhitelist = ["home", "moderno", "clasico", "abstracto", "login", "register"];
+      
+      if (!user && !guestWhitelist.includes(page)) {
+        console.warn("Acceso restringido. Redirigiendo a login...");
+        const base = getBasePath();
+        window.location.href = `${base}/pages/login.html`;
+        return;
+      }
+
       initPages(page, seccion);
     }
   }
@@ -78,6 +89,38 @@ async function loadLayout() {
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
+
+  // 🔑 NORMALIZACIÓN DE RUTAS EN PARTIALS
+  document.querySelectorAll("header a, footer a").forEach(link => {
+    let href = link.getAttribute("href");
+    if (href && !href.startsWith("http") && !href.startsWith("#")) {
+      // Limpiamos ./ y ../ iniciales
+      const cleanHref = href.replace(/^(\.\.\/)+/, "").replace(/^\.\//, "");
+      
+      // Lista de archivos que sabemos que están en /pages/ (incluso si no lo dicen en el href)
+      const pagesFiles = [
+        "artistas.html", "obras.html", "categorias.html", "login.html", 
+        "obra-detalle.html", "artista-detalle.html", "categoria-detalle.html",
+        "perfil-artista.html", "perfil-usuario.html",
+        "moderno.html", "clasico.html", "abstracto.html"
+      ];
+
+      const isKnownPage = pagesFiles.some(p => cleanHref.startsWith(p));
+      const isPagesDir = cleanHref.includes("pages/");
+
+      if (isKnownPage || isPagesDir) {
+        // Aseguramos que tenga el prefijo pages/ si no lo tiene
+        const finalPath = isPagesDir ? cleanHref : `pages/${cleanHref}`;
+        link.href = `${base}/${finalPath}`;
+        console.log(`[Route] Resolved Page: ${href} -> ${link.href}`);
+      } else if (cleanHref.includes("assets/")) {
+        link.href = `${base}/${cleanHref}`;
+      } else if (cleanHref === "index.html" || cleanHref === "" || cleanHref === "./") {
+        link.href = `${base}/index.html`;
+        console.log(`[Route] Resolved Home: ${href} -> ${link.href}`);
+      }
+    }
+  });
 
   // 🔑 CLAVE: esperar a que el DOM realmente exista
   requestAnimationFrame(() => {

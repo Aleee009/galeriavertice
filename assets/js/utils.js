@@ -72,7 +72,7 @@ async function loadJSON(file) {
 }
 
 /* ================================
-   TEXTO
+   TEXTO Y FECHAS
 ================================ */
 
 // Normaliza texto para búsquedas (acentos, mayúsculas)
@@ -81,6 +81,21 @@ function normalize(text) {
     .toLowerCase()
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "");
+}
+
+function formatNewsDate(dateString) {
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('es-ES', options);
+}
+
+/* ================================
+   UI HELPERS
+================================ */
+
+function initCarouselControls(track) {
+  // Lógica básica para el carrusel si es necesaria
+  // Por ahora solo aseguramos que el track sea visible
+  if (track) track.style.opacity = "1";
 }
 
 /* ================================
@@ -94,13 +109,14 @@ function normalize(text) {
  */
 const SECCIONES = {
   moderno: {
-    categoriaPrincipal: [4, 6, 18], // Arte Digital, Conceptual, Motion
+    categoriaPrincipal: [4, 6, 9, 17, 18, 23], // IDs de obras.json que representan lo moderno
   },
   clasico: {
-    categoriaPrincipal: [1, 2], // Pintura, Fotografía
+    categoriaPrincipal: [1, 2, 3, 8, 10, 12, 13], 
   },
   abstracto: {
-    categoriasSecundarias: [14], // Abstracto
+    categoriaPrincipal: [7, 14, 15, 18, 20],
+    categoriasSecundarias: [14],
   },
 };
 
@@ -111,16 +127,19 @@ function obraEnSeccion(obra, seccion) {
   const config = SECCIONES[seccion];
   if (!config) return false;
 
+  const catPrincipal = parseInt(obra.categoriaPrincipal);
+  const catsSecundarias = (obra.categoriasSecundarias || []).map(c => parseInt(c));
+
   if (
     config.categoriaPrincipal &&
-    config.categoriaPrincipal.includes(obra.categoriaPrincipal)
+    config.categoriaPrincipal.includes(catPrincipal)
   ) {
     return true;
   }
 
   if (
     config.categoriasSecundarias &&
-    obra.categoriasSecundarias?.some(cat =>
+    catsSecundarias.some(cat =>
       config.categoriasSecundarias.includes(cat)
     )
   ) {

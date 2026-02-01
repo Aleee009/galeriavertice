@@ -37,13 +37,13 @@ main {
 }
 
 .site-header .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
 
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  height: 96px;
+  height: 120px;
 }
 
 /* ===========================
@@ -123,20 +123,20 @@ main {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 1px solid var(--color-grisclaro);
+  border: none;
   color: var(--text-primary);
   background: transparent;
   cursor: pointer;
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
 }
 
 .user-icon:hover {
-  background: var(--bg-secondary);
-  border-color: var(--color-grismedio);
+  opacity: 0.7;
 }
 
 .user-icon span {
-  font-size: 22px;
+  font-size: 28px;
 }
 
 /* Seguridad */

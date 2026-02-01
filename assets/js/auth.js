@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
   initLogin();
   renderUserName();
   initCustomSelect();
+
+  // 🔑 SOPORTE PARA MODO REGISTRO DESDE URL
+  const mode = new URLSearchParams(window.location.search).get("mode");
+  if (mode === "register") {
+    const container = document.getElementById('auth-container');
+    if (container) container.classList.add("right-panel-active");
+  }
 });
 
 /* ================================
@@ -108,7 +115,8 @@ function initRegister() {
     alert("¡Registro completado! Bienvenido.");
 
     // Redirigir
-    window.location.href = "../index.html";
+    const base = getBasePath();
+    window.location.href = `${base}/index.html`;
   });
 }
 
@@ -137,7 +145,8 @@ function initLogin() {
     }
 
     setSession(user);
-    window.location.href = "../index.html";
+    const base = getBasePath();
+    window.location.href = `${base}/index.html`;
   });
 }
 
@@ -155,7 +164,8 @@ function renderUserName() {
 
 function logout() {
   clearSession();
-  window.location.href = "../index.html";
+  const base = getBasePath();
+  window.location.href = `${base}/index.html`;
 }
 
 /* Dropdown Menu (si lo usas en el header) */

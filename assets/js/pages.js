@@ -3,6 +3,8 @@ let artistas = [];
 let obras = [];
 
 let mostrarSoloFavoritos = false;
+let artistasFiltrados = [];
+let categoriaActiva = null;
 
 /* ================================
    CARGA DE DATOS
@@ -19,48 +21,54 @@ async function cargarDatos() {
 }
 
 /* ================================
+   SECCIONES HOME
+================================ */
+
+const SECCIONES = {
+  moderno: [4, 6, 9, 17, 18, 23],
+  clasico: [1, 3, 12, 13],
+  abstracto: [7, 14, 15, 18, 20],
+};
+
+/* ================================
    HOME
 ================================ */
 
-function iniciarHome() {
+/* ================================
+   HOME
+================================ */
+
+async function iniciarHome() {
   const grid = document.querySelector(".home-grid");
   const buttons = document.querySelectorAll(".home-categories span");
   const base = getBasePath();
 
   if (!grid) return;
 
-  fetch(`${base}/data/obras.json`)
-    .then((r) => r.json())
-    .then((data) => {
-      obras = data;
-      renderCategoria("moderno");
-    });
+  // Cargar datos primero
+  await cargarDatos();
 
+  // Renderizar categoría por defecto
+  renderCategoria("moderno");
+
+  // Añadir eventos a las categorías
   buttons.forEach((btn) => {
     btn.addEventListener("mouseenter", () => {
+      // Remover clase activo de otros
+      buttons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
       renderCategoria(btn.dataset.cat);
     });
   });
 
   function renderCategoria(seccion) {
     grid.innerHTML = "";
-
-    const seleccion = obras
-      .filter((o) => {
-        if (seccion === "moderno") {
-          return [4, 6, 18].includes(o.categoriaPrincipal);
-        }
-
-        if (seccion === "clasico") {
-          return [1, 2].includes(o.categoriaPrincipal);
-        }
-
-        if (seccion === "abstracto") {
-          return o.categoriasSecundarias?.includes(14);
-        }
-
-        return false;
-      })
+    
+    // Usar la función de filtrado de utils.js
+    const filtradas = filtrarPorSeccion(obras, seccion);
+    
+    // Mezclar y tomar 5
+    const seleccion = [...filtradas]
       .sort(() => Math.random() - 0.5)
       .slice(0, 5);
 
@@ -86,14 +94,17 @@ function renderObras(lista) {
   const grid = document.getElementById("obrasGrid");
   if (!grid) return;
 
+  const base = getBasePath();
+
   grid.innerHTML = lista
     .map((obra) => {
       const artista = artistas.find((a) => a.id === obra.artistaId);
       const favorito = isFavorite(obra.id);
+      const imgPath = obra.imagen;
 
       return `
         <article class="card-obra">
-          <img src="../assets/img/${obra.imagen}">
+          <img src="${base}/assets/img/${imgPath}" alt="${obra.titulo}">
           <h3>${obra.titulo}</h3>
           <p>${artista?.nombre || ""}</p>
           <button class="favorite" onclick="handleFavorite(${obra.id})">
@@ -117,7 +128,7 @@ function handleFavorite(id) {
 }
 
 /* ================================
-   FILTROS
+   FILTROS OBRAS
 ================================ */
 
 function aplicarFiltros() {
@@ -163,10 +174,12 @@ async function initObras() {
   }
 
   document.getElementById("buscador")?.addEventListener("input", aplicarFiltros);
-  document.getElementById("filtroFavoritos")?.addEventListener("click", () => {
-    mostrarSoloFavoritos = !mostrarSoloFavoritos;
-    aplicarFiltros();
-  });
+  document
+    .getElementById("filtroFavoritos")
+    ?.addEventListener("click", () => {
+      mostrarSoloFavoritos = !mostrarSoloFavoritos;
+      aplicarFiltros();
+    });
 
   aplicarFiltros();
 }
@@ -201,13 +214,67 @@ async function initCategoriaDetalle() {
 
   document.getElementById("categoriaTitulo").textContent = categoria.nombre;
 
-  const filtradas = obras.filter(
-    (o) =>
-      o.categoriaPrincipal === id ||
-      o.categoriasSecundarias?.includes(id)
+  const filtradas = obras.filter((o) =>
+    [o.categoriaPrincipal, ...(o.categoriasSecundarias || [])].includes(id)
   );
 
   renderObras(filtradas);
+}
+
+async function initObraDetalle() {
+  await cargarDatos();
+  const id = parseInt(getParam("id"));
+  const obra = obras.find(o => o.id === id);
+  if (!obra) return;
+
+  const artista = artistas.find(a => a.id === obra.artistaId);
+  const base = getBasePath();
+
+  document.querySelector(".obra-texto h1").textContent = obra.titulo;
+  document.querySelector(".obra-texto p:nth-child(2)").textContent = obra.descripcion || "Sin descripción";
+  document.querySelector(".obra-texto p:nth-child(3)").textContent = `Artista: ${artista?.nombre || "Desconocido"}`;
+  
+  const imgContainer = document.querySelector(".obra-imagen");
+  if (imgContainer) {
+    imgContainer.innerHTML = `<img src="${base}/assets/img/${obra.metadata?.archivo || obra.imagen}" alt="${obra.titulo}">`;
+  }
+}
+
+async function initArtistaDetalle() {
+  await cargarDatos();
+  const slug = getParam("slug");
+  const artista = artistas.find(a => a.slug === slug);
+  if (!artista) return;
+
+  document.getElementById("artistaNombre").textContent = artista.nombre;
+  if (document.getElementById("artistaBio")) {
+    document.getElementById("artistaBio").textContent = artista.bio || "Biografía no disponible.";
+  }
+
+  const obrasArtista = obras.filter(o => o.artistaId === artista.id);
+  renderObras(obrasArtista);
+}
+
+async function initPerfilArtista() {
+  const user = getCurrentUser();
+  if (!user || user.role !== "artista") {
+    goTo("../index.html");
+    return;
+  }
+  await cargarDatos();
+  const obrasArtista = obras.filter(o => o.artistaId === user.id);
+  renderObras(obrasArtista);
+}
+
+async function initPerfilUsuario() {
+  const user = getCurrentUser();
+  if (!user) {
+    goTo("login.html");
+    return;
+  }
+  await cargarDatos();
+  const favoritos = obras.filter(o => isFavorite(o.id));
+  renderObras(favoritos);
 }
 
 /* ================================
@@ -220,6 +287,11 @@ function initPages(page) {
   if (page === "categorias") initCategorias();
   if (page === "categoria") initCategoriaDetalle();
   if (page === "artistas") initArtistas();
+  if (page === "obra") initObraDetalle();
+  if (page === "artista") initArtistaDetalle();
+  if (page === "perfil-artista") initPerfilArtista();
+  if (page === "perfil-usuario") initPerfilUsuario();
+  if (["moderno", "clasico", "abstracto"].includes(page)) initSeccionDetalle(page);
 }
 
 /* =====================================================
@@ -229,54 +301,75 @@ function initPages(page) {
 async function initArtistas() {
   await cargarDatos();
 
-  const artistasActivos = artistas.filter((a) => a.activo);
-  if (!artistasActivos.length) return;
+  artistasFiltrados = artistas.filter((a) => a.activo);
 
-  renderArtistsGrid(artistasActivos);
   renderArtistFilters();
-  initSearch(artistasActivos);
-  initOrder(artistasActivos);
+  renderArtistsGrid(artistasFiltrados);
+  initSearch();
+  initOrder();
 }
 
 /* =====================================================
-   FILTROS ARTISTAS
+   FILTROS ARTISTAS (PILLS FUNCIONALES)
 ===================================================== */
 
 function renderArtistFilters() {
   const container = document.getElementById("artistFilters");
-  if (!container || !Array.isArray(categorias)) return;
+  if (!container) return;
 
   container.innerHTML = "";
 
-  const ordenVisible = [
-    "Pintura",
-    "Fotografía",
-    "Retrato",
-    "Abstracto",
-    "Arte Digital",
-  ];
+  const categoriasUsadas = new Set();
 
-  const normalizeName = (str) =>
-    str
-      .toLowerCase()
-      .normalize("NFD")
-      .replace(/[\u0300-\u036f]/g, "");
-
-  const mapCategorias = new Map(
-    categorias.map((c) => [normalizeName(c.nombre), c])
-  );
-
-  ordenVisible.forEach((nombre) => {
-    const categoria = mapCategorias.get(normalizeName(nombre));
-    if (!categoria) return;
-
-    const btn = document.createElement("button");
-    btn.className = "filter-pill";
-    btn.textContent = categoria.nombre;
-    btn.dataset.id = categoria.id;
-
-    container.appendChild(btn);
+  obras.forEach((o) => {
+    categoriasUsadas.add(o.categoriaPrincipal);
+    (o.categoriasSecundarias || []).forEach((c) => categoriasUsadas.add(c));
   });
+
+  categorias
+    .filter((c) => categoriasUsadas.has(c.id))
+    .forEach((categoria) => {
+      const btn = document.createElement("button");
+      btn.className = "filter-pill";
+      btn.textContent = categoria.nombre;
+
+      btn.addEventListener("click", () => {
+        categoriaActiva =
+          categoriaActiva === categoria.id ? null : categoria.id;
+
+        document
+          .querySelectorAll(".filter-pill")
+          .forEach((b) => b.classList.remove("active"));
+
+        if (categoriaActiva) btn.classList.add("active");
+
+        filtrarArtistasPorCategoria();
+      });
+
+      container.appendChild(btn);
+    });
+}
+
+function filtrarArtistasPorCategoria() {
+  if (!categoriaActiva) {
+    artistasFiltrados = artistas.filter((a) => a.activo);
+  } else {
+    const artistasConCategoria = new Set(
+      obras
+        .filter((o) =>
+          [o.categoriaPrincipal, ...(o.categoriasSecundarias || [])].includes(
+            categoriaActiva
+          )
+        )
+        .map((o) => o.artistaId)
+    );
+
+    artistasFiltrados = artistas.filter(
+      (a) => a.activo && artistasConCategoria.has(a.id)
+    );
+  }
+
+  renderArtistsGrid(artistasFiltrados);
 }
 
 /* =====================================================
@@ -290,12 +383,13 @@ function renderArtistsGrid(lista) {
   grid.innerHTML = "";
 
   lista.forEach((artista) => {
+    const base = getBasePath();
     grid.insertAdjacentHTML(
       "beforeend",
       `
       <article class="artist-card">
         <div class="artist-image">
-          <img src="../assets/img/${artista.avatar}" alt="${artista.nombre}">
+          <img src="${base}/assets/img/${artista.avatar}" alt="${artista.nombre}">
         </div>
 
         <div class="artist-info">
@@ -313,20 +407,20 @@ function renderArtistsGrid(lista) {
 }
 
 /* =====================================================
-   BUSCADOR
+   BUSCADOR ARTISTAS
 ===================================================== */
 
-function initSearch(allArtists) {
+function initSearch() {
   const input = document.getElementById("artistSearch");
   if (!input) return;
 
   input.addEventListener("input", () => {
-    const value = input.value.toLowerCase();
+    const value = normalize(input.value);
 
-    const filtered = allArtists.filter(
+    const filtered = artistasFiltrados.filter(
       (a) =>
-        a.nombre.toLowerCase().includes(value) ||
-        a.ciudad.toLowerCase().includes(value)
+        normalize(a.nombre).includes(value) ||
+        normalize(a.ciudad).includes(value)
     );
 
     renderArtistsGrid(filtered);
@@ -334,15 +428,15 @@ function initSearch(allArtists) {
 }
 
 /* =====================================================
-   ORDEN
+   ORDEN ARTISTAS
 ===================================================== */
 
-function initOrder(allArtists) {
+function initOrder() {
   const select = document.getElementById("artistOrder");
   if (!select) return;
 
   select.addEventListener("change", () => {
-    const sorted = [...allArtists].sort((a, b) =>
+    const sorted = [...artistasFiltrados].sort((a, b) =>
       select.value === "az"
         ? a.nombre.localeCompare(b.nombre)
         : b.nombre.localeCompare(a.nombre)
@@ -377,12 +471,13 @@ async function initFeaturedNewsCarousel() {
   track.innerHTML = "";
 
   featuredNews.forEach((noticia) => {
+    const base = getBasePath();
     const slide = document.createElement("article");
     slide.className = "news-slide";
 
     slide.innerHTML = `
       <div class="news-image">
-        <img src="../assets/img/${noticia.imagen}" alt="${noticia.titulo}">
+        <img src="${base}/assets/img/${noticia.imagen}" alt="${noticia.titulo}">
       </div>
 
       <div class="news-content">
@@ -403,17 +498,39 @@ async function initFeaturedNewsCarousel() {
   initCarouselControls(track);
 }
 
-/* ===============================
-   FECHA
-=============================== */
+document.addEventListener("DOMContentLoaded", initFeaturedNewsCarousel);
 
-function formatNewsDate(date) {
-  const d = new Date(date);
-  return d.toLocaleDateString("es-ES", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
+/**
+ * Inicializador compartido para las 3 secciones temáticas (Moderno, Clásico, Abstracto)
+ */
+async function initSeccionDetalle(seccion) {
+  // Aseguramos que los datos estén cargados
+  await cargarDatos();
+  
+  const grid = document.querySelector(".home-grid");
+  const base = getBasePath();
+
+  if (!grid) return;
+
+  // Filtrar usando la lógica de utils.js
+  const filtradas = filtrarPorSeccion(obras, seccion);
+  
+  if (filtradas.length === 0) {
+    grid.innerHTML = "<p style='grid-column: 1/-1; text-align: center; padding: 4rem;'>No hay obras disponibles para esta categoría en este momento.</p>";
+    return;
+  }
+
+  // Renderizar las obras encontradas
+  grid.innerHTML = "";
+  filtradas.forEach((obra) => {
+    const div = document.createElement("div");
+    div.className = "grid-item";
+
+    const img = document.createElement("img");
+    img.src = `${base}/assets/img/${obra.imagen}`;
+    img.alt = obra.titulo;
+
+    div.appendChild(img);
+    grid.appendChild(div);
   });
 }
-
-document.addEventListener("DOMContentLoaded", initFeaturedNewsCarousel);
