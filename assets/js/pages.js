@@ -505,15 +505,21 @@ document.addEventListener("DOMContentLoaded", initFeaturedNewsCarousel);
 
 /**
  * Inicializador compartido para las 3 secciones temáticas (Moderno, Clásico, Abstracto)
+ * Implementa el layout editorial "Low Profile"
  */
 async function initSeccionDetalle(seccion) {
   // Aseguramos que los datos estén cargados
   await cargarDatos();
   
+  // Buscamos el grid (usaremos la clase .home-grid como contenedor base pero con estilo editorial)
   const grid = document.querySelector(".home-grid");
   const base = getBasePath();
 
   if (!grid) return;
+
+  // Cambiamos la clase para aplicar el nuevo layout
+  grid.classList.remove("home-grid");
+  grid.classList.add("editorial-grid");
 
   // Filtrar usando la lógica de utils.js
   const filtradas = filtrarPorSeccion(obras, seccion);
@@ -525,15 +531,29 @@ async function initSeccionDetalle(seccion) {
 
   // Renderizar las obras encontradas
   grid.innerHTML = "";
-  filtradas.forEach((obra) => {
-    const div = document.createElement("div");
-    div.className = "grid-item";
+  
+  // Spans predefinidos para un look asimétrico que imita el wirefare (rítmico)
+  // [4,4,4] -> [6,6] -> [4,4,4]...
+  const spans = ["span-4", "span-4", "span-4", "span-6", "span-6", "span-4", "span-4", "span-4"];
 
-    const img = document.createElement("img");
-    img.src = `${base}/assets/img/${obra.imagen}`;
-    img.alt = obra.titulo;
+  filtradas.forEach((obra, index) => {
+    const artista = artistas.find(a => a.id === obra.artistaId);
+    const spanClass = spans[index % spans.length];
 
-    div.appendChild(img);
-    grid.appendChild(div);
+    const article = document.createElement("article");
+    article.className = `editorial-item ${spanClass}`;
+
+    article.innerHTML = `
+      <div class="editorial-count">${(index + 1).toString().padStart(2, '0')}</div>
+      <div class="editorial-image-wrap">
+        <img src="${base}/assets/img/${obra.imagen}" alt="${obra.titulo}" loading="lazy">
+      </div>
+      <div class="editorial-caption">
+        <span class="editorial-title">${obra.titulo}</span>
+        <span class="editorial-artist">${artista ? artista.nombre : "Artista Independiente"}</span>
+      </div>
+    `;
+
+    grid.appendChild(article);
   });
 }

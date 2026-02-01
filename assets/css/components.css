@@ -399,3 +399,89 @@
 .home-grid .grid-item:hover {
   transform: translateY(-8px);
 }
+
+/* =====================================
+   EDITORIAL MASONRY GRID (LOW PROFILE)
+===================================== */
+
+.editorial-grid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 3rem;
+  padding: 2rem 0 8rem;
+  align-items: start;
+}
+
+.editorial-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+  transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-item:hover {
+  transform: translateY(-4px);
+}
+
+/* Diferentes tamaños (Spans) */
+.span-4 { grid-column: span 4; }
+.span-6 { grid-column: span 6; }
+.span-8 { grid-column: span 8; }
+.span-3 { grid-column: span 3; }
+
+/* En móvil todo a full width */
+@media (max-width: 768px) {
+  .editorial-item { grid-column: span 12 !important; }
+  .editorial-grid { gap: 2rem; }
+}
+
+.editorial-image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-secondary);
+}
+
+.editorial-image-wrap img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-item:hover img {
+  transform: scale(1.03);
+}
+
+/* Cartela Curatorial */
+.editorial-caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.editorial-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-primary);
+}
+
+.editorial-artist {
+  font-family: "Inter", sans-serif;
+  font-weight: 300;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  color: var(--text-subtitle);
+}
+
+.editorial-count {
+  font-family: "Marcellus", serif;
+  font-size: 0.75rem;
+  opacity: 0.4;
+  margin-bottom: 0.5rem;
+}
+
