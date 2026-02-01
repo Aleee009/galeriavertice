@@ -281,3 +281,121 @@
 .user-dropdown button.logout-btn:hover .material-symbols-outlined {
   color: currentColor;
 }
+
+/* =====================================
+   PREMIUM GATE OVERLAY (GUEST FEEDBACK)
+===================================== */
+
+.premium-gate {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.premium-gate.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.premium-gate-content {
+  background: white;
+  padding: 4rem;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 40px 100px rgba(0,0,0,0.1);
+  border-radius: 2px; /* Editorial square look */
+  border: 1px solid var(--color-grisclaro);
+  transform: translateY(20px);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.premium-gate.active .premium-gate-content {
+  transform: translateY(0);
+}
+
+.premium-gate h2 {
+  font-family: "Marcellus", serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+.premium-gate p {
+  color: var(--text-subtitle);
+  line-height: 1.6;
+  margin-bottom: 2.5rem;
+  font-size: 1.1rem;
+}
+
+.premium-gate .gate-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.premium-gate .btn {
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  padding: 1.2rem;
+}
+
+.premium-gate .close-gate {
+  margin-top: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text-subtitle);
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* =====================================
+   EDITORIAL SECTION HEADERS
+===================================== */
+
+.section-header {
+  padding: 8rem 0 5rem;
+  text-align: center;
+  max-width: 900px !important;
+  margin: 0 auto;
+}
+
+.section-title {
+  font-family: "Marcellus", serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  line-height: 1;
+}
+
+.section-description {
+  font-family: "Inter", sans-serif;
+  color: var(--text-subtitle);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.home-grid .grid-item {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.6s ease;
+}
+
+.home-grid .grid-item:hover {
+  transform: translateY(-8px);
+}

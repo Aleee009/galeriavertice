@@ -115,8 +115,11 @@ function initRegister() {
     alert("¡Registro completado! Bienvenido.");
 
     // Redirigir
+    const intended = localStorage.getItem("intended_destination");
+    localStorage.removeItem("intended_destination");
+
     const base = getBasePath();
-    window.location.href = `${base}/index.html`;
+    window.location.href = intended || `${base}/index.html`;
   });
 }
 
@@ -145,8 +148,13 @@ function initLogin() {
     }
 
     setSession(user);
+    
+    // Redirigir a destino previo o Home
+    const intended = localStorage.getItem("intended_destination");
+    localStorage.removeItem("intended_destination");
+
     const base = getBasePath();
-    window.location.href = `${base}/index.html`;
+    window.location.href = intended || `${base}/index.html`;
   });
 }
 

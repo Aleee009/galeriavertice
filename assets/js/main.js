@@ -1,21 +1,33 @@
 document.addEventListener("DOMContentLoaded", async () => {
-  // Página actual definida en <body data-page="...">
   const page = document.body.dataset.page;
+  const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
+  
+  // 🔑 LOGICA DE ACCESO GLOBAL (GUEST CONTROL)
+  const guestWhitelist = ["home", "moderno", "clasico", "abstracto", "login", "register"];
+  
+  // Si es un acceso directo a una página prohibida
+  if (!user && !guestWhitelist.includes(page)) {
+    console.warn(`[Vértice Security] Acceso denegado a "${page}".`);
+    // Guardamos intención
+    saveIntendedDestination();
+    const base = window.location.pathname.includes("/pages/") ? ".." : ".";
+    window.location.href = `${base}/pages/login.html`;
+    return;
+  }
 
   /* ===========================
      LAYOUT (HEADER + FOOTER)
      =========================== */
 
-  // Cargar layout solo si NO es login ni register
   if (page !== "login" && page !== "register") {
     await loadLayout();
+    
+    // Inyectar Premium Gate Markup (siempre por si acaso)
+    injectPremiumGate();
 
-    // Renderiza usuario en header si existe la función
     if (typeof renderHeaderUser === "function") {
       renderHeaderUser();
     }
-
-    // Aplica rol de usuario si existe la función
     if (typeof applyUserRole === "function") {
       applyUserRole();
     }
@@ -26,23 +38,9 @@ document.addEventListener("DOMContentLoaded", async () => {
      =========================== */
 
   if (typeof initPages === "function") {
-    // Pasamos también la sección por URL (si existe)
     const seccion = getParam("seccion");
-
-    if (
-      ["home", "obras", "categorias", "categoria", "artistas", "obra", "artista", "perfil-artista", "perfil-usuario", "moderno", "clasico", "abstracto"].includes(page)
-    ) {
-      // 🔑 CONTROL DE ACCESO PARA INVITADOS
-      const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
-      const guestWhitelist = ["home", "moderno", "clasico", "abstracto", "login", "register"];
-      
-      if (!user && !guestWhitelist.includes(page)) {
-        console.warn("Acceso restringido. Redirigiendo a login...");
-        const base = getBasePath();
-        window.location.href = `${base}/pages/login.html`;
-        return;
-      }
-
+    const initWhitelist = ["home", "obras", "categorias", "categoria", "artistas", "obra", "artista", "perfil-artista", "perfil-usuario", "moderno", "clasico", "abstracto"];
+    if (initWhitelist.includes(page)) {
       initPages(page, seccion);
     }
   }
@@ -56,48 +54,96 @@ document.addEventListener("DOMContentLoaded", async () => {
       initAuth(page);
     }
   }
+
+  // 🖱️ INTERCEPTOR DE CLICKS PARA INVITADOS
+  if (!user) {
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest("a");
+      if (!link) return;
+
+      const href = link.getAttribute("href");
+      if (!href || href.startsWith("http") || href.startsWith("#")) return;
+
+      // Determinamos si el destino es una página protegida
+      const isProtected = ["artistas.html", "obras.html", "categorias.html", "perfil"].some(p => href.includes(p));
+      
+      if (isProtected) {
+        e.preventDefault();
+        saveIntendedDestination(href);
+        showPremiumGate();
+      }
+    });
+  }
 });
 
 /* ===========================
-   BASE PATH
+   PREMIUM GATE LOGIC
+=========================== */
+
+function injectPremiumGate() {
+  if (document.getElementById("premium-gate")) return;
+  
+  const html = `
+    <div id="premium-gate" class="premium-gate">
+      <div class="premium-gate-content">
+        <h2>Experiencia Exclusiva</h2>
+        <p>Estás a punto de entrar en la zona curatorial privada. Únete a nuestra comunidad para descubrir obras y artistas exclusivos.</p>
+        <div class="gate-actions">
+          <a href="login.html?mode=register" class="btn">Crear cuenta privada</a>
+          <a href="login.html" class="btn btn-outline">Iniciar sesión</a>
+        </div>
+        <button class="close-gate" onclick="hidePremiumGate()">Seguir explorando como invitado</button>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML("beforeend", html);
+}
+
+function showPremiumGate() {
+  const gate = document.getElementById("premium-gate");
+  if (gate) gate.classList.add("active");
+}
+
+function hidePremiumGate() {
+  const gate = document.getElementById("premium-gate");
+  if (gate) gate.classList.remove("active");
+}
+
+function saveIntendedDestination(href = window.location.href) {
+  localStorage.setItem("intended_destination", href);
+}
+
+/* ===========================
+   BASE PATH HELPER
 =========================== */
 
 function getBasePath() {
-  // Si estamos dentro de /pages/, subimos un nivel
   return window.location.pathname.includes("/pages/") ? ".." : ".";
 }
 
 /* ===========================
-   LAYOUT
+   LAYOUT INJECTION
 =========================== */
 
 async function loadLayout() {
   const base = getBasePath();
-
-  // getCurrentUser puede no existir aún
   let user = null;
   if (typeof getCurrentUser === "function") {
     user = getCurrentUser();
   }
 
-  // Header según estado de sesión
   const headerFile = user ? "header.html" : "header_sesion.html";
-
-  // Carga de header y footer
   const header = await fetch(`${base}/partials/${headerFile}`).then(r => r.text());
   const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
 
   document.body.insertAdjacentHTML("afterbegin", header);
   document.body.insertAdjacentHTML("beforeend", footer);
 
-  // 🔑 NORMALIZACIÓN DE RUTAS EN PARTIALS
+  // Normalización de rutas
   document.querySelectorAll("header a, footer a").forEach(link => {
     let href = link.getAttribute("href");
     if (href && !href.startsWith("http") && !href.startsWith("#")) {
-      // Limpiamos ./ y ../ iniciales
       const cleanHref = href.replace(/^(\.\.\/)+/, "").replace(/^\.\//, "");
-      
-      // Lista de archivos que sabemos que están en /pages/ (incluso si no lo dicen en el href)
       const pagesFiles = [
         "artistas.html", "obras.html", "categorias.html", "login.html", 
         "obra-detalle.html", "artista-detalle.html", "categoria-detalle.html",
@@ -109,32 +155,19 @@ async function loadLayout() {
       const isPagesDir = cleanHref.includes("pages/");
 
       if (isKnownPage || isPagesDir) {
-        // Aseguramos que tenga el prefijo pages/ si no lo tiene
         const finalPath = isPagesDir ? cleanHref : `pages/${cleanHref}`;
         link.href = `${base}/${finalPath}`;
-        console.log(`[Route] Resolved Page: ${href} -> ${link.href}`);
       } else if (cleanHref.includes("assets/")) {
         link.href = `${base}/${cleanHref}`;
       } else if (cleanHref === "index.html" || cleanHref === "" || cleanHref === "./") {
         link.href = `${base}/index.html`;
-        console.log(`[Route] Resolved Home: ${href} -> ${link.href}`);
       }
     }
   });
 
-  // 🔑 CLAVE: esperar a que el DOM realmente exista
   requestAnimationFrame(() => {
-    if (typeof renderHeaderUser === "function") {
-      renderHeaderUser();
-    }
-
-    if (typeof applyUserRole === "function") {
-      applyUserRole();
-    }
-
-    // Si tienes menú desplegable por JS
-    if (typeof initHeaderMenu === "function") {
-      initHeaderMenu();
-    }
+    if (typeof renderHeaderUser === "function") renderHeaderUser();
+    if (typeof applyUserRole === "function") applyUserRole();
+    if (typeof initHeaderMenu === "function") initHeaderMenu();
   });
 }
