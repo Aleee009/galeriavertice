@@ -4,13 +4,15 @@ document.addEventListener("DOMContentLoaded", async () => {
   
   // 🔑 LOGICA DE ACCESO GLOBAL (GUEST CONTROL)
   const guestWhitelist = ["home", "moderno", "clasico", "abstracto", "login", "register"];
+  const isWhitelisted = guestWhitelist.includes(page);
   
+  console.log(`[Vértice Security] Page: "${page}" | User: ${!!user} | Whitelisted: ${isWhitelisted}`);
+
   // Si es un acceso directo a una página prohibida
-  if (!user && !guestWhitelist.includes(page)) {
-    console.warn(`[Vértice Security] Acceso denegado a "${page}".`);
-    // Guardamos intención
+  if (!user && !isWhitelisted) {
+    console.warn(`[Vértice Security] Acceso denegado a "${page}". Redirigiendo...`);
     saveIntendedDestination();
-    const base = window.location.pathname.includes("/pages/") ? ".." : ".";
+    const base = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/').replace(/\/pages$/, '');
     window.location.href = `${base}/pages/login.html`;
     return;
   }
@@ -65,9 +67,15 @@ document.addEventListener("DOMContentLoaded", async () => {
       if (!href || href.startsWith("http") || href.startsWith("#")) return;
 
       // Determinamos si el destino es una página protegida
+      const guestWhitelist = ["home", "moderno", "clasico", "abstracto", "login", "register"];
+      const cleanHref = href.split('/').pop().replace('.html', '');
+      const isWhitelisted = guestWhitelist.includes(cleanHref);
+      
       const isProtected = ["artistas.html", "obras.html", "categorias.html", "perfil"].some(p => href.includes(p));
       
-      if (isProtected) {
+      console.log(`[Interceptor] Destination: ${href} | Protected: ${isProtected} | Whitelisted: ${isWhitelisted}`);
+
+      if (isProtected && !isWhitelisted) {
         e.preventDefault();
         saveIntendedDestination(href);
         showPremiumGate();

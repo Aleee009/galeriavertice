@@ -20,15 +20,7 @@ async function cargarDatos() {
   obras = obrasData;
 }
 
-/* ================================
-   SECCIONES HOME
-================================ */
 
-const SECCIONES = {
-  moderno: [4, 6, 9, 17, 18, 23],
-  clasico: [1, 3, 12, 13],
-  abstracto: [7, 14, 15, 18, 20],
-};
 
 /* ================================
    HOME
@@ -53,11 +45,22 @@ async function iniciarHome() {
 
   // Añadir eventos a las categorías
   buttons.forEach((btn) => {
+    // 1. Vista previa al pasar el ratón
     btn.addEventListener("mouseenter", () => {
-      // Remover clase activo de otros
       buttons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
       renderCategoria(btn.dataset.cat);
+    });
+
+    // 2. Navegación al hacer clic
+    btn.addEventListener("click", () => {
+      const seccion = btn.dataset.cat;
+      if (!seccion) return;
+      
+      // Desde el root (index.html), entramos en pages/seccion.html
+      const destino = `pages/${seccion}.html`;
+      console.log(`[Navigation] Navigating from Home to: ${destino}`);
+      window.location.href = destino;
     });
   });
 
