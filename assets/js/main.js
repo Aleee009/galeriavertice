@@ -1,4 +1,13 @@
 document.addEventListener("DOMContentLoaded", async () => {
+  // 🔥 Registro de Service Worker para caché extremo
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('./sw.js')
+        .then(reg => console.log('[SW] Registrado con éxito', reg.scope))
+        .catch(err => console.error('[SW] Error al registrar', err));
+    });
+  }
+
   const page = document.body.dataset.page;
   const user = typeof getCurrentUser === "function" ? getCurrentUser() : null;
   
@@ -18,34 +27,27 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 
   /* ===========================
-     LAYOUT (HEADER + FOOTER)
+     EXECUCCIÓN PARALELA (LAYOUT + PÁGINA)
      =========================== */
+  const initTasks = [];
 
   if (page !== "login" && page !== "register") {
-    await loadLayout();
-    
-    // Inyectar Premium Gate Markup (siempre por si acaso)
-    injectPremiumGate();
-
-    if (typeof renderHeaderUser === "function") {
-      renderHeaderUser();
-    }
-    if (typeof applyUserRole === "function") {
-      applyUserRole();
-    }
+    initTasks.push(loadLayout().then(() => {
+      injectPremiumGate();
+      if (typeof applyUserRole === "function") applyUserRole();
+    }));
   }
-
-  /* ===========================
-     ROUTING DE PÁGINAS
-     =========================== */
 
   if (typeof initPages === "function") {
     const seccion = getParam("seccion");
     const initWhitelist = ["home", "obras", "categorias", "categoria", "artistas", "obra", "artista", "perfil-artista", "perfil-usuario", "moderno", "clasico", "abstracto"];
     if (initWhitelist.includes(page)) {
-      initPages(page, seccion);
+      initTasks.push(initPages(page, seccion));
     }
   }
+
+  // Esperar a que todo lo crítico termine
+  await Promise.all(initTasks);
 
   /* ===========================
      AUTH
@@ -141,11 +143,20 @@ async function loadLayout() {
   }
 
   const headerFile = user ? "header.html" : "header_sesion.html";
-  const header = await fetch(`${base}/partials/${headerFile}`).then(r => r.text());
-  const footer = await fetch(`${base}/partials/footer.html`).then(r => r.text());
+  
+  // 🔥 Optimización: Carga paralela de header y footer
+  const [headerHtml, footerHtml] = await Promise.all([
+    fetch(`${base}/partials/${headerFile}`).then(r => r.text()),
+    fetch(`${base}/partials/footer.html`).then(r => r.text())
+  ]);
 
-  document.body.insertAdjacentHTML("afterbegin", header);
-  document.body.insertAdjacentHTML("beforeend", footer);
+  document.body.insertAdjacentHTML("afterbegin", headerHtml);
+  document.body.insertAdjacentHTML("beforeend", footerHtml);
+
+  // Renderizar nombre de usuario inmediatamente si existe
+  if (user && typeof renderUserName === "function") {
+    renderUserName();
+  }
 
   // Normalización de rutas
   document.querySelectorAll("header a, footer a").forEach(link => {
@@ -174,7 +185,6 @@ async function loadLayout() {
   });
 
   requestAnimationFrame(() => {
-    if (typeof renderHeaderUser === "function") renderHeaderUser();
     if (typeof applyUserRole === "function") applyUserRole();
     if (typeof initHeaderMenu === "function") initHeaderMenu();
   });

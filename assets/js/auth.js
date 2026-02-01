@@ -186,8 +186,12 @@ function renderUserName() {
   const user = getCurrentUser();
   if (!user) return;
 
-  document.querySelectorAll(".user-name").forEach((el) => {
+  const nameElements = document.querySelectorAll(".user-name");
+  nameElements.forEach((el) => {
     el.textContent = user.name;
+    // Asegurar que el contenedor padre sea visible si estaba oculto
+    const parent = el.closest(".user-text");
+    if (parent) parent.style.display = "inline";
   });
 }
 

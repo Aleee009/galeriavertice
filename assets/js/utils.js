@@ -61,14 +61,36 @@ function toggleFavorite(id) {
 }
 
 /* ================================
-   JSON
+   JSON & CACHE
 ================================ */
 
-// Carga de archivos JSON respetando /pages/
+const dataCache = new Map();
+
+// Carga de archivos JSON respetando /pages/ con caché interna
 async function loadJSON(file) {
-  const base = getBasePath();
-  const res = await fetch(`${base}/data/${file}`);
-  return await res.json();
+  if (dataCache.has(file)) return dataCache.get(file);
+
+  try {
+    const base = getBasePath();
+    const res = await fetch(`${base}/data/${file}`);
+    if (!res.ok) throw new Error(`Fetch error: ${res.status}`);
+    const data = await res.json();
+    dataCache.set(file, data);
+    return data;
+  } catch (err) {
+    console.error(`[loadJSON] Error cargando ${file}:`, err);
+    return null;
+  }
+}
+
+// Pre-carga paralela de los archivos críticos
+async function preloadGlobals() {
+  console.log("[Performance] Preloading globals in parallel...");
+  return Promise.all([
+    loadJSON("categorias.json"),
+    loadJSON("artistas.json"),
+    loadJSON("obras.json")
+  ]);
 }
 
 /* ================================
@@ -94,8 +116,49 @@ function formatNewsDate(dateString) {
 
 function initCarouselControls(track) {
   // Lógica básica para el carrusel si es necesaria
-  // Por ahora solo aseguramos que el track sea visible
   if (track) track.style.opacity = "1";
+}
+
+/**
+ * Renderiza una imagen con optimizaciones extremas
+ */
+function renderOptimizedImage(container, src, alt, priority = false, aspectRatio = "4/5") {
+  const base = getBasePath();
+  
+  container.classList.add("image-reveal-container");
+  container.style.aspectRatio = aspectRatio;
+  // Mantenemos el fondo para el efecto shimmer
+  container.style.position = "relative";
+
+  // Si la prioridad es alta, inyectamos directamente
+  if (priority) {
+    container.innerHTML = `
+      <img src="${base}/assets/img/${src}" 
+           alt="${alt}" 
+           fetchpriority="high"
+           onload="this.parentElement.classList.add('loaded')"
+           style="opacity: 0; transition: opacity 0.8s ease-in-out; width: 100%; height: 100%; object-fit: cover;">
+    `;
+    return;
+  }
+
+  // Si no es prioritaria, usamos el observer para no saturar el ancho de banda
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        container.innerHTML = `
+          <img src="${base}/assets/img/${src}" 
+               alt="${alt}" 
+               loading="lazy"
+               onload="this.parentElement.classList.add('loaded')"
+               style="opacity: 0; transition: opacity 0.8s ease-in-out; width: 100%; height: 100%; object-fit: cover;">
+        `;
+        observer.unobserve(container);
+      }
+    });
+  }, { rootMargin: '200px' }); // Cargar 200px antes de que llegue
+
+  observer.observe(container);
 }
 
 /* ================================
@@ -109,14 +172,13 @@ function initCarouselControls(track) {
  */
 const SECCIONES = {
   moderno: {
-    categoriaPrincipal: [4, 6, 9, 17, 18, 23], // IDs de obras.json que representan lo moderno
+    categoriaPrincipal: [1, 2, 3, 4, 5, 6, 7, 8], 
   },
   clasico: {
-    categoriaPrincipal: [1, 2, 3, 8, 10, 12, 13], 
+    categoriaPrincipal: [9, 10, 11, 12, 13, 14, 15, 16], 
   },
   abstracto: {
-    categoriaPrincipal: [7, 14, 15, 18, 20],
-    categoriasSecundarias: [14],
+    categoriaPrincipal: [17, 18, 19, 20, 21, 22, 23, 24],
   },
 };
 

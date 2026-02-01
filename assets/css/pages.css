@@ -1762,3 +1762,174 @@ button.ghost:hover {
     grid-template-columns: 1fr;
   }
 }
+
+/* =========================================================
+   EDITORIAL GRID ENHANCEMENTS
+========================================================= */
+
+.editorial-item {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInRotate 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeInRotate {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.editorial-item:nth-child(n) { animation-delay: calc(var(--i, 0) * 0.1s); }
+
+.editorial-image-wrap {
+  position: relative;
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.editorial-image-wrap img {
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.editorial-item:hover .editorial-image-wrap img {
+  transform: scale(1.05);
+}
+
+.editorial-caption {
+  margin-top: 1.5rem;
+}
+
+.editorial-title {
+  display: block;
+  font: var(--font-text-1);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.editorial-artist {
+  display: block;
+  font: var(--font-text-2);
+  color: var(--text-subtitle);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.8rem;
+}
+/* ================================
+   SISTEMA DE DISEÑO UNIFICADO (V-CARD)
+================================ */
+.v-card {
+  background: white;
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.v-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.v-card-info {
+  padding: 1.5rem;
+}
+
+.v-card-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+}
+
+.v-card-info p {
+  font-size: 0.9rem;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+}
+
+.favorite {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.v-empty {
+  grid-column: 1/-1;
+  text-align: center;
+  padding: 4rem;
+  color: #888;
+  font-style: italic;
+}
+
+.editorial-item.v-card {
+  border-radius: 0;
+  background: transparent;
+}
+
+.editorial-item.v-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* Efecto Shimmer (Brillo en movimiento) */
+.editorial-image-wrap:not(.loaded)::after,
+.grid-item:not(.loaded)::after,
+.artist-image:not(.loaded)::after,
+.news-image:not(.loaded)::after,
+.image-reveal-container:not(.loaded)::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  animation: shimmer 1.5s infinite linear;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.editorial-image-wrap.loaded img, 
+.grid-item.loaded img,
+.artist-image.loaded img,
+.news-image.loaded img,
+.image-reveal-container.loaded img {
+  opacity: 1 !important;
+}
+
+.editorial-image-wrap,
+.grid-item,
+.artist-image,
+.news-image,
+.image-reveal-container {
+  transition: background 0.4s ease;
+}
+
+.editorial-image-wrap.loaded,
+.grid-item.loaded,
+.artist-image.loaded,
+.news-image.loaded,
+.image-reveal-container.loaded {
+  background: transparent;
+}
