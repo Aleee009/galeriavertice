@@ -1,0 +1,36 @@
+{
+  "name": "Galería Vértice",
+  "short_name": "Vértice",
+  "description": "Galería de arte contemporáneo - Red social para coleccionistas",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1a1a1a",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "assets/icons/logo_vertice.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["art", "lifestyle", "social"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Obras",
+      "short_name": "Obras",
+      "description": "Ver todas las obras",
+      "url": "/pages/obras.html",
+      "icons": [{ "src": "assets/icons/logo_vertice.svg", "sizes": "any", "type": "image/svg+xml" }]
+    },
+    {
+      "name": "Artistas",
+      "short_name": "Artistas",
+      "description": "Ver todos los artistas",
+      "url": "/pages/artistas.html",
+      "icons": [{ "src": "assets/icons/logo_vertice.svg", "sizes": "any", "type": "image/svg+xml" }]
+    }
+  ]
+}

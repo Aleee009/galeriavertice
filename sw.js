@@ -2,6 +2,9 @@ const CACHE_NAME = 'galeria-vertice-v2';
 const ASSETS_TO_CACHE = [
   '/',
   '/index.html',
+  '/manifest.json',
+  '/assets/icons/logo_vertice.svg',
+  '/assets/icons/Logo_Texto_Vertice.svg',
   '/assets/css/styles.css',
   '/assets/js/main.js',
   '/assets/js/utils.js',

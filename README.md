@@ -88,3 +88,12 @@ Cada página HTML define su identidad con:
 
 ```html
 <body data-page="obras">
+```
+
+---
+
+## PWA y Iconos 🔧
+
+- Los logos principales se mantienen como `SVG` (ej. `assets/icons/logo_vertice.svg`) y deben usarse en los HTML con `<img>` o `background-image`.
+- Para mantener coherencia visual usamos únicamente `SVG` para los logos (`assets/icons/logo_vertice.svg` y `assets/icons/Logo_Texto_Vertice.svg`).
+- No se generan PNGs en el repositorio; el manifiesto y el Service Worker apuntan y cachean los `SVG` correspondientes para uso offline.
