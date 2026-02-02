@@ -2,8 +2,11 @@
   "categorias": [
     { "id": 1, "nombre": "Pintura", "slug": "pintura" },
     { "id": 2, "nombre": "Fotografía", "slug": "fotografia" },
+    { "id": 3, "nombre": "Escultura", "slug": "escultura" },
     { "id": 4, "nombre": "Arte Digital", "slug": "arte-digital" },
+    { "id": 5, "nombre": "Ilustración", "slug": "ilustracion" },
     { "id": 6, "nombre": "Arte Conceptual", "slug": "arte-conceptual" },
+    { "id": 7, "nombre": "Instalación", "slug": "instalacion" },
     { "id": 18, "nombre": "Motion Art", "slug": "motion-art" }
   ]
 }

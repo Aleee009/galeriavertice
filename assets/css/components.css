@@ -810,3 +810,32 @@ body::before {
 .auth-notification.error {
   border-bottom: 3px solid var(--action-danger);
 }
+/* =========================
+   PAGINACIÓN
+========================= */
+
+.v-pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+    margin-bottom: 5rem;
+}
+
+.btn-premium {
+    background: var(--bg-inverse);
+    color: var(--text-inverse);
+    padding: 1.2rem 4rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: var(--transition-smooth);
+    border: 1px solid var(--bg-inverse);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.btn-premium:hover {
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}

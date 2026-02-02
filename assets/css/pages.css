@@ -400,12 +400,22 @@ button.ghost:hover {
   transition: var(--transition-fast);
 }
 
-.home-categories span:hover {
-  color: var(--text-subtitle);
+.home-categories span:hover,
+.home-categories span.active {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 8px;
 }
 
-.home-categories span.active {
-  font-weight: 600;
+.home-grid .grid-item {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .home-hero .container {

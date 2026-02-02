@@ -172,13 +172,13 @@ function renderOptimizedImage(container, src, alt, priority = false, aspectRatio
  */
 const SECCIONES = {
   moderno: {
-    categoriaPrincipal: [1, 2, 3, 4, 5, 6, 7, 8], 
+    categoriaPrincipal: [1, 2, 5], // Pintura, Fotografía, Ilustración
   },
   clasico: {
-    categoriaPrincipal: [9, 10, 11, 12, 13, 14, 15, 16], 
+    categoriaPrincipal: [3, 6, 7], // Escultura, Arte Conceptual, Instalación
   },
   abstracto: {
-    categoriaPrincipal: [17, 18, 19, 20, 21, 22, 23, 24],
+    categoriaPrincipal: [4, 18], // Arte Digital, Motion Art
   },
 };
 

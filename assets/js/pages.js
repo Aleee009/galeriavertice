@@ -16,12 +16,12 @@ const Galleria = {
     this.obras = obr || [];
   },
 
-  render(containerId, items, type = 'obra') {
+  render(containerId, items, type = 'obra', append = false) {
     const grid = document.getElementById(containerId) || document.querySelector(`.${containerId}`);
     if (!grid) return;
 
-    grid.innerHTML = "";
-    if (items.length === 0) {
+    if (!append) grid.innerHTML = "";
+    if (items.length === 0 && !append) {
       grid.innerHTML = "<p class='v-empty'>No hay elementos en esta selección.</p>";
       return;
     }
@@ -95,22 +95,61 @@ async function initPages(page, seccion) {
 
   const routes = {
     home: () => {
-      const sample = [...Galleria.obras].sort(() => 0.5 - Math.random()).slice(0, 8);
-      Galleria.render("home-grid", sample);
-      // Listener para categorías en home
-      document.querySelectorAll(".home-categories span").forEach(span => {
+      const grid = "home-grid";
+      const spans = document.querySelectorAll(".home-categories span");
+      
+      const renderCategory = (catName) => {
+        // Filtrar obras por sección curatorial (usando la lógica de SECCIONES en utils.js)
+        const obras = Galleria.obras.filter(o => obraEnSeccion(o, catName));
+        // Tomar las primeras 5 o las que haya
+        const sample = obras.slice(0, 5);
+        Galleria.render(grid, sample);
+        
+        // Actualizar clase activa
+        spans.forEach(s => s.classList.toggle("active", s.dataset.cat === catName));
+      };
+
+      spans.forEach(span => {
+        span.onmouseenter = () => renderCategory(span.dataset.cat);
+        // Si el usuario hace click, también le llevamos a la página de la categoría
         span.onclick = () => window.location.href = `pages/${span.dataset.cat}.html`;
       });
+
+      // Render inicial (por defecto Moderno)
+      renderCategory("moderno");
     },
     obras: () => {
       const grid = "obrasGrid";
-      Galleria.render(grid, Galleria.obras);
+      const btnVerMas = document.getElementById("btnVerMas");
+      let visibleCount = 12;
+      let currentItems = Galleria.obras;
+
+      const updateGallery = () => {
+        const toShow = currentItems.slice(0, visibleCount);
+        Galleria.render(grid, toShow);
+        if (btnVerMas) {
+          btnVerMas.style.display = visibleCount < currentItems.length ? "block" : "none";
+        }
+      };
+
+      if (btnVerMas) {
+        btnVerMas.onclick = () => {
+          visibleCount += 12;
+          updateGallery();
+          // Scroll suave hacia abajo para mostrar las nuevas obras
+          window.scrollBy({ top: 300, behavior: 'smooth' });
+        };
+      }
+
+      updateGallery();
+
       const search = document.getElementById("buscador");
       if (search) {
         search.oninput = () => {
           const q = search.value.toLowerCase();
-          const filtered = Galleria.obras.filter(o => o.titulo.toLowerCase().includes(q));
-          Galleria.render(grid, filtered);
+          currentItems = Galleria.obras.filter(o => o.titulo.toLowerCase().includes(q));
+          visibleCount = 12;
+          updateGallery();
         };
       }
     },

@@ -12,6 +12,16 @@
     { "id": 18, "nombre": "Thiago Mendes", "avatar": "thiago_mendes.jpg" },
     { "id": 19, "nombre": "Laura Svensson", "avatar": "laura_svensson.jpg" },
     { "id": 20, "nombre": "David Chen", "avatar": "david_chen.jpg" },
-    { "id": 21, "nombre": "Álvaro Núñez", "avatar": "alvaro_nunez.jpg" }
+    { "id": 21, "nombre": "Álvaro Núñez", "avatar": "alvaro_nunez.jpg" },
+    { "id": 22, "nombre": "Maya Sato", "avatar": "maya_sato.jpg" },
+    { "id": 23, "nombre": "Julian Thorne", "avatar": "julian_thorne.jpg" },
+    { "id": 24, "nombre": "Isabella Valli", "avatar": "isabella_valli.jpg" },
+    { "id": 25, "nombre": "Kofi Mensah", "avatar": "kofi_mensah.jpg" },
+    { "id": 26, "nombre": "Anaïs Petit", "avatar": "anais_petit.jpg" },
+    { "id": 27, "nombre": "Lars Berg", "avatar": "lars_berg.jpg" },
+    { "id": 28, "nombre": "Zoe Miller", "avatar": "zoe_miller.jpg" },
+    { "id": 29, "nombre": "Omar Al-Fayed", "avatar": "omar_alfayed.jpg" },
+    { "id": 30, "nombre": "Yuki Tanaka", "avatar": "yuki_tanaka.jpg" },
+    { "id": 31, "nombre": "Renata Silva", "avatar": "renata_silva.jpg" }
   ]
 }
