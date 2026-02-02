@@ -33,19 +33,30 @@ const Galleria = {
       if (type === 'obra') {
         const artista = this.artistas.find(a => a.id === item.artistaId);
         card.className = "card-obra v-card";
-        const imgWrap = document.createElement("div");
-        renderOptimizedImage(imgWrap, item.imagen, item.titulo, priority, "4/5");
-        card.appendChild(imgWrap);
-        card.insertAdjacentHTML("beforeend", `
-          <div class="v-card-info">
-            <h3>${item.titulo}</h3>
-            <p>${artista?.nombre || "Vértice"}</p>
-            <a href="obra-detalle.html?id=${item.id}" class="v-card-link"></a>
-            <button class="favorite ${isFavorite(item.id) ? 'active' : ''}" onclick="Handle.favorite(event, ${item.id})">
-              <span class="material-symbols-outlined">${isFavorite(item.id) ? 'favorite' : 'favorite_border'}</span>
-            </button>
+        
+        card.innerHTML = `
+          <div class="v-card-visual">
+            <div class="v-card-img-wrap"></div>
+            <div class="v-card-overlay">
+              <button class="favorite ${isFavorite(item.id) ? 'active' : ''}" onclick="Handle.favorite(event, ${item.id})">
+                <span class="material-symbols-outlined">${isFavorite(item.id) ? 'favorite' : 'favorite_border'}</span>
+              </button>
+              <div class="v-card-info">
+                <p class="v-card-artist">${artista?.nombre || "Vértice"}</p>
+                <h2 class="v-card-title">${item.titulo}</h2>
+                <div class="v-card-meta">
+                  <span>${item.tecnica}</span>
+                  <span class="v-sep">|</span>
+                  <span>${item.año}</span>
+                </div>
+              </div>
+            </div>
+            <a href="${getPageRoute('obra-detalle.html')}?id=${item.id}" class="v-card-link"></a>
           </div>
-        `);
+        `;
+        
+        const imgWrap = card.querySelector(".v-card-img-wrap");
+        renderOptimizedImage(imgWrap, item.imagen, item.titulo, priority, "4/5");
       } 
       else if (type === 'artista') {
         card.className = "card-artista v-card";
@@ -55,7 +66,7 @@ const Galleria = {
         card.insertAdjacentHTML("beforeend", `
           <div class="v-card-info">
             <h3>${item.nombre}</h3>
-            <a href="artista-detalle.html?id=${item.id}" class="v-card-link"></a>
+            <a href="${getPageRoute('artista-detalle.html')}?id=${item.id}" class="v-card-link"></a>
           </div>
         `);
       }
@@ -64,7 +75,7 @@ const Galleria = {
         card.insertAdjacentHTML("beforeend", `
           <div class="v-card-info">
             <h3>${item.nombre}</h3>
-            <a href="categoria-detalle.html?id=${item.id}" class="v-card-link"></a>
+            <a href="${getPageRoute('categoria-detalle.html')}?id=${item.id}" class="v-card-link"></a>
           </div>
         `);
       }
@@ -112,7 +123,7 @@ async function initPages(page, seccion) {
       spans.forEach(span => {
         span.onmouseenter = () => renderCategory(span.dataset.cat);
         // Si el usuario hace click, también le llevamos a la página de la categoría
-        span.onclick = () => window.location.href = `pages/${span.dataset.cat}.html`;
+        span.onclick = () => window.location.href = getPageRoute(`${span.dataset.cat}.html`);
       });
 
       // Render inicial (por defecto Moderno)
@@ -167,8 +178,7 @@ async function initPages(page, seccion) {
 }
 
 async function initSeccion(name) {
-  const obrasId = SECCIONES[name]?.categoriaPrincipal || [];
-  const filtered = Galleria.obras.filter(o => obrasId.includes(o.id));
+  const filtered = Galleria.obras.filter(o => obraEnSeccion(o, name));
   Galleria.render("editorial-grid", filtered);
 }
 
@@ -178,17 +188,19 @@ async function initObraDetalle() {
   if (!obra) return;
   const artista = Galleria.artistas.find(a => a.id === obra.artistaId);
 
-  document.querySelector(".obra-texto h1").textContent = obra.titulo;
-  const imgCont = document.querySelector(".obra-imagen");
-  if (imgCont) renderOptimizedImage(imgCont, obra.imagen, obra.titulo, true, "1/1");
-  
-  document.querySelector(".obra-texto p").innerHTML = `
-    <div class="v-details">
-      <ul>
-        <li><strong>Artista:</strong> ${artista?.nombre || "Vértice"}</li>
-        <li><strong>Técnica:</strong> ${obra.tecnica}</li>
-        <li><strong>Año:</strong> ${obra.año}</li>
-      </ul>
+  document.querySelector(".obra-texto").innerHTML = `
+    <h1 class="v-title">${obra.titulo}</h1>
+    <a href="${getPageRoute('artista-detalle.html')}?id=${artista?.id}" class="obra-artist-link">${artista?.nombre || "Vértice"}</a>
+    
+    <div class="obra-curatorial-block">
+      <p class="obra-short-desc">${obra.descripcion}</p>
+      
+      <div class="obra-spec-grid">
+        <div class="spec-item"><strong>Técnica:</strong> ${obra.tecnica}</div>
+        <div class="spec-item"><strong>Año:</strong> ${obra.año}</div>
+        <div class="spec-item"><strong>Dimensiones:</strong> ${obra.dimensiones}</div>
+        <div class="spec-item"><strong>Época:</strong> ${obra.epoca}</div>
+      </div>
     </div>
   `;
 }
@@ -197,7 +209,25 @@ async function initArtistaDetalle() {
   const id = parseInt(getParam("id"));
   const artista = Galleria.artistas.find(a => a.id === id);
   if (!artista) return;
-  document.getElementById("artistaNombre").textContent = artista.nombre;
+  const header = document.querySelector(".section-header");
+  header.innerHTML = `
+    <h1 class="section-title">${artista.nombre}</h1>
+    <p class="artist-location">Información Curatorial</p>
+    <p class="artist-main-bio">${artista.bio || "Biografía pronto disponible."}</p>
+    
+    <div class="artist-achievements">
+      <h3>Reconocimientos</h3>
+      <ul>
+        ${(artista.premios || []).map(p => `<li>${p}</li>`).join('')}
+      </ul>
+    </div>
+    
+    <div class="artist-skills">
+      <h3>Últimas Noticias</h3>
+      <p class="obra-short-desc">${artista.noticias || "Sin noticias recientes."}</p>
+    </div>
+  `;
+
   const filtered = Galleria.obras.filter(o => o.artistaId === id);
   Galleria.render("obrasGrid", filtered);
 }

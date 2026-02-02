@@ -174,6 +174,7 @@ function initLogin() {
 
     const base = getBasePath();
     setTimeout(() => {
+      // Si la URL guardada es la de login anterior con parámetros, mejor ir a home o usar la absoluta
       window.location.href = intended || `${base}/index.html`;
     }, 1500);
   });

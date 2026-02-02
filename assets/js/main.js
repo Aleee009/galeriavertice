@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   if (!user && !isWhitelisted) {
     console.warn(`[Vértice Security] Acceso denegado a "${page}". Redirigiendo...`);
     saveIntendedDestination();
-    const base = window.location.origin + window.location.pathname.split('/').slice(0, -1).join('/').replace(/\/pages$/, '');
+    const base = getBasePath();
     window.location.href = `${base}/pages/login.html`;
     return;
   }
@@ -99,8 +99,8 @@ function injectPremiumGate() {
         <h2>Experiencia Exclusiva</h2>
         <p>Estás a punto de entrar en la zona curatorial privada. Únete a nuestra comunidad para descubrir obras y artistas exclusivos.</p>
         <div class="gate-actions">
-          <a href="login.html?mode=register" class="btn">Crear cuenta privada</a>
-          <a href="login.html" class="btn btn-outline">Iniciar sesión</a>
+          <a href="${getPageRoute('login.html')}?mode=register" class="btn">Crear cuenta privada</a>
+          <a href="${getPageRoute('login.html')}" class="btn btn-outline">Iniciar sesión</a>
         </div>
         <button class="close-gate" onclick="hidePremiumGate()">Seguir explorando como invitado</button>
       </div>
@@ -120,7 +120,9 @@ function hidePremiumGate() {
 }
 
 function saveIntendedDestination(href = window.location.href) {
-  localStorage.setItem("intended_destination", href);
+  // Convertimos a URL absoluta interna para que sea robusta ante cambios de nivel
+  const absoluteUrl = new URL(href, window.location.origin + window.location.pathname).href;
+  localStorage.setItem("intended_destination", absoluteUrl);
 }
 
 /* ===========================
@@ -158,28 +160,18 @@ async function loadLayout() {
     renderUserName();
   }
 
-  // Normalización de rutas
-  document.querySelectorAll("header a, footer a").forEach(link => {
+  // Normalización de rutas para navegación dinámica
+  document.querySelectorAll("header a, footer a, .premium-gate a, .v-card-link").forEach(link => {
     let href = link.getAttribute("href");
     if (href && !href.startsWith("http") && !href.startsWith("#")) {
-      const cleanHref = href.replace(/^(\.\.\/)+/, "").replace(/^\.\//, "");
-      const pagesFiles = [
-        "artistas.html", "obras.html", "categorias.html", "login.html", 
-        "obra-detalle.html", "artista-detalle.html", "categoria-detalle.html",
-        "perfil-artista.html", "perfil-usuario.html",
-        "moderno.html", "clasico.html", "abstracto.html"
-      ];
-
-      const isKnownPage = pagesFiles.some(p => cleanHref.startsWith(p));
-      const isPagesDir = cleanHref.includes("pages/");
-
-      if (isKnownPage || isPagesDir) {
-        const finalPath = isPagesDir ? cleanHref : `pages/${cleanHref}`;
-        link.href = `${base}/${finalPath}`;
-      } else if (cleanHref.includes("assets/")) {
-        link.href = `${base}/${cleanHref}`;
-      } else if (cleanHref === "index.html" || cleanHref === "" || cleanHref === "./") {
-        link.href = `${base}/index.html`;
+      // Extraemos solo el nombre del archivo y sus parámetros
+      const urlMatch = href.match(/([^/]+\.html)(\?.*)?$/);
+      if (urlMatch) {
+        const pageName = urlMatch[1];
+        const params = urlMatch[2] || "";
+        link.href = getPageRoute(pageName) + params;
+      } else if (href === "index.html" || href === "./" || href === "") {
+        link.href = `${getBasePath()}/index.html`;
       }
     }
   });

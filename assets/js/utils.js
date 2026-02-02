@@ -18,6 +18,17 @@ function getBasePath() {
   return window.location.pathname.includes("/pages/") ? ".." : ".";
 }
 
+// Resuelve la ruta a una página interna (.html) respetando la ubicación actual
+function getPageRoute(pageFile) {
+  const base = getBasePath();
+  // El index siempre está en la raíz
+  if (pageFile === "index.html") return `${base}/index.html`;
+  // Si ya estamos en /pages, el resto de páginas están en el mismo nivel
+  if (base === "..") return pageFile;
+  // Si estamos en la raíz, el resto de páginas están en /pages
+  return `pages/${pageFile}`;
+}
+
 /* ================================
    LOCAL STORAGE
 ================================ */
@@ -171,44 +182,17 @@ function renderOptimizedImage(container, src, alt, priority = false, aspectRatio
  * 👉 un solo sitio donde se define la lógica
  */
 const SECCIONES = {
-  moderno: {
-    categoriaPrincipal: [1, 2, 5], // Pintura, Fotografía, Ilustración
-  },
-  clasico: {
-    categoriaPrincipal: [3, 6, 7], // Escultura, Arte Conceptual, Instalación
-  },
-  abstracto: {
-    categoriaPrincipal: [4, 18], // Arte Digital, Motion Art
-  },
+  moderno: "moderno",
+  clasico: "clasico",
+  abstracto: "abstracto",
 };
 
 /**
- * Comprueba si una obra pertenece a una sección
+ * Comprueba si una obra pertenece a una sección curatorial
  */
 function obraEnSeccion(obra, seccion) {
-  const config = SECCIONES[seccion];
-  if (!config) return false;
-
-  const catPrincipal = parseInt(obra.categoriaPrincipal);
-  const catsSecundarias = (obra.categoriasSecundarias || []).map(c => parseInt(c));
-
-  if (
-    config.categoriaPrincipal &&
-    config.categoriaPrincipal.includes(catPrincipal)
-  ) {
-    return true;
-  }
-
-  if (
-    config.categoriasSecundarias &&
-    catsSecundarias.some(cat =>
-      config.categoriasSecundarias.includes(cat)
-    )
-  ) {
-    return true;
-  }
-
-  return false;
+  const targetEpoca = SECCIONES[seccion];
+  return obra && obra.epoca === targetEpoca;
 }
 
 /**

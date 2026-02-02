@@ -7,6 +7,9 @@
     { "id": 5, "nombre": "Ilustración", "slug": "ilustracion" },
     { "id": 6, "nombre": "Arte Conceptual", "slug": "arte-conceptual" },
     { "id": 7, "nombre": "Instalación", "slug": "instalacion" },
+    { "id": 8, "nombre": "Arte Contemporáneo", "slug": "arte-contemporaneo" },
+    { "id": 9, "nombre": "Grabado", "slug": "grabado" },
+    { "id": 10, "nombre": "Bellas Artes", "slug": "bellas-artes" },
     { "id": 18, "nombre": "Motion Art", "slug": "motion-art" }
   ]
 }
