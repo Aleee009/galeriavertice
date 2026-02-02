@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Lucía Moreno",
       "avatar": "lucia_moreno.jpg",
-      "bio": "Lucía Moreno es una fotógrafa contemporánea cuya obra explora la intersección entre la arquitectura urbana y la soledad del individuo. Formada en la Escuela de Artes de Berlín, su estilo se caracteriza por una paleta de colores desaturados y composiciones geométricas rigurosas.",
+      "bio": "Fotógrafa contemporánea cuya obra explora la intersección entre la arquitectura urbana y la soledad del individuo. Formada en la Escuela de Artes de Berlín, su estilo se caracteriza por una paleta de colores desaturados y composiciones geométricas rigurosas.",
       "premios": ["Premio Nacional de Fotografía 2021", "Beca de Creación Artística Europea 2019"],
       "noticias": "Próxima exposición individual 'Silencios de Cemento' en la Galería Nacional de Londres (Marzo 2026)."
     },
@@ -12,7 +12,7 @@
       "id": 2,
       "nombre": "Daniel Ortiz",
       "avatar": "daniel_ortiz.jpg",
-      "bio": "Daniel Ortiz utiliza la fotografía analógica para capturar la esencia cruda de la vida metropolitana. Sus retratos son conocidos por su honestidad brutal y su capacidad para revelar la vulnerabilidad humana en entornos hostiles.",
+      "bio": "Utiliza la fotografía analógica para capturar la esencia cruda de la vida metropolitana. Sus retratos son conocidos por su honestidad brutal y su capacidad para revelar la vulnerabilidad humana en entornos hostiles.",
       "premios": ["Mención de Honor World Press Photo 2023", "Fotógrafo del Año - Círculo de Bellas Artes 2020"],
       "noticias": "Publicación del libro de arte 'Sombras de Asfalto' con la editorial Phaidon."
     },
@@ -20,7 +20,7 @@
       "id": 3,
       "nombre": "Sofia Klein",
       "avatar": "sofia_klein.jpg",
-      "bio": "Sofia Klein es una pionera del arte generativo y la escultura digital. Sus obras desafían la percepción del espectador mediante el uso de algoritmos complejos que crean formas orgánicas a partir de datos digitales.",
+      "bio": "Pionera del arte generativo y la escultura digital. Sus obras desafían la percepción del espectador mediante el uso de algoritmos complejos que crean formas orgánicas a partir de datos digitales.",
       "premios": ["Grand Prix Ars Electronica 2024", "Innovación en Artes Visuales - MIT 2022"],
       "noticias": "Colaboración con el centro de investigación CERN para una instalación inmersiva sobre la materia oscura."
     },
@@ -41,18 +41,10 @@
       "noticias": "Participación en la gira mundial 'Cuerpos de Ébano' que visitará Nueva York, París y Tokio."
     },
     {
-      "id": 8,
-      "nombre": "Hugo Lambert",
-      "avatar": "hugo_lambert.jpg",
-      "bio": "Pintor abstracto que utiliza pigmentos naturales recolectados en sus viajes por el mundo. Su obra es un diálogo entre la geología y la emoción pura.",
-      "premios": ["Residencia de Artista - Fundación Gugghenheim 2023"],
-      "noticias": "Subasta récord de su obra 'Tierra Roja' en Christie's Nueva York."
-    },
-    {
       "id": 9,
       "nombre": "Marta Kowalska",
       "avatar": "marta_kowalska.jpg",
-      "bio": "Kowalska revive la tradición del claroscuro en bodegones monumentales que cuestionan el consumismo contemporáneo. Su técnica de óleo sobre lienzo es de un realismo sobrecogedor.",
+      "bio": "Revive la tradición del claroscuro en bodegones monumentales que cuestionan el consumismo contemporáneo. Su técnica de óleo sobre lienzo es de un realismo sobrecogedor.",
       "premios": ["Primer Premio - Concurso Internacional de Pintura Realista 2021"],
       "noticias": "Retrospectiva de 10 años en el Museo Nacional de Varsovia."
     },
@@ -76,7 +68,7 @@
       "id": 18,
       "nombre": "Thiago Mendes",
       "avatar": "thiago_mendes.jpg",
-      "bio": "Mendes utiliza el motion art para explorar la fluidez de la identidad en la era digital. Sus piezas de videoarte son fluidas, hipnóticas y profundamente emocionales.",
+      "bio": "Utiliza el motion art para explorar la fluidez de la identidad en la era digital. Sus piezas de videoarte son fluidas, hipnóticas y profundamente emocionales.",
       "premios": ["Digital Creator Award - Cannes Lions 2023"],
       "noticias": "Colaboración con músicos de jazz experimental para una performance audiovisual en Berlín."
     },
@@ -103,86 +95,6 @@
       "bio": "Fotógrafo de paisajes que busca la abstracción dentro de la geografía. Sus tomas aéreas de desiertos y salinas parecen pinturas gestuales.",
       "premios": ["Wildlife Photographer of the Year (Categoría Paisaje) 2022"],
       "noticias": "Expedición a la Antártida para documentar el retroceso de los glaciares."
-    },
-    {
-      "id": 22,
-      "nombre": "Maya Sato",
-      "avatar": "maya_sato.jpg",
-      "bio": "Artista de instalaciones textiles que utiliza hilos de seda naturales y tintes vegetales. Su obra explora los lazos invisibles que unen a las comunidades.",
-      "premios": ["Kyoto Art Award 2023"],
-      "noticias": "Instalación a gran escala en el atrio del Museo de Arte Fuji de Tokio."
-    },
-    {
-      "id": 23,
-      "nombre": "Julian Thorne",
-      "avatar": "julian_thorne.jpg",
-      "bio": "Escultor abstracto que trabaja la madera de deriva y materiales encontrados en el mar. Sus formas son ecos del movimiento de las olas y el viento.",
-      "premios": ["Ocean Preservation Artist Award 2024"],
-      "noticias": "Exposición itinerante por las costas de Australia y Nueva Zelanda."
-    },
-    {
-      "id": 24,
-      "nombre": "Isabella Valli",
-      "avatar": "isabella_valli.jpg",
-      "bio": "Fotógrafa de moda que ha transformado el género en una crítica social. Sus imágenes son composiciones teatrales cargadas de simbolismo político.",
-      "premios": ["Vogue Photographer of the Decade 2020"],
-      "noticias": "Donación de su archivo histórico al Centro de Fotografía Creativa de Arizona."
-    },
-    {
-      "id": 25,
-      "nombre": "Kofi Mensah",
-      "avatar": "kofi_mensah.jpg",
-      "bio": "Pintor ghanés que utiliza el color vibrante para narrar historias de la diáspora africana. Su estilo mezcla el cubismo con patrones tradicionales Adinkra.",
-      "premios": ["Premio Africano de Bellas Artes 2022"],
-      "noticias": "Retrospectiva en el Museo de Arte Africano de Washington D.C."
-    },
-    {
-      "id": 26,
-      "nombre": "Anaïs Petit",
-      "avatar": "anais_petit.jpg",
-      "bio": "Escultora de vidrio soplado que crea estructuras de una fragilidad imposible. Su trabajo captura la luz en formas orgánicas que parecen líquidas.",
-      "premios": ["Glass Art Society Award 2023"],
-      "noticias": "Taller magistral en la prestigiosa Escuela de Vidrio de Murano."
-    },
-    {
-      "id": 27,
-      "nombre": "Lars Berg",
-      "avatar": "lars_berg.jpg",
-      "bio": "Grabador noruego que utiliza técnicas del siglo XVI para representar la soledad en paisajes árticos. Su obra es un testamento a la paciencia y el detalle.",
-      "premios": ["Norwegian Cultural Merit Award 2021"],
-      "noticias": "Próxima edición limitada de grabados inspirados en las sagas vikingas."
-    },
-    {
-      "id": 28,
-      "nombre": "Zoe Miller",
-      "avatar": "zoe_miller.jpg",
-      "bio": "Pintora neopsicodélica que explora los estados alterados de conciencia a través de fractales pintados a mano. Su obra es una experiencia sensorial total.",
-      "premios": ["Contemporary Vision Award 2024"],
-      "noticias": "Instalación inmersiva en el festival de arte de Coachella."
-    },
-    {
-      "id": 29,
-      "nombre": "Omar Al-Fayed",
-      "avatar": "omar_alfayed.jpg",
-      "bio": "Arquitecto y artista digital que diseña mundos virtuales inspirados en la geometría islámica. Sus meta-arquitecturas son refugios espirituales digitales.",
-      "premios": ["Agha Khan Award for Digital Arts 2023"],
-      "noticias": "Conferencia en el MIT sobre arquitectura y espiritualidad digital."
-    },
-    {
-      "id": 30,
-      "nombre": "Yuki Tanaka",
-      "avatar": "yuki_tanaka.jpg",
-      "bio": "Videoartista que utiliza la macrofotografía para documentar la descomposición natural. Su obra es una meditación sobre el paso del tiempo y la belleza de lo efímero.",
-      "premios": ["Japan Media Arts Festival Excellence Award 2022"],
-      "noticias": "Exposición individual en el Palais de Tokyo, París."
-    },
-    {
-      "id": 31,
-      "nombre": "Renata Silva",
-      "avatar": "renata_silva.jpg",
-      "bio": "Pintora expresionista brasileña que captura la energía vital de la Amazonía. Sus lienzos son explosiones de color y trazos salvajes y matéricos.",
-      "premios": ["Biennale of São Paulo Honorary Mention 2024"],
-      "noticias": "Mural monumental en la fachada de la Biblioteca Nacional de Brasilia."
     }
   ]
 }

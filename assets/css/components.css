@@ -380,6 +380,60 @@
   font-size: 0.7rem;
 }
 
+/* =====================================================
+   CATEGORIES GRID & CARDS
+ ===================================================== */
+
+.grid-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-block: 2rem;
+}
+
+.card-categoria {
+  position: relative;
+  background: var(--bg-secondary);
+  padding: 3rem 2rem;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  border: 1px solid var(--color-grisclaro);
+}
+
+.card-categoria:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--text-primary);
+}
+
+.card-categoria .v-card-info {
+  position: relative;
+  z-index: 2;
+}
+
+.card-categoria h3 {
+  font-family: "Marcellus", serif;
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin: 0;
+  color: var(--text-primary);
+  transition: var(--transition-fast);
+}
+
+.card-categoria:hover h3 {
+  color: var(--text-subtitle);
+}
+
+.card-categoria .v-card-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
 .card-obra img {
     width: 100%;
     height: 480px; /* Más editorial/vertical */
@@ -798,8 +852,8 @@ body::before {
 
 .editorial-grid {
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2.5rem;
   padding: 2rem 0 8rem;
   align-items: start;
 }
@@ -825,16 +879,12 @@ body::before {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* Diferentes tamaños (Spans) */
-.span-4 { grid-column: span 4; }
-.span-6 { grid-column: span 6; }
-.span-8 { grid-column: span 8; }
-.span-3 { grid-column: span 3; }
-
-/* En móvil todo a full width */
+/* Responsive: En móvil todo a full width */
 @media (max-width: 768px) {
-  .editorial-item { grid-column: span 12 !important; }
-  .editorial-grid { gap: 2rem; }
+  .editorial-grid { 
+    grid-template-columns: 1fr;
+    gap: 2rem; 
+  }
 }
 
 .editorial-image-wrap {
