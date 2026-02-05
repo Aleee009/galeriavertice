@@ -1,23 +1,90 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
-  <title>Perfil Usuario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Perfil Usuario – Vértice</title>
+
   <link rel="stylesheet" href="../assets/css/styles.css">
+  <link rel="stylesheet" href="../assets/css/perfil-usuario.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/pages.js" defer></script>
-  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
 </head>
+
 <body data-page="perfil-usuario">
 
-<main class="container">
-  <h1>Mi perfil</h1>
-  <section class="grid-obras"></section>
-</main>
+  <!-- HEADER (inyectado) -->
+  <div id="site-header"></div>
 
+  <main class="main">
+    <div class="container">
+
+      <!-- PERFIL TOP -->
+      <section class="perfil-top">
+        <div class="perfil-top__row">
+          <img class="perfil-avatar" src="../assets/img/bird-artist.jpg" alt="Foto de perfil">
+
+          <div class="perfil-info">
+            <h1 class="perfil-name">月华 (Yuè huá)</h1>
+            <p class="perfil-role">VISITANTE</p>
+
+            <button class="perfil-btn" type="button">EDITAR PERFIL</button>
+          </div>
+        </div>
+      </section>
+
+      <hr class="perfil-sep">
+
+      <!-- OBRAS FAVORITAS -->
+      <section class="perfil-section">
+        <div class="perfil-section__head">
+          <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+          <h2>Obras Favoritas</h2>
+        </div>
+
+        <div class="perfil-grid">
+          <img class="perfil-card" src="../assets/img/bird.jpg" alt="Obra favorita 1">
+          <img class="perfil-card" src="../assets/img/bird3.jpg" alt="Obra favorita 2">
+          <img class="perfil-card" src="../assets/img/bird8.jpg" alt="Obra favorita 3">
+          <img class="perfil-card" src="../assets/img/bird9.jpg" alt="Obra favorita 4">
+        </div>
+
+        <button class="perfil-btn perfil-btn--left" type="button">VER MÁS</button>
+      </section>
+
+      <hr class="perfil-sep">
+
+      <!-- ARTISTAS FAVORITOS -->
+      <section class="perfil-section">
+        <div class="perfil-section__head">
+          <span class="material-symbols-outlined" aria-hidden="true">favorite</span>
+          <h2>Artistas Favoritos</h2>
+        </div>
+
+        <div class="perfil-grid perfil-grid--artists">
+          <img class="perfil-card perfil-card--wide" src="../assets/img/sand.jpg" alt="Artista favorito 1">
+          <img class="perfil-card perfil-card--wide" src="../assets/img/sand3.jpg" alt="Artista favorito 2">
+          <img class="perfil-card perfil-card--wide" src="../assets/img/sand9.jpg" alt="Artista favorito 3">
+          <img class="perfil-card perfil-card--wide" src="../assets/img/sand5.jpg" alt="Artista favorito 4">
+        </div>
+
+        <button class="perfil-btn perfil-btn--left" type="button">VER MÁS</button>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER (inyectado) -->
+  <div id="site-footer"></div>
+
+  <!-- JS -->
   <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/pages.js" defer></script>
-
+  <script src="../assets/js/pages.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/main.js"></script>
 </body>
+
 </html>

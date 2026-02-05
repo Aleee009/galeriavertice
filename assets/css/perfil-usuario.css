@@ -1,0 +1,214 @@
+/* =========================================================
+   PERFIL USUARIO (solo esta página)
+========================================================= */
+
+:root {
+  --perfil-max: 1212px;
+  --perfil-border: #ccc8c8;
+  --perfil-text: #303030;
+  --perfil-black: #111111;
+  --perfil-gap: 40px;
+}
+
+body[data-page="perfil-usuario"] .main {
+  padding-block: 24px 72px;
+  background: #fff;
+}
+
+/* Mantén tu container global, pero aquí lo limitamos al ancho de Figma */
+body[data-page="perfil-usuario"] .main > .container {
+  max-width: var(--perfil-max);
+  margin-inline: auto;
+  padding-inline: 40px;
+  box-sizing: border-box;
+}
+
+/* -------- TOP PERFIL -------- */
+body[data-page="perfil-usuario"] .perfil-top__row {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  padding-block: 18px;
+}
+
+body[data-page="perfil-usuario"] .perfil-avatar {
+  width: 166px;
+  height: 166px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+}
+
+body[data-page="perfil-usuario"] .perfil-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+body[data-page="perfil-usuario"] .perfil-name {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  line-height: 36px;
+  color: var(--perfil-text);
+  text-transform: uppercase;
+}
+
+body[data-page="perfil-usuario"] .perfil-role {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--perfil-text);
+  text-transform: uppercase;
+}
+
+/* Botón negro */
+body[data-page="perfil-usuario"] .perfil-btn {
+  margin-top: 18px;
+  width: 163px;
+  height: 32px;
+  border: none;
+  background: var(--perfil-black);
+  color: #fafafa;
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+body[data-page="perfil-usuario"] .perfil-btn:hover {
+  filter: brightness(1.08);
+}
+
+body[data-page="perfil-usuario"] .perfil-btn--left {
+  margin-top: 18px;
+}
+
+/* Separadores */
+body[data-page="perfil-usuario"] .perfil-sep {
+  border: 0;
+  border-top: 1px solid var(--perfil-border);
+  margin: 0;
+}
+
+/* -------- SECCIONES -------- */
+body[data-page="perfil-usuario"] .perfil-section {
+  padding-block: 18px 28px;
+}
+
+body[data-page="perfil-usuario"] .perfil-section__head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  color: var(--perfil-text);
+}
+
+body[data-page="perfil-usuario"] .perfil-section__head span.material-symbols-outlined {
+  font-size: 22px;
+  line-height: 1;
+}
+
+body[data-page="perfil-usuario"] .perfil-section__head h2 {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: var(--perfil-text);
+}
+
+/* Grid (4 columnas) */
+body[data-page="perfil-usuario"] .perfil-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--perfil-gap);
+  align-items: start;
+}
+
+/* Tarjetas */
+body[data-page="perfil-usuario"] .perfil-card {
+  width: 100%;
+  height: 273px;
+  object-fit: cover;
+  display: block;
+}
+
+/* En la captura, la segunda fila se ve un poco más “apaisada”.
+   Si luego quieres exacto, lo afinamos. */
+body[data-page="perfil-usuario"] .perfil-card--wide {
+  height: 180px;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 1100px) {
+  body[data-page="perfil-usuario"] .perfil-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  body[data-page="perfil-usuario"] .main > .container {
+    padding-inline: 16px;
+  }
+
+  body[data-page="perfil-usuario"] .perfil-top__row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  body[data-page="perfil-usuario"] .perfil-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body[data-page="perfil-usuario"] .perfil-btn {
+    width: 100%;
+  }
+}
+/* ===== Pixel-perfect extras ===== */
+
+/* Icono corazón dentro de círculo (como la captura) */
+body[data-page="perfil-usuario"] .perfil-fav-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  border: 1px solid #b7b7b7;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: #111;
+}
+
+/* Separadores con aire como en Figma */
+body[data-page="perfil-usuario"] .perfil-sep {
+  margin-block: 20px;
+}
+
+/* Botones “VER MÁS” alineados a la izquierda */
+body[data-page="perfil-usuario"] .perfil-btn--left {
+  width: 120px;
+  margin-top: 18px;
+}
+
+/* Grid de artistas: en la captura se ven más apaisados */
+body[data-page="perfil-usuario"] .perfil-grid--artists .perfil-card--wide {
+  height: 180px;
+}
+
+body[data-page="perfil-usuario"] .main {
+  padding-block: 24px 72px;
+}
+
+body[data-page="perfil-usuario"] .main > .container {
+  max-width: 1212px;
+  margin-inline: auto;
+  padding-inline: 40px;
+}
+
