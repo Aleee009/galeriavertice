@@ -331,6 +331,7 @@ button.ghost:hover {
   /* AIRE EDITORIAL REAL */
   padding-top: var(--space-xl);
   padding-bottom: var(--space-xl);
+  overflow: visible;
 }
 
 .home-hero .container {
@@ -366,7 +367,8 @@ button.ghost:hover {
 ========================================================= */
 
 .home-category-block {
-  margin-bottom: var(--space-xl);
+  margin: 0 auto var(--space-xl);
+  max-width: 1200px;
 }
 
 .home-eyebrow {
@@ -385,7 +387,8 @@ button.ghost:hover {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-lg);
-  margin-bottom: var(--space-lg);
+  margin: 0 auto var(--space-lg);
+  max-width: 1000px;
 }
 
 .home-categories span {
@@ -431,8 +434,10 @@ button.ghost:hover {
 .home-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  gap: var(--space-md);
-  margin-top: var(--space-xl);
+  gap: 1.5rem;
+  margin: var(--space-xl) auto 0;
+  max-width: 1200px;
+  padding: 1rem;
 }
 
 /* Cada obra */
@@ -455,7 +460,7 @@ button.ghost:hover {
 
 @media (max-width: 1200px) {
   .home-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -1603,13 +1608,10 @@ button.ghost:hover {
 
 .artists-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  margin-top: 48px;
-  margin-bottom: 96px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin: 48px auto 96px;
   max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
 }
 
 .artist-card {
@@ -1761,7 +1763,13 @@ button.ghost:hover {
    RESPONSIVE
 =============================== */
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
+  .artists-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
   .artists-grid {
     grid-template-columns: repeat(2, 1fr);
   }
