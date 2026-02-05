@@ -4,27 +4,30 @@
 <head>
   <meta charset="UTF-8">
   <title>Artista · Vértice</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/styles.css">
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/pages.js" defer></script>
   <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/pages.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </head>
 
 <body data-page="artista">
 
   <main class="container page-padding">
+
     <header class="section-header">
-      <h1 id="artistaNombre" class="section-title">Artista</h1>
+      <h1 id="artistaNombre" class="section-title">Cargando artista...</h1>
     </header>
 
+    <section id="artistProfile" class="artist-profile-layout"></section>
+
     <section class="grid-obras" id="obrasGrid"></section>
+
   </main>
 
-  <script src="../assets/js/utils.js"></script>
-  <script src="../assets/js/auth.js"></script>
-  <script src="../assets/js/pages.js"></script>
-  <script src="../assets/js/main.js"></script>
 </body>
 
 </html>

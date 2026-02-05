@@ -33,7 +33,7 @@ const Galleria = {
       if (type === 'obra') {
         const artista = this.artistas.find(a => a.id === item.artistaId);
         card.className = "card-obra v-card";
-        
+
         card.innerHTML = `
           <div class="v-card-visual">
             <div class="v-card-img-wrap"></div>
@@ -54,10 +54,10 @@ const Galleria = {
             <a href="${getPageRoute('obra-detalle.html')}?id=${item.id}" class="v-card-link"></a>
           </div>
         `;
-        
+
         const imgWrap = card.querySelector(".v-card-img-wrap");
         renderOptimizedImage(imgWrap, item.imagen, item.titulo, priority, "4/5");
-      } 
+      }
       else if (type === 'artista') {
         card.className = "card-artista v-card";
         const imgWrap = document.createElement("div");
@@ -108,14 +108,14 @@ async function initPages(page, seccion) {
     home: () => {
       const grid = "home-grid";
       const spans = document.querySelectorAll(".home-categories span");
-      
+
       const renderCategory = (catName) => {
         // Filtrar obras por sección curatorial (usando la lógica de SECCIONES en utils.js)
         const obras = Galleria.obras.filter(o => obraEnSeccion(o, catName));
         // Tomar las primeras 5 o las que haya
         const sample = obras.slice(0, 5);
         Galleria.render(grid, sample);
-        
+
         // Actualizar clase activa
         spans.forEach(s => s.classList.toggle("active", s.dataset.cat === catName));
       };
@@ -207,27 +207,54 @@ async function initObraDetalle() {
 
 async function initArtistaDetalle() {
   const id = parseInt(getParam("id"));
-  const artista = Galleria.artistas.find(a => a.id === id);
-  if (!artista) return;
-  const header = document.querySelector(".section-header");
-  header.innerHTML = `
-    <h1 class="section-title">${artista.nombre}</h1>
-    <p class="artist-location">Información Curatorial</p>
-    <p class="artist-main-bio">${artista.bio || "Biografía pronto disponible."}</p>
-    
-    <div class="artist-achievements">
-      <h3>Reconocimientos</h3>
-      <ul>
-        ${(artista.premios || []).map(p => `<li>${p}</li>`).join('')}
-      </ul>
-    </div>
-    
-    <div class="artist-skills">
-      <h3>Últimas Noticias</h3>
-      <p class="obra-short-desc">${artista.noticias || "Sin noticias recientes."}</p>
-    </div>
-  `;
+  // Aseguramos que los datos estén cargados
+  if (Galleria.artistas.length === 0) await Galleria.load();
 
+  const artista = Galleria.artistas.find(a => a.id === id);
+
+  if (!artista) {
+    document.querySelector(".section-title").textContent = "Artista no encontrado";
+    return;
+  }
+
+  // 1. INYECTAMOS NOMBRE + AVATAR EN EL HEADER
+  const header = document.querySelector(".section-header");
+  if (header) {
+    // Usamos ../assets/img/ + el nombre del archivo del JSON
+    header.innerHTML = `
+      <h1 class="section-title">${artista.nombre}</h1>
+      <div class="artist-header-image">
+        <img src="../assets/img/${artista.avatar}" alt="${artista.nombre}">
+      </div>
+    `;
+  }
+
+  // 2. Generamos el perfil (Bio + Sidebar) - Esto sigue igual que antes
+  const profileContainer = document.getElementById("artistProfile");
+  if (profileContainer) {
+    profileContainer.innerHTML = `
+      <div class="profile-main">
+        <p class="artist-bio-text">${artista.bio || "La biografía de este artista estará disponible próximamente."}</p>
+      </div>
+
+      <aside class="profile-sidebar">
+        <div class="sidebar-block">
+          <h3 class="sidebar-title">Reconocimientos</h3>
+          <ul class="sidebar-list">
+            ${(artista.premios || []).length > 0
+        ? (artista.premios || []).map(p => `<li>${p}</li>`).join('')
+        : '<li class="empty">Sin reconocimientos registrados</li>'}
+          </ul>
+        </div>
+        <div class="sidebar-block">
+          <h3 class="sidebar-title">Actualidad</h3>
+          <p class="sidebar-text">${artista.noticias || "No hay noticias recientes."}</p>
+        </div>
+      </aside>
+    `;
+  }
+
+  // 3. Renderizamos sus obras
   const filtered = Galleria.obras.filter(o => o.artistaId === id);
   Galleria.render("obrasGrid", filtered);
 }
