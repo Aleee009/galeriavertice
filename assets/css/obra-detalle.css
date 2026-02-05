@@ -358,6 +358,7 @@ body[data-page="obra-detalle"] .art__img {
     height: 100%;
     object-fit: cover;
     display: block;
+    cursor:zoom-in
 }
 
 body[data-page="obra-detalle"] .art__expand {
@@ -591,21 +592,21 @@ body[data-page="obra-detalle"] .site-footer .footer-container {
     body[data-page="obra-detalle"] .related .card {
         width: 100%;
     }
+
+    body[data-page="obra-detalle"] .zoom-modal__content {
+    inset: 16px;
+    }
 }
 
-body[data-page="obra-detalle"] .art__link {
-    display: block;
-    cursor: zoom-in;
-}
-
-/* =========================================================
-   MODAL ZOOM (solo obra-detalle)
-========================================================= */
+/* ===========================
+   MODAL · ZOOM OBRA
+=========================== */
 body[data-page="obra-detalle"] .zoom-modal {
     position: fixed;
     inset: 0;
     z-index: 9999;
     display: none;
+    /* cerrado por defecto */
 }
 
 body[data-page="obra-detalle"] .zoom-modal.is-open {
@@ -615,59 +616,42 @@ body[data-page="obra-detalle"] .zoom-modal.is-open {
 body[data-page="obra-detalle"] .zoom-modal__backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(17, 17, 17, 0.78);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 body[data-page="obra-detalle"] .zoom-modal__content {
-    position: relative;
-    z-index: 1;
-
-    width: min(1200px, calc(100vw - 48px));
-    height: min(85vh, 900px);
-
-    margin: 48px auto;
-    background: transparent;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: absolute;
+    inset: 40px;
+    /* margen alrededor */
+    display: grid;
+    place-items: center;
 }
 
 body[data-page="obra-detalle"] .zoom-modal__img {
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     object-fit: contain;
-    /* clave: grande sin recortar */
-    display: block;
+    background: #fff;
 }
 
-/* Botón cerrar */
 body[data-page="obra-detalle"] .zoom-modal__close {
     position: absolute;
-    top: -12px;
-    right: -12px;
-
+    top: 16px;
+    right: 16px;
     width: 44px;
     height: 44px;
-
+    border: none;
+    cursor: pointer;
     border-radius: 999px;
-    background: rgba(255, 255, 255, 0.95);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    background: rgba(255, 255, 255, 0.9);
 
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    display: grid;
+    place-items: center;
 }
 
 body[data-page="obra-detalle"] .zoom-modal__close:hover {
     background: #fff;
 }
-
-/* Cursor zoom en la imagen principal */
-body[data-page="obra-detalle"] .art__img {
-    cursor: zoom-in;
-}
-
 
 
 /* =========================================================

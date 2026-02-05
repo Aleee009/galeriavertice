@@ -116,121 +116,126 @@
 
         </div>
       </section>
+    </div>
+  </main>
 
+  <!-- RELATED -->
+  <section class="related">
+    <div class="container">
+      <h2 class="related__title">OBRAS RELACIONADAS</h2>
 
-      <!-- RELATED -->
-      <section class="related">
-        <div class="container">
-          <h2 class="related__title">OBRAS RELACIONADAS</h2>
-
-          <div class="cards">
-            <article class="card">
-              <span class="tag">NEW</span>
-              <img class="card__img" src="../assets/img/gato1.jpg" alt="Obra relacionada 1" />
-              <div class="card__body">
-                <h3 class="card__title">CUADRO</h3>
-                <p class="card__artist">ARTISTA DEL CUADRO</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <span class="tag">NEW</span>
-              <img class="card__img" src="../assets/img/gato8.jpg" alt="Obra relacionada 2" />
-              <div class="card__body">
-                <h3 class="card__title">CUADRO</h3>
-                <p class="card__artist">ARTISTA DEL CUADRO</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <span class="tag">NEW</span>
-              <img class="card__img" src="../assets/img/gato.jpg" alt="Obra relacionada 3" />
-              <div class="card__body">
-                <h3 class="card__title">CUADRO</h3>
-                <p class="card__artist">ARTISTA DEL CUADRO</p>
-              </div>
-            </article>
-
-            <article class="card">
-              <span class="tag">NEW</span>
-              <img class="card__img" src="../assets/img/gato6.jpg" alt="Obra relacionada 4" />
-              <div class="card__body">
-                <h3 class="card__title">CUADRO</h3>
-                <p class="card__artist">ARTISTA DEL CUADRO</p>
-              </div>
-            </article>
+      <div class="cards">
+        <article class="card">
+          <span class="tag">NEW</span>
+          <img class="card__img" src="../assets/img/gato1.jpg" alt="Obra relacionada 1" />
+          <div class="card__body">
+            <h3 class="card__title">CUADRO</h3>
+            <p class="card__artist">ARTISTA DEL CUADRO</p>
           </div>
-        </div>
-      </section>
+        </article>
 
-      <!-- FOOTER (inyectado) -->
-      <div id="site-footer"></div>
+        <article class="card">
+          <span class="tag">NEW</span>
+          <img class="card__img" src="../assets/img/gato8.jpg" alt="Obra relacionada 2" />
+          <div class="card__body">
+            <h3 class="card__title">CUADRO</h3>
+            <p class="card__artist">ARTISTA DEL CUADRO</p>
+          </div>
+        </article>
 
-      <!-- MODAL · ZOOM OBRA -->
-      <div class="zoom-modal" id="zoomModal" aria-hidden="true">
-        <div class="zoom-modal__backdrop" data-close="true"></div>
+        <article class="card">
+          <span class="tag">NEW</span>
+          <img class="card__img" src="../assets/img/gato.jpg" alt="Obra relacionada 3" />
+          <div class="card__body">
+            <h3 class="card__title">CUADRO</h3>
+            <p class="card__artist">ARTISTA DEL CUADRO</p>
+          </div>
+        </article>
 
-        <div class="zoom-modal__content" role="dialog" aria-modal="true" aria-label="Vista ampliada de la obra">
-          <button class="zoom-modal__close" type="button" id="zoomClose" aria-label="Cerrar">
-            <span class="material-symbols-outlined" aria-hidden="true">close</span>
-          </button>
-
-          <img class="zoom-modal__img" id="zoomImg" alt="Obra ampliada">
-        </div>
+        <article class="card">
+          <span class="tag">NEW</span>
+          <img class="card__img" src="../assets/img/gato6.jpg" alt="Obra relacionada 4" />
+          <div class="card__body">
+            <h3 class="card__title">CUADRO</h3>
+            <p class="card__artist">ARTISTA DEL CUADRO</p>
+          </div>
+        </article>
       </div>
+    </div>
+  </section>
 
-      <!-- JS -->
-      <script src="../assets/js/utils.js"></script>
-      <script src="../assets/js/pages.js"></script>
-      <script src="../assets/js/auth.js"></script>
-      <script src="../assets/js/main.js"></script>
 
-      <script>
-        (function () {
-          const modal = document.getElementById('zoomModal');
-          const modalImg = document.getElementById('zoomImg');
-          const closeBtn = document.getElementById('zoomClose');
 
-          const mainImg = document.querySelector('body[data-page="obra-detalle"] .art__img');
-          const expandBtn = document.querySelector('body[data-page="obra-detalle"] .art__expand');
+  <!-- FOOTER (inyectado) -->
+  <div id="site-footer"></div>
 
-          if (!modal || !modalImg || !mainImg) return;
+  <!-- MODAL · ZOOM OBRA -->
+  <div class="zoom-modal" id="zoomModal" aria-hidden="true">
+    <div class="zoom-modal__backdrop" data-close="true"></div>
 
-          function openModal(src, alt) {
-            modalImg.src = src;
-            modalImg.alt = alt || 'Obra ampliada';
-            modal.classList.add('is-open');
-            modal.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden';
-          }
+    <div class="zoom-modal__content" role="dialog" aria-modal="true" aria-label="Vista ampliada de la obra">
+      <button class="zoom-modal__close" type="button" id="zoomClose" aria-label="Cerrar">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
 
-          function closeModal() {
-            modal.classList.remove('is-open');
-            modal.setAttribute('aria-hidden', 'true');
-            modalImg.src = '';
-            document.body.style.overflow = '';
-          }
+      <img class="zoom-modal__img" id="zoomImg" alt="Obra ampliada">
+    </div>
+  </div>
 
-          mainImg.addEventListener('click', () => openModal(mainImg.src, mainImg.alt));
+  <!-- JS -->
+  <script src="../assets/js/utils.js"></script>
+  <script src="../assets/js/pages.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/main.js"></script>
 
-          if (expandBtn) {
-            expandBtn.addEventListener('click', (e) => {
-              e.preventDefault();
-              openModal(mainImg.src, mainImg.alt);
-            });
-          }
+  <script>
+    (function () {
+      const modal = document.getElementById('zoomModal');
+      const modalImg = document.getElementById('zoomImg');
+      const closeBtn = document.getElementById('zoomClose');
 
-          if (closeBtn) closeBtn.addEventListener('click', closeModal);
+      const mainImg = document.querySelector('body[data-page="obra-detalle"] .art__img');
+      const expandBtn = document.querySelector('body[data-page="obra-detalle"] .art__expand');
 
-          modal.addEventListener('click', (e) => {
-            if (e.target && e.target.dataset && e.target.dataset.close === 'true') closeModal();
-          });
+      if (!modal || !modalImg || !mainImg) return;
 
-          document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
-          });
-        })();
-      </script>
+      function openModal(src, alt) {
+        modalImg.src = src;
+        modalImg.alt = alt || 'Obra ampliada';
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        modalImg.src = '';
+        document.body.style.overflow = '';
+      }
+
+      mainImg.addEventListener('click', () => openModal(mainImg.src, mainImg.alt));
+
+      if (expandBtn) {
+        expandBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation(); // 🔥 clave: no “sube” al contenedor / imagen
+          openModal(mainImg.src, mainImg.alt);
+        });
+      }
+
+
+      if (closeBtn) closeBtn.addEventListener('click', closeModal);
+
+      modal.addEventListener('click', (e) => {
+        if (e.target && e.target.dataset && e.target.dataset.close === 'true') closeModal();
+      });
+
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    })();
+  </script>
 
 </body>
 
