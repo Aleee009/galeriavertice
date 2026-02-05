@@ -1,6 +1,7 @@
-@import url("./reset.css");
-@import url("./variables.css");
-@import url("./base.css");
-@import url("./layout.css");
-@import url("./components.css");
-@import url("./pages.css");
+@import url("./reset.css");        /* 1. Reset base */
+@import url("./variables.css");    /* 2. Variables */
+@import url("./base.css");         /* 3. Base */
+@import url("./layout.css");       /* 4. Layout (ahora con :not) */
+@import url("./components.css");   /* 5. Componentes */
+@import url("./pages.css");        /* 6. Páginas (SIN obra-detalle) */
+/* obra-detalle.css se carga aparte en el HTML y debe ir DESPUÉS */
