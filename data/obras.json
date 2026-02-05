@@ -2,7 +2,7 @@
   {
     "id": 1,
     "titulo": "Horizonte urbano",
-    "imagen": "moderno_4.jpg",
+    "imagen": "Horizonte_Urbano.png",
     "artistaId": 1,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía digital",
@@ -14,7 +14,7 @@
   {
     "id": 2,
     "titulo": "Trama urbana",
-    "imagen": "moderno_6.jpg",
+    "imagen": "Trama_Urbana.png",
     "artistaId": 1,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía digital",
@@ -26,7 +26,7 @@
   {
     "id": 3,
     "titulo": "Pulso digital",
-    "imagen": "moderno_7.jpg",
+    "imagen": "Pulso_Digital.png",
     "artistaId": 1,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía urbana",
@@ -38,7 +38,7 @@
   {
     "id": 4,
     "titulo": "Intersección",
-    "imagen": "moderno_8.jpg",
+    "imagen": "Interseccion.png",
     "artistaId": 1,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía arquitectónica",
@@ -50,7 +50,7 @@
   {
     "id": 5,
     "titulo": "Rojo profundo",
-    "imagen": "moderno_1.jpg",
+    "imagen": "Rojo_Profundo.png",
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "tecnica": "Arte generativo",
@@ -62,7 +62,7 @@
   {
     "id": 6,
     "titulo": "Equilibrio",
-    "imagen": "moderno_3.jpg",
+    "imagen": "Equilibrio.png",
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "tecnica": "Escultura digital 3D",
@@ -74,7 +74,7 @@
   {
     "id": 7,
     "titulo": "Geometría viva",
-    "imagen": "abstracto_2.jpg",
+    "imagen": "Geometria_Viva.png",
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "tecnica": "Infografía generativa",
@@ -86,7 +86,7 @@
   {
     "id": 8,
     "titulo": "Fragmentos",
-    "imagen": "abstracto_1.jpg",
+    "imagen": "Fragmentos.png",
     "artistaId": 3,
     "categoriaPrincipal": 4,
     "tecnica": "Collage digital",
@@ -98,7 +98,7 @@
   {
     "id": 9,
     "titulo": "Naturaleza contenida",
-    "imagen": "clasico_2.jpg",
+    "imagen": "Naturaleza_Contenida.png",
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "tecnica": "Óleo sobre lienzo",
@@ -110,7 +110,7 @@
   {
     "id": 10,
     "titulo": "Abismo",
-    "imagen": "p_43.jpg",
+    "imagen": "Abismo.png",
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "tecnica": "Óleo sobre tabla",
@@ -122,7 +122,7 @@
   {
     "id": 11,
     "titulo": "Geometría sagrada",
-    "imagen": "p_62.jpg",
+    "imagen": "Geometria_Sagrada.png",
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "tecnica": "Temple al huevo",
@@ -134,7 +134,7 @@
   {
     "id": 12,
     "titulo": "Luz habitada",
-    "imagen": "p_34.jpg",
+    "imagen": "Luz_Habitada.png",
     "artistaId": 9,
     "categoriaPrincipal": 1,
     "tecnica": "Óleo sobre lino",
@@ -146,7 +146,7 @@
   {
     "id": 13,
     "titulo": "Perfil urbano",
-    "imagen": "retrato_1.jpg",
+    "imagen": "Perfil_Urbano.png",
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía analógica",
@@ -158,7 +158,7 @@
   {
     "id": 14,
     "titulo": "Silencio urbano",
-    "imagen": "foto_urbana_3.jpg",
+    "imagen": "Silencio_Urbano.png",
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía directa",
@@ -170,7 +170,7 @@
   {
     "id": 15,
     "titulo": "Nostalgia urbana",
-    "imagen": "f_36.jpg",
+    "imagen": "Nostalgia_Urbana.png",
     "artistaId": 2,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía en blanco y negro",
@@ -182,7 +182,7 @@
   {
     "id": 16,
     "titulo": "Luz estructural",
-    "imagen": "moderno_5.jpg",
+    "imagen": "Luz_Estructural.png",
     "artistaId": 6,
     "categoriaPrincipal": 7,
     "tecnica": "Instalación lumínica",
@@ -194,7 +194,7 @@
   {
     "id": 17,
     "titulo": "Sombra proyectada",
-    "imagen": "i_50.jpg",
+    "imagen": "Sombra_Proyectada.png",
     "artistaId": 6,
     "categoriaPrincipal": 7,
     "tecnica": "Instalación lumínica",
@@ -206,7 +206,7 @@
   {
     "id": 18,
     "titulo": "Resonancia",
-    "imagen": "i_64.jpg",
+    "imagen": "Resonancia.png",
     "artistaId": 6,
     "categoriaPrincipal": 7,
     "tecnica": "Instalación sonora y lumínica",
@@ -218,7 +218,7 @@
   {
     "id": 19,
     "titulo": "Caos cromático",
-    "imagen": "abstracto_3.jpg",
+    "imagen": "Caos_Cromatico.png",
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "tecnica": "Pintura generativa",
@@ -230,7 +230,7 @@
   {
     "id": 20,
     "titulo": "Materia generativa",
-    "imagen": "abstracto_8.jpg",
+    "imagen": "Materia_Generativa.png",
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "tecnica": "Arte generativo (Impresión)",
@@ -242,7 +242,7 @@
   {
     "id": 21,
     "titulo": "Fractalidad",
-    "imagen": "d_35.jpg",
+    "imagen": "Fractalidad.png",
     "artistaId": 20,
     "categoriaPrincipal": 4,
     "tecnica": "Arte generativo",
@@ -254,7 +254,7 @@
   {
     "id": 22,
     "titulo": "Luz del norte",
-    "imagen": "clasico_3.jpg",
+    "imagen": "Luz_del_Norte.png",
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía analógica",
@@ -266,7 +266,7 @@
   {
     "id": 23,
     "titulo": "Paisaje estable",
-    "imagen": "clasico_5.jpg",
+    "imagen": "Paisaje_Estable.png",
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía Fine Art",
@@ -278,7 +278,7 @@
   {
     "id": 24,
     "titulo": "Horizonte efímero",
-    "imagen": "f_48.jpg",
+    "imagen": "Horizonte_Efimero.png",
     "artistaId": 21,
     "categoriaPrincipal": 2,
     "tecnica": "Larga exposición",
@@ -290,7 +290,7 @@
   {
     "id": 25,
     "titulo": "Presencia",
-    "imagen": "retrato_2.jpg",
+    "imagen": "Presencia.png",
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía Fine Art",
@@ -302,7 +302,7 @@
   {
     "id": 26,
     "titulo": "Retrato de mármol",
-    "imagen": "clasico_1.jpg",
+    "imagen": "Retrato_de_Marmol.png",
     "artistaId": 7,
     "categoriaPrincipal": 2,
     "tecnica": "Fotografía Fine Art",
@@ -314,7 +314,7 @@
   {
     "id": 27,
     "titulo": "Ritmo visual",
-    "imagen": "abstracto_4.jpg",
+    "imagen": "Ritmo_Visual.png",
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "tecnica": "Motion Graphics",
@@ -326,7 +326,7 @@
   {
     "id": 28,
     "titulo": "Sinfonía visual",
-    "imagen": "d_41.jpg",
+    "imagen": "Sinfonia_Visual.png",
     "artistaId": 18,
     "categoriaPrincipal": 18,
     "tecnica": "Loop de video",
@@ -338,7 +338,7 @@
   {
     "id": 29,
     "titulo": "Minimal",
-    "imagen": "moderno_2.jpg",
+    "imagen": "Minimal.png",
     "artistaId": 19,
     "categoriaPrincipal": 1,
     "tecnica": "Acrílico y resina sobre panel",
@@ -350,7 +350,7 @@
   {
     "id": 30,
     "titulo": "Silencio blanco",
-    "imagen": "p_52.jpg",
+    "imagen": "Silencio_Blanco.png",
     "artistaId": 19,
     "categoriaPrincipal": 1,
     "tecnica": "Óleo minimalista",
@@ -362,7 +362,7 @@
   {
     "id": 31,
     "titulo": "Equilibrio inestable",
-    "imagen": "e_45.jpg",
+    "imagen": "Equilibrio_Inestable.png",
     "artistaId": 12,
     "categoriaPrincipal": 3,
     "tecnica": "Hierro forjado",
@@ -374,7 +374,7 @@
   {
     "id": 32,
     "titulo": "Metamorfosis",
-    "imagen": "e_53.jpg",
+    "imagen": "Metamorfosis.png",
     "artistaId": 12,
     "categoriaPrincipal": 3,
     "tecnica": "Resina pigmentada",
@@ -386,7 +386,7 @@
   {
     "id": 33,
     "titulo": "Raíces aéreas",
-    "imagen": "i_42.jpg",
+    "imagen": "Raices_Aereas.png",
     "artistaId": 17,
     "categoriaPrincipal": 5,
     "tecnica": "Ilustración digital",
@@ -398,7 +398,7 @@
   {
     "id": 34,
     "titulo": "Pensamiento lineal",
-    "imagen": "i_46.jpg",
+    "imagen": "Pensamiento_Lineal.png",
     "artistaId": 17,
     "categoriaPrincipal": 5,
     "tecnica": "Grafito y pan de oro",
